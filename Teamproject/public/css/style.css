@@ -1,0 +1,29 @@
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic");
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+@media (max-width: 700px) {
+    .body_sub, .list_board, .main_body {
+        width: 100%
+    }
+
+    .baskets, .main_left, .menu_btn {
+        display: none
+    }}
+
+a {  text-decoration: none!important;  color: black; }
+a:visited { text-decoration: none!important; }
+a:hover { text-decoration: none!important; }
+a:focus { text-decoration: none!important; }
+a:hover, a:active { text-decoration: none!important; }
+

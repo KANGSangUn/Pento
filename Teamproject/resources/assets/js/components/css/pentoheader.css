@@ -1,0 +1,111 @@
+.main_header {
+    color: #2c2c2c;
+    width: 100%;
+    height: auto;
+    position : fixed;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    z-index: 2;
+    transition-duration:0.4s;
+    background : transparent;
+}
+
+.header_logo{ text-align: center;}
+
+.header_sub{
+    margin : auto;
+    width:50%;
+    height:auto;
+    text-align: center;
+    font-size : 1.3em;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.menu{
+    color: #2c2c2c;
+    transition-duration:0.4s;
+    font-family: 'Noto Sans', sans-serif;
+    padding : 0.5em;
+}
+.menu:hover{
+    background : rgba(248, 137, 19, 0.8);
+    color: white;
+}
+.header_sub a{ font-family: 'Noto Sans', sans-serif; }
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    background-color: #a1a2a1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background : #f1f1f1;
+}
+.sidenav div{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.sidenav img{
+    border-radius: 50%;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.add_frd_modal {
+    width: 100%;
+    height: 500px
+}
+.add_frd_modal_sub1 {
+    width: 45%;
+    height: 100%;
+    float: left;
+    background-color: #85f78b
+}
+.add_frd_modal_sub2 {
+    width: 45%;
+    height: 100%;
+    float: right
+}
+.container, .frd_list {
+    height: 100%;
+    width: 100%
+}
+.frd_list {
+    border: 1px solid silver
+}
+@media (max-width: 700px) {
+    .body_sub, .list_board, .main_body {
+        width: 100%
+    }
+
+    .baskets, .main_left, .menu_btn {
+        display: none
+    }}

@@ -1,0 +1,95 @@
+
+.story_main {
+    width: 100%;
+    height :100%
+}
+.stp_thumbnail{
+    margin: auto;
+    width: 100%;
+    height: 65%;
+    padding : 10%;
+    background-image: url("../imgs/storypage.jpg");
+    background-size: cover;
+    text-align: left;
+
+}
+.stp_thumbnail p{
+    font-family: "Yu Gothic UI Light";
+    color : #ffffff;
+    font-size: 3vw;
+    bottom: 40%;
+}
+
+.stp_body{
+    text-align: center;
+    width: 90%;
+    height: 80%;
+    margin:5vw  auto;
+}
+.stp_text{
+    font-family: "Yu Gothic UI Light";
+    font-size: 3vw;
+    color : #000000;
+}
+
+.booklist{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.basket{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.obj_bkt{
+    padding : 2%;
+    height: 24vh;  width: 20vh;
+    border : 1px solid slategray;
+}
+.obj_bkt img{
+    width: 100%;
+    height: 80%;
+}
+.list_item{
+    transition: .3s ease-in-out;
+    margin: 0.5vw;
+    background: white;
+    position: relative;
+    text-align: center;
+}
+.list_item figure {
+    position: relative;
+    overflow: hidden;
+
+}
+.list_item figure img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+    margin : 1vw auto;
+    position: relative;
+    display: block;
+    height: 30vh;  width: 26vh;
+}
+.list_item figure figcaption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+}
+figure.info_effect figcaption{
+    top : auto;
+    bottom : 0;
+    padding : 2em;
+    background: #6b696e;
+    color : #fefff6;
+    transition: transform 0.35s;
+    transform: translate3d(0,100%,0)
+}
+figure.info_effect h2{
+    float : left;
+    display : inline-block;
+}
+figure.info_effect:hover figcaption,
+figure.info_effect:hover h2{
+    transform : translate3d(0,0,0);
+}

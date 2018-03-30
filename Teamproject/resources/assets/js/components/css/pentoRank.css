@@ -1,0 +1,50 @@
+.rank-div {
+    margin: 3% auto;
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    font-family: 'Noto Sans', sans-serif;
+}
+.rank-menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    padding : 1vw;
+    background-color: #538bf0;
+
+}
+.menu-title{
+    margin: 0.5vw;
+    color: white;
+    font-size: 2vw;
+}
+.menu-board
+{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    background-color: white;
+}
+.rank-body{
+    padding : 1vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #8aa0f0;
+}
+.rank-body-one{
+    background-color: #d2ffd8;
+}
+.rank-body-two{
+    background-color: #bce8f1;
+}
+.rank-frd{
+    padding : 1vw;
+    display: grid;
+    grid-template-rows: 1.9fr 0.1fr;
+    background-color: #978df0;
+}
+.frd-board{
+    background-color: white;
+}
