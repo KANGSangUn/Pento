@@ -12,20 +12,35 @@ use App\Model_Buy;
 use App\Model_Recommend;
 use App\Model_Subscribe;
 use App\Model_Records;
+use App\Models\BuyStory;
+use App\Models\Collection;
+use App\Models\PentoRecord;
+use App\Models\Recommend;
 
 class Contents extends Controller
 {
     // 도안 검색 메서드
     public function Search_colletion($collection_name){
+
         // 사용자번호 불러오기
         $user_no = session()->get('user_no');
 
+        // DB에서 도안정보 검색하기
+        $result_value = PentoRecord::searchPentoRecord($user_no,$collection_name);
+
         // 검색된 도안 불러오기
-        return Model_Records::findPento($user_no,$collection_name);
+        if($result_value == 'select fail'){
+            $return_value = 'false';
+        }
+        else{
+            $return_value = $result_value;
+        }
+
+        return $return_value;
     }
 
     // 구매 or 구독 메서드
-    public function Buy_Contents($category,$contents_id,$method_id){
+    public function Buy_Contents($category,$contents_id){
 
         // 사용자번호 불러오기
         $user_no = session()->get('user_no');
@@ -35,74 +50,65 @@ class Contents extends Controller
             // 동화 구매
             case 'tale':
                 // 구매 여부 확인
-                $check_buylist = Model_Buy::check_buylist($contents_id,$user_no);
 
-                if(empty($check_buylist)){      // 구매목록에 없을때
+//                $contents_id = array(1,3,2,4,5);
 
-                    if($method_id == 'Bucket'){     // 장바구니 추가 일때
+                // 구매할 동화가 몇개인지 판별
+                if(is_array($contents_id)){
 
-                        $this->Bucket_Contents($contents_id);
-                        return '장바구니 추가완료';
-                    }
-                    else{                           // 구매하기 일때
+                    // 동화갯수만큼 구매하기 기능 실행
+                    for ($i=0; $i<count($contents_id); $i++){
 
-                        Model_Buy::buyStory($contents_id,$user_no);
-                        return '동화구입 완료';
+                        $check_buylist = BuyStory::buyStory($user_no,$contents_id[$i]);
+
+                        // 하나라도 이미 구매한 동화라면 false 반환
+                        if($check_buylist != 'true'){
+                            return 'false';
+                        }
                     }
                 }
-                else{                           // 이미 구매한 동화일때
-                    return '이미구입한 동화입니다.';
+                else{
+                    $check_buylist = BuyStory::buyStory($user_no,$contents_id);
+                }
+
+                // 이미 구매한 동화면 false 반환
+                if($check_buylist != 'true'){
+                    $result_value = 'false';
+                }
+                else{
+                    $result_value =  'true';
                 }
 
                 break;
 
             // 도안 구독
             case 'collection':
+
                 // 구독 여부 확인
-                $check_collection = Model_Subscribe::check_collection($contents_id,$user_no);
+                $check_collection =  Collection::subscribePento($contents_id,$user_no);
 
-                if(empty($check_collection)){      // 구독목록에 없을때
+                // 이미 구독한 도안이면 false 반환
+                if($check_collection == 'Duplicate Value'){
 
-                    Model_Subscribe::subscribe($contents_id,$user_no);
-                    return '구독완료';
+                    $result_value = 'false';
                 }
-                else{                           // 이미 구매한 동화일때
-                    return '이미구독한 도안입니다.';
+                else{
+                    $result_value = 'true';
                 }
-
-                break;
 
         }
+
+        return $result_value;
     }
 
-    // 장바구니 메서드
-//    public function Bucket_Contents($contents_id){
-//
-//        if(session()->has('Bucket')){
-//            session()->push('Bucket', $contents_id);
-//        }
-//        else{
-//            session()->put(['Bucket' => $contents_id]);
-//        }
-//    }
-
     // 추천 메서드
-    public function Recommend_Contents($category,$contents_id){
+    public function Recommend_Contents($imitatedNum){
 
         // 사용자번호 불러오기
         $user_no = session()->get('user_no');
 
-        // 추천 여부 확인
-        $check_recommend = Model_Recommend::check_recommend($category,$contents_id,$user_no);
-
-        if(empty($check_recommend)){
-            Model_Recommend::add_recommend($category,$contents_id,$user_no);       // 친구 추가
-            return '추천추가';
-        }
-        else{
-            Model_Recommend::delete_recommend($category,$contents_id,$user_no);    // 친구 삭제
-            return '추천삭제';
-        }
+        // 추천 하기
+        return $check_recommend = Recommend::recommend($user_no, $imitatedNum);
     }
 
 }

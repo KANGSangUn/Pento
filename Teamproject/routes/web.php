@@ -19,8 +19,16 @@ Route::get('/',function (){
 
 //Route::post('/con_router','Main_Controller@asd');
 /*동화 페이지*/
-Route::post('/conrouter','MainController@Load_Controller');//storypage 동화목록 불러오기
-Route::post('/buystory','MainController@Load_Controller');//동화 구매하기
+Route::post('/storypagereq','Main_Controller@Load_Controller_Web');//storypage 동화목록 불러오기
+Route::post('/userlogin','Main_Controller@Load_Controller_Web');
+Route::post('/storyinfo','Main_Controller@Load_Controller_Web');
+Route::post('/buystory','Main_Controller@Load_Controller_Web');
+Route::post('/pentomyuser','Main_Controller@Load_Controller_Web');
+Route::post('/pentomyfrd','Main_Controller@Load_Controller_Web');
+Route::post('/frd_search','Main_Controller@Load_Controller_Web');
+Route::post('/user_story','Main_Controller@Load_Controller_Web');
+Route::post('/Rank_list','Main_Controller@Load_Controller_Web');
+Route::post('/select_game_rank','Main_Controller@Load_Controller_Web');
 /*내 정보*/
 
 /*랭킹*/

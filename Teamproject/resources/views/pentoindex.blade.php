@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pento</title>
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
-    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
 
 </head>
 <body>

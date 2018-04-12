@@ -1,74 +1,123 @@
+<!--
+dev . KANG SANG UN
+main div
+[
+    main sub1
+    midden menu1
+    midden menu2
+    page menu
+]
 
+-->
 <template>
     <div class="main-div">
         <headers></headers>
-        <div class="main-sub1"> <!--스크롤 이벤트-->
+        <div class="main-sub1">
+            <!--main banner move selcet button-->
             <input type="radio" name="pos" id="pos1" checked>
             <input type="radio" name="pos" id="pos2">
             <input type="radio" name="pos" id="pos3">
             <input type="radio" name="pos" id="pos4">
             <ul>
+                <!--main banner background-->
+                <!--li x 4  = four background banner-->
                 <li>
-                    <div>asdasdasdsd</div>
-                </li>
-                <li>
-                    <div>asdaadsasdsdasdsd</div>
-                </li>
-                <li>
-                    <div>a1211sdasdasdsd</div>
-                </li>
-                <li>
-                    <div>
-                        <img v-bind:src="'http://localhost:8000/images/main_banner_4.png'"/>
+                    <div class="parallax"></div>
+                    <div class="menu-1">
+                        <p>よこそう</p>
+                        <p>ペントの</p>
+                        <p>世界に</p>
                     </div>
                 </li>
-            </ul>
+                <li>
+                    <div></div>
+                </li>
+                <li>
+                    <div></div>
+                    <div class="parallax3"></div>
+                </li>
+                <li>
+                    <div class="menu-4-1">
+                        <img v-bind:src="'http://localhost:8000/images/web/main_banner_4.png'"/>
+                    </div>
+                    <div class="menu-4-2">
+                        <img v-bind:src="'http://localhost:8000/images/web/main_banner_4_1.png'"/>
+                    </div>
 
+                </li>
+            </ul>
             <p class="pos">
+
                 <label for="pos1"></label>
                 <label for="pos2"></label>
                 <label for="pos3"></label>
                 <label for="pos4"></label>
             </p>
-        </div> <!--main1 div-->
+        </div>   <!--middle menu-->
         <div class="middle-menu">
             <p>PENTO IS SPECIAL</p>
             <div class="info-menu">
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/menu1.png"'>
+                    <img v-bind:src='"http://localhost:8000/images/web/menu1.png"'>
                     <br/>
                     <span>Spatial perception</span>
-                    <p>공간을 파고드는 능력</p>
+                    <p>頭いいな</p>
                 </div>
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/menu2.png"'>
+                    <img v-bind:src='"http://localhost:8000/images/web/menu2.png"'>
                     <br/>
                     <span>Creativity</span>
                     <p>다양한 해결방법으로 키우는 창의력</p>
                 </div>
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/menu3.png"'>
+                    <img v-bind:src='"http://localhost:8000/images/web/menu3.png"'>
                     <br/>
                     <span>Problem-solving</span>
                     <p>문제를 해결 합니다</p>
                 </div>
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/menu4.png"'>
+                    <img v-bind:src='"http://localhost:8000/images/web/menu4.png"'>
                     <br/>
                     <span>Concentration</span>
                     <p>그냥 펜토미노가 아니다 펜토다</p>
                 </div>
             </div>
         </div>
+        <div class="middle-menu-2">
+            <div class="parallax2">
+
+                <div class="middle-menu-2-sub-1">
+                    <p>PLAY PENTO VIDEO</p>
+                    <div style="width: 40vw">
+                    <span>
+                        Slip inside the eye of your mind
+                        Don't you know you might find
+                        A better place to play
+                        You said that you'd never been
+                        But all the things that you've seen
+                        Will slowly fade awayasdasd
+                    </span>
+                    </div>
+                </div>
+                <div class="middle-menu-2-sub-2">
+                    <iframe width="70%" height="100%"
+                            src="https://www.youtube.com/embed/xXAJy4OtcZo"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+
+                    </iframe>
+                </div>
+            </div>
+        </div>
         <div class="main-menu">
                 <div class="menu-2">
                     <div style="background-color:#47b7df">
-                        MY PENTO MINO PNETOMI
                     </div>
                     <div class="grid" id="menu-story">
                         <!--스토리 리스트 이동 html-->
                         <figure class="effect-apollo">
-                            <img src="../imgs/story.png"/>
+                            <img v-bind:src="'http://localhost:8000/images/web/story.png'"/>
                             <router-link :to="{name:'pentostorylist'}">
                                 <figcaption>
                                     <h2>PENTO STORY</h2>
@@ -84,8 +133,8 @@
                     <div class="grid" id="menu-col" >
                         <!--펜토미노 컬렉션-->
                         <figure class="effect-apollo">
-                            <img src="../imgs/collection.png"/>
-                            <router-link :to="{name:'col_Main'}">
+                            <img src="http://localhost:8000/images/web/collection.png"/>
+                            <router-link :to="{name:'pento_col'}">
                                 <figcaption>
                                     <h2>Pento collection</h2>
                                     <p>모두의 펜토미노</p>
@@ -98,7 +147,7 @@
                     <div class="grid" id="menu-rank">
                         <!--펜토미노 랭크-->
                         <figure class="effect-apollo">
-                            <img src="../imgs/ranking.png"/>
+                            <img src="http://localhost:8000/images/web/ranking.png"/>
                             <router-link :to="{name:'pentoRank'}">
                                 <figcaption>
                                     <h2>Pento Rank</h2>
@@ -117,20 +166,23 @@
 <style src="../css/pentomain.css">
 </style>
 <script>
-    import footers from '../template/Footer.vue';
+
     import header from '../template/pentoheader.vue';
+    import footers from '../template/Footer.vue';
     export default {
+        /*
+         * components
+         * header footer import
+        */
         components : {
             'headers' : header,
             'footers' : footers
-        }
+        },
+
+
     }
 
 
 
 </script>
 
-<!--<div class="parallax">-->
-    <!--<div class="banner">-->
-    <!--</div>-->
-<!--</div>-->

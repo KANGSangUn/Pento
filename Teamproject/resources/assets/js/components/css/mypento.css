@@ -4,14 +4,19 @@
 }
 .mypento_div {
     margin: 2% auto;
-    width: 50%;
-    height: 90%
+    width: 70%;
+    height: 100%
 }
 .mypento_sub_div {
-    height: 700px;
+    height: 80vh;
 }
 #mypento_sub_div1 {
-    background-color: #00E676;
+    display: grid;
+    grid-template-columns : 1fr 1fr;
+    background-color: #47b7df;
+}
+#mypento_sub_div1 div{
+    padding: 5vw;
 }
 #mypento_sub_div1{
     width: 100%;
@@ -20,9 +25,20 @@
 }
 
 #mypento_sub_div2 {
-    background-color: #76FF03
+    display : grid;
+    background-color: #ffc609;
+    grid-template-columns: 0.3fr 0.7fr;
 }
-
+.my-frd-one{
+    background-size: cover;
+    background-image: url("http://localhost:8000/images/web/mypage_banner_1.png");
+}
 #mypento_sub_div3 {
-    background-color: #C6FF00
+    background-color: #141c35;
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+}
+.booklistpage{
+    background-size: cover;
+    background-image: url("http://localhost:8000/images/web/booklist.png");
 }

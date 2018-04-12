@@ -28,10 +28,11 @@
     "dependencies": {
         "ajv": "^6.2.1",
         "browser-env": "^3.2.5",
+        "chart.js": "^2.7.2",
         "fs": "0.0.1-security",
         "sweet-modal-vue": "^2.0.0",
         "vue-awesome": "^2.3.5",
-        "vue-scrollactive": "^0.6.1",
+        "vue-chartjs": "^3.3.1",
         "vuesax": "^2.0.49"
     }
 }

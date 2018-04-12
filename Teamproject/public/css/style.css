@@ -1,13 +1,12 @@
 
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic");
+@import url('https://fonts.googleapis.com/earlyaccess/mplus1p.css');
 
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-
 }
 body::-webkit-scrollbar {
     display: none;

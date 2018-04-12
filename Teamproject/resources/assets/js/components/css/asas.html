@@ -1,0 +1,173 @@
+<html>
+<head>
+</head>
+
+<body>
+
+<form action="Load_web" method="post">
+
+    id : <input type="text" name="user_id">
+    pw : <input type="text" name="user_pw">
+    <input type="submit" value="로그인"> O O
+
+    <input type="hidden" value="Login" name="kinds">
+
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="로그아웃"> O O
+    <input type="hidden" value="Logout" name="kinds">
+</form>
+
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="동화리스트 초기값 불러오기"> O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="StoryList" name="page_name">
+</form>
+
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="컬렉션페이지 초기값 불러오기"> O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="Collection" name="page_name">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="마이페이지 초기값 불러오기"> O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="MyInfo" name="page_name">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="동화구매리스트 초기값 불러오기"> O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="BuyList" name="page_name">
+
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="친구페이지 초기값 불러오기"> O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="Friends" name="page_name">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="랭크페이지 값 불러오기"> O O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="Rank" name="category">
+    <input type="hidden" value="1" name="detailed_value">
+
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="동화 상세정보 불러오기">  O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="story" name="category">
+    <input type="hidden" value="1" name="detailed_value">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="도안 상세정보 불러오기"> O
+
+    <input type="hidden" value="Page" name="kinds">
+    <input type="hidden" value="collection_default" name="category">
+    <input type="hidden" value="2" name="detailed_value">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="text" name="collection_name">
+
+    <input type="submit" value="컬렉션 검색하기">  O O
+
+    <input type="hidden" value="Contents" name="kinds">
+    <input type="hidden" value="Search" name="method_id">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="컬렉션 구독하기"> O O
+
+    <input type="hidden" value="Contents" name="kinds">
+
+    <input type="hidden" value="Subscribe" name="method_id">
+    <input type="hidden" value="collection" name="category">
+    <input type="hidden" value="1" name="detailed_value">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="동화 구매하기"> O O
+
+    <input type="hidden" value="Contents" name="kinds">
+
+    <input type="hidden" value="Buy" name="method_id">
+    <input type="hidden" value="tale" name="category">
+    <input type="hidden" value="1" name="detailed_value">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="컬렉션 추천하기"> O O
+
+    <input type="hidden" value="Contents" name="kinds">
+
+    <input type="hidden" value="Recommend" name="method_id">
+    <input type="hidden" value="1" name="detailed_value">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="text" name="friends_name">
+
+    <input type="submit" value="친구검색"> O O
+
+    <input type="hidden" value="Friends" name="kinds">
+
+    <input type="hidden" value="Search" name="method_id">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="친구 추가"> O O
+
+    <input type="hidden" value="Friends" name="kinds">
+
+    <input type="hidden" value="Add_Friends" name="method_id">
+
+    <input type="hidden" value="3" name="friends_no">
+</form>
+
+<form action="Load_web" method="post">
+
+    <input type="submit" value="친구 삭제"> O O
+
+    <input type="hidden" value="Friends" name="kinds">
+
+    <input type="hidden" value="Delete_Friends" name="method_id">
+
+    <input type="hidden" value="3" name="friends_no">
+</form>
+
+
+
+</body>
+
+</html>
