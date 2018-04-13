@@ -19,7 +19,7 @@ dev . KANG SANG UN
                 <div class="booklist">
                     <div v-for="list in story" class="list_item" @click='openStory(list)'>
                         <figure class="info_effect">
-                            <img v-bind:src='"http://localhost:8000/images/storypage/"+(list.tale_url)'/>
+                            <img v-bind:src="'http://localhost:8000'+(list.tale_image)+'.jpg'"/>
                             <figcaption>
                                 <h2>{{list.tale_title}}</h2>
                             </figcaption>
@@ -30,7 +30,7 @@ dev . KANG SANG UN
             <sweet-modal title="BASKET LIST" ref='bkt_modal' overlay-theme="dark">
                 <div class="basket">
                     <div v-for="item_bkt in basket_item" class="obj_bkt" @click="delect_Item(item_bkt)">
-                        <img  v-bind:src='"http://localhost:8000/storypage/images/"+(item_bkt.tale_url)'/>
+                        <img  v-bind:src="'http://localhost:8000'+(item_bkt.tale_image)+'.jpg'"/>
                         {{item_bkt.tale_title}}
                     </div>
                 </div>
@@ -43,8 +43,7 @@ dev . KANG SANG UN
                 <div class="story-modal">
                     <div style="float: left" class="story-modal-left">
                         <div class="story-modal-left-main">
-                        <!--<img  v-bind:src='"http://localhost:8000/images/storypage/"+(select_item.tale_url)'/>-->
-                            <img  v-bind:src='"http://localhost:8000/images/storypage/story1.jpg"'/>
+                            <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image0)+'.jpg'"/>
                         </div>
                         <div class="story-modal-left-sub">
                         미리보기 사진

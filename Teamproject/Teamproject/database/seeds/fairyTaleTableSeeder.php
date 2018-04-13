@@ -13,8 +13,8 @@ class fairyTaleTableSeeder extends Seeder
     {
         // 동화 제목 dummy data
         $taleTitleArray = [
-            'cinderella', 'jack_and_tree', 'foo_head', 'rapunzel', 'thumb',
-            'little_mermaid', 'spongebab', 'frozen', 'baby_pig', 'snow_white'
+            '신데렐라', '잭과 콩나무', '누가 내 머리에 똥 쌌어', '라푼젤', '엄지공주',
+            '인어공주', '스폰지밥', '겨울왕국', '아기돼지 삼형제', '백설공주'
         ];
 
         // $taleTitleArray 의 배열 개수만큼 반복

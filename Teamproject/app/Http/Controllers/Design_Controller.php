@@ -7,11 +7,9 @@
  */
 
 namespace App\Http\Controllers;
-
-use App\Model_test;
-
-use App\Models\PentoDesign;
 use Image;
+use App\Models\PentoDesign;
+
 
 class Design_Controller extends Controller
 {
@@ -83,6 +81,7 @@ class Design_Controller extends Controller
 
             $pre_index_value_design_no = 0;
             // 도안번호 저장배열의 인덱스번호를 비교할 변수
+
 
             // 도안번호 저장배열에 값저장
             for ( $i=0,$index=0; $i<count($parameter); $i++ ){
@@ -223,24 +222,25 @@ class Design_Change {
         // 도안생성 메서드
 
         for($i=0; $i<count($array_result); $i++){
-            $this->image[$i] = imagecreatetruecolor(300,300);
-            $background = imagecolorallocate($this->image[$i],254,251,239);
+            $this->image[$i] = imagecreatetruecolor(600,600);
+            $background = imagecolorallocate($this->image[$i],255,255,255);
             imagefill($this->image[$i],0,0,$background);
+            for($j=20*2; $j<=600; $j+=40){
 
-            for($j=10*2; $j<=300; $j+=20){
                 $white = imagecolorallocate($this->image[$i],255,255,255);
-                imageline($this->image[$i],$j,0,$j,300,$white);
-                imageline($this->image[$i],0,$j,300,$j,$white);
+                imageline($this->image[$i],$j,0,$j,600,$white);
+                imageline($this->image[$i],0,$j,600,$j,$white);
+
             }
         }
 
         // 랜덤으로 부여할 블록 색상 지정
+        //RGB
         $color_ran = array(
-            0 => [254,115,114],
-            1 => [254,200,85],
-            2 => [71,183,223],
-            3 => [115,214,24],
-            4 => [253,199,200]  );
+            0 => [255,116,115],
+            1 => [255,201,82],
+            2 => [71,184,234],
+            3 => [202,255,100],);
 
         if(!empty($array_design_explain['design_explain'])){
 
@@ -263,14 +263,14 @@ class Design_Change {
 
                     if( $y == $array_result[$key_value]['board_Y'][$count] && $x == $array_result[$key_value]['board_X'][$count]){
 
-                        $random = rand(0,4);
+                        $random = rand(0,count($color_ran)-1);
 
                         $color_cube = imagecolorallocate(
                             $this->image[$image_num],$color_ran[$random][0],$color_ran[$random][1],$color_ran[$random][2]);
 
                         imagefilledrectangle($this->image[$image_num],
-                            $x*20, $y*20,
-                            ($x*20)+20, ($y*20)+20,
+                            $x*40, $y*40,
+                            ($x*40)+40, ($y*40)+40,
                             $color_cube
                         );
 
@@ -293,8 +293,9 @@ class Design_Change {
 
         for($i=0; $i<count($this->image); $i++){
 
-            imagejpeg($this->image[$i],$_SERVER['DOCUMENT_ROOT'] . "/photos/fuck".$i.".jpeg");
+            imagejpeg($this->image[$i],$_SERVER['DOCUMENT_ROOT'] . "/images/collection/pentoimg".$i.".png");
             // 이미지를 파일로 저장
+
             if(!empty($array_design_explain['design_explain'])){
                 // 특정 이미지 하나만 저장
 
@@ -308,7 +309,7 @@ class Design_Change {
                 $array_image[$i]['design_no'] = $array_design_explain[$i];
             }
 
-            $array_image[$i]['file_name'] = $_SERVER['DOCUMENT_ROOT'] . "/photos/fuck".$i.".jpeg";
+            $array_image[$i]['file_name'] = "http://localhost:8000" . "/images/collection/pentoimg".$i.".png";
             // 파일이름을 배열에 저장
         }
 

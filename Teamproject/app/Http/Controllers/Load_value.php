@@ -9,8 +9,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Design_Controller;
-use App\Model_Collection;
-use App\Model_Userinfo;
 use App\Models\BuyStory;
 use App\Models\Collection;
 use App\Models\FairyTale;
@@ -18,9 +16,7 @@ use App\Models\Friend;
 use App\Models\PentoDesign;
 use App\Models\PentoRecord;
 use App\Models\UserProfile;
-use App\Post;
-use App\Model_Fairytale;
-use App\Model_Buy;
+
 use Illuminate\Support\Facades\Session;
 
 
@@ -50,8 +46,9 @@ class Load_value extends Controller
             //  '펜토미노 컬렉션' 페이지
             case 'Collection':
                 // DB에서 '펜토미노 컬렉션' 페이지 default_value 불러오기
-                $value_parameter = Collection::collectionListWeb($user_no);
-                $value_page = $this->obj_Design_Controller->img($value_parameter);
+               $value_parameter = Collection::collectionListWeb($user_no);
+               $value_page = $this->obj_Design_Controller->img($value_parameter);
+
                 break;
 
             //  '내정보' 페이지

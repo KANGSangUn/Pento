@@ -29,6 +29,8 @@ Route::post('/frd_search','Main_Controller@Load_Controller_Web');
 Route::post('/user_story','Main_Controller@Load_Controller_Web');
 Route::post('/Rank_list','Main_Controller@Load_Controller_Web');
 Route::post('/select_game_rank','Main_Controller@Load_Controller_Web');
+Route::post('/col_my','Main_Controller@Load_Controller_Web');
+
 /*내 정보*/
 
 /*랭킹*/

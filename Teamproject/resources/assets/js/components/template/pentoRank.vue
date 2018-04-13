@@ -105,7 +105,10 @@ dev . KANG SANG UN
                 user_play_games :[],
                 frd_rank_record :[],
                 user_rank_record : [],
-                rank_btn : null
+                rank_btn : null,
+                frdname:[],
+                frdrecoed:[],
+                datacolor : ['#6ef864','#ffba63','#3079f8','#f86077','#38a21e','#d44ac2']
             }
         },
 
@@ -139,40 +142,42 @@ dev . KANG SANG UN
                     this.frd_rank_record=response.data.userRank;
                     this.user_rank_record=response.data.userRecord;
                 });
-                this.load_frd_play(true);
+
+                this.load_frd_play(true,this.frd_rank_record);
             },
-            load_frd_play : function(temp){
-                let url=""; //친구와의 랭킹
-//                this.axios.post().then((response)=>
-//                {this.frd_rank=response.data});
-
-
+            load_frd_play : function(temp,frd_record){
+                this.frdname=[];
+                this.frdrecoed=[];
+                for(let i=0; i<frd_record.length;i++){
+                    this.frdname.push(frd_record[i].user_nickname);
+                    this.frdrecoed.push(this.getRandomInt());
+                }
                 this.rank_btn = temp;
                 this.piedatasets={
-                    labels: ['park','horenso','kim','lee'],
+                    labels: this.frdname,
                     datasets: [
                         {
-                            backgroundColor: ['#6ef864','#ffba63','#3079f8','#f86077'],
-                            data: [this.getRandomInt(), this.getRandomInt(),this.getRandomInt(),this.getRandomInt()]
+                            backgroundColor: this.datacolor,
+                            data: this.frdrecoed
                         },
                     ]
                 };
                 this.Linedatasets={
-                    labels: ['park','horenso','kim','lee'],
+                    labels: this.frdname,
                     datasets: [
                         {
 
-                            backgroundColor: ['#6ef864','#ffba63','#3079f8','#f86077'],
-                            data: [this.getRandomInt(), this.getRandomInt(),this.getRandomInt(),this.getRandomInt()]
+                            backgroundColor: this.datacolor,
+                            data: this.frdrecoed
                         },
                     ]
                 };
                 this.radardatasets={
-                    labels: ['park','horenso','kim','lee'],
+                    labels: this.frdname,
                     datasets: [
                         {
-                            backgroundColor: '#f8b213',
-                            data: [this.getRandomInt(), this.getRandomInt(),this.getRandomInt(),this.getRandomInt()]
+                            backgroundColor: '#41f820',
+                            data: this.frdrecoed
                         },
                     ]
                 };

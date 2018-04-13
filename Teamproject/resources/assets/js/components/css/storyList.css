@@ -81,7 +81,7 @@ figure.info_effect figcaption{
     top : auto;
     bottom : 0;
     padding : 2em;
-    background: #6b696e;
+    background: #ff942a;
     color : #fefff6;
     transition: transform 0.35s;
     transform: translate3d(0,100%,0)
