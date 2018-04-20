@@ -12,10 +12,9 @@ dev . KANG SANG UN
                             >
                         <!--유저 기본 정보 div-->
                         <div v-for="user_info in Item_list">
-                            <!--<img v-bind:src='"http://localhost:8000/images/users/userimg.png"' class="userimg"/>-->
-                            <h1>{{user_info.user_nickname}}</h1>
-                            <h2>{{user_info.user_point}}</h2>
-
+                            <img v-bind:src="'http://localhost:8000'+user_info.image+'.png'" class="userimg"/>
+                            <h1>안녕하세요! {{user_info.user_nickname}}</h1>
+                            <h2>보유 미노 : {{user_info.user_point}}</h2>
                         </div>
                         <div v-for="user_info in Item_list">
                             <h2>소개</h2>
@@ -37,10 +36,10 @@ dev . KANG SANG UN
                     <vs-tab vs-label="나의 동화"
                             class="mypento_sub_div"
                             id="mypento_sub_div3">
-                        <div>
-                            <li v-for="buylist in buy_list">
-                                {{buylist}}
-                            </li>
+                        <div class="my-tale-list">
+                            <div class="my-tele-list-sub" v-for="buylist in buy_list">
+                                <img v-bind:src="'http://localhost:8000'+buylist.tale_image+'.jpg'">
+                            </div>
                         </div>
                         <div class="booklistpage">
 

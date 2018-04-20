@@ -46,6 +46,7 @@ class Recommend extends Model
             }
         }
 
+
         $return_value['count'] = DB::table('recommends')
             ->select('imitated_no')
             ->where('imitated_no','=',$imitatedNum)

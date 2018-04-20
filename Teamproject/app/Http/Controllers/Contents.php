@@ -8,10 +8,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Model_Buy;
-use App\Model_Recommend;
-use App\Model_Subscribe;
-use App\Model_Records;
 use App\Models\BuyStory;
 use App\Models\Collection;
 use App\Models\PentoRecord;
@@ -85,7 +81,7 @@ class Contents extends Controller
             case 'collection':
 
                 // 구독 여부 확인
-                $check_collection =  Collection::subscribePento($contents_id,$user_no);
+                $check_collection =  Collection::subscribePento($user_no,$contents_id);
 
                 // 이미 구독한 도안이면 false 반환
                 if($check_collection == 'Duplicate Value'){

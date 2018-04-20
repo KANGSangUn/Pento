@@ -3,7 +3,8 @@
     height: 100%
 }
 .mypento_div {
-    margin: 2% auto;
+    padding-top: 3vw;
+    margin: auto;
     width: 70%;
     height: 100%
 }
@@ -41,4 +42,19 @@
 .booklistpage{
     background-size: cover;
     background-image: url("http://localhost:8000/images/web/booklist.png");
+}
+.my-tale-list{
+    padding : 1vw;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    grid-column-gap: 1vw;
+}
+.my-tele-list-sub{
+    text-align: center;
+    width: 15vw;
+    height: 20vw;
+}
+.my-tele-list-sub img{
+    width: 100%;
+    height: 100%;
 }

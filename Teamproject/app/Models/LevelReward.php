@@ -9,38 +9,51 @@ use Illuminate\Database\QueryException;
 class LevelReward extends Model
 {
     // 단계별 모드 리스트 반환
-    static public function getLevelDesign($userNum)
+    static public function getUserLevel($userNum)
     {
         // 회원 레벨 가져오기
-        $userGrade      =       DB::table('user_profiles')
-                                    ->select('user_grade')
-                                    ->where('user_no', $userNum)
-                                    ->get();
+        $userGrade = DB::table('user_profiles')
+            ->select('user_grade')
+            ->where('user_no', $userNum)
+            ->get();
 
-        $userLevel      =       $userGrade[0]->user_grade;
+        return $userGrade;
+    }
 
+    static public function getLevelDesign_Info($level){
         // 펜토미노 도안 리스트 가져오기
-        // 도안번호, 도안제목, 좌표값
+        // 도안번호, 도안제목
         $designInfo     =       DB::table('pento_designs as pd')
                                     ->join('level_rewards as lr', 'pd.design_no', '=', 'lr.design_no')
-                                    ->join('coordinate_values as co', 'pd.design_no', '=', 'co.design_no')
                                     ->select
                                     (
                                         'pd.design_no',
-                                        'pd.design_title',
-                                        'co.board_X',
-                                        'co.board_Y'
+                                        'pd.design_title'
                                     )
-                                    ->where('lr.level_of_difficultly', $userLevel)
+                                    ->where('lr.level_of_difficultly', $level)
                                     ->get();
 
-        $total =
-            [
-                'coordinate_info' => $designInfo,
-                'user_level_info' => $userGrade
-            ];
+        return $designInfo;
 
-        return $total;
+    }
+
+    static public function getLevelDesign_Coordinate($level){
+        // 펜토미노 도안 리스트 가져오기
+        // 좌표 가져오기
+        $designInfo     =       DB::table('pento_designs as pd')
+            ->join('level_rewards as lr', 'pd.design_no', '=', 'lr.design_no')
+            ->join('coordinate_values as co', 'pd.design_no', '=', 'co.design_no')
+            ->select
+            (
+                'pd.design_no',
+                'co.board_X',
+                'co.board_Y'
+            )
+            ->where('lr.level_of_difficultly', $level)
+            ->get();
+
+
+        return $designInfo;
 
     }
 

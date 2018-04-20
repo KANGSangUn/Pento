@@ -59,19 +59,17 @@ class PentoRecord extends Model
         $routeName = ImageRoute::getImageRoute('pentoImg');
 
         // 작품 테이블과 기록 테이블의 도안번호가 같을 시에 해당 도안번호와 도안 사진을 반환
-        $recordPentoList=DB::table('imitated_pentos as ip')
-            ->join('pento_records as pr', 'ip.design_no', '=', 'pr.design_no')
-            ->join('pento_designs as pd', 'ip.design_no', '=', 'pd.design_no')
-            ->select
-            (
-                'ip.design_no',
-                'pd.design_title',
-                DB::raw('concat ("' .$routeName .'", ip.imitated_photo) as imitated_photo')
-            )
-            ->where('ip.user_no', $userNum)
-            ->groupby('ip.design_no')
-            ->orderby('ip.registered_date', 'desc')
-            ->get();
+        $recordPentoList    =     DB::table('imitated_pentos as ip')
+                                    ->join('pento_records as pr', 'ip.design_no', '=', 'pr.design_no')
+                                    ->select
+                                    (
+                                        'ip.design_no',
+                                        DB::raw('concat ("' . $routeName .'", ip.imitated_photo) as imitated_photo')
+                                    )
+                                    ->where('ip.user_no', 1)
+                                    ->groupby('ip.design_no')
+                                    ->orderby('ip.registered_date desc')
+                                    ->get();
 
         // 비어있는 값일 경우 select 실패
         if($recordPentoList == "[]")
@@ -87,6 +85,11 @@ class PentoRecord extends Model
     static public function searchPentoRecord($userNum, $pentoTitle)
     {
         $routeName = ImageRoute::getImageRoute('pentoImg');
+
+        if (empty($pentoTitle))
+        {
+            return "select fail";
+        }
 
         $searchResult = DB::table('imitated_pentos as ip')
             ->join('pento_records as pr', 'ip.design_no', '=', 'pr.design_no')
@@ -112,32 +115,31 @@ class PentoRecord extends Model
         return $searchResult;
     }
 
-
     // 웹 마이페이지 기록반환
     static public function showRecord($userNum, $designNum)
     {
         // 회원의 기록이 있는 작품 리스트
         // 클리어시간 반환
         $userRecord         =     DB::table('pento_records')
-            ->select('cleartime', 'register_date')
-            ->where('user_no', $userNum)
-            ->where('design_no', $designNum)->get();
+                                ->select('cleartime', 'register_date')
+                                ->where('user_no', $userNum)
+                                ->where('design_no', $designNum)->get();
 
         // 해당 도안을 푼 사용자들의 평균 클리어 시간 반환
         $avgTime            =     DB::table('pento_records')
-            ->select
-            (
-                DB::raw('sec_to_time(floor(avg(time_to_sec(cleartime)))) as avgTime')
-            )
-            ->where('design_no', $designNum)
-            ->get();
+                                    ->select
+                                    (
+                                        DB::raw('sec_to_time(floor(avg(time_to_sec(cleartime)))) as avgTime')
+                                    )
+                                    ->where('design_no', $designNum)
+                                    ->get();
 
         // 해당 도안의 유저 랭킹 정보 반환
         $userRank           =     DB::table(DB::raw('pento_records as pr join user_profiles as up on pr.user_no = up.user_no,(select @rnum :=0) cleartime'))
-            ->select(DB::raw('@rnum := @rnum + 1 as rank, up.user_nickname, pr.cleartime'))
-            ->where('pr.design_no', $designNum)
-            ->orderby('pr.cleartime')
-            ->get();
+                                    ->select(DB::raw('@rnum := @rnum + 1 as rank, up.user_nickname, pr.cleartime'))
+                                    ->where('pr.design_no', $designNum)
+                                    ->orderby('pr.cleartime')
+                                    ->get();
 
 
         // 키 값으로 객체에 저장

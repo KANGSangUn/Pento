@@ -25,7 +25,7 @@ dev . KANG SANG UN
             <router-link class="menu"  :to="{name:'pentostorylist'}">
                 StoryList
             </router-link>
-            <router-link class="menu"  :to="{name:'col_Main'}">
+            <router-link class="menu"  :to="{name:'pento_col'}">
                 Pento Collection
             </router-link>
             <router-link class="menu"  :to="{name:'pentoRank'}">
@@ -155,8 +155,13 @@ dev . KANG SANG UN
             },
             /*logout function*/
             logout : function () {
-                let url = {'kinds':"Logout"};
-                this.axios.post(url).then();
+                let url = 'logout';
+                let art = {
+                    'kinds' : 'Logout'
+                };
+//                <input type="submit" value="로그아웃"> O O
+//                <input type="hidden" value="Logout" name="kinds">
+                this.axios.post(url,art).then();
                 sessionStorage.setItem('user_session','null');
                 sessionStorage.removeItem('user_nickname');
                 sessionStorage.removeItem('user_number');
@@ -188,4 +193,3 @@ dev . KANG SANG UN
         }
     }
 </script>
-

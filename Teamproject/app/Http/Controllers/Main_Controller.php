@@ -6,8 +6,9 @@ use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Models\UserInfo;
 use Illuminate\Routing\Controller as BaseController;
-use App\Http\Controllers\Controller_Collection;
 use Illuminate\Support\Facades\Session;
+use App\Models\RegisterInfo;
+
 
 class Main_Controller extends BaseController
 {
@@ -31,7 +32,8 @@ class Main_Controller extends BaseController
 
         switch ($request->input('kinds')){
 
-            case 'Login':
+            case 'Login':		
+	
                 // 사용자가 입력한 id,pw가 유효한지 체크
                 $login_value = UserInfo::loginCheck($request->input('user_id'),$request->input('user_pw'));
 
@@ -145,6 +147,12 @@ class Main_Controller extends BaseController
         // Unity 컨트롤러
 
         switch ($request->input('unity_method_id')){
+	                
+	                case 'Login':
+
+                return RegisterInfo::getUserNum($request->input('serial_no'));
+
+                break;
 
             case 'Load_value':
                 // 단계별,컬렉션,동화 데이터 가져오기

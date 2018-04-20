@@ -26,6 +26,7 @@ class FairyTale extends Model
                                 (
                                     'ft.fairy_tale_no',
                                     'ft.tale_title',
+                                    'ft.tale_explain',
                                     DB::raw('concat( "' . $routeName . '", ti.tale_image) as tale_image')
                                 )
                                 ->where('ti.type_no', 1)
@@ -43,7 +44,8 @@ class FairyTale extends Model
 
     // unity 에서 호출할 때
 
-    static public function getStoryListUnity($user_no)
+
+    static public function getStoryListUnity()
     {
 
         // 동화 이미지의 경로 검색
@@ -64,45 +66,24 @@ class FairyTale extends Model
                                             ->orderBy('ft.tale_title')
                                             ->get();
 
-        $buyNumResult = BuyStory::select('fairy_tale_no')
-                                ->where('user_no', $user_no)
-                                ->get();
 
-        if ($unityTaleList == "[]" || $buyNumResult == "[]")
-        {
-            return "fail select!";
-        }
 
         $total =
             [
-            'fairy_info' => $unityTaleList,
-            'buy_info' => $buyNumResult
+            'fairy_info' => $unityTaleList
             ];
 
 
         return $total;
-        /*// 유니티의 목록을 출력할 때 동화번호, 제목, 이미지, 설명 반환
-        $taleArray = array();
+    }
 
-        // 동화번호와 동화제목 검색
-        $taleResult = FairyTale::select('fairy_tale_no', 'tale_title', 'tale_explain')->get();
+    static public function getMyStoryNum($user_no)
+    {
+        $buyNumResult = BuyStory::select('fairy_tale_no')
+            ->where('user_no', $user_no)
+            ->get();
 
-        // 동화의 개수만큼 반복
-        for ($i = 0; $i < count($taleResult); $i++) {
-
-            // $taleArray[레코드번호][키값]
-            $taleArray[$i]['taleNum'] = $taleResult[$i]->fairy_tale_no;
-            $taleArray[$i]['taleTitle'] = $taleResult[$i]->tale_title;
-
-
-            $taleImageResult = TaleImage::getTaleImage('mainImage', $taleArray[$i]['taleNum']);
-            $taleArray[$i]['taleImage'] = $routeName . $taleImageResult;
-            $taleArray[$i]['taleExplain'] = $taleResult[$i]->tale_explain;
-
-        }
-        // 배열값 리턴
-        return $taleArray;*/
-
+        return $buyNumResult;
     }
 
     //동화 상세설명
@@ -131,39 +112,7 @@ class FairyTale extends Model
             return "fail select!";
         }
         return $taleInfo;
-        /*$taleArray = array();
-
-        // 동화번호와 동화제목 검색
-        $taleResult = FairyTale::select('tale_title', 'tale_explain', 'tale_price')->where('fairy_tale_no', $taleNum)->get();
-
-        if ($taleResult == "[]") {
-            return "해당 동화가 없습니다. Invalid taleNum";
-        } else {
-
-            // 동화 이미지의 경로 검색
-            $routeName = ImageRoute::getImageRoute('storyPage');
-
-            // 동화의 개수만큼 반복
-
-            // $taleArray[레코드번호][키값]
-            $taleArray['taleTitle'] = $taleResult[0]->tale_title;
-
-
-            $taleImageResult = TaleImage::getTaleImage('subImage', $taleNum);
-
-
-            for ($i = 0; $i < count($taleImageResult); $i++) {
-                $taleArray[$i]['taleImage'] = $routeName . $taleImageResult[$i];
-            }
-            $taleArray['tale_price'] = $taleResult[0]->tale_price;
-            $taleArray['taleExplain'] = $taleResult[0]->tale_explain;
-
-
-            // 배열값 리턴
-            return $taleArray;
-        }*/
     }
-
 }
 
 

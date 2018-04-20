@@ -4,22 +4,39 @@ dev . KANG SANG UN
 <style src="../css/storyList.css"></style>
 <template>
 
-        <div class="story_main">
+        <div class="story_main" id="story_main">
             <div class="stp_thumbnail">
-                <p>「Pento」でしか会えない</p>
-                <p>特別な物語。</p>
+                    <p class="stp_thumbnail-p">ものがたり<br>さいこう</p>
+
+                    <button>
+                    <scrollactive class="my-nav"
+                                  active-class="active"
+                                  :offset="50"
+                                  :duration="1000"
+                                  bezier-easing-value=".5,0,.35,1">
+                        <a href="#story-body" class="scrollactive-item">!</a>
+                    </scrollactive>
+                    </button>
             </div>
-            <div class="stp_body">
+            <div class="stp_body" id="story-body">
                 <div class="stp_text">
-                    STORY LIST
                     <button @click="openBasket()">
                         <icon name="shopping-cart" scale="4" color="#323131"></icon>
                     </button>
+                    <button>
+                        <scrollactive class="my-nav"
+                                      active-class="active"
+                                      :offset="100"
+                                      :duration="1000"
+                                      bezier-easing-value=".5,0,.35,1">
+                            <a href="#story_main" class="scrollactive-item">!</a>
+                        </scrollactive>
+                    </button><br>
                 </div>
                 <div class="booklist">
                     <div v-for="list in story" class="list_item" @click='openStory(list)'>
                         <figure class="info_effect">
-                            <img v-bind:src="'http://localhost:8000'+(list.tale_image)+'.jpg'"/>
+                            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(list.tale_image)+'.jpg'"/>
                             <figcaption>
                                 <h2>{{list.tale_title}}</h2>
                             </figcaption>
@@ -30,7 +47,7 @@ dev . KANG SANG UN
             <sweet-modal title="BASKET LIST" ref='bkt_modal' overlay-theme="dark">
                 <div class="basket">
                     <div v-for="item_bkt in basket_item" class="obj_bkt" @click="delect_Item(item_bkt)">
-                        <img  v-bind:src="'http://localhost:8000'+(item_bkt.tale_image)+'.jpg'"/>
+                        <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(item_bkt.tale_image)+'.jpg'"/>
                         {{item_bkt.tale_title}}
                     </div>
                 </div>
@@ -43,10 +60,22 @@ dev . KANG SANG UN
                 <div class="story-modal">
                     <div style="float: left" class="story-modal-left">
                         <div class="story-modal-left-main">
-                            <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image0)+'.jpg'"/>
+                            <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image0)+'.jpg'"/>
                         </div>
                         <div class="story-modal-left-sub">
-                        미리보기 사진
+                            <div class="story-modal-images" @click="thunail_change(select_item.tale_image1)">
+                                <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image1)+'.jpg'"/>
+                            </div>
+                            <div class="story-modal-images" @click="thunail_change(select_item.tale_image2)">
+                                <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image2)+'.jpg'"/>
+                            </div>
+                            <div class="story-modal-images" @click="thunail_change(select_item.tale_image3)">
+                                <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image3)+'.jpg'"/>
+                            </div>
+                            <div class="story-modal-images" @click="thunail_change(select_item.tale_image4)">
+                                <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image4)+'.jpg'"/>
+                            </div>
+
                         </div>
                     </div>
                     <div class="story-modal-right">
@@ -79,7 +108,7 @@ dev . KANG SANG UN
                     </div>
                 </div>
             </sweet-modal>
-        <footers></footers>
+            <footers></footers>
         </div>
 </template>
 <script>
@@ -192,6 +221,9 @@ dev . KANG SANG UN
 
 
             },
+            thunail_change : function (image) {
+                this.select_item.tale_image0 = image;
+            }
 
         },
 

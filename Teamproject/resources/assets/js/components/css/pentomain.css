@@ -33,7 +33,14 @@ ul, li {
     display: block;
     clear: both;
 }
-.main-sub1 li {
+.banner-li-2{
+    display: grid;
+    grid-template-columns: 1fr;
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+.banner-li {
     display: grid;
     grid-template-columns: 1fr 1fr;
     float: left;
@@ -41,7 +48,7 @@ ul, li {
     height: 100%;
 }
 .main-sub1 li:nth-child(1) {
-    background: #292a57;
+    background: #f99a04;
 
 }
 .main-sub1 li:nth-child(2) {
@@ -50,42 +57,19 @@ ul, li {
 }
 
 .main-sub1 li:nth-child(3) {
-    background: #ffbf2a;
 
+    background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_3_2.jpg");
 }
 
 
 .main-sub1 li:nth-child(4) {
-    background: linear-gradient(-45deg, #6976b4, #25304d, #121d38, #74ecff);
+    background: linear-gradient(-45deg, #97a6db, #1e2e4d, #011438, #c8faff);
     background-size: 400% 400%;
-    -webkit-animation: Gradient 15s ease infinite;
-    -moz-animation: Gradient 15s ease infinite;
-    animation: Gradient 15s ease infinite;
+    -webkit-animation: Gradient 5s ease infinite;
+    -moz-animation: Gradient 5s ease infinite;
+    animation: Gradient 5s ease infinite;
 }
 
-@-webkit-keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
-}
-
-@-moz-keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
-}
 
 @keyframes Gradient {
     0% {
@@ -172,6 +156,50 @@ ul, li {
     font-size: 5vw;
     font-family:'Mplus 1p',sans-serif;
 }
+.menu-4{
+    padding: 3vw;
+    text-align:left;
+}
+.menu-4 p{
+    color : white;
+    font-size: 2vw;
+    font-family:'Mplus 1p',sans-serif;
+}
+.menu-2-1{
+
+}
+.menu-2-2{
+    background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_2.jpg");
+    background-size: cover;
+}
+.menu-3{
+    display:grid;
+    grid-template-columns: 0.6fr;
+    padding: 5vw;
+    position: relative;
+    background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_3_1.jpg");
+    background-size: cover;
+    animation-name: menu-3-ani;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    transition: 2s;
+    animation-iteration-count: infinite;
+}
+.menu-3 div{
+    height: auto;
+    float: right;
+}
+@keyframes menu-3-ani {
+    0% {
+        background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_3_1.jpg");
+    }
+    50%{
+        background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_3_2.jpg");
+    }
+    100%{
+        background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_3_1.jpg");
+    }
+}
 .menu-4-1 img{
 
     position: absolute;
@@ -186,8 +214,9 @@ ul, li {
     font-size: 5vw;
     font-family:'Mplus 1p',sans-serif;
 }
+
 .parallax{
-    background: url('http://localhost:8000/images/web/main_banner_1.jpg');
+    background: url('http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_1.jpg');
     background-position: left;
     height: 100%;
     background-repeat: no-repeat;
@@ -198,7 +227,7 @@ ul, li {
     height: 60vh;
 }
 .parallax2{
-    background: url('http://localhost:8000/images/web/main_middle_background.jpg');
+    background: url('http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_middle_background.jpg');
     background-position: left;
     height: 100%;
     background-repeat: no-repeat;
@@ -434,15 +463,15 @@ figure.effect-apollo:hover p {
 }
 
 #menu-story {
-    background-color: #870001;
+    background-color: #670001;
 }
 
 #menu-col {
-    background-color: #2f8033;
+    background-color: #00721a;
 }
 
 #menu-rank {
-    background-color: #2b3278;
+    background-color: #001065;
 }
 
 /* Media queries */

@@ -40,17 +40,42 @@ class Collection extends Model
         return $webCollectionList;
     }
 
+    // 나만의 컬렉션 리스트 웹
+    static public function collectionListWeb_All()
+    {
+        // 수정중
+        // 도안번호, 제목, 이미지, 작성자, 만들었는 날짜
+        $webCollectionList =   DB::table('collections as co')
+            ->join('pento_designs as pd','co.design_no', '=', 'pd.design_no')
+            ->join('user_profiles as up', 'pd.user_no', '=', 'up.user_no')
+            ->join('coordinate_values as cv', 'co.design_no', '=', 'cv.design_no')
+            ->select(
+                'pd.design_no',
+                'cv.board_X',
+                'cv.board_Y',
+                'pd.user_no',
+                'pd.design_title',
+                'up.user_nickname',
+                'pd.registered_date'
+            )
+            ->get();
+
+        if($webCollectionList == "[]")
+        {
+            return "Invalid Value!";
+        }
+
+        return $webCollectionList;
+    }
+
     // 유니티 컬렉션 리스트
-    static public function collectionListUnity($userNum)
+    static public function collectionListUnity_Info($userNum)
     {
         $unityCollectionList    =     DB::table('collections as co')
                                         ->join('pento_designs as pd','co.design_no', '=', 'pd.design_no')
                                         ->join('user_profiles as up', 'pd.user_no', '=', 'up.user_no')
-                                        ->join('coordinate_values as cv', 'co.design_no', '=', 'cv.design_no')
                                         ->select(
                                             'pd.design_no',
-                                            'cv.board_X',
-                                            'cv.board_Y',
                                             'pd.design_title',
                                             'up.user_nickname'
                                         )
@@ -64,46 +89,34 @@ class Collection extends Model
         return $unityCollectionList;
     }
 
-  /*  // 컬렉션 삭제 : 구독해제
-    static public function deleteColletion($userNum, $designNum)
+    static public function collectionListUnity_Coordinate($userNum)
     {
-        try
-        {
-            Collection::where('user_no', $userNum)
-                        ->where('design_no', $designNum)
-                        ->delete();
-        }
-        catch (QueryException $e)
-        {
-            $errorCode = $e->errorInfo[1];
-            return $errorCode;
-        }
-        return true;
-    }*/
-
-
-
-
-    // 도안 구독하기
-    static public function subscribePento($userNum, $designNum)
-    {
-        DB::table('collections as co')
+        $unityCollectionList    =     DB::table('collections as co')
             ->join('pento_designs as pd','co.design_no', '=', 'pd.design_no')
             ->join('user_profiles as up', 'pd.user_no', '=', 'up.user_no')
             ->join('coordinate_values as cv', 'co.design_no', '=', 'cv.design_no')
             ->select(
                 'pd.design_no',
                 'cv.board_X',
-                'cv.board_Y',
-                'pd.design_title',
-                'up.user_nickname'
+                'cv.board_Y'
             )
             ->where('co.user_no', $userNum)
             ->get();
 
+        if($unityCollectionList == "[]")
+        {
+            return "Invalid Value!";
+        }
+        return $unityCollectionList;
+    }
+
+    static public function subscribePento($userNum, $designNum)
+    {
+
+
         try
         {
-            Collection::insert(
+            DB::table('collections')->insert(
                 [
                     'user_no' => $userNum,
                     'design_no' => $designNum,
@@ -123,6 +136,7 @@ class Collection extends Model
             }
 
         }
+
         return true;
     }
 }

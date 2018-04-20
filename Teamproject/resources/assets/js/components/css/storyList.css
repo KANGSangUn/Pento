@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/earlyaccess/mplus1p.css');
 .story_main {
     width: 100%;
     height :auto;
@@ -6,36 +7,54 @@
     background-image: url("http://localhost:8000/images/web/storypage_banner.jpg") ;
     margin: auto;
     width: 100%;
-    height:50vh;
-    background-size: cover;
+    height:80vh;
     text-align: left;
 
 }
-.stp_thumbnail p{
+.story-modal-left-sub{
+    display: grid;
+    grid-column-gap: 0.2vw;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+}
+.story-modal-left-sub div{
+    width: 100%;
+    height: 100%;
+}
+.story-modal-images img{
+    max-width:100%;
+    max-height:100%;
+    display:inline-block;
+}
+.stp_thumbnail-p{
+    color : purple;
+    font-weight: 200;
+    padding: 15vw;
 
-    color : #ffffff;
-    font-size: 3vw;
+    font-size: 4vw;
     bottom: 40%;
+    font-family:'Mplus 1p',sans-serif;
 }
 
 .stp_body{
+
     text-align: center;
-    width: 90%;
-    height: 80%;
-    margin:5vw  auto;
+    width: 65%;
+    height: auto;
+    margin: 5vh auto 15vh auto ;
 }
 .stp_text{
-
     font-size: 3vw;
     color : #000000;
 }
+
 .stp_text button{
     float : right;
     background-color: transparent;
 }
 .booklist{
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
 }
 .basket{
     display: grid;
@@ -45,15 +64,17 @@
     padding : 2%;
     height: 24vh;  width: 20vh;
     border : 1px solid slategray;
+
 }
 .obj_bkt img{
     width: 100%;
     height: 80%;
+
 }
 .list_item{
+
     transition: .3s ease-in-out;
-    margin: 0.5vw;
-    background: white;
+
     position: relative;
     text-align: center;
 }
@@ -81,7 +102,7 @@ figure.info_effect figcaption{
     top : auto;
     bottom : 0;
     padding : 2em;
-    background: #ff942a;
+    background: #f1a720;
     color : #fefff6;
     transition: transform 0.35s;
     transform: translate3d(0,100%,0)

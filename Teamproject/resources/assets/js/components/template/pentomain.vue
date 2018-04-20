@@ -12,6 +12,7 @@ main div
 <template>
     <div class="main-div">
         <headers></headers>
+
         <div class="main-sub1">
             <!--main banner move selcet button-->
             <input type="radio" name="pos" id="pos1" checked>
@@ -21,74 +22,106 @@ main div
             <ul>
                 <!--main banner background-->
                 <!--li x 4  = four background banner-->
-                <li>
+                <li class="banner-li">
                     <div class="parallax"></div>
                     <div class="menu-1">
-                        <p>よこそう</p>
+                        <p>ようこそ</p>
                         <p>ペントの</p>
                         <p>世界に</p>
                     </div>
                 </li>
-                <li>
-                    <div></div>
+                <li class="banner-li">
+                    <div class="menu-2-2">
+                    </div>
+                    <div class="menu-1">
+                        <p>PENTOMINO + IT</p>
+                        <p>新しい</p>
+                        <p>オモチャ</p>
+                    </div>
                 </li>
-                <li>
-                    <div></div>
-                    <div class="parallax3"></div>
+                <li class="banner-li-2">
+                    <div class="menu-3 ">
+                        <div class="menu-1">
+                            <p>Pixel Artで会う</p>
+                            <p>ペントの</p>
+                            <p>特別なコンテンツ</p>
+                        </div>
+                    </div>
                 </li>
-                <li>
+                <li class="banner-li">
                     <div class="menu-4-1">
-                        <img v-bind:src="'http://localhost:8000/images/web/main_banner_4.png'"/>
+                        <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_4.png'"/>
                     </div>
                     <div class="menu-4-2">
-                        <img v-bind:src="'http://localhost:8000/images/web/main_banner_4_1.png'"/>
+                        <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_banner_4_1.png'"/>
+                        <button>
+                            <scrollactive class="my-nav"
+                                          active-class="active"
+                                          :offset="80"
+                                          :duration="1000"
+                                          bezier-easing-value=".5,0,.35,1">
+                                <a href="#middle-menu" class="scrollactive-item">Home</a>
+                            </scrollactive>
+                        </button>
+                        <div class="menu-4" style="position: absolute">
+                            <p>宇宙みたいに</p>
+                            <p>広い</p>
+                            <p>ペントの</p>
+                            <p>CONTENTS</p>
+                        </div>
                     </div>
-
                 </li>
             </ul>
             <p class="pos">
-
                 <label for="pos1"></label>
                 <label for="pos2"></label>
                 <label for="pos3"></label>
                 <label for="pos4"></label>
             </p>
         </div>   <!--middle menu-->
-        <div class="middle-menu">
+        <div id="middle-menu" class="middle-menu">
             <p>PENTO IS SPECIAL</p>
             <div class="info-menu">
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/web/menu1.png"'>
+                    <img v-bind:src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/menu1.png"'>
                     <br/>
                     <span>Spatial perception</span>
                     <p>頭いいな</p>
                 </div>
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/web/menu2.png"'>
+                    <img v-bind:src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/menu2.png"'>
                     <br/>
                     <span>Creativity</span>
                     <p>다양한 해결방법으로 키우는 창의력</p>
                 </div>
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/web/menu3.png"'>
+                    <img v-bind:src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/menu3.png"'>
                     <br/>
                     <span>Problem-solving</span>
                     <p>문제를 해결 합니다</p>
                 </div>
                 <div class="info-sub">
-                    <img v-bind:src='"http://localhost:8000/images/web/menu4.png"'>
+                    <img v-bind:src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/menu4.png"'>
                     <br/>
                     <span>Concentration</span>
                     <p>그냥 펜토미노가 아니다 펜토다</p>
                 </div>
             </div>
         </div>
-        <div class="middle-menu-2">
+        <div id="middle-menu-2" class="middle-menu-2">
             <div class="parallax2">
 
                 <div class="middle-menu-2-sub-1">
                     <p>PLAY PENTO VIDEO</p>
+                    <scrollactive class="my-nav"
+                                  active-class="active"
+                                  :offset="80"
+                                  :duration="1000"
+                                  bezier-easing-value=".5,0,.35,1">
+                        <a href="#main-menu" class="scrollactive-item">Home</a>
+                    </scrollactive>
                     <div style="width: 40vw">
+
                     <span>
                         Slip inside the eye of your mind
                         Don't you know you might find
@@ -110,7 +143,7 @@ main div
                 </div>
             </div>
         </div>
-        <div class="main-menu">
+        <div class="main-menu" id="main-menu">
                 <div class="menu-2">
                     <div style="background-color:#47b7df">
                     </div>

@@ -41,6 +41,7 @@ class Load_value extends Controller
             case 'StoryList':
                 // DB에서 '동화리스트' 페이지 default_value 불러오기
                 $value_page = FairyTale::getStoryListWeb();
+
                 break;
 
             //  '펜토미노 컬렉션' 페이지
@@ -48,7 +49,13 @@ class Load_value extends Controller
                 // DB에서 '펜토미노 컬렉션' 페이지 default_value 불러오기
                $value_parameter = Collection::collectionListWeb($user_no);
                $value_page = $this->obj_Design_Controller->img($value_parameter);
+                break;
 
+	       // '펜토미노 컬렉션' 모두의 페이지
+            case 'Collection_all':
+                // DB에서 '펜토미노 컬렉션' 페이지 default_value 불러오기
+                $value_parameter = Collection::collectionListWeb_All();
+                $value_page = $this->obj_Design_Controller->img($value_parameter);
                 break;
 
             //  '내정보' 페이지
@@ -68,6 +75,7 @@ class Load_value extends Controller
                 // DB에서 '친구추가' 페이지 default_value 불러오기
                 $value_page = Friend::getFriendList($user_no);
                 break;
+
             case 'Rank':
                 // DB에서 '친구추가' 페이지 default_value 불러오기
                $value_page = PentoRecord::recordPentolist($user_no);
@@ -138,6 +146,7 @@ class Load_value extends Controller
 
         $obj_unity = new Design_Controller();
         // 좌표를 변환하기 위한 클래스객체 생성
+
         $result_value_unity = array();
         // 유니티로 전송할 최종 데이터를 저장하기위한 배열 생성 ( 도안 좌표값 제외 )
 
@@ -146,59 +155,52 @@ class Load_value extends Controller
             // 단계별 학습
             case 'step':
 
-                // 넘어오는 unity_value가 default일때
-                if($value_kinds['unity_value'] == 'default'){
-                    // return 사용자레벨
-                    $result_value_unity =  array('user_grade' => session('user_grade'));
-                }
-                else{
-                    //  return 도안좌표
-                    $result_value_unity = $obj_unity->change($value_kinds['design_no']);
-                }
+                $result_value_unity =  session('user_grade');
 
                 break;
 
             // 스토리 학습
             case 'story':
 
-                // 넘어오는 unity_value가 default일때
-                if($value_kinds['unity_value'] == 'default'){
-                    // return 모든 동화 정보(동화id,이름,설명), 사용자의 동화 구매정보
+                $result_value_unity = ['story_value' => FairyTale::getStoryListUnity(session('user_no'))];
 
-                    $result_value_unity = ['story_value' => Model_Fairytale::prtAll(),
-                        'buy_list' => Model_Buy::load_buylist(1)];
-                    // DB값 불러오기
-                }
-                else{
-                    //  return 도안좌표
-                    $result_value_unity =  $obj_unity->change($value_kinds['design_no']);
-                }
-
-                // return 동화목록
                 break;
 
             // 컬렉션
             case 'collection':
 
-                // 넘어오는 unity_value가 default일때
-                if($value_kinds['unity_value'] == 'default'){
-                    // return 모든 컬렉션 정보(동화id,이름,설명)
+                    $value_parameter = Collection::collectionListUnity(session('user_no'));
 
-                    $result_value_unity = ['collection_value' => Model_Collection::prtAll()];
-                    // DB값 불러오기
-                }
-                else{
-                    // return 도안좌표
-                    $result_value_unity =  $obj_unity->change($value_kinds['design_no']);
+                    $result_value_unity = $this->obj_Design_Controller->img($value_parameter);
+
+                    $final_value = '';
+
+                for($i=0,$j=0; $i<count($result_value_unity); $i++){
+
+                    foreach ($result_value_unity[$i] as $key => $value){
+
+                        if($key == 'design_no'){
+                            $final_value .= $value.',';
+                        }
+                    }
+
+                    $final_value .= ' ';
                 }
 
-                // return 컬렉션 목록
+                return $final_value;
+
+                break;
+
+            // 좌표값 불러오기
+            case 'Location':
+
+                $result_value_unity = $obj_unity->change($value_kinds['design_no']);
+
                 break;
 
         }
 
         return $result_value_unity;
     }
-
 }
 

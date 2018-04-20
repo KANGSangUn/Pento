@@ -7,9 +7,12 @@
  */
 
 namespace App\Http\Controllers;
-use Image;
-use App\Models\PentoDesign;
 
+use Illuminate\Http\Request;
+// 새로추가
+
+use App\Models\PentoDesign;
+use Image;
 
 class Design_Controller extends Controller
 {
@@ -82,7 +85,6 @@ class Design_Controller extends Controller
             $pre_index_value_design_no = 0;
             // 도안번호 저장배열의 인덱스번호를 비교할 변수
 
-
             // 도안번호 저장배열에 값저장
             for ( $i=0,$index=0; $i<count($parameter); $i++ ){
 
@@ -102,7 +104,9 @@ class Design_Controller extends Controller
             }
 
             // 이미지만 반환
+
             return $this->obj->Change_to_image($array_result,$array_design_no);
+
         }
 
     }
@@ -125,7 +129,7 @@ class Design_Controller extends Controller
 
         // 좌표값 중복검사를 위한 배열로 변환
         $check_duplication = $this->obj->Change_to_duplication($value_result['design_location']);
-//        $check_result = 경임 DB
+
 
         // 중복검사후 중복값이 없으면 저장
         if(empty($check_result)){
@@ -205,6 +209,14 @@ class Design_Change {
                         case 'board_Y':
                             $array_result[$array_db[$i]->design_no][$key][$index] = $value;
                             break;
+
+                        case 'design_title':
+                            $array_result[$array_db[$i]->design_no][$key][$index] = $value;
+                            break;
+
+                        case 'user_id':
+                            $array_result[$array_db[$i]->design_no][$key][$index] = $value;
+                            break;
                     }
 
                 }
@@ -222,35 +234,48 @@ class Design_Change {
         // 도안생성 메서드
 
         for($i=0; $i<count($array_result); $i++){
-            $this->image[$i] = imagecreatetruecolor(600,600);
-            $background = imagecolorallocate($this->image[$i],255,255,255);
+
+            $this->image[$i] = imagecreatetruecolor(300,300);
+            $background = imagecolorallocate($this->image[$i],254,251,239);
             imagefill($this->image[$i],0,0,$background);
-            for($j=20*2; $j<=600; $j+=40){
 
+            for($j=10*2; $j<=300; $j+=20){
                 $white = imagecolorallocate($this->image[$i],255,255,255);
-                imageline($this->image[$i],$j,0,$j,600,$white);
-                imageline($this->image[$i],0,$j,600,$j,$white);
-
+                imageline($this->image[$i],$j,0,$j,300,$white);
+                imageline($this->image[$i],0,$j,300,$j,$white);
             }
         }
 
         // 랜덤으로 부여할 블록 색상 지정
-        //RGB
         $color_ran = array(
-            0 => [255,116,115],
-            1 => [255,201,82],
-            2 => [71,184,234],
-            3 => [202,255,100],);
+            0 => [254,115,114],
+            1 => [254,200,85],
+            2 => [71,183,223],
+            3 => [115,214,24],
+            4 => [253,199,200]  );
 
-        if(!empty($array_design_explain['design_explain'])){
 
-            $key_value = $array_design_explain['design_no'];
+        if(!empty($array_design_explain['design_explain']) || !empty($array_design_explain['user_no'])
+            || count($array_result) == 1){
+
+            if( !empty($array_design_explain['design_no'])){
+                $key_value = $array_design_explain['design_no'];
+            }
+            else{
+                $key_value = $array_design_explain[0];
+            }
+
+            $first_key_value = key($array_result);
+
         }
         else{
-            $key_value = $array_design_explain[0];
+
+            $key_value = 1;
+
+            $first_key_value = 1;
         }
+
         // 도안번호 저장
-        $first_key_value = key($array_result);
         // 첫번째 배열의 키값 불러오기
         $image_num = 0;
         // 이미지 인덱스값
@@ -260,8 +285,8 @@ class Design_Change {
             for( $x=0,$count=0; $x<15; $x++ ){
 
                 for( $y=0; $y<15; $y++ ){
-
                     if( $y == $array_result[$key_value]['board_Y'][$count] && $x == $array_result[$key_value]['board_X'][$count]){
+
 
                         $random = rand(0,count($color_ran)-1);
 
@@ -269,8 +294,8 @@ class Design_Change {
                             $this->image[$image_num],$color_ran[$random][0],$color_ran[$random][1],$color_ran[$random][2]);
 
                         imagefilledrectangle($this->image[$image_num],
-                            $x*40, $y*40,
-                            ($x*40)+40, ($y*40)+40,
+                            $x*20, $y*20,
+                            ($x*20)+20, ($y*20)+20,
                             $color_cube
                         );
 
@@ -279,12 +304,11 @@ class Design_Change {
                         }
                     }
                 }
-            }
+            } //색 삽입 반복문
 
-                $image_num++;
-                $key_value++;
+            $image_num++;
+            $key_value++;
         }
-
 ////////////////////////////////////////////////////////////
 
         Header('Content-type: image/png');
@@ -293,23 +317,30 @@ class Design_Change {
 
         for($i=0; $i<count($this->image); $i++){
 
-            imagejpeg($this->image[$i],$_SERVER['DOCUMENT_ROOT'] . "/images/collection/pentoimg".$i.".png");
             // 이미지를 파일로 저장
-
             if(!empty($array_design_explain['design_explain'])){
                 // 특정 이미지 하나만 저장
-
                 foreach ($array_design_explain as $key => $value){
-
                     $array_image[$i][$key] = $array_design_explain[$key];
                 }
             }
             else{
                 // 모든 이미지 저장
-                $array_image[$i]['design_no'] = $array_design_explain[$i];
+                    $array_image[$i]['design_no'] = $array_design_explain[$i];
+            }
+	
+            if(count($this->image) != 1 ){
+
+                imagepng($this->image[($array_image[$i]['design_no']-1)],$_SERVER['DOCUMENT_ROOT'] . "/images/collection/pentoimg".($array_image[$i]['design_no']-1).".png");
+
+                    $array_image[($array_image[$i]['design_no']-1)]['file_name'] = "http://localhost:8000" . "/images/collection/pentoimg".($array_image[$i]['design_no']-1).".png";
+            }
+            else{
+               imagepng($this->image[$i],$_SERVER['DOCUMENT_ROOT'] . "/images/collection/pentoimg".$i.".png");
+
+                    $array_image[$i]['file_name'] = "http://localhost:8000" . "/images/collection/pentoimg".($array_image[$i]['design_no']-1).".png";
             }
 
-            $array_image[$i]['file_name'] = "http://localhost:8000" . "/images/collection/pentoimg".$i.".png";
             // 파일이름을 배열에 저장
         }
 
@@ -345,7 +376,7 @@ class Design_Change {
             }
         }
 
-        return $array_result;
+        return $this->Change_to_duplication($array_result);
         // Unity로 배열 반환
     }
 //////////////////////////////////////////////////////////////////////
@@ -382,10 +413,10 @@ class Design_Change {
 
         $array_result = '';    // 변환된 좌표를 저장할 배열
 
-        for($y=0; $y<15; $y++){
+        for($x=0; $x<15; $x++){
             // Unity, Y좌표
 
-            for($x=0; $x<15; $x++){
+            for($y=0; $y<15; $y++){
                 // Unity, X좌표
 
                 $array_result .= $array_unity[$y][$x];

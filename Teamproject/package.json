@@ -33,6 +33,7 @@
         "sweet-modal-vue": "^2.0.0",
         "vue-awesome": "^2.3.5",
         "vue-chartjs": "^3.3.1",
+        "vue-scrollactive": "^0.6.1",
         "vuesax": "^2.0.49"
     }
 }

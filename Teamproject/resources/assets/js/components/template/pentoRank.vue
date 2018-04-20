@@ -9,19 +9,20 @@ dev . KANG SANG UN
                 </div>
                 <div class="border-style" >
                     <div id="round-list" v-for="gamelist in game_record" @click="load_user_play(gamelist)">
-                        <div>{{gamelist.design_title}}</div>
+                        <!--<div>{{gamelist.design_title}}</div>-->
+
                     </div>
                 </div>
             </div>
             <div id="body-main" class="grid-format">
                 <div id="grid-format-2">
-                    <div class="border-style">{{user_play_games.design_title}}</div>
-                    <div class="border-style"></div>
+                    <div class="border-style">코끼리{{user_play_games.design_title}}</div>
+                    <div class="border-style">5R</div>
                 </div>
                 <div class="border-style" id="rank-img">
                     <!--{{user_play_games}}-->
 
-                        <img src="http://localhost:8000/images/collection/ranktemp.jpg">
+                        <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/collection/pentoimg4.png">
                         <p>Ranking 8</p>
                         <p>01:15:54</p>
 
@@ -91,8 +92,8 @@ dev . KANG SANG UN
             'BarChart':BarChart
         },
         mounted() {
-
-            this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
+            this.load_frd_play()
+            //this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
         },
         data(){
             return{
@@ -106,8 +107,8 @@ dev . KANG SANG UN
                 frd_rank_record :[],
                 user_rank_record : [],
                 rank_btn : null,
-                frdname:[],
-                frdrecoed:[],
+                frdname:["pakg","asdkw","asdkwk1",'goodgoo','asdw'],
+                frdrecoed:[this.getRandomInt(),this.getRandomInt(),this.getRandomInt(),this.getRandomInt(),this.getRandomInt()],
                 datacolor : ['#6ef864','#ffba63','#3079f8','#f86077','#38a21e','#d44ac2']
             }
         },
@@ -143,16 +144,21 @@ dev . KANG SANG UN
                     this.user_rank_record=response.data.userRecord;
                 });
 
+
                 this.load_frd_play(true,this.frd_rank_record);
+
+
             },
-            load_frd_play : function(temp,frd_record){
-                this.frdname=[];
-                this.frdrecoed=[];
-                for(let i=0; i<frd_record.length;i++){
-                    this.frdname.push(frd_record[i].user_nickname);
-                    this.frdrecoed.push(this.getRandomInt());
-                }
-                this.rank_btn = temp;
+            load_frd_play : function(
+//                temp,frd_record
+            ){
+//                this.frdname=[];
+//                this.frdrecoed=[];
+//                for(let i=0; i<frd_record.length;i++){
+//                    this.frdname.push(frd_record[i].user_nickname);
+//                    this.frdrecoed.push(this.getRandomInt());
+//                }
+//                this.rank_btn = temp;
                 this.piedatasets={
                     labels: this.frdname,
                     datasets: [
@@ -167,7 +173,7 @@ dev . KANG SANG UN
                     datasets: [
                         {
 
-                            backgroundColor: this.datacolor,
+                            backgroundColor:  this.datacolor,
                             data: this.frdrecoed
                         },
                     ]
@@ -176,7 +182,7 @@ dev . KANG SANG UN
                     labels: this.frdname,
                     datasets: [
                         {
-                            backgroundColor: '#41f820',
+                            backgroundColor: '#f8b213',
                             data: this.frdrecoed
                         },
                     ]

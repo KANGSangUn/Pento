@@ -12,8 +12,7 @@
 */
 
 Route::get('/',function (){
-//    $obj =new \App\Http\Controllers\Main_Controller();
-//    $obj->Load_Controller('page/Storylist');
+
     return view('pentoindex');
 });
 
@@ -21,6 +20,7 @@ Route::get('/',function (){
 /*동화 페이지*/
 Route::post('/storypagereq','Main_Controller@Load_Controller_Web');//storypage 동화목록 불러오기
 Route::post('/userlogin','Main_Controller@Load_Controller_Web');
+Route::post('/logout','Main_Controller@Load_Controller_Web');
 Route::post('/storyinfo','Main_Controller@Load_Controller_Web');
 Route::post('/buystory','Main_Controller@Load_Controller_Web');
 Route::post('/pentomyuser','Main_Controller@Load_Controller_Web');
@@ -30,7 +30,10 @@ Route::post('/user_story','Main_Controller@Load_Controller_Web');
 Route::post('/Rank_list','Main_Controller@Load_Controller_Web');
 Route::post('/select_game_rank','Main_Controller@Load_Controller_Web');
 Route::post('/col_my','Main_Controller@Load_Controller_Web');
-
+Route::post('/my_col_pop','Main_Controller@Load_Controller_Web');
+Route::post('/col_all','Main_Controller@Load_Controller_Web');
+Route::post('/all_col_pop','Main_Controller@Load_Controller_Web');
+Route::post('/buy_pento_col','Main_Controller@Load_Controller_Web');
 /*내 정보*/
 
 /*랭킹*/
