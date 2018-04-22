@@ -2,8 +2,9 @@
 dev . KANG SANG UN
 -->
 <template>
-    <div class="footer_div">
+    <div class="footer-div">
         <div>
+           <p>Developers</p>
             <ul>
                 <li v-for="name in team_member">
                     {{name}}
@@ -11,14 +12,13 @@ dev . KANG SANG UN
             </ul>
         </div>
         <div>
-
         </div>
         <div>
-            Project Pento dev.Kang
         </div>
-        <div>
-            Project Pento dev.Kang111
-        </div>
+        <!-- 두번째 줄 -->
+        <div></div>
+        <div>Project Pento Dev Team Horenso</div>
+        <div></div>
     </div>
 </template>
 <script>
@@ -31,14 +31,15 @@ export default {
 };
 </script>
 <style>
-.footer_div {
-  padding: 1vw;
+.footer-div {
+  margin-top: 1vh;
+  padding: 3vh;
   text-align: center;
-  background-color: #2b2b2b;
+  background: gray;
   width: 100%;
   height: 300px;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 </style>
