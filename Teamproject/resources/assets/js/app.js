@@ -4,9 +4,6 @@ import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import SweetModal from 'sweet-modal-vue/src/plugin.js';
-import Icon from 'vue-awesome/components/Icon.vue'
-import 'vue-awesome/icons/flag';
-import 'vue-awesome/icons';
 import Vuesax from 'vuesax';
 import 'vuesax/dist/vuesax.css';
 import vuescrollor from 'vue-scrollactive';
@@ -16,7 +13,6 @@ Vue.use(SweetModal);
 Vue.use(VueRouter);
 Vue.use(Vuesax);
 Vue.use(VueAxios, axios);
-Vue.component('icon', Icon);
 
 import main from './components/template/pentomain.vue';
 import pentostorylist from './components/template/pentostorylist.vue';

@@ -4,7 +4,7 @@ dev . KANG SANG UN
 <template>
     <div class="footer-div">
         <div>
-           <p>Developers</p>
+           <p>Developer</p>
             <ul>
                 <li v-for="name in team_member">
                     {{name}}
@@ -17,7 +17,19 @@ dev . KANG SANG UN
         </div>
         <!-- 두번째 줄 -->
         <div></div>
-        <div>Project Pento Dev Team Horenso</div>
+        <div style="font-size:3vh;">
+        <p style="font-size:1.5vh;">Developement by Horenso</p>
+        <i class="fab fa-css3-alt"></i>
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-js"></i>
+        <i class="fab fa-vuejs" ></i>
+        <i class="fab fa-laravel "></i>
+        <i class="fab fa-node "></i>
+        <i class="fab fa-aws "></i>
+        <a  href="https://github.com/KANGSangUn/Pento">
+        <i  class="fab fa-github"></i>
+        </a>
+        </div>
         <div></div>
     </div>
 </template>
@@ -33,13 +45,14 @@ export default {
 <style>
 .footer-div {
   margin-top: 1vh;
-  padding: 3vh;
+  padding: 1vh;
   text-align: center;
   background: gray;
   width: 100%;
   height: 300px;
   color: white;
   display: grid;
+  grid-template-rows: 0.9fr 0.1fr;
   grid-template-columns: 1fr 1fr 1fr;
 }
 </style>

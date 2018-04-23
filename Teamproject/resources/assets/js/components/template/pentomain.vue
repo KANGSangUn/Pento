@@ -46,7 +46,7 @@
         <!--</div>-->
         <div class="main-body-3">
             <div class="main-body-menu">
-                <div class="menu-sub-banner">
+                <div class="main-page-menu-sub-banner">
                          <img class="menu-img" v-bind:src="'http://localhost:8000/images/web/loginimage.png'"/>
                             <div class="menu-title" >
                               <p>まるで、花のようだ。</p>
@@ -55,7 +55,7 @@
             </div>
             <div class="main-body-menu"  id="menu-ex">
                     <!--스토리 리스트 이동 html-->
-                    <div class="menu-sub">
+                    <div class="main-page-menu-sub">
                           <router-link :to="{name:'pentostorylist'}">
                          <img  class="menu-img" v-bind:src="'http://localhost:8000/images/web/story.png'"/>
                             <div class="menu-title" >
@@ -71,7 +71,7 @@
                     </div>
             </div>
             <div class="main-body-menu">
-                         <div class="menu-sub">
+                         <div class="main-page-menu-sub">
                              <router-link :to="{name:'pentoRank'}">
                                  <img class="menu-img" src="http://localhost:8000/images/web/ranking.png">
                                 <div class="menu-title" >
@@ -87,7 +87,7 @@
                         </div>
             </div>
             <div class="main-body-menu">
-                        <div class="menu-sub">
+                        <div class="main-page-menu-sub">
                             <router-link :to="{name:'pento_col'}">
                                 <img class="menu-img" src="http://localhost:8000/images/web/collection.png"/>
                                 <div class="menu-title" >
@@ -115,6 +115,9 @@ export default {
          */
   components: {
     footers: footers
+  },
+  created() {
+    window.scrollTo(0, 0);
   }
 };
 </script>

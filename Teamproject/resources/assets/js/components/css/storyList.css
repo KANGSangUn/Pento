@@ -40,36 +40,75 @@
     text-align: center;
     width: 65%;
     height: auto;
+    display: grid;
+    grid-template-rows: 0.1fr 0.9fr;
     margin: 5vh auto 15vh auto ;
 }
+
 .stp_text{
-    font-size: 3vw;
+    text-align: left;
+    margin: auto;
+    width: 96%;
+    font-size: 4vh;
     color : #000000;
+    border-bottom: 1px rgb(112, 113, 144) solid;
+}
+.stp_text span{
+    font-family:'Mplus 1p',sans-serif;
+    font-weight: 300;
+    float: left;
 }
 
 .stp_text button{
+    border-radius: 0%;
+    background: rgb(61, 61, 61);
+    font-size: 2vh;
     float : right;
-    background-color: transparent;
+    padding : 1vh;
+    color : white;
+    transition: 0.3s;
+}
+.stp_text button:hover{
+    color : black;
+    background: rgb(255, 182, 47);
+}
+.stp_text button:active{
+    background: red;
 }
 .booklist{
-
     display: grid;
     grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
 }
-.basket{
+#basket{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.obj_bkt{
+
+.obj-bkt{
+    margin-right: 10px;
+    font-size : 2vh;
+    font-weight: 100;
+    text-align: center;
     padding : 2%;
-    height: 24vh;  width: 20vh;
-    border : 1px solid slategray;
+    height: 40vh;  width: 30vh;
+    border : 0.5px solid slategray;
 
 }
-.obj_bkt img{
+.list-enter-active, .list-leave-active {
+  transition: all 0.5s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.obj-bkt img{
     width: 100%;
     height: 80%;
-
+}
+.basket-price{
+    font-size: 3vh;
+    text-align: right;
+    border-top : 1px solid slategray;
+    width: 100%;
 }
 .list_item{
 
