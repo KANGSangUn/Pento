@@ -63,6 +63,10 @@ export default {
 };
 </script>
 <style>
+.container {
+  width: auto;
+  height: auto;
+}
 .slide-fade-enter-active {
   transition: all 0.8s ease;
 }

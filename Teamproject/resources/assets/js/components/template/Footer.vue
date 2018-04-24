@@ -3,56 +3,63 @@ dev . KANG SANG UN
 -->
 <template>
     <div class="footer-div">
-        <div>
-           <p>Developer</p>
-            <ul>
-                <li v-for="name in team_member">
-                    {{name}}
-                </li>
-            </ul>
+        <div class="footer-left">
+          
         </div>
-        <div>
+        <div class="footer-middle">
+                <img src="http://localhost:8000/images/web/main_logo.png">
+                <br>
+                <a  href="https://github.com/KANGSangUn/Pento">
+                <i class="fab fa-vuejs fa-2x"></i>
+                <i class="fab fa-laravel fa-2x"></i>
+                <i  class="fab fa-github fa-2x" ></i>
+                </a>
+                <br>
+                <p>Developed Team Horenso</p>
         </div>
-        <div>
+        <div class="footer-right">
+            <p style="border-bottom : 1px solid white">Developers</p>
+            Unity 정현우<br>
+            Leap Motion 정지민<br>
+            Arduino 최요한<br>
+            Database 성경임<br>
+            Back-end 김영문<br>
+            Front-end 강상운
         </div>
         <!-- 두번째 줄 -->
-        <div></div>
-        <div style="font-size:3vh;">
-        <p style="font-size:1.5vh;">Developement by Horenso</p>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-js"></i>
-        <i class="fab fa-vuejs" ></i>
-        <i class="fab fa-laravel "></i>
-        <i class="fab fa-node "></i>
-        <i class="fab fa-aws "></i>
-        <a  href="https://github.com/KANGSangUn/Pento">
-        <i  class="fab fa-github"></i>
-        </a>
-        </div>
-        <div></div>
+    
     </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      team_member: ["정현우", "최요한", "강상운", "김영문", "성경임", "정지민"]
-    };
-  }
-};
-</script>
+
 <style>
 .footer-div {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin-top: 1vh;
-  padding: 1vh;
   text-align: center;
   background: gray;
   width: 100%;
-  height: 300px;
+  height: auto;
   color: white;
   display: grid;
   grid-template-rows: 0.9fr 0.1fr;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.footer-left {
+  font-size: 2vh;
+  text-align: left;
+  padding: 5vh;
+}
+.footer-middle {
+  padding: 5vh;
+}
+.footer-right {
+  font-size: 2vh;
+  text-align: right;
+  padding: 4vh;
+}
+.footer-middle i {
+  color: white;
+  margin: 2vh 1vh 2vh 1vh;
 }
 </style>

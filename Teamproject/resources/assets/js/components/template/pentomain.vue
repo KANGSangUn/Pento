@@ -109,10 +109,6 @@
 <script>
 import footers from "../template/Footer.vue";
 export default {
-  /*
-         * components
-         * header footer import
-         */
   components: {
     footers: footers
   },

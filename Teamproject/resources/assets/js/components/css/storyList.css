@@ -80,9 +80,13 @@
     grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
 }
 #basket{
+    text-align: center;
+    min-height: 70vh;
+    max-height : 70vh;
+    margin: auto;
     transition: 0.5s;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
 }
 
 .obj-bkt{
@@ -91,14 +95,14 @@
     font-weight: 100;
     text-align: center;
     padding : 2%;
-    height: 40vh;  width: 30vh;
+    height: 30vh;  width: 20vh;
     border : 0.5px solid slategray;
 
 }
 .list-item {
   transition: all 1s;
   display: inline-block;
-  margin-right: 10px;
+
 }
 .list-enter, .list-leave-to {
   opacity: 0;
@@ -121,9 +125,7 @@
     width: 100%;
 }
 .list_item{
-
     transition: .3s ease-in-out;
-
     position: relative;
     text-align: center;
 }

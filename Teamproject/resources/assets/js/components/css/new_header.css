@@ -5,7 +5,7 @@
     position: fixed;
     background : rgba(0, 0, 0, 0.7);
     grid-template-columns: 0.15fr 0.7fr 0.15fr;
-    z-index: 2;
+    z-index: 30;
     transition-duration:0.4s;
 
 

@@ -1,5 +1,4 @@
 <template>
-
         <div class="pento-router">
             <!--나만의 펜토미노-->
             <div class="pento-router-body">
@@ -25,18 +24,30 @@
                 </div>
                 </router-link>
             </div>
+            <footers></footers>
         </div>
 
+
+
 </template>
+<script>
+import footers from "../template/Footer.vue";
+export default {
+  components: {
+    footers: footers
+  }
+};
+</script>
+
 <style>
 .pento-router {
   background-image: url("http://localhost:8000/images/web/collection_main.jpg");
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .pento-router-body {
   padding-top: 20vh;
-  margin: auto;
+  margin: auto auto 20vh auto;
   width: 80vw;
   height: auto;
   display: grid;
