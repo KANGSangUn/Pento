@@ -30,6 +30,7 @@
             
             <div></div>
         </div>
+        <br>
         <sweet-modal ref="col_modal2" width="60vw" overlay-theme="dark">
             <div class="col-share-modal-layout" v-for="select_pento in select_pento_list">
                 <div class="col-share-modal-layout-sub-1">
@@ -54,6 +55,7 @@
                     </div>
 
                 </div>
+                
             </div>
         </sweet-modal>
         <!-- footer -->
@@ -217,7 +219,7 @@ export default {
   width: 0px;
   background: rgba(10, 30, 180, 0.5);
   height: 100%;
-  transition: 0.5s;
+  transition: 0.35s;
 }
 .content-index span {
   font-size: 2vh;

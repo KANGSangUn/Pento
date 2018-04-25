@@ -5348,7 +5348,7 @@ module.exports = {
 "use strict";
 
 
-var color = __webpack_require__(29);
+var color = __webpack_require__(28);
 var helpers = __webpack_require__(1);
 
 function interpolate(start, view, model, ease) {
@@ -5479,6 +5479,61 @@ module.exports.Rectangle = __webpack_require__(243);
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
+var disposed = false
+function injectStyle (context) {
+  if (disposed) return
+  __webpack_require__(216)
+}
+/* script */
+var __vue_script__ = null
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __vue_script__,
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\template\\Footer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-01553ad6", Component.options)
+  } else {
+    hotAPI.reload("data-v-01553ad6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5904,7 +5959,7 @@ module.exports = {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5978,61 +6033,6 @@ module.exports = {
 		}
 	}
 };
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
-var disposed = false
-function injectStyle (context) {
-  if (disposed) return
-  __webpack_require__(216)
-}
-/* script */
-var __vue_script__ = null
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __vue_script__,
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["b" /* staticRenderFns */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\template\\Footer.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-01553ad6", Component.options)
-  } else {
-    hotAPI.reload("data-v-01553ad6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
 
 /***/ }),
@@ -7567,7 +7567,15 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+var _components$created$c;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -7678,22 +7686,33 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+/* harmony default export */ __webpack_exports__["a"] = (_components$created$c = {
   components: {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
   created: function created() {
     window.scrollTo(0, 0);
   }
-});
+}, _defineProperty(_components$created$c, "created", function created() {
+  window.addEventListener("scroll", this.handleScroll);
+}), _defineProperty(_components$created$c, "destroyed", function destroyed() {
+  window.removeEventListener("scroll", this.handleScroll);
+}), _defineProperty(_components$created$c, "methods", {
+  handleScroll: function handleScroll(event) {
+    if (window.scrollY > 250) {
+      document.getElementById("event-1-1").style.color = "#2a2a2a";
+      document.getElementById("event-1-2").style.color = "#2a2a2a";
+      document.getElementById("event-1").style.marginTop = "-3%";
+    }
+  }
+}), _components$created$c);
 
 /***/ }),
-/* 26 */,
-/* 27 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
 //
 //
 //
@@ -7934,14 +7953,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_Radar_js__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_Pie_js__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__template_Footer_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__template_Footer_vue__ = __webpack_require__(9);
 //
 //
 //
@@ -8127,7 +8146,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
@@ -8618,7 +8637,7 @@ module.exports = Color;
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8955,7 +8974,7 @@ module.exports = {
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9036,7 +9055,7 @@ module.exports = helpers.extend({
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9425,7 +9444,7 @@ module.exports = {
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9502,7 +9521,7 @@ module.exports = {
 
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9641,7 +9660,7 @@ module.exports = {
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9704,7 +9723,7 @@ module.exports = {
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9767,7 +9786,7 @@ module.exports = {
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9893,7 +9912,7 @@ module.exports = {
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9956,7 +9975,7 @@ module.exports = {
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10064,7 +10083,7 @@ module.exports = {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10127,7 +10146,7 @@ module.exports = {
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10236,7 +10255,7 @@ module.exports = {
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10372,7 +10391,7 @@ module.exports = {
 
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10466,7 +10485,7 @@ module.exports = {
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10528,7 +10547,7 @@ module.exports = {
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10651,7 +10670,7 @@ module.exports = {
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10774,7 +10793,7 @@ module.exports = {
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10886,7 +10905,7 @@ module.exports = {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11041,7 +11060,7 @@ module.exports = {
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11133,7 +11152,7 @@ module.exports = {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11316,7 +11335,7 @@ module.exports = {
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11383,7 +11402,7 @@ module.exports = {
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11467,7 +11486,7 @@ module.exports = {
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11531,7 +11550,7 @@ module.exports = {
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11611,7 +11630,7 @@ module.exports = {
 
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11691,7 +11710,7 @@ module.exports = {
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11771,7 +11790,7 @@ module.exports = {
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11874,7 +11893,7 @@ module.exports = {
 
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11978,7 +11997,7 @@ module.exports = {
 
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12049,7 +12068,7 @@ module.exports = {
 
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12116,7 +12135,7 @@ module.exports = {
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12187,7 +12206,7 @@ module.exports = {
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12258,7 +12277,7 @@ module.exports = {
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12324,7 +12343,7 @@ module.exports = {
 
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12395,7 +12414,7 @@ module.exports = {
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12470,7 +12489,7 @@ module.exports = {
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12566,7 +12585,7 @@ module.exports = {
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12662,7 +12681,7 @@ module.exports = {
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12749,7 +12768,7 @@ module.exports = {
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12833,7 +12852,7 @@ module.exports = {
 
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12903,7 +12922,7 @@ module.exports = {
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13013,7 +13032,7 @@ module.exports = {
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13126,7 +13145,7 @@ module.exports = {
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13190,7 +13209,7 @@ module.exports = {
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13277,7 +13296,7 @@ module.exports = {
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13355,7 +13374,7 @@ module.exports = {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13437,7 +13456,7 @@ module.exports = {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13516,7 +13535,7 @@ module.exports = {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13596,7 +13615,7 @@ module.exports = {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13677,7 +13696,7 @@ module.exports = {
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13804,7 +13823,7 @@ module.exports = {
 
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13932,7 +13951,7 @@ module.exports = {
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14033,7 +14052,7 @@ module.exports = {
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14161,7 +14180,7 @@ module.exports = {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14319,7 +14338,7 @@ module.exports = {
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14433,7 +14452,7 @@ module.exports = {
 
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14532,7 +14551,7 @@ module.exports = {
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14618,7 +14637,7 @@ module.exports = {
 
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14754,7 +14773,7 @@ module.exports = {
 
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14827,7 +14846,7 @@ module.exports = {
 
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14923,7 +14942,7 @@ module.exports = {
 
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15009,7 +15028,7 @@ module.exports = {
 
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15102,7 +15121,7 @@ module.exports = {
 
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15193,7 +15212,7 @@ module.exports = {
 
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15307,7 +15326,7 @@ module.exports = {
 
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15437,7 +15456,7 @@ module.exports = {
 
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15522,7 +15541,7 @@ module.exports = {
 
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15613,7 +15632,7 @@ module.exports = {
 
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15753,7 +15772,7 @@ module.exports = {
 
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15827,7 +15846,7 @@ module.exports = {
 
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15949,7 +15968,7 @@ module.exports = {
 
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16050,7 +16069,7 @@ module.exports = {
 
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16166,7 +16185,7 @@ module.exports = {
 
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16234,7 +16253,7 @@ module.exports = {
 
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16328,7 +16347,7 @@ module.exports = {
 
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16413,7 +16432,7 @@ module.exports = {
 
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16521,7 +16540,7 @@ module.exports = {
 
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16685,7 +16704,7 @@ module.exports = {
 
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16771,7 +16790,7 @@ module.exports = {
 
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16857,7 +16876,7 @@ module.exports = {
 
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16921,7 +16940,7 @@ module.exports = {
 
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17018,7 +17037,7 @@ module.exports = {
 
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17084,7 +17103,7 @@ module.exports = {
 
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17211,7 +17230,7 @@ module.exports = {
 
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17302,7 +17321,7 @@ module.exports = {
 
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17393,7 +17412,7 @@ module.exports = {
 
 
 /***/ }),
-/* 116 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17457,7 +17476,7 @@ module.exports = {
 
 
 /***/ }),
-/* 117 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17585,7 +17604,7 @@ module.exports = {
 
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17715,7 +17734,7 @@ module.exports = {
 
 
 /***/ }),
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17784,7 +17803,7 @@ module.exports = {
 
 
 /***/ }),
-/* 120 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17849,7 +17868,7 @@ module.exports = {
 
 
 /***/ }),
-/* 121 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17928,7 +17947,7 @@ module.exports = {
 
 
 /***/ }),
-/* 122 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18114,7 +18133,7 @@ module.exports = {
 
 
 /***/ }),
-/* 123 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18216,7 +18235,7 @@ module.exports = {
 
 
 /***/ }),
-/* 124 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18280,7 +18299,7 @@ module.exports = {
 
 
 /***/ }),
-/* 125 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18355,7 +18374,7 @@ module.exports = {
 
 
 /***/ }),
-/* 126 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18515,7 +18534,7 @@ module.exports = {
 
 
 /***/ }),
-/* 127 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18692,7 +18711,7 @@ module.exports = {
 
 
 /***/ }),
-/* 128 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18764,7 +18783,7 @@ module.exports = {
 
 
 /***/ }),
-/* 129 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18879,7 +18898,7 @@ module.exports = {
 
 
 /***/ }),
-/* 130 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18994,7 +19013,7 @@ module.exports = {
 
 
 /***/ }),
-/* 131 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19086,7 +19105,7 @@ module.exports = {
 
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19159,7 +19178,7 @@ module.exports = {
 
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19222,7 +19241,7 @@ module.exports = {
 
 
 /***/ }),
-/* 134 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19355,7 +19374,7 @@ module.exports = {
 
 
 /***/ }),
-/* 135 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19448,7 +19467,7 @@ module.exports = {
 
 
 /***/ }),
-/* 136 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19519,7 +19538,7 @@ module.exports = {
 
 
 /***/ }),
-/* 137 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19639,7 +19658,7 @@ module.exports = {
 
 
 /***/ }),
-/* 138 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19710,7 +19729,7 @@ module.exports = {
 
 
 /***/ }),
-/* 139 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19776,7 +19795,7 @@ module.exports = {
 
 
 /***/ }),
-/* 140 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19902,7 +19921,7 @@ module.exports = {
 
 
 /***/ }),
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -20000,7 +20019,7 @@ module.exports = {
 
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20095,7 +20114,7 @@ module.exports = {
 
 
 /***/ }),
-/* 143 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20157,7 +20176,7 @@ module.exports = {
 
 
 /***/ }),
-/* 144 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20219,7 +20238,7 @@ module.exports = {
 
 
 /***/ }),
-/* 145 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js language configuration
@@ -20342,7 +20361,7 @@ module.exports = {
 
 
 /***/ }),
-/* 146 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20497,7 +20516,7 @@ module.exports = {
 
 
 /***/ }),
-/* 147 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20599,7 +20618,7 @@ module.exports = {
 
 
 /***/ }),
-/* 148 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20661,7 +20680,7 @@ module.exports = {
 
 
 /***/ }),
-/* 149 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20723,7 +20742,7 @@ module.exports = {
 
 
 /***/ }),
-/* 150 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20806,7 +20825,7 @@ module.exports = {
 
 
 /***/ }),
-/* 151 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20878,7 +20897,7 @@ module.exports = {
 
 
 /***/ }),
-/* 152 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20942,7 +20961,7 @@ module.exports = {
 
 
 /***/ }),
-/* 153 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21056,7 +21075,7 @@ module.exports = {
 
 
 /***/ }),
-/* 154 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21163,7 +21182,7 @@ module.exports = {
 
 
 /***/ }),
-/* 155 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21270,7 +21289,7 @@ module.exports = {
 
 
 /***/ }),
-/* 156 */
+/* 155 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21337,7 +21356,7 @@ module.exports = {
 });
 
 /***/ }),
-/* 157 */
+/* 156 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21433,115 +21452,245 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    /*header req value*/
-    props: ['frd_value'],
-    created: function created() {
-        var _this = this;
+  /*header req value*/
+  props: ["frd_value"],
+  created: function created() {
+    var _this = this;
 
-        this.$eventBus.$on("login_success", function (login_type) {
-            _this.login_register(login_type);
-            _this.login_susandfail();
-        });
-        console.log(this.login_type);
-    },
-    data: function data() {
-        return {
-            userinfo: {
-                'userid': '',
-                'userpw': ''
-            },
-            frd_name: [],
-            register_type: '',
-            login_type: {
-                user_login: sessionStorage.getItem('user_session'),
-                user_name: sessionStorage.getItem('user_nickname'),
-                user_number: sessionStorage.getItem('user_number'),
-                user_image: sessionStorage.getItem('user_image'),
-                user_point: sessionStorage.getItem('user_point')
-            }
-        };
-    },
+    this.$eventBus.$on("login_success", function (login_type) {
+      _this.login_register(login_type);
+      _this.login_susandfail();
+    });
+    console.log(this.login_type);
+  },
+  data: function data() {
+    return {
+      userinfo: {
+        userid: "",
+        userpw: ""
+      },
+      frd_name: [],
+      register_type: "",
+      login_type: {
+        user_login: sessionStorage.getItem("user_session"),
+        user_name: sessionStorage.getItem("user_nickname"),
+        user_number: sessionStorage.getItem("user_number"),
+        user_image: sessionStorage.getItem("user_image"),
+        user_point: sessionStorage.getItem("user_point")
+      }
+    };
+  },
 
-    methods: {
-        /*login modal open*/
-        register_btn: function register_btn(modal_type) {
-            this.register_type = modal_type;
-            this.$refs.register_modal.open();
-        },
-        /*friend add modal open*/
-        hidden_menu: function hidden_menu() {
-            this.$refs.frd_modal.open();
-        },
-        /*fried Search function*/
-        frd_Search: function frd_Search() {
-            this.$emit("frd_search", this.frd_name);
-        },
-        /*hidden bar close*/
-        closeNav: function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        },
-        /*user login register*/
-        user: function user() {
-            this.$eventBus.$emit('login_function', this.userinfo);
-        },
-        /*login show result*/
-        login_susandfail: function login_susandfail() {
-            this.login_type = {
-                user_login: sessionStorage.getItem('user_session'),
-                user_name: sessionStorage.getItem('user_nickname'),
-                user_number: sessionStorage.getItem('user_number'),
-                user_image: sessionStorage.getItem('user_image'),
-                user_point: sessionStorage.getItem('user_point')
-            };
-        },
-        /*logout function*/
-        logout: function logout() {
-            var url = 'logout';
-            var art = {
-                'kinds': 'Logout'
-            };
-            //                <input type="submit" value="로그아웃"> O O
-            //                <input type="hidden" value="Logout" name="kinds">
-            this.axios.post(url, art).then();
-            sessionStorage.setItem('user_session', 'null');
-            sessionStorage.removeItem('user_nickname');
-            sessionStorage.removeItem('user_number');
-            sessionStorage.removeItem('user_image');
-            sessionStorage.removeItem('user_point');
-            this.login_type = {
-                user_login: 'null',
-                user_name: null,
-                user_number: '',
-                user_image: '',
-                user_point: ''
-            };
-        },
-        login_register: function login_register(condition) {
-            if (condition) {
-                this.$refs.loginok.open();
-            } else {
-                this.$refs.loginno.open();
-            }
-        },
-        login_btn: function login_btn(condition) {
-            if (condition) {
-                this.$refs.loginok.close();
-                this.$refs.register_modal.close();
-            } else {
-                this.$refs.loginno.close();
-            }
-        }
+  methods: {
+    /*login modal open*/
+    register_btn: function register_btn(modal_type) {
+      this.register_type = modal_type;
+      this.$refs.register_modal.open();
+    },
+    /*friend add modal open*/
+    hidden_menu: function hidden_menu() {
+      this.$refs.frd_modal.open();
+    },
+    /*fried Search function*/
+    frd_Search: function frd_Search() {
+      this.$emit("frd_search", this.frd_name);
+    },
+    /*hidden bar close*/
+    closeNav: function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    },
+    /*user login register*/
+    user: function user() {
+      this.$eventBus.$emit("login_function", this.userinfo);
+    },
+    /*login show result*/
+    login_susandfail: function login_susandfail() {
+      this.login_type = {
+        user_login: sessionStorage.getItem("user_session"),
+        user_name: sessionStorage.getItem("user_nickname"),
+        user_number: sessionStorage.getItem("user_number"),
+        user_image: sessionStorage.getItem("user_image"),
+        user_point: sessionStorage.getItem("user_point")
+      };
+    },
+    /*logout function*/
+    logout: function logout() {
+      var url = "logout";
+      var art = {
+        kinds: "Logout"
+      };
+      //                <input type="submit" value="로그아웃"> O O
+      //                <input type="hidden" value="Logout" name="kinds">
+      this.axios.post(url, art).then();
+      sessionStorage.setItem("user_session", "null");
+      sessionStorage.removeItem("user_nickname");
+      sessionStorage.removeItem("user_number");
+      sessionStorage.removeItem("user_image");
+      sessionStorage.removeItem("user_point");
+      this.login_type = {
+        user_login: "null",
+        user_name: null,
+        user_number: "",
+        user_image: "",
+        user_point: ""
+      };
+    },
+    login_register: function login_register(condition) {
+      if (condition) {
+        this.$refs.loginok.open();
+      } else {
+        this.$refs.loginno.open();
+      }
+    },
+    login_btn: function login_btn(condition) {
+      if (condition) {
+        this.$refs.loginok.close();
+        this.$refs.register_modal.close();
+      } else {
+        this.$refs.loginno.close();
+      }
     }
+  }
 });
+
+/***/ }),
+/* 157 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  components: {
+    footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
+  },
+  mounted: function mounted() {
+    this.load_user_info();
+    this.load_user_frd();
+    this.load_user_story();
+  },
+  data: function data() {
+    return {
+      Item_list: "",
+      frd_list: [],
+      buy_list: []
+      //각 항목의 유저의 값을 담을 변수
+    };
+  },
+
+  methods: {
+    load_user_info: function load_user_info() {
+      var _this = this;
+
+      //서버로 유저 정보 요청
+      var url = "pentomyuser";
+      var art = {
+        kinds: "Page",
+        page_name: "MyInfo"
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this.Item_list = response.data;
+      });
+    },
+    load_user_frd: function load_user_frd() {
+      var _this2 = this;
+
+      var url = "pentomyfrd";
+      var art = {
+        kinds: "Page",
+        page_name: "Friends"
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this2.frd_list = response.data;
+      });
+    },
+    load_user_story: function load_user_story() {
+      var _this3 = this;
+
+      var url = "user_story";
+      var art = {
+        kinds: "Page",
+        page_name: "BuyList"
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this3.buy_list = response.data;
+      });
+    }
+  }
+});
+//
 
 /***/ }),
 /* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
 //
 //
 //
@@ -21574,92 +21723,12 @@ module.exports = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    components: {
-
-        'footers': __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
-    },
-    mounted: function mounted() {
-        this.load_user_info();
-        this.load_user_frd();
-        this.load_user_story();
-    },
-    data: function data() {
-        return {
-            Item_list: '',
-            frd_list: [],
-            buy_list: []
-            //각 항목의 유저의 값을 담을 변수
-        };
-    },
-
-    methods: {
-        load_user_info: function load_user_info() {
-            var _this = this;
-
-            //서버로 유저 정보 요청
-            var url = 'pentomyuser';
-            var art = {
-                'kinds': 'Page',
-                'page_name': 'MyInfo'
-            };
-            this.axios.post(url, art).then(function (response) {
-                _this.Item_list = response.data;
-            });
-        },
-        load_user_frd: function load_user_frd() {
-            var _this2 = this;
-
-            var url = 'pentomyfrd';
-            var art = {
-                'kinds': 'Page',
-                'page_name': 'Friends'
-            };
-            this.axios.post(url, art).then(function (response) {
-                _this2.frd_list = response.data;
-            });
-        },
-        load_user_story: function load_user_story() {
-            var _this3 = this;
-
-            var url = 'user_story';
-            var art = {
-                'kinds': 'Page',
-                'page_name': 'BuyList'
-            };
-            this.axios.post(url, art).then(function (response) {
-                _this3.buy_list = response.data;
-            });
-        }
-    }
-    //
-
+  components: {
+    footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
+  }
 });
 
 /***/ }),
@@ -21667,6 +21736,7 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
 //
 //
 //
@@ -21696,49 +21766,60 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    created: function created() {
-        this.my_pento_page();
+  components: {
+    footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
+  },
+  created: function created() {
+    this.my_pento_page();
+  },
+  data: function data() {
+    return {
+      pento_list: "", //펜토미노 페이지 값을 담을 변수
+      select_pento_list: {} //펜토미노를 선택 할 때 담을 변수
+    };
+  },
+
+  methods: {
+    my_pento_page: function my_pento_page() {
+      var _this = this;
+
+      //펜토마이페이지 불러버리기~
+      var url = "col_my";
+      var art = {
+        kinds: "Page",
+        page_name: "Collection"
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this.pento_list = response.data;
+      });
     },
-    data: function data() {
-        return {
-            pento_list: '', //펜토미노 페이지 값을 담을 변수
-            select_pento_list: {} //펜토미노를 선택 할 때 담을 변수
+    pento_my_modal: function pento_my_modal(design_no) {
+      var _this2 = this;
 
-        };
-    },
+      var url = "my_col_pop";
+      var art = {
+        kinds: "Page",
+        category: "collection_default",
+        detailed_value: design_no
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this2.select_pento_list = response.data;
+      });
 
-    methods: {
-        my_pento_page: function my_pento_page() {
-            var _this = this;
-
-            //펜토마이페이지 불러버리기~
-            var url = 'col_my';
-            var art = {
-                'kinds': 'Page',
-                'page_name': 'Collection'
-            };
-            this.axios.post(url, art).then(function (response) {
-                _this.pento_list = response.data;
-            });
-        },
-        pento_my_modal: function pento_my_modal(design_no) {
-            var _this2 = this;
-
-            var url = "my_col_pop";
-            var art = {
-                'kinds': 'Page',
-                'category': 'collection_default',
-                'detailed_value': design_no
-            };
-            this.axios.post(url, art).then(function (response) {
-                _this2.select_pento_list = response.data;
-            });
-
-            this.$refs.col_modal.open();
-        }
+      this.$refs.col_modal.open();
     }
+  }
 });
 
 /***/ }),
@@ -21746,7 +21827,9 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+//
+//
 //
 //
 //
@@ -40389,7 +40472,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : auto auto 5vh auto;\r\n        width: 99vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        text-align: center;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding: 8vw;\n}\n.main-body-4-2{\r\n        padding : 6vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\r\n", ""]);
+exports.push([module.i, "\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : auto auto 5vh auto;\r\n        width: 99vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        text-align: center;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding: 8vw;\n}\n.main-body-4-2{\r\n        padding : 6vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}", ""]);
 
 // exports
 
@@ -40676,9 +40759,15 @@ var staticRenderFns = [
       "div",
       { staticClass: "main-body-2", attrs: { id: "main-body-2" } },
       [
-        _c("p", [_vm._v("PENTO")]),
-        _vm._v(" "),
-        _c("span", [_vm._v("ペントミノをもっと楽しく、面白く")])
+        _c("div", { attrs: { id: "event-1" } }, [
+          _c("p", { attrs: { id: "event-1-1" } }, [
+            _vm._v("\n                PENTO")
+          ]),
+          _vm._v(" "),
+          _c("span", { attrs: { id: "event-1-2" } }, [
+            _vm._v("\n                ペントミノをもっと楽しく、面白く")
+          ])
+        ])
       ]
     )
   },
@@ -40763,7 +40852,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentostorylist_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentostorylist_vue__ = __webpack_require__(26);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_588a0c5a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_pentostorylist_vue__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -41243,7 +41332,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentoRank_vue__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentoRank_vue__ = __webpack_require__(27);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b1e55156_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_pentoRank_vue__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -41571,11 +41660,11 @@ __webpack_require__(235)(Chart);
 Chart.defaults = __webpack_require__(2);
 Chart.Element = __webpack_require__(7);
 Chart.elements = __webpack_require__(8);
-Chart.Interaction = __webpack_require__(30);
-Chart.layouts = __webpack_require__(9);
-Chart.platform = __webpack_require__(31);
-Chart.plugins = __webpack_require__(32);
-Chart.Ticks = __webpack_require__(10);
+Chart.Interaction = __webpack_require__(29);
+Chart.layouts = __webpack_require__(10);
+Chart.platform = __webpack_require__(30);
+Chart.plugins = __webpack_require__(31);
+Chart.Ticks = __webpack_require__(11);
 
 __webpack_require__(246)(Chart);
 __webpack_require__(247)(Chart);
@@ -42328,7 +42417,7 @@ module.exports = {
 /* global document: false */
 
 
-var color = __webpack_require__(29);
+var color = __webpack_require__(28);
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
 
@@ -45346,10 +45435,10 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var Interaction = __webpack_require__(30);
-var layouts = __webpack_require__(9);
-var platform = __webpack_require__(31);
-var plugins = __webpack_require__(32);
+var Interaction = __webpack_require__(29);
+var layouts = __webpack_require__(10);
+var platform = __webpack_require__(30);
+var plugins = __webpack_require__(31);
 
 module.exports = function(Chart) {
 
@@ -46637,7 +46726,7 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var layouts = __webpack_require__(9);
+var layouts = __webpack_require__(10);
 
 module.exports = function(Chart) {
 
@@ -46691,7 +46780,7 @@ module.exports = function(Chart) {
 var defaults = __webpack_require__(2);
 var Element = __webpack_require__(7);
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(10);
+var Ticks = __webpack_require__(11);
 
 defaults._set('scale', {
 	display: true,
@@ -48921,7 +49010,7 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(10);
+var Ticks = __webpack_require__(11);
 
 module.exports = function(Chart) {
 
@@ -49118,7 +49207,7 @@ module.exports = function(Chart) {
 
 
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(10);
+var Ticks = __webpack_require__(11);
 
 /**
  * Generate a set of logarithmic ticks
@@ -49473,7 +49562,7 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(10);
+var Ticks = __webpack_require__(11);
 
 module.exports = function(Chart) {
 
@@ -50823,252 +50912,252 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 33,
-	"./af.js": 33,
-	"./ar": 34,
-	"./ar-dz": 35,
-	"./ar-dz.js": 35,
-	"./ar-kw": 36,
-	"./ar-kw.js": 36,
-	"./ar-ly": 37,
-	"./ar-ly.js": 37,
-	"./ar-ma": 38,
-	"./ar-ma.js": 38,
-	"./ar-sa": 39,
-	"./ar-sa.js": 39,
-	"./ar-tn": 40,
-	"./ar-tn.js": 40,
-	"./ar.js": 34,
-	"./az": 41,
-	"./az.js": 41,
-	"./be": 42,
-	"./be.js": 42,
-	"./bg": 43,
-	"./bg.js": 43,
-	"./bm": 44,
-	"./bm.js": 44,
-	"./bn": 45,
-	"./bn.js": 45,
-	"./bo": 46,
-	"./bo.js": 46,
-	"./br": 47,
-	"./br.js": 47,
-	"./bs": 48,
-	"./bs.js": 48,
-	"./ca": 49,
-	"./ca.js": 49,
-	"./cs": 50,
-	"./cs.js": 50,
-	"./cv": 51,
-	"./cv.js": 51,
-	"./cy": 52,
-	"./cy.js": 52,
-	"./da": 53,
-	"./da.js": 53,
-	"./de": 54,
-	"./de-at": 55,
-	"./de-at.js": 55,
-	"./de-ch": 56,
-	"./de-ch.js": 56,
-	"./de.js": 54,
-	"./dv": 57,
-	"./dv.js": 57,
-	"./el": 58,
-	"./el.js": 58,
-	"./en-au": 59,
-	"./en-au.js": 59,
-	"./en-ca": 60,
-	"./en-ca.js": 60,
-	"./en-gb": 61,
-	"./en-gb.js": 61,
-	"./en-ie": 62,
-	"./en-ie.js": 62,
-	"./en-il": 63,
-	"./en-il.js": 63,
-	"./en-nz": 64,
-	"./en-nz.js": 64,
-	"./eo": 65,
-	"./eo.js": 65,
-	"./es": 66,
-	"./es-do": 67,
-	"./es-do.js": 67,
-	"./es-us": 68,
-	"./es-us.js": 68,
-	"./es.js": 66,
-	"./et": 69,
-	"./et.js": 69,
-	"./eu": 70,
-	"./eu.js": 70,
-	"./fa": 71,
-	"./fa.js": 71,
-	"./fi": 72,
-	"./fi.js": 72,
-	"./fo": 73,
-	"./fo.js": 73,
-	"./fr": 74,
-	"./fr-ca": 75,
-	"./fr-ca.js": 75,
-	"./fr-ch": 76,
-	"./fr-ch.js": 76,
-	"./fr.js": 74,
-	"./fy": 77,
-	"./fy.js": 77,
-	"./gd": 78,
-	"./gd.js": 78,
-	"./gl": 79,
-	"./gl.js": 79,
-	"./gom-latn": 80,
-	"./gom-latn.js": 80,
-	"./gu": 81,
-	"./gu.js": 81,
-	"./he": 82,
-	"./he.js": 82,
-	"./hi": 83,
-	"./hi.js": 83,
-	"./hr": 84,
-	"./hr.js": 84,
-	"./hu": 85,
-	"./hu.js": 85,
-	"./hy-am": 86,
-	"./hy-am.js": 86,
-	"./id": 87,
-	"./id.js": 87,
-	"./is": 88,
-	"./is.js": 88,
-	"./it": 89,
-	"./it.js": 89,
-	"./ja": 90,
-	"./ja.js": 90,
-	"./jv": 91,
-	"./jv.js": 91,
-	"./ka": 92,
-	"./ka.js": 92,
-	"./kk": 93,
-	"./kk.js": 93,
-	"./km": 94,
-	"./km.js": 94,
-	"./kn": 95,
-	"./kn.js": 95,
-	"./ko": 96,
-	"./ko.js": 96,
-	"./ky": 97,
-	"./ky.js": 97,
-	"./lb": 98,
-	"./lb.js": 98,
-	"./lo": 99,
-	"./lo.js": 99,
-	"./lt": 100,
-	"./lt.js": 100,
-	"./lv": 101,
-	"./lv.js": 101,
-	"./me": 102,
-	"./me.js": 102,
-	"./mi": 103,
-	"./mi.js": 103,
-	"./mk": 104,
-	"./mk.js": 104,
-	"./ml": 105,
-	"./ml.js": 105,
-	"./mn": 106,
-	"./mn.js": 106,
-	"./mr": 107,
-	"./mr.js": 107,
-	"./ms": 108,
-	"./ms-my": 109,
-	"./ms-my.js": 109,
-	"./ms.js": 108,
-	"./mt": 110,
-	"./mt.js": 110,
-	"./my": 111,
-	"./my.js": 111,
-	"./nb": 112,
-	"./nb.js": 112,
-	"./ne": 113,
-	"./ne.js": 113,
-	"./nl": 114,
-	"./nl-be": 115,
-	"./nl-be.js": 115,
-	"./nl.js": 114,
-	"./nn": 116,
-	"./nn.js": 116,
-	"./pa-in": 117,
-	"./pa-in.js": 117,
-	"./pl": 118,
-	"./pl.js": 118,
-	"./pt": 119,
-	"./pt-br": 120,
-	"./pt-br.js": 120,
-	"./pt.js": 119,
-	"./ro": 121,
-	"./ro.js": 121,
-	"./ru": 122,
-	"./ru.js": 122,
-	"./sd": 123,
-	"./sd.js": 123,
-	"./se": 124,
-	"./se.js": 124,
-	"./si": 125,
-	"./si.js": 125,
-	"./sk": 126,
-	"./sk.js": 126,
-	"./sl": 127,
-	"./sl.js": 127,
-	"./sq": 128,
-	"./sq.js": 128,
-	"./sr": 129,
-	"./sr-cyrl": 130,
-	"./sr-cyrl.js": 130,
-	"./sr.js": 129,
-	"./ss": 131,
-	"./ss.js": 131,
-	"./sv": 132,
-	"./sv.js": 132,
-	"./sw": 133,
-	"./sw.js": 133,
-	"./ta": 134,
-	"./ta.js": 134,
-	"./te": 135,
-	"./te.js": 135,
-	"./tet": 136,
-	"./tet.js": 136,
-	"./tg": 137,
-	"./tg.js": 137,
-	"./th": 138,
-	"./th.js": 138,
-	"./tl-ph": 139,
-	"./tl-ph.js": 139,
-	"./tlh": 140,
-	"./tlh.js": 140,
-	"./tr": 141,
-	"./tr.js": 141,
-	"./tzl": 142,
-	"./tzl.js": 142,
-	"./tzm": 143,
-	"./tzm-latn": 144,
-	"./tzm-latn.js": 144,
-	"./tzm.js": 143,
-	"./ug-cn": 145,
-	"./ug-cn.js": 145,
-	"./uk": 146,
-	"./uk.js": 146,
-	"./ur": 147,
-	"./ur.js": 147,
-	"./uz": 148,
-	"./uz-latn": 149,
-	"./uz-latn.js": 149,
-	"./uz.js": 148,
-	"./vi": 150,
-	"./vi.js": 150,
-	"./x-pseudo": 151,
-	"./x-pseudo.js": 151,
-	"./yo": 152,
-	"./yo.js": 152,
-	"./zh-cn": 153,
-	"./zh-cn.js": 153,
-	"./zh-hk": 154,
-	"./zh-hk.js": 154,
-	"./zh-tw": 155,
-	"./zh-tw.js": 155
+	"./af": 32,
+	"./af.js": 32,
+	"./ar": 33,
+	"./ar-dz": 34,
+	"./ar-dz.js": 34,
+	"./ar-kw": 35,
+	"./ar-kw.js": 35,
+	"./ar-ly": 36,
+	"./ar-ly.js": 36,
+	"./ar-ma": 37,
+	"./ar-ma.js": 37,
+	"./ar-sa": 38,
+	"./ar-sa.js": 38,
+	"./ar-tn": 39,
+	"./ar-tn.js": 39,
+	"./ar.js": 33,
+	"./az": 40,
+	"./az.js": 40,
+	"./be": 41,
+	"./be.js": 41,
+	"./bg": 42,
+	"./bg.js": 42,
+	"./bm": 43,
+	"./bm.js": 43,
+	"./bn": 44,
+	"./bn.js": 44,
+	"./bo": 45,
+	"./bo.js": 45,
+	"./br": 46,
+	"./br.js": 46,
+	"./bs": 47,
+	"./bs.js": 47,
+	"./ca": 48,
+	"./ca.js": 48,
+	"./cs": 49,
+	"./cs.js": 49,
+	"./cv": 50,
+	"./cv.js": 50,
+	"./cy": 51,
+	"./cy.js": 51,
+	"./da": 52,
+	"./da.js": 52,
+	"./de": 53,
+	"./de-at": 54,
+	"./de-at.js": 54,
+	"./de-ch": 55,
+	"./de-ch.js": 55,
+	"./de.js": 53,
+	"./dv": 56,
+	"./dv.js": 56,
+	"./el": 57,
+	"./el.js": 57,
+	"./en-au": 58,
+	"./en-au.js": 58,
+	"./en-ca": 59,
+	"./en-ca.js": 59,
+	"./en-gb": 60,
+	"./en-gb.js": 60,
+	"./en-ie": 61,
+	"./en-ie.js": 61,
+	"./en-il": 62,
+	"./en-il.js": 62,
+	"./en-nz": 63,
+	"./en-nz.js": 63,
+	"./eo": 64,
+	"./eo.js": 64,
+	"./es": 65,
+	"./es-do": 66,
+	"./es-do.js": 66,
+	"./es-us": 67,
+	"./es-us.js": 67,
+	"./es.js": 65,
+	"./et": 68,
+	"./et.js": 68,
+	"./eu": 69,
+	"./eu.js": 69,
+	"./fa": 70,
+	"./fa.js": 70,
+	"./fi": 71,
+	"./fi.js": 71,
+	"./fo": 72,
+	"./fo.js": 72,
+	"./fr": 73,
+	"./fr-ca": 74,
+	"./fr-ca.js": 74,
+	"./fr-ch": 75,
+	"./fr-ch.js": 75,
+	"./fr.js": 73,
+	"./fy": 76,
+	"./fy.js": 76,
+	"./gd": 77,
+	"./gd.js": 77,
+	"./gl": 78,
+	"./gl.js": 78,
+	"./gom-latn": 79,
+	"./gom-latn.js": 79,
+	"./gu": 80,
+	"./gu.js": 80,
+	"./he": 81,
+	"./he.js": 81,
+	"./hi": 82,
+	"./hi.js": 82,
+	"./hr": 83,
+	"./hr.js": 83,
+	"./hu": 84,
+	"./hu.js": 84,
+	"./hy-am": 85,
+	"./hy-am.js": 85,
+	"./id": 86,
+	"./id.js": 86,
+	"./is": 87,
+	"./is.js": 87,
+	"./it": 88,
+	"./it.js": 88,
+	"./ja": 89,
+	"./ja.js": 89,
+	"./jv": 90,
+	"./jv.js": 90,
+	"./ka": 91,
+	"./ka.js": 91,
+	"./kk": 92,
+	"./kk.js": 92,
+	"./km": 93,
+	"./km.js": 93,
+	"./kn": 94,
+	"./kn.js": 94,
+	"./ko": 95,
+	"./ko.js": 95,
+	"./ky": 96,
+	"./ky.js": 96,
+	"./lb": 97,
+	"./lb.js": 97,
+	"./lo": 98,
+	"./lo.js": 98,
+	"./lt": 99,
+	"./lt.js": 99,
+	"./lv": 100,
+	"./lv.js": 100,
+	"./me": 101,
+	"./me.js": 101,
+	"./mi": 102,
+	"./mi.js": 102,
+	"./mk": 103,
+	"./mk.js": 103,
+	"./ml": 104,
+	"./ml.js": 104,
+	"./mn": 105,
+	"./mn.js": 105,
+	"./mr": 106,
+	"./mr.js": 106,
+	"./ms": 107,
+	"./ms-my": 108,
+	"./ms-my.js": 108,
+	"./ms.js": 107,
+	"./mt": 109,
+	"./mt.js": 109,
+	"./my": 110,
+	"./my.js": 110,
+	"./nb": 111,
+	"./nb.js": 111,
+	"./ne": 112,
+	"./ne.js": 112,
+	"./nl": 113,
+	"./nl-be": 114,
+	"./nl-be.js": 114,
+	"./nl.js": 113,
+	"./nn": 115,
+	"./nn.js": 115,
+	"./pa-in": 116,
+	"./pa-in.js": 116,
+	"./pl": 117,
+	"./pl.js": 117,
+	"./pt": 118,
+	"./pt-br": 119,
+	"./pt-br.js": 119,
+	"./pt.js": 118,
+	"./ro": 120,
+	"./ro.js": 120,
+	"./ru": 121,
+	"./ru.js": 121,
+	"./sd": 122,
+	"./sd.js": 122,
+	"./se": 123,
+	"./se.js": 123,
+	"./si": 124,
+	"./si.js": 124,
+	"./sk": 125,
+	"./sk.js": 125,
+	"./sl": 126,
+	"./sl.js": 126,
+	"./sq": 127,
+	"./sq.js": 127,
+	"./sr": 128,
+	"./sr-cyrl": 129,
+	"./sr-cyrl.js": 129,
+	"./sr.js": 128,
+	"./ss": 130,
+	"./ss.js": 130,
+	"./sv": 131,
+	"./sv.js": 131,
+	"./sw": 132,
+	"./sw.js": 132,
+	"./ta": 133,
+	"./ta.js": 133,
+	"./te": 134,
+	"./te.js": 134,
+	"./tet": 135,
+	"./tet.js": 135,
+	"./tg": 136,
+	"./tg.js": 136,
+	"./th": 137,
+	"./th.js": 137,
+	"./tl-ph": 138,
+	"./tl-ph.js": 138,
+	"./tlh": 139,
+	"./tlh.js": 139,
+	"./tr": 140,
+	"./tr.js": 140,
+	"./tzl": 141,
+	"./tzl.js": 141,
+	"./tzm": 142,
+	"./tzm-latn": 143,
+	"./tzm-latn.js": 143,
+	"./tzm.js": 142,
+	"./ug-cn": 144,
+	"./ug-cn.js": 144,
+	"./uk": 145,
+	"./uk.js": 145,
+	"./ur": 146,
+	"./ur.js": 146,
+	"./uz": 147,
+	"./uz-latn": 148,
+	"./uz-latn.js": 148,
+	"./uz.js": 147,
+	"./vi": 149,
+	"./vi.js": 149,
+	"./x-pseudo": 150,
+	"./x-pseudo.js": 150,
+	"./yo": 151,
+	"./yo.js": 151,
+	"./zh-cn": 152,
+	"./zh-cn.js": 152,
+	"./zh-hk": 153,
+	"./zh-hk.js": 153,
+	"./zh-tw": 154,
+	"./zh-tw.js": 154
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -53353,7 +53442,7 @@ module.exports = {
 var defaults = __webpack_require__(2);
 var Element = __webpack_require__(7);
 var helpers = __webpack_require__(1);
-var layouts = __webpack_require__(9);
+var layouts = __webpack_require__(10);
 
 var noop = helpers.noop;
 
@@ -53936,7 +54025,7 @@ module.exports = {
 var defaults = __webpack_require__(2);
 var Element = __webpack_require__(7);
 var helpers = __webpack_require__(1);
-var layouts = __webpack_require__(9);
+var layouts = __webpack_require__(10);
 
 var noop = helpers.noop;
 
@@ -54455,7 +54544,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_new_header_vue__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_new_header_vue__ = __webpack_require__(155);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7e5b1db2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_new_header_vue__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -54554,7 +54643,7 @@ exports.push([module.i, "\n.sub_header {\r\n    width: 100%;\r\n    height: auto
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_hiddnenav_vue__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_hiddnenav_vue__ = __webpack_require__(156);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1076d4c0_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_hiddnenav_vue__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -54643,7 +54732,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://localhost:8000/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    height: 50vh\n}\n.add_frd_modal_sub1 {\r\n    width: 50%;\r\n    height: 100%;\r\n    float: left;\n}\n.add_frd_modal_sub2 {\r\n    width: 45%;\r\n    height: 30vh;\r\n    float: right\n}\n.container, .frd_list {\r\n    height: 100%;\r\n    width: 100%\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    font-size: 0.5vw;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
+exports.push([module.i, "\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://localhost:8000/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid gray;\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
 
 // exports
 
@@ -54690,13 +54779,15 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("p", [
-                _vm._v(_vm._s(_vm.login_type.user_name) + "님 안녕하세요?")
+                _vm._v(
+                  "こんにちは！" + _vm._s(_vm.login_type.user_name) + "さん"
+                )
               ]),
               _vm._v(" "),
               _c(
                 "router-link",
                 { staticClass: "menu", attrs: { to: { name: "Mypento" } } },
-                [_vm._v("내 정보")]
+                [_vm._v("MY PENTO")]
               ),
               _vm._v(" "),
               _c(
@@ -54708,7 +54799,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("친구 추가")]
+                [_vm._v("友達探し")]
               ),
               _vm._v(" "),
               _c(
@@ -54756,20 +54847,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("로그인")]
-              ),
-              _vm._v(" "),
-              _c(
-                "vs-button",
-                {
-                  attrs: { "vs-type": "primary-filled" },
-                  on: {
-                    click: function($event) {
-                      _vm.register_btn(false)
-                    }
-                  }
-                },
-                [_vm._v("회원가입")]
+                [_vm._v("Login")]
               )
             ],
             1
@@ -54822,64 +54900,90 @@ var render = function() {
         [
           _c("div", { staticClass: "add_frd_modal" }, [
             _c("div", { staticClass: "add_frd_modal_sub1" }, [
-              _c("div", { staticClass: "frd_board" })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "add_frd_modal_sub2" },
-              [
+              _c("div", { staticClass: "frd_board" }, [
                 _c(
-                  "div",
-                  { staticClass: "select_frd" },
+                  "table",
                   [
-                    _c("vs-input", {
-                      attrs: {
-                        "vs-icon": "search",
-                        "vs-label-placeholder": "친구 이름을 입력해"
-                      },
-                      model: {
-                        value: _vm.frd_name,
-                        callback: function($$v) {
-                          _vm.frd_name = $$v
-                        },
-                        expression: "frd_name"
-                      }
+                    _c("thead", [
+                      _c("tr", { staticClass: "uppercase" }, [
+                        _c("th", [_vm._v("検索結果")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v(" +")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(5, function(as) {
+                      return _c("tbody", [
+                        _c("tr", [
+                          _c("td", { staticClass: "frd-table-td-1" }, [
+                            _vm._v("as")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "frd-table-td-2" }, [
+                            _c("button", [
+                              _vm._v(
+                                "\n                                 +\n                                "
+                              )
+                            ])
+                          ])
+                        ])
+                      ])
                     })
                   ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "vs-button",
-                  {
-                    staticClass: "frd-btn",
-                    attrs: { "vs-type": "success-relief" },
-                    on: {
-                      click: function($event) {
-                        _vm.frd_Search()
-                      }
-                    }
-                  },
-                  [_vm._v("친구추가")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "frd_list" },
-                  _vm._l(_vm.frd_value, function(frd) {
-                    return _c("li", [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(frd.user_nickname) +
-                          "\n                    "
-                      )
-                    ])
-                  })
+                  2
                 )
-              ],
-              1
-            )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "add_frd_modal_sub2" }, [
+              _c(
+                "div",
+                { staticClass: "select_frd" },
+                [
+                  _c("vs-input", {
+                    attrs: {
+                      "vs-icon": "search",
+                      "vs-label-placeholder": "名前を入力してください。"
+                    },
+                    model: {
+                      value: _vm.frd_name,
+                      callback: function($$v) {
+                        _vm.frd_name = $$v
+                      },
+                      expression: "frd_name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "frd-btn",
+                  on: {
+                    click: function($event) {
+                      _vm.frd_Search()
+                    }
+                  }
+                },
+                [_vm._v("サーチ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "frd_list" },
+                _vm._l(_vm.frd_value, function(frd) {
+                  return _c("li", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(frd.user_nickname) +
+                        "\n                    "
+                    )
+                  ])
+                })
+              )
+            ])
           ])
         ]
       ),
@@ -55110,7 +55214,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Mypento_vue__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Mypento_vue__ = __webpack_require__(157);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_277945fd_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mypento_vue__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -55199,7 +55303,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 3vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 5vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n#mypento_sub_div2 {\r\n    display : grid;\r\n    background-color: #ffc609;\r\n    grid-template-columns: 0.3fr 0.7fr;\n}\n.my-frd-one{\r\n    background-size: cover;\r\n    background-image: url(\"http://localhost:8000/images/web/mypage_banner_1.png\");\n}\n#mypento_sub_div3 {\r\n    background-color: #141c35;\r\n    display: grid;\r\n    grid-template-columns: 0.7fr 0.3fr;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://localhost:8000/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
+exports.push([module.i, "\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 5vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 4vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n.userimg{\r\n    margin-bottom : 2vh;\n}\n.mypento-sub-div-content-2{\r\n    background: gold\n}\n#mypento_sub_div3 {\r\n     padding : 5vh;\r\n    overflow: scroll;\r\n    margin : auto;\r\n    background-color: #141c35;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://localhost:8000/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\r\n    grid-row-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
 
 // exports
 
@@ -55231,7 +55335,7 @@ var render = function() {
                 "vs-tab",
                 {
                   staticClass: "mypento_sub_div",
-                  attrs: { "vs-label": "내 정보", id: "mypento_sub_div1" },
+                  attrs: { "vs-label": "私のデータ", id: "mypento_sub_div1" },
                   on: {
                     click: function($event) {
                       _vm.debugsss()
@@ -55250,22 +55354,41 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("h1", [
-                        _vm._v("안녕하세요! " + _vm._s(user_info.user_nickname))
+                        _vm._v("こんにちは! " + _vm._s(user_info.user_nickname))
                       ]),
                       _vm._v(" "),
                       _c("h2", [
-                        _vm._v("보유 미노 : " + _vm._s(user_info.user_point))
+                        _vm._v("保有ミノ : " + _vm._s(user_info.user_point))
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", { staticStyle: { "margin-top": "2vh" } }, [
+                        _vm._v("紹介")
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { "font-size": "2vh" } }, [
+                        _vm._v(_vm._s(user_info.user_intro))
                       ])
                     ])
                   }),
                   _vm._v(" "),
-                  _vm._l(_vm.Item_list, function(user_info) {
-                    return _c("div", [
-                      _c("h2", [_vm._v("소개")]),
+                  _c(
+                    "div",
+                    { staticClass: "mypento-sub-div-content-2" },
+                    [
+                      _c("h1", [_vm._v("MY Frined")]),
                       _vm._v(" "),
-                      _c("h2", [_vm._v(_vm._s(user_info.user_intro))])
-                    ])
-                  })
+                      _vm._l(_vm.frd_list, function(frdlist) {
+                        return _c("li", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(frdlist.user_nickname) +
+                              "\n                    "
+                          )
+                        ])
+                      })
+                    ],
+                    2
+                  )
                 ],
                 2
               ),
@@ -55274,31 +55397,7 @@ var render = function() {
                 "vs-tab",
                 {
                   staticClass: "mypento_sub_div",
-                  attrs: { "vs-label": "나의 친구들", id: "mypento_sub_div2" }
-                },
-                [
-                  _c("div", { staticClass: "my-frd-one" }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    _vm._l(_vm.frd_list, function(frdlist) {
-                      return _c("li", [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(frdlist.user_nickname) +
-                            "\n                    "
-                        )
-                      ])
-                    })
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "vs-tab",
-                {
-                  staticClass: "mypento_sub_div",
-                  attrs: { "vs-label": "나의 동화", id: "mypento_sub_div3" }
+                  attrs: { "vs-label": "私の物語", id: "mypento_sub_div3" }
                 },
                 [
                   _c(
@@ -55316,9 +55415,7 @@ var render = function() {
                         })
                       ])
                     })
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "booklistpage" })
+                  )
                 ]
               )
             ],
@@ -55327,6 +55424,9 @@ var render = function() {
         ],
         1
       ),
+      _c("br"),
+      _c("br"),
+      _c("br"),
       _vm._v(" "),
       _c("footers")
     ],
@@ -55348,7 +55448,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pento_col_main_vue__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pento_col_main_vue__ = __webpack_require__(158);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1a1ff1be_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_pento_col_main_vue__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -55602,10 +55702,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-main-div{\n    display : grid;\n    grid-template-columns: 0.3fr 0.7fr;\n    height: 100%;\n}\n#my-main-banner{\n    background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\n    background-size: cover;\n}\n#my-main-list{\n    padding-top : 8vh;\n    text-align: center;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    -webkit-transition: 0.5s;\n    transition: 0.5s;\n}\n#my-main-list img{\n    border-radius: 10%;\n    margin:30% auto;\n    text-align: center;\n    width: 100%;\n    height: 100%;\n}\n#my-main-list div{\n    border-top: 1px solid silver;\n    border-right: 1px solid silver;\n    border-bottom: 1px solid silver;\n    padding: 1vw;\n    -webkit-transition: 0.5s;\n    transition: 0.5s;\n}\n#my-main-list div:hover{\n\n    background-color: #ff99aa;\n}\n.col-my-modal-layout{\n    height: auto;\n    display: grid;\n    grid-template-rows: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1{\n    border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img{\n    padding : 1.5vw;\n    width: 40%;\n    height: 50%;\n}\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: 100%;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  padding: 1.5vw;\r\n  width: 40%;\r\n  height: 50%;\n}\r\n", ""]);
 
 // exports
 
@@ -55623,62 +55723,95 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col-my-main-div" },
+    { staticClass: "col-my-page" },
     [
-      _c("div", { attrs: { id: "my-main-banner" } }),
-      _vm._v(" "),
-      _c("div", { staticClass: "my-main-pento-list" }, [
-        _c(
-          "div",
-          { attrs: { id: "my-main-list" } },
-          _vm._l(_vm.pento_list, function(pento_imgs) {
-            return _c(
-              "div",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.pento_my_modal(pento_imgs.design_no)
-                  }
-                }
-              },
-              [_c("img", { attrs: { src: "", src: pento_imgs.file_name } })]
-            )
-          })
-        )
-      ]),
-      _vm._v(" "),
       _c(
-        "sweet-modal",
-        { ref: "col_modal", attrs: { width: "60vw", "overlay-theme": "dark" } },
-        _vm._l(_vm.select_pento_list, function(select_pento) {
-          return _c("div", { staticClass: "col-my-modal-layout" }, [
-            _c("div", { staticClass: "col-my-modal-layout-sub-1" }, [
-              _c("div", [
-                _c("img", { attrs: { src: "", src: select_pento.file_name } })
+        "div",
+        { staticClass: "col-my-main-div" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "my-main-pento-list" }, [
+            _c(
+              "div",
+              { attrs: { id: "my-main-list" } },
+              _vm._l(_vm.pento_list, function(pento_imgs) {
+                return _c(
+                  "div",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.pento_my_modal(pento_imgs.design_no)
+                      }
+                    }
+                  },
+                  [_c("img", { attrs: { src: "", src: pento_imgs.file_name } })]
+                )
+              })
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "sweet-modal",
+            {
+              ref: "col_modal",
+              attrs: { width: "60vw", "overlay-theme": "dark" }
+            },
+            _vm._l(_vm.select_pento_list, function(select_pento) {
+              return _c("div", { staticClass: "col-my-modal-layout" }, [
+                _c("div", { staticClass: "col-my-modal-layout-sub-1" }, [
+                  _c("div", [
+                    _c("img", {
+                      attrs: { src: "", src: select_pento.file_name }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-my-modal-layout-sub-2" }, [
+                  _c("h2", [_vm._v(_vm._s(select_pento.design_title))]),
+                  _vm._v(" "),
+                  _c("h4", [
+                    _vm._v("작성자 : " + _vm._s(select_pento.user_nickname))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "난이도 : " + _vm._s(select_pento.level_of_difficultly)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(select_pento.design_explain))])
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-my-modal-layout-sub-2" }, [
-              _c("h2", [_vm._v(_vm._s(select_pento.design_title))]),
-              _vm._v(" "),
-              _c("h4", [
-                _vm._v("작성자 : " + _vm._s(select_pento.user_nickname))
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("난이도 : " + _vm._s(select_pento.level_of_difficultly))
-              ]),
-              _vm._v(" "),
-              _c("span", [_vm._v(_vm._s(select_pento.design_explain))])
-            ])
-          ])
-        })
-      )
+            })
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("footers")
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "my-main-banner" } }, [
+      _vm._v("\r\n            あなたが"),
+      _c("br"),
+      _vm._v("\r\n            作った"),
+      _c("br"),
+      _vm._v("\r\n            選んだ"),
+      _c("br"),
+      _vm._v("\r\n            ペントを"),
+      _c("br"),
+      _vm._v("\r\n            見よう。\r\n        ")
+    ])
+  }
+]
 render._withStripped = true
 
 if (false) {
@@ -55782,7 +55915,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.6fr 0.4fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  height: 100%;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.6fr 0.4fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
 
 // exports
 
@@ -55835,6 +55968,8 @@ var render = function() {
         _vm._v(" "),
         _c("div")
       ]),
+      _vm._v(" "),
+      _c("br"),
       _vm._v(" "),
       _c(
         "sweet-modal",
@@ -55965,58 +56100,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(11);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  components: {
-    footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
-  }
-});
 
 /***/ })
 /******/ ]);

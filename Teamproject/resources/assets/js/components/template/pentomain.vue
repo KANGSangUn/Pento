@@ -6,8 +6,12 @@
             <img src="http://localhost:8000/images/newweb/main_sub_banner_1.png">
         </div>
         <div class="main-body-2" id="main-body-2">
-            <p>PENTO</p>
-            <span>ペントミノをもっと楽しく、面白く</span>
+            <div id="event-1">
+                <p id="event-1-1">
+                    PENTO</p>
+                <span id="event-1-2">
+                    ペントミノをもっと楽しく、面白く</span>
+            </div>
         </div>
         <div id="main-body-3" class="main-body-banner-1">
             <div class="main-body-3-1">
@@ -114,6 +118,21 @@ export default {
   },
   created() {
     window.scrollTo(0, 0);
+  },
+  created: function() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed: function() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll: function(event) {
+      if (window.scrollY > 250) {
+        document.getElementById("event-1-1").style.color = "#2a2a2a";
+        document.getElementById("event-1-2").style.color = "#2a2a2a";
+        document.getElementById("event-1").style.marginTop = "-3%";
+      }
+    }
   }
 };
 </script>

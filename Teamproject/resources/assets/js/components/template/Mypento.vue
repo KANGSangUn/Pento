@@ -5,7 +5,7 @@ dev . KANG SANG UN
         <div class="mypento_main_div">
             <div class="mypento_div">
                 <vs-tabs vs-color="rgb(72, 150, 2)">
-                    <vs-tab vs-label="내 정보"
+                    <vs-tab vs-label="私のデータ"
                             @click="debugsss()"
                             class="mypento_sub_div"
                             id="mypento_sub_div1"
@@ -13,27 +13,20 @@ dev . KANG SANG UN
                         <!--유저 기본 정보 div-->
                         <div v-for="user_info in Item_list">
                             <img v-bind:src="'http://localhost:8000'+user_info.image+'.png'" class="userimg"/>
-                            <h1>안녕하세요! {{user_info.user_nickname}}</h1>
-                            <h2>보유 미노 : {{user_info.user_point}}</h2>
+                            <h1>こんにちは! {{user_info.user_nickname}}</h1>
+                            <h2>保有ミノ : {{user_info.user_point}}</h2>
+                            <h2 style="margin-top : 2vh;">紹介</h2>
+                            <span style="font-size : 2vh">{{user_info.user_intro}}</span>
                         </div>
-                        <div v-for="user_info in Item_list">
-                            <h2>소개</h2>
-                            <h2>{{user_info.user_intro}}</h2>
-                        </div>
-                    </vs-tab>
-                    <vs-tab vs-label="나의 친구들"
-                            class="mypento_sub_div"
-                            id="mypento_sub_div2">
-                        <div class="my-frd-one">
-
-                        </div>
-                        <div>
+                         <div class="mypento-sub-div-content-2">
+                           <h1>MY Frined</h1>
                             <li v-for="frdlist in frd_list">
                                 {{frdlist.user_nickname}}
                             </li>
                         </div>
                     </vs-tab>
-                    <vs-tab vs-label="나의 동화"
+                
+                    <vs-tab vs-label="私の物語"
                             class="mypento_sub_div"
                             id="mypento_sub_div3">
                         <div class="my-tale-list">
@@ -41,77 +34,68 @@ dev . KANG SANG UN
                                 <img v-bind:src="'http://localhost:8000'+buylist.tale_image+'.jpg'">
                             </div>
                         </div>
-                        <div class="booklistpage">
-
-                        </div>
+                    
                     </vs-tab>
 
                 </vs-tabs>
-            </div>
+            </div><br><br><br>
             <footers></footers>
         </div>
 </template>
 
 <style src="../css/mypento.css"></style>
 <script>
-
-    import footers from '../template/Footer.vue';
-    export default {
-        components : {
-
-            'footers' : footers
-        },
-        mounted() {
-            this.load_user_info();
-            this.load_user_frd();
-            this.load_user_story();
-        },
-        data(){
-            return {
-                Item_list :'',
-                frd_list : [],
-                buy_list : []
-                //각 항목의 유저의 값을 담을 변수
-            }
-        },
-        methods :  {
-            load_user_info : function () {
-                //서버로 유저 정보 요청
-                let url = 'pentomyuser';
-                let art ={
-                    'kinds':'Page',
-                    'page_name':'MyInfo'
-                };
-                this.axios.post(url,art).then(
-                    (response)=>{
-                    this.Item_list=response.data;
-                })
-            },
-            load_user_frd : function () {
-                let url = 'pentomyfrd';
-                let art = {
-                    'kinds' : 'Page',
-                    'page_name' : 'Friends'
-                };
-                this.axios.post(url,art).then(
-                    (response)=>{
-                        this.frd_list=response.data;
-                    })
-            },
-            load_user_story : function () {
-                let url = 'user_story';
-                let art = {
-                    'kinds' : 'Page',
-                    'page_name' : 'BuyList'
-                }
-                this.axios.post(url,art).then(
-                    (response)=>{
-                        this.buy_list=response.data;
-                    })
-            }
-        }
+import footers from "../template/Footer.vue";
+export default {
+  components: {
+    footers: footers
+  },
+  mounted() {
+    this.load_user_info();
+    this.load_user_frd();
+    this.load_user_story();
+  },
+  data() {
+    return {
+      Item_list: "",
+      frd_list: [],
+      buy_list: []
+      //각 항목의 유저의 값을 담을 변수
+    };
+  },
+  methods: {
+    load_user_info: function() {
+      //서버로 유저 정보 요청
+      let url = "pentomyuser";
+      let art = {
+        kinds: "Page",
+        page_name: "MyInfo"
+      };
+      this.axios.post(url, art).then(response => {
+        this.Item_list = response.data;
+      });
+    },
+    load_user_frd: function() {
+      let url = "pentomyfrd";
+      let art = {
+        kinds: "Page",
+        page_name: "Friends"
+      };
+      this.axios.post(url, art).then(response => {
+        this.frd_list = response.data;
+      });
+    },
+    load_user_story: function() {
+      let url = "user_story";
+      let art = {
+        kinds: "Page",
+        page_name: "BuyList"
+      };
+      this.axios.post(url, art).then(response => {
+        this.buy_list = response.data;
+      });
     }
+  }
+};
 //
-
-
 </script>

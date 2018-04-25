@@ -47,17 +47,17 @@
         width: 100vw;
         height: 70vh;
     }
-
+    
     #main-body-2 p{
         font-family:'Mplus 1p',sans-serif;
         font-weight: 600;
-        color : #2a2a2a;
+     
         font-size: 3vw;
     }
     #main-body-2 span{
         font-weight: 200;
         font-family:'Mplus 1p',sans-serif;
-        color : #2a2a2a;
+    
         font-size: 2vw;
     }
     .main-body-banner-1{
@@ -227,4 +227,18 @@
         transition: 0.4s;
         font-size : 4.5vh;
         font-family:Arial, Helvetica, sans-serif;
+    }
+
+    #event-1{
+        color : transparent;
+        transition: 1s;
+        margin-top : -10%;
+    }
+    #event-1-1{
+        transition: 1s;
+        color: transparent;
+    }
+    #event-1-2{
+        transition: 1s;
+        color: transparent;
     }

@@ -3,7 +3,7 @@
     height: 100%
 }
 .mypento_div {
-    padding-top: 3vw;
+    padding-top: 5vw;
     margin: auto;
     width: 70%;
     height: 100%
@@ -17,37 +17,35 @@
     background-color: #47b7df;
 }
 #mypento_sub_div1 div{
-    padding: 5vw;
+    padding: 4vw;
 }
 #mypento_sub_div1{
     width: 100%;
     margin: auto;
     text-align: center;
 }
-
-#mypento_sub_div2 {
-    display : grid;
-    background-color: #ffc609;
-    grid-template-columns: 0.3fr 0.7fr;
+.userimg{
+    margin-bottom : 2vh;
 }
-.my-frd-one{
-    background-size: cover;
-    background-image: url("http://localhost:8000/images/web/mypage_banner_1.png");
+.mypento-sub-div-content-2{
+    background: gold
 }
 #mypento_sub_div3 {
+     padding : 5vh;
+    overflow: scroll;
+    margin : auto;
     background-color: #141c35;
-    display: grid;
-    grid-template-columns: 0.7fr 0.3fr;
 }
 .booklistpage{
     background-size: cover;
     background-image: url("http://localhost:8000/images/web/booklist.png");
 }
 .my-tale-list{
-    padding : 1vw;
+    width: 100%;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr ;
     grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
 }
 .my-tele-list-sub{
     text-align: center;
