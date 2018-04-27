@@ -21,12 +21,32 @@
                     <div>
                     <img src v-bind:src='select_pento.file_name'/>
                     </div>
+                      <button
+                    class="modal-btn" @click="delect_my_col()"
+                    >삭제</button>
                 </div>
                 <div class="col-my-modal-layout-sub-2">
-                    <h2>{{select_pento.design_title}}</h2>
+                <table>
+                      <tr class="my-modal-layout-tr-tilte">
+                        <td height="10%" colspan="2">{{select_pento.design_title}}</td>
+                      </tr>
+                      <tr class="my-modal-layout-tr-index">
+                        <td height="5%" width="50%">{{select_pento.user_nickname}}</td>
+                        <td height="5%">난이도 : {{select_pento.level_of_difficultly}}</td>            
+                      </tr>
+                      <tr class="my-modal-layout-tr-index-2">
+                        <td colspan="2">
+                          {{select_pento.design_explain}}
+                        </td>
+                      </tr>
+                </table>
+                    <!-- <h2>{{select_pento.design_title}}</h2>
                     <h4>작성자 : {{select_pento.user_nickname}}</h4>
                     <p>난이도 : {{select_pento.level_of_difficultly}}</p>
                     <span>{{select_pento.design_explain}}</span>
+                    <button
+                    class="modal-btn"
+                    >삭제</button> -->
                 </div>
             </div>
         </sweet-modal>
@@ -74,7 +94,8 @@ export default {
       });
 
       this.$refs.col_modal.open();
-    }
+    },
+    delect_my_col: function() {}
   }
 };
 </script>
@@ -88,7 +109,7 @@ export default {
 .col-my-main-div {
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
-  height: 100%;
+  height: 100vh;
 }
 #my-main-banner {
   font-weight: 200;
@@ -122,7 +143,7 @@ export default {
 .col-my-modal-layout {
   height: auto;
   display: grid;
-  grid-template-rows: 0.5fr 0.5fr;
+  grid-template-columns: 0.5fr 0.5fr;
 }
 .col-my-modal-layout-sub-1 {
   border-bottom: 1px solid silver;
@@ -131,5 +152,33 @@ export default {
   padding: 1.5vw;
   width: 40%;
   height: 50%;
+}
+.col-my-modal-layout-sub-2 {
+  height: auto;
+}
+.modal-btn {
+  padding: 1vh;
+  color: white;
+  float: right;
+  border-radius: 0%;
+  background: tomato;
+  font-size: 2vh;
+  transition: 0.3s;
+}
+.col-my-modal-layout-sub-2 table {
+  text-align: center;
+  margin: auto;
+  padding: 2vh;
+  width: 90%;
+  height: 100%;
+}
+.my-modal-layout-tr-tilte {
+  font-size: 4vh;
+}
+.my-modal-layout-tr-index {
+  font-size: 2vh;
+}
+.my-modal-layout-tr-index-2 {
+  text-align: left;
 }
 </style>

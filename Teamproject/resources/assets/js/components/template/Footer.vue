@@ -33,6 +33,8 @@ dev . KANG SANG UN
 
 <style>
 .footer-div {
+  position: relative;
+  bottom: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin-top: 1vh;

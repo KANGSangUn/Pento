@@ -7684,6 +7684,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_components$created$c = {
@@ -7700,6 +7710,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_components$created$c, "methods", {
   handleScroll: function handleScroll(event) {
     if (window.scrollY > 250) {
+      //스크롤 내릴 때 css 이벤트 발생!
       document.getElementById("event-1-1").style.color = "#2a2a2a";
       document.getElementById("event-1-2").style.color = "#2a2a2a";
       document.getElementById("event-1").style.marginTop = "-3%";
@@ -7713,8 +7724,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-//
-//
 //
 //
 //
@@ -7961,6 +7970,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_Pie_js__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__template_Footer_vue__ = __webpack_require__(9);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21774,6 +21797,26 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21818,7 +21861,8 @@ module.exports = {
       });
 
       this.$refs.col_modal.open();
-    }
+    },
+    delect_my_col: function delect_my_col() {}
   }
 });
 
@@ -40513,7 +40557,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.footer-div {\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  margin-top: 1vh;\r\n  text-align: center;\r\n  background: gray;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle {\r\n  padding: 5vh;\n}\n.footer-right {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
+exports.push([module.i, "\n.footer-div {\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  margin-top: 1vh;\r\n  text-align: center;\r\n  background: gray;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle {\r\n  padding: 5vh;\n}\n.footer-right {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
 
 // exports
 
@@ -40961,38 +41005,7 @@ var render = function() {
     "div",
     { staticClass: "story_main", attrs: { id: "story_main" } },
     [
-      _c("div", { staticClass: "stp_thumbnail" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "button",
-          [
-            _c(
-              "scrollactive",
-              {
-                staticClass: "my-nav",
-                attrs: {
-                  "active-class": "active",
-                  offset: 50,
-                  duration: 1000,
-                  "bezier-easing-value": ".5,0,.35,1"
-                }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "scrollactive-item",
-                    attrs: { href: "#story-body" }
-                  },
-                  [_vm._v("!")]
-                )
-              ]
-            )
-          ],
-          1
-        )
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "stp_body", attrs: { id: "story-body" } }, [
         _c("div", { staticClass: "stp_text" }, [
@@ -41110,6 +41123,7 @@ var render = function() {
                   _vm._s(_vm.all_price) +
                   "\n            "
               ),
+              _vm._v(" "),
               _c("vs-button", { attrs: { "vs-type": "primary-filled" } }, [
                 _vm._v("구매하기")
               ])
@@ -41311,10 +41325,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "stp_thumbnail-p" }, [
-      _vm._v("ものがたり"),
-      _c("br"),
-      _vm._v("さいこう")
+    return _c("div", { staticClass: "stp_thumbnail" }, [
+      _c("p", { staticClass: "stp_thumbnail-p" }, [
+        _vm._v("ものがたり"),
+        _c("br"),
+        _vm._v("さいこう")
+      ])
     ])
   }
 ]
@@ -41421,7 +41437,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.rank-div {\r\n    width: 100%;\r\n    height: auto;\r\n    font-size: 1vw;\n}\n.border-style{\r\n    border : 1px solid #8d8d8d;\n}\n#round-list{\r\n    text-align : center;\r\n    display:grid;\r\n    grid-template-columns: 0.3fr 0.7fr;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n#round-list:hover{\r\n    background-color: orange;\n}\n#rank-img{\r\n    text-align: center;\n}\n#rank-img img{\r\n    margin-top : 5vw;\n}\n.rank-body{\r\n    display: grid;\r\n    grid-template-columns : 0.7fr 1.3fr 1.5fr;\r\n    grid-column-gap: 1vw;\r\n    margin : auto auto 3vw auto;\r\n    width: 90vw;\r\n    height: 80vh;\n}\n.grid-format{\r\n\r\n    display : grid;\r\n    grid-gap : 0.5vw;\r\n    grid-template-rows : 0.13fr 0.8fr;\n}\n#grid-format-2{\r\n    display: grid;\r\n    grid-template-columns: 0.7fr 0.3fr;\r\n    grid-gap :0.5vw;\n}\n#body-menu{\n}\n#body-main{\r\n    text-align : center;\r\n    font-size : 2vw;\n}\n#body-data{\r\n    display : grid;\r\n    grid-gap: 0.5vw;\r\n    grid-template-columns: 0.5fr 0.5fr;\r\n    grid-template-rows : 0.5fr 0.5fr;\n}\n#rank-div{\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design{\r\n    display : grid;\r\n    grid-template-columns : 0.5fr 0.5fr;\r\n    border-top : 1px solid slategray;\n}\n.btn-div-design button{\r\n    width: 100%;\r\n    height: 100%;\r\n    font-size : 1vw;\r\n    color: white;\r\n    background: transparent;\n}\n.btn-div-design-1{\r\n    background-color : #60a0ff;\n}\n.btn-div-design-2{\r\n     background-color : #141c35;\n}\n.ranking{\r\n    text-align: center;\r\n    border-top : 1px solid silver;\n}", ""]);
+exports.push([module.i, "\n.rank-div {\r\n    width: 100%;\r\n    height: auto;\r\n    font-size: 1vw;\n}\n.border-style{\r\n    border : 1px solid #8d8d8d;\n}\n.rank-body{\r\n    width: 100vw;\r\n    height: 100vh;\n}\n#play-list-menu{\r\n    max-height: 80vh;\r\n    overflow: scroll;\r\n    display: grid;\r\n    grid-template-columns : 0.5fr 0.5fr;\r\n    grid-column-gap: 0.5vh;\r\n    grid-row-gap: 0.5vh;\n}\n#round-list{\r\n    text-align : center;\r\n    display:grid;\r\n    grid-template-rows: 0.9fr 0.1fr;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n#round-list-images img{ \r\n    width: 100%;\r\n    height: 100%;\n}\n#round-list:hover{\r\n    background-color: orange;\n}\n#rank-img{\r\n    text-align: center;\n}\n#rank-img img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-body{\r\n    display: grid;\r\n    grid-template-columns : 0.2fr 0.4fr 0.4fr;\r\n    grid-column-gap: 1vw;\r\n    margin : auto auto 3vw auto;\r\n    width: 90vw;\r\n    height: 80vh;\n}\n.grid-format{\r\n\r\n    display : grid;\r\n    grid-gap : 0.5vw;\r\n    grid-template-rows : 0.13fr 0.8fr;\n}\n#grid-format-2{\r\n    display: grid;\r\n    grid-template-columns: 0.7fr 0.3fr;\r\n    grid-gap :0.5vw;\n}\n#body-menu{\n}\n#body-main{\r\n    text-align : center;\r\n    font-size : 2vw;\n}\n#user-game-title{\r\n    font-size : 5vh;\r\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif\n}\n#user-game-round{\r\n   font-size : 5vh;\r\n   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif\n}\n#body-data{\r\n    display : grid;\r\n    grid-gap: 0.5vw;\r\n    grid-template-columns: 0.5fr 0.5fr;\r\n    grid-template-rows : 0.5fr 0.5fr;\n}\n#rank-div{\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design{\r\n    display : grid;\r\n    grid-template-columns : 0.5fr 0.5fr;\r\n    border-top : 1px solid slategray;\n}\n.btn-div-design button{\r\n    width: 100%;\r\n    height: 100%;\r\n    font-size : 1vw;\r\n    color: white;\r\n    background: transparent;\n}\n.btn-div-design-1{\r\n    background-color : #60a0ff;\n}\n.btn-div-design-2{\r\n     background-color : #141c35;\n}\n.ranking{\r\n    text-align: center;\r\n    border-top : 1px solid silver;\n}", ""]);
 
 // exports
 
@@ -54347,30 +54363,46 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "border-style" },
-            _vm._l(_vm.game_record, function(gamelist) {
-              return _c("div", {
-                attrs: { id: "round-list" },
-                on: {
-                  click: function($event) {
-                    _vm.load_user_play(gamelist)
+            { staticClass: "border-style", attrs: { id: "play-list-menu" } },
+            _vm._l(6, function(gamelist) {
+              return _c(
+                "div",
+                {
+                  attrs: { id: "round-list" },
+                  on: {
+                    click: function($event) {
+                      _vm.load_user_play(gamelist)
+                    }
                   }
-                }
-              })
+                },
+                [
+                  _vm._m(0, true),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v("\n                      돼지\n                    ")
+                  ])
+                ]
+              )
             })
           )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "grid-format", attrs: { id: "body-main" } }, [
           _c("div", { attrs: { id: "grid-format-2" } }, [
-            _c("div", { staticClass: "border-style" }, [
-              _vm._v("코끼리" + _vm._s(_vm.user_play_games.design_title))
-            ]),
+            _c(
+              "div",
+              { staticClass: "border-style", attrs: { id: "user-game-title" } },
+              [
+                _c("span", { staticStyle: { "vertical-align": "middle" } }, [
+                  _vm._v("코끼리" + _vm._s(_vm.user_play_games.design_title))
+                ])
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "border-style" }, [_vm._v("5R")])
+            _vm._m(1)
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(2)
         ]),
         _vm._v(" "),
         _c("div", { attrs: { id: "body-data" } }, [
@@ -54508,6 +54540,33 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "round-list-images" } }, [
+      _c("img", {
+        attrs: {
+          src:
+            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/collection/pentoimg1.png"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "border-style", attrs: { id: "user-game-round" } },
+      [
+        _c("span", { staticStyle: { "vertical-align": "middle" } }, [
+          _vm._v("\n                  5R\n                  ")
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -55705,7 +55764,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: 100%;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  padding: 1.5vw;\r\n  width: 40%;\r\n  height: 50%;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: 100vh;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  padding: 1.5vw;\r\n  width: 40%;\r\n  height: 50%;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: center;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
 
 // exports
 
@@ -55764,23 +55823,53 @@ var render = function() {
                     _c("img", {
                       attrs: { src: "", src: select_pento.file_name }
                     })
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "modal-btn",
+                      on: {
+                        click: function($event) {
+                          _vm.delect_my_col()
+                        }
+                      }
+                    },
+                    [_vm._v("삭제")]
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-my-modal-layout-sub-2" }, [
-                  _c("h2", [_vm._v(_vm._s(select_pento.design_title))]),
-                  _vm._v(" "),
-                  _c("h4", [
-                    _vm._v("작성자 : " + _vm._s(select_pento.user_nickname))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "난이도 : " + _vm._s(select_pento.level_of_difficultly)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(select_pento.design_explain))])
+                  _c("table", [
+                    _c("tr", { staticClass: "my-modal-layout-tr-tilte" }, [
+                      _c("td", { attrs: { height: "10%", colspan: "2" } }, [
+                        _vm._v(_vm._s(select_pento.design_title))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "my-modal-layout-tr-index" }, [
+                      _c("td", { attrs: { height: "5%", width: "50%" } }, [
+                        _vm._v(_vm._s(select_pento.user_nickname))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { height: "5%" } }, [
+                        _vm._v(
+                          "난이도 : " +
+                            _vm._s(select_pento.level_of_difficultly)
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "my-modal-layout-tr-index-2" }, [
+                      _c("td", { attrs: { colspan: "2" } }, [
+                        _vm._v(
+                          "\r\n                          " +
+                            _vm._s(select_pento.design_explain) +
+                            "\r\n                        "
+                        )
+                      ])
+                    ])
+                  ])
                 ])
               ])
             })

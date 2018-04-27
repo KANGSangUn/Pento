@@ -1,11 +1,14 @@
 <template>
     <div class="main-body">
+        <!-- 첫번째 배너 -->
         <div class="main-body-1">
             <p class="main-body-p-1">WELCOME</p>
             <p class="main-body-p-2">MY NAME IS PENTO!</p>
             <img src="http://localhost:8000/images/newweb/main_sub_banner_1.png">
         </div>
+        <!-- 두번째 배너 -->
         <div class="main-body-2" id="main-body-2">
+            <!-- 베너 텍스트 이벤트를 위한 id할당 -->
             <div id="event-1">
                 <p id="event-1-1">
                     PENTO</p>
@@ -13,6 +16,7 @@
                     ペントミノをもっと楽しく、面白く</span>
             </div>
         </div>
+        <!-- 3번째 배너 -->
         <div id="main-body-3" class="main-body-banner-1">
             <div class="main-body-3-1">
             </div>
@@ -24,6 +28,7 @@
                 <span>ずっと遊びましょう</span>
             </div>
         </div>
+        <!-- 4번째 배너 -->
         <div id="main-body-4" class="main-body-banner-1">
             <div class="main-body-4-1">
                 <p>CREATE YOUR PENTO</p>
@@ -48,11 +53,14 @@
                 <!--<p>特別なコンテンツ</p>-->
             <!--</div>-->
         <!--</div>-->
+
+        <!-- 메뉴 배너 -->
         <div class="main-body-3">
             <div class="main-body-menu">
                 <div class="main-page-menu-sub-banner">
                          <img class="menu-img" v-bind:src="'http://localhost:8000/images/web/loginimage.png'"/>
                             <div class="menu-title" >
+                                <!-- 메뉴 배너 텍스트 -->
                               <p>まるで、花のようだ。</p>
                             </div>
                      </div>
@@ -75,6 +83,7 @@
                     </div>
             </div>
             <div class="main-body-menu">
+                <!-- 랭킹 페이지 이동 -->
                          <div class="main-page-menu-sub">
                              <router-link :to="{name:'pentoRank'}">
                                  <img class="menu-img" src="http://localhost:8000/images/web/ranking.png">
@@ -91,6 +100,7 @@
                         </div>
             </div>
             <div class="main-body-menu">
+                <!-- 컬렉션 페이지 이동 -->
                         <div class="main-page-menu-sub">
                             <router-link :to="{name:'pento_col'}">
                                 <img class="menu-img" src="http://localhost:8000/images/web/collection.png"/>
@@ -128,6 +138,7 @@ export default {
   methods: {
     handleScroll: function(event) {
       if (window.scrollY > 250) {
+        //스크롤 내릴 때 css 이벤트 발생!
         document.getElementById("event-1-1").style.color = "#2a2a2a";
         document.getElementById("event-1-2").style.color = "#2a2a2a";
         document.getElementById("event-1").style.marginTop = "-3%";

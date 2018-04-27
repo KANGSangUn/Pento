@@ -7,24 +7,17 @@ dev . KANG SANG UN
         <div class="story_main" id="story_main">
             <div class="stp_thumbnail">
                     <p class="stp_thumbnail-p">ものがたり<br>さいこう</p>
-
-                    <button>
-                    <scrollactive class="my-nav"
-                                  active-class="active"
-                                  :offset="50"
-                                  :duration="1000"
-                                  bezier-easing-value=".5,0,.35,1">
-                        <a href="#story-body" class="scrollactive-item">!</a>
-                    </scrollactive>
-                    </button>
+                    <!--상단 배너 -->
             </div>
             <div class="stp_body" id="story-body">
                 <div class="stp_text">
+                  <!--리스트의 장바구니 메뉴와 타이틀 -->
                     <span>STORY LIST</span>
                     <button @click="openBasket()">
                         BASKET
                     </button>
                 </div>
+                <!-- 동화 리스트 출력 -->
                 <div class="booklist">
                     <div v-for="list in story" class="list_item" @click='openStory(list)'>
                         <figure class="info_effect">
@@ -36,9 +29,11 @@ dev . KANG SANG UN
                     </div>
                 </div>
             </div>
+            <!-- 장바구니 리스트 출력 -->
             <sweet-modal title="BASKET LIST" ref='bkt_modal' overlay-theme="dark" width="50vw">
                 <div class="basket">
                   <transition-group name="list" tag="div" id="basket">
+                    <!-- 동화 삭제 애니메이션을 위한 트렌지션 그룹 -->
                     <div v-for="item_bkt in basket_item"  v-bind:key="item_bkt.tale_title" class="obj-bkt" @click="delect_Item(item_bkt)">
                         <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(item_bkt.tale_image0)+'.jpg'"/>
                         {{item_bkt.tale_title}}
@@ -48,11 +43,14 @@ dev . KANG SANG UN
                 <div class="basket-price">
                   <span
                   style="font-size:1.5vh;"
+                    
                   >클릭 시 장바구니에서 제거 됩니다.</span>
                     총 금액 : {{all_price}}
+                    <!-- 총 금액 !!!!!!!!!!함수가 가끔식 고장남 고치기 -->
                     <vs-button vs-type="primary-filled">구매하기</vs-button>
                 </div>
             </sweet-modal>
+            <!-- 동화 상세정보 출력 -->
             <sweet-modal ref='modal' overlay-theme="dark" width="50vw" title="Faerie tale">
                 <div class="story-modal">
                     <div style="float: left" class="story-modal-left">

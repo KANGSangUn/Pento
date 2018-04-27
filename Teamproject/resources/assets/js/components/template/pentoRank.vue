@@ -8,17 +8,31 @@ dev . KANG SANG UN
             <div id="body-menu" class="grid-format">
                 <div>
                 </div>
-                <div class="border-style" >
-                    <div id="round-list" v-for="gamelist in game_record" @click="load_user_play(gamelist)">
+                <div class="border-style" id="play-list-menu">
+                  <!--게임 리스트 출력-->
+                    <div id="round-list" v-for="gamelist in 6" @click="load_user_play(gamelist)">
                         <!--<div>{{gamelist.design_title}}</div>-->
-
+                        <div id="round-list-images">
+                          <!--게임 리스트의 이미지를 띄움.-->
+                        <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/collection/pentoimg1.png">
+                        </div>
+                        <div>
+                          <!--게임 라운드 및 이름 출력 -->
+                          돼지
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="body-main" class="grid-format">
                 <div id="grid-format-2">
-                    <div class="border-style">코끼리{{user_play_games.design_title}}</div>
-                    <div class="border-style">5R</div>
+                  <!--클릭한 게임 값 출력 초기값은 null or res받은 배열의 첫번째 값-->
+                    <div class="border-style" id="user-game-title">
+                      <span style="vertical-align: middle;">코끼리{{user_play_games.design_title}}</span>
+                      </div>
+                    <div class="border-style" id="user-game-round">
+                      <span style="vertical-align: middle;">
+                      5R
+                      </span></div>
                 </div>
                 <div class="border-style" id="rank-img">
                     <!--{{user_play_games}}-->

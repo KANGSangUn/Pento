@@ -6,12 +6,29 @@
 .border-style{
     border : 1px solid #8d8d8d;
 }
+.rank-body{
+    width: 100vw;
+    height: 100vh;
+}
+#play-list-menu{
+    max-height: 80vh;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns : 0.5fr 0.5fr;
+    grid-column-gap: 0.5vh;
+    grid-row-gap: 0.5vh;
+}
 #round-list{
     text-align : center;
     display:grid;
-    grid-template-columns: 0.3fr 0.7fr;
+    grid-template-rows: 0.9fr 0.1fr;
     transition: 0.3s;
 }
+#round-list-images img{ 
+    width: 100%;
+    height: 100%;
+}
+
 #round-list:hover{
     background-color: orange;
 }
@@ -19,11 +36,12 @@
     text-align: center;
 }
 #rank-img img{
-    margin-top : 5vw;
+    width: 100%;
+    height: 100%;
 }
 .rank-body{
     display: grid;
-    grid-template-columns : 0.7fr 1.3fr 1.5fr;
+    grid-template-columns : 0.2fr 0.4fr 0.4fr;
     grid-column-gap: 1vw;
     margin : auto auto 3vw auto;
     width: 90vw;
@@ -47,7 +65,14 @@
 #body-main{
     text-align : center;
     font-size : 2vw;
-
+}
+#user-game-title{
+    font-size : 5vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+#user-game-round{
+   font-size : 5vh;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 #body-data{
     display : grid;
