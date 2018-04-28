@@ -8037,33 +8037,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -41437,7 +41410,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.rank-div {\r\n    width: 100%;\r\n    height: auto;\r\n    font-size: 1vw;\n}\n.border-style{\r\n    border : 1px solid #8d8d8d;\n}\n.rank-body{\r\n    width: 100vw;\r\n    height: 100vh;\n}\n#play-list-menu{\r\n    max-height: 80vh;\r\n    overflow: scroll;\r\n    display: grid;\r\n    grid-template-columns : 0.5fr 0.5fr;\r\n    grid-column-gap: 0.5vh;\r\n    grid-row-gap: 0.5vh;\n}\n#round-list{\r\n    text-align : center;\r\n    display:grid;\r\n    grid-template-rows: 0.9fr 0.1fr;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n#round-list-images img{ \r\n    width: 100%;\r\n    height: 100%;\n}\n#round-list:hover{\r\n    background-color: orange;\n}\n#rank-img{\r\n    text-align: center;\n}\n#rank-img img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-body{\r\n    display: grid;\r\n    grid-template-columns : 0.2fr 0.4fr 0.4fr;\r\n    grid-column-gap: 1vw;\r\n    margin : auto auto 3vw auto;\r\n    width: 90vw;\r\n    height: 80vh;\n}\n.grid-format{\r\n\r\n    display : grid;\r\n    grid-gap : 0.5vw;\r\n    grid-template-rows : 0.13fr 0.8fr;\n}\n#grid-format-2{\r\n    display: grid;\r\n    grid-template-columns: 0.7fr 0.3fr;\r\n    grid-gap :0.5vw;\n}\n#body-menu{\n}\n#body-main{\r\n    text-align : center;\r\n    font-size : 2vw;\n}\n#user-game-title{\r\n    font-size : 5vh;\r\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif\n}\n#user-game-round{\r\n   font-size : 5vh;\r\n   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif\n}\n#body-data{\r\n    display : grid;\r\n    grid-gap: 0.5vw;\r\n    grid-template-columns: 0.5fr 0.5fr;\r\n    grid-template-rows : 0.5fr 0.5fr;\n}\n#rank-div{\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design{\r\n    display : grid;\r\n    grid-template-columns : 0.5fr 0.5fr;\r\n    border-top : 1px solid slategray;\n}\n.btn-div-design button{\r\n    width: 100%;\r\n    height: 100%;\r\n    font-size : 1vw;\r\n    color: white;\r\n    background: transparent;\n}\n.btn-div-design-1{\r\n    background-color : #60a0ff;\n}\n.btn-div-design-2{\r\n     background-color : #141c35;\n}\n.ranking{\r\n    text-align: center;\r\n    border-top : 1px solid silver;\n}", ""]);
+exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 7vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 95vh;\r\n\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    overflow: scroll;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 30%;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\r\n  border-top: 1px solid slategray;\n}\n.btn-div-design button {\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1vw;\r\n  color: white;\r\n  background: transparent;\n}\n.btn-div-design-1 {\r\n  background-color: #60a0ff;\n}\n.btn-div-design-2 {\r\n  background-color: #141c35;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}", ""]);
 
 // exports
 
@@ -54353,184 +54326,117 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "rank-div" },
+    { staticClass: "rank-page-div" },
     [
-      _c("div", { staticStyle: { height: "10vh" } }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-body" }, [
-        _c("div", { staticClass: "grid-format", attrs: { id: "body-menu" } }, [
-          _c("div"),
-          _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-body" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "rank-page-div-3" }, [
           _c(
             "div",
-            { staticClass: "border-style", attrs: { id: "play-list-menu" } },
-            _vm._l(6, function(gamelist) {
-              return _c(
-                "div",
-                {
-                  attrs: { id: "round-list" },
-                  on: {
-                    click: function($event) {
-                      _vm.load_user_play(gamelist)
-                    }
-                  }
-                },
-                [
-                  _vm._m(0, true),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._v("\n                      돼지\n                    ")
-                  ])
-                ]
-              )
-            })
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "grid-format", attrs: { id: "body-main" } }, [
-          _c("div", { attrs: { id: "grid-format-2" } }, [
-            _c(
-              "div",
-              { staticClass: "border-style", attrs: { id: "user-game-title" } },
-              [
-                _c("span", { staticStyle: { "vertical-align": "middle" } }, [
-                  _vm._v("코끼리" + _vm._s(_vm.user_play_games.design_title))
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(1)
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "body-data" } }, [
-          _c(
-            "div",
-            { staticClass: "border-style" },
+            { staticClass: "rank-page-div-3-sub-1" },
             [
               _c("bar-chart", {
                 attrs: {
                   "chart-data": _vm.Linedatasets,
-                  width: 300,
-                  height: 300
+                  width: 250,
+                  height: 150
                 }
               })
             ],
             1
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "border-style" },
-            [
-              _c("pie-chart", {
-                attrs: {
-                  "chart-data": _vm.piedatasets,
-                  width: 300,
-                  height: 300
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "border-style" },
-            [
-              _c("radar-chart", {
-                attrs: {
-                  "chart-data": _vm.Linedatasets,
-                  width: 300,
-                  height: 300
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "border-style", attrs: { id: "rank-div" } },
-            [
-              _c(
-                "div",
-                [
-                  _vm._l(_vm.frd_rank_record, function(user_rank) {
-                    return _vm.rank_btn === true
-                      ? _c("div", { staticClass: "ranking" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(user_rank.rank) +
-                              "\n                            " +
-                              _vm._s(user_rank.user_nickname) +
-                              "\n                            " +
-                              _vm._s(user_rank.cleartime) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  }),
+          _c("div", { staticClass: "rank-page-div-3-sub-2" }, [
+            _c(
+              "div",
+              [_c("pie-chart", { attrs: { "chart-data": _vm.piedatasets } })],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "border-style", attrs: { id: "rank-div" } },
+              [
+                _c(
+                  "div",
+                  [
+                    _vm._l(_vm.frd_rank_record, function(user_rank) {
+                      return _vm.rank_btn === true
+                        ? _c("div", { staticClass: "ranking" }, [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(user_rank.rank) +
+                                "\n                    " +
+                                _vm._s(user_rank.user_nickname) +
+                                "\n                    " +
+                                _vm._s(user_rank.cleartime) +
+                                "\n                  "
+                            )
+                          ])
+                        : _vm._e()
+                    }),
+                    _vm._v(" "),
+                    _vm._l(_vm.user_rank_record, function(user_rank) {
+                      return _vm.rank_btn === false
+                        ? _c("div", { staticClass: "ranking" }, [
+                            _vm._v(
+                              "\n                      " +
+                                _vm._s(user_rank.cleartime) +
+                                "\n                      " +
+                                _vm._s(user_rank.register_date) +
+                                "\n                  "
+                            )
+                          ])
+                        : _vm._e()
+                    })
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "btn-div-design" }, [
+                  _c("div", { staticClass: "btn-div-design-1" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.load_frd_play(true)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        친구 랭킹\n                      "
+                        )
+                      ]
+                    )
+                  ]),
                   _vm._v(" "),
-                  _vm._l(_vm.user_rank_record, function(user_rank) {
-                    return _vm.rank_btn === false
-                      ? _c("div", { staticClass: "ranking" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(user_rank.cleartime) +
-                              "\n                            " +
-                              _vm._s(user_rank.register_date) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  })
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-div-design" }, [
-                _c("div", { staticClass: "btn-div-design-1" }, [
                   _c(
-                    "button",
+                    "div",
                     {
+                      staticClass: "btn-div-design-2",
                       on: {
                         click: function($event) {
-                          _vm.load_frd_play(true)
+                          _vm.load_frd_play(false)
                         }
                       }
                     },
                     [
-                      _vm._v(
-                        "\n                                친구 랭킹\n                            "
-                      )
+                      _c("button", [
+                        _vm._v(
+                          "\n                          월드 랭킹\n                        "
+                        )
+                      ])
                     ]
                   )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "btn-div-design-2",
-                    on: {
-                      click: function($event) {
-                        _vm.load_frd_play(false)
-                      }
-                    }
-                  },
-                  [
-                    _c("button", [
-                      _vm._v(
-                        "\n                                월드 랭킹\n                            "
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ]
-          )
+                ])
+              ]
+            )
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -54544,49 +54450,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "round-list-images" } }, [
-      _c("img", {
-        attrs: {
-          src:
-            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/collection/pentoimg1.png"
-        }
-      })
+    return _c("div", { staticClass: "rank-page-div-1" }, [
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-1-sub" })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "border-style", attrs: { id: "user-game-round" } },
-      [
-        _c("span", { staticStyle: { "vertical-align": "middle" } }, [
-          _vm._v("\n                  5R\n                  ")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "border-style", attrs: { id: "rank-img" } },
-      [
-        _c("img", {
-          attrs: {
-            src:
-              "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/collection/pentoimg4.png"
-          }
-        }),
-        _vm._v(" "),
-        _c("p", [_vm._v("Ranking 8")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("01:15:54")])
-      ]
-    )
+    return _c("div", { staticClass: "rank-page-div-2" }, [
+      _c("div", { staticClass: "rank-page-div-2-sub-1" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "rank-page-div-2-sub-2" })
+    ])
   }
 ]
 render._withStripped = true
