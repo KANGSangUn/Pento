@@ -8037,6 +8037,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -41410,7 +41422,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 7vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 95vh;\r\n\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    overflow: scroll;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 30%;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\r\n  border-top: 1px solid slategray;\n}\n.btn-div-design button {\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1vw;\r\n  color: white;\r\n  background: transparent;\n}\n.btn-div-design-1 {\r\n  background-color: #60a0ff;\n}\n.btn-div-design-2 {\r\n  background-color: #141c35;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}", ""]);
+exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 7vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 95vh;\r\n\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    overflow: scroll;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 30%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 1fr 1fr;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\r\n  border-top: 1px solid slategray;\n}\n.btn-div-design button {\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1vw;\r\n  color: white;\r\n  background: transparent;\n}\n.btn-div-design-1 {\r\n  background-color: #60a0ff;\n}\n.btn-div-design-2 {\r\n  background-color: #141c35;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}", ""]);
 
 // exports
 
@@ -54352,12 +54364,6 @@ var render = function() {
           _c("div", { staticClass: "rank-page-div-3-sub-2" }, [
             _c(
               "div",
-              [_c("pie-chart", { attrs: { "chart-data": _vm.piedatasets } })],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
               { staticClass: "border-style", attrs: { id: "rank-div" } },
               [
                 _c(
@@ -54435,6 +54441,12 @@ var render = function() {
                   )
                 ])
               ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [_c("pie-chart", { attrs: { "chart-data": _vm.piedatasets } })],
+              1
             )
           ])
         ])
@@ -54475,9 +54487,33 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "rank-page-div-2" }, [
-      _c("div", { staticClass: "rank-page-div-2-sub-1" }),
+      _c("div", { staticClass: "rank-page-div-2-sub-1" }, [
+        _c("div"),
+        _vm._v(" "),
+        _c("div", { staticStyle: { "text-align": "center" } }, [
+          _c("img", {
+            attrs: {
+              src: "http://localhost:8000/images/collection/pentoimg1.png"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div")
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-2-sub-2" })
+      _c("div", { staticClass: "rank-page-div-2-sub-2" }, [
+        _c("div", [_vm._v("헬리꼽타")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rank-page-div-2-sub-2-sub" }, [
+          _c("div", [_vm._v("클리어시간")]),
+          _c("div", [_vm._v("평균기록")]),
+          _c("div", [_vm._v("날짜")]),
+          _vm._v(" "),
+          _c("div", [_vm._v("클리어시간")]),
+          _c("div", [_vm._v("평균기록")]),
+          _c("div", [_vm._v("날짜")])
+        ])
+      ])
     ])
   }
 ]

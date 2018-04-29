@@ -14,10 +14,28 @@
     grid-column-gap: 1vh;
 }
 .rank-page-div-1{
+    height: 80vh;
     overflow: scroll;
     display : grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 30%;
+
+}
+.rank-page-div-2-sub-1{
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+}
+.rank-page-div-2-sub-2{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.rank-page-div-2-sub-2 div{
+  text-align: center;
+}
+.rank-page-div-2-sub-2-sub{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1fr;
 }
 .rank-page-div-2{
     display: grid;

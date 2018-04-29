@@ -16,9 +16,21 @@ dev . KANG SANG UN
                   <div class="rank-page-div-1-sub"></div>
               </div>
               <div class="rank-page-div-2">
-                <div class="rank-page-div-2-sub-1"></div>
+                <div class="rank-page-div-2-sub-1">
+                  <div></div>
+                  <div style="text-align :center">
+                  <!-- 이미지 노출 -->
+                    <img src="http://localhost:8000/images/collection/pentoimg1.png">
+                  </div>
+                   <div></div>
+                </div>
                 <div class="rank-page-div-2-sub-2">
-                  
+                  <div>헬리꼽타</div>
+                  <div 
+                  class="rank-page-div-2-sub-2-sub">
+                  <div>클리어시간</div><div>평균기록</div><div>날짜</div>
+                  <div>클리어시간</div><div>평균기록</div><div>날짜</div>
+                  </div>
                 </div>
               </div>
               <div class="rank-page-div-3">
@@ -28,9 +40,6 @@ dev . KANG SANG UN
                   :height="150"></bar-chart> 
                 </div>
                 <div class="rank-page-div-3-sub-2">
-                  <div>
-                    <pie-chart :chart-data="piedatasets"></pie-chart>
-                  </div>
                   <div class="border-style" id="rank-div">
                     <div>
                       <div v-if="rank_btn===true" v-for="user_rank in frd_rank_record" class="ranking">
@@ -55,6 +64,9 @@ dev . KANG SANG UN
                             </button>
                         </div>
                       </div>
+                  </div>
+                    <div>
+                    <pie-chart :chart-data="piedatasets"></pie-chart>
                   </div>
                 </div>
               </div>
