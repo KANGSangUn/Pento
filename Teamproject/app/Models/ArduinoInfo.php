@@ -13,16 +13,16 @@ class ArduinoInfo extends Model
 
         // 해당 시리얼번호의 아두이노 번호 찾기
         $arduinoResult   =        ArduinoInfo::select('arduino_no')
-                                             ->where('serial_num', $serialNum)
-                                             ->get();
+                                                ->where('serial_num', $serialNum)
+                                                ->get();
 
         // 존재하지 않는 시리얼번호일 경우
         if ($arduinoResult == "[]")
         {
-            return "not exist serial number";
+            return "false";
         }
 
         // 아두이노 번호 반환
-        return $arduinoResult[0]->arduino_no;
+        return "true";
     }
 }

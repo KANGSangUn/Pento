@@ -14,6 +14,7 @@ class Recommend extends Model
     // 작품 추천하기
     static public function recommend($userNum, $imitatedNum)
     {
+
         try
         {
             // 추천한 회원번호, 추천한 도안번호, 추천 날짜 등록
@@ -26,10 +27,14 @@ class Recommend extends Model
                     ]
                 );
 
-            $return_value['result'] = 'insert';
+            // 추천 성공
+            return "true";
+
         }
+
         catch (QueryException $e)
         {
+
             $errorCode = $e->errorInfo[1];
 
             // 추천을 했던 작품일 경우 추천 해제(= 레코드 삭제)
@@ -41,17 +46,14 @@ class Recommend extends Model
                     ->where('imitated_no', $imitatedNum)
                     ->delete();
 
-                $return_value['result'] = 'delete';
+                // 추천해제
+                return "false";
 
             }
+            else
+            {
+                return $errorCode;
+            }
         }
-
-
-        $return_value['count'] = DB::table('recommends')
-            ->select('imitated_no')
-            ->where('imitated_no','=',$imitatedNum)
-            ->count();
-
-        return $return_value;
     }
 }

@@ -6766,9 +6766,8 @@ process.umask = function() { return 0; };
 
     this.$eventBus.$on("login_function", function (userinfo) {
       //외부객체
-      var uri = "userlogin";
+      var uri = "Login";
       var temp = {
-        kinds: "Login",
         user_id: userinfo.userid,
         user_pw: userinfo.userpw
       };
@@ -6776,10 +6775,11 @@ process.umask = function() { return 0; };
       //서버로 http통신 요청
       function (response) {
         //response 받은 값 이야기 정보 함수에 전송
-        _this.user_temp.user_nickname = response.data.user_nickname;
-        _this.user_temp.user_number = response.data.user_no;
-        _this.user_temp.user_image = response.data.image;
-        _this.user_temp.user_point = response.data.user_point;
+        console.log(response.data[0].user_no);
+        _this.user_temp.user_nickname = response.data[0].user_nickname;
+        _this.user_temp.user_number = response.data[0].user_no;
+        _this.user_temp.user_image = response.data[0].image;
+        _this.user_temp.user_point = response.data[0].user_point;
         if (_this.user_temp.user_number) {
           _this.login_opertion(true);
         } else _this.login_opertion(false);
@@ -7828,10 +7828,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -7842,6 +7838,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       story: [], //이야기 리스트 데이터 값을 담는 변수
       select_item: [], //선택한 이야기의 정보를 담는 변수
+      story_list_no: [],
       basket_item: [], //장바구니 데이터
       backgroundLoading: "#ee9e19",
       temp: "",
@@ -7871,12 +7868,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       //함수선언
-      var uri = "storypagereq";
-      var art = {
-        kinds: "Page",
-        page_name: "StoryList"
-      };
-      this.axios.post(uri, art).then(
+      var uri = "StoryList";
+      this.axios.post(uri).then(
       //서버로 http통신 요청
       function (response) {
         //response 받은 값 이야기 정보 함수에 전송
@@ -7888,62 +7881,68 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this3 = this;
 
       //동화 클릭시 동화 모달 이벤트 출력
-      var url = "storyinfo";
+      var url = "StoryValue";
       var art = {
-        kinds: "Page",
-        category: "story",
-        detailed_value: items
+        story_no: items
       };
 
       this.axios.post(url, art).then(function (response) {
         _this3.select_item = response.data;
       });
+
       this.$refs.modal.open();
     },
     alert: function alert(color, story_number) {
       var _this4 = this;
 
-      //구독하기 버튼
-      var uri = "buystory";
+      //구매하기 버튼
+      var uri = "Buy";
       var art = {
-        kinds: "Contents",
-        method_id: "Buy",
-        category: "tale",
-        detailed_value: story_number
+        story_no: story_number,
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(uri, art).then(function (response) {
         _this4.temp = response.data;
       });
       this.$vs.alert({
-        title: "구독 완료!",
+        title: "구매 완료!",
         text: this.select_item.tale_title + "를 구매하셨습니다!",
         textConfirm: "확인",
         color: color
       });
-
-      this.basket_list_buy(story_number);
     },
     openBasket: function openBasket() {
       this.$refs.bkt_modal.open();
     },
     like_it: function like_it(items) {
-      //장바구니 넣기 함수
+      //장바구니 넣기 함
+      this.story_list_no.push(items.fairy_tale_no);
       this.all_price += items.tale_price;
       this.basket_item.push(items);
     },
     basket_list_buy: function basket_list_buy(items) {
       var _this5 = this;
 
-      var url = "buystory";
+      var uri = "Buylists";
       var art = {
-        kinds: "Contents",
-        category: "Buy",
-        detailed_value: items
+        story_no: this.story_list_no,
+        user_no: sessionStorage.getItem("user_number")
       };
-
-      this.axios.post(url, art).then(function (response) {
-        _this5.select_item = response.data;
+      this.axios.post(uri, art).then(function (response) {
+        _this5.temp = response.data;
       });
+
+      this.$vs.alert({
+        title: "구매 완료!",
+        text: "구매하셨습니다!",
+        textConfirm: "확인",
+        color: "success"
+      });
+      this.basket_item = [];
+      this.story_list_no = [];
+      this.all_price = 0;
+      this.$refs.bkt_modal.close();
+
       //this.basket_item 를 이용한 함수 구현
     },
     delect_Item: function delect_Item(this_items) {
@@ -8044,11 +8043,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -8064,7 +8058,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mounted: function mounted() {
     this.load_frd_play();
-    //this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
+    this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
   },
   data: function data() {
     return {
@@ -8090,28 +8084,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     search_my_play: function search_my_play() {
       var _this = this;
 
-      var url = "Rank_list"; //기록 메뉴
+      var url = "Rank"; //기록 메뉴
       var art = {
-        kinds: "Page",
-        page_name: "Rank"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
         _this.game_record = response.data;
       });
     },
-    load_user_play: function load_user_play(select_game) {
+    load_user_play: function load_user_play(design_no) {
       var _this2 = this;
 
-      var url = "select_game_rank"; //나의 현재 기록
+      var url = "RankRecordValue"; //나의 현재 기록
       var art = {
-        kinds: "Page",
-        category: "Rank",
-        detailed_value: select_game.design_no
+        user_no: sessionStorage.getItem("user_number"),
+        design_no: design_no
       };
-      this.user_play_games = select_game;
       this.axios.post(url, art).then(function (response) {
-        _this2.frd_rank_record = response.data.userRank;
-        _this2.user_rank_record = response.data.userRecord;
+        _this2.user_rank_record = response.data;
       });
 
       this.load_frd_play(true, this.frd_rank_record);
@@ -21823,10 +21813,9 @@ module.exports = {
       var _this = this;
 
       //펜토마이페이지 불러버리기~
-      var url = "col_my";
+      var url = "MyCollection";
       var art = {
-        kinds: "Page",
-        page_name: "Collection"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
         _this.pento_list = response.data;
@@ -21835,11 +21824,9 @@ module.exports = {
     pento_my_modal: function pento_my_modal(design_no) {
       var _this2 = this;
 
-      var url = "my_col_pop";
+      var url = "CollectionValue";
       var art = {
-        kinds: "Page",
-        category: "collection_default",
-        detailed_value: design_no
+        design_no: design_no
       };
       this.axios.post(url, art).then(function (response) {
         _this2.select_pento_list = response.data;
@@ -21857,6 +21844,7 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+//
 //
 //
 //
@@ -21944,23 +21932,18 @@ module.exports = {
       var _this = this;
 
       //펜토마이페이지 불러버리기~
-      var url = "col_all";
-      var art = {
-        kinds: "Page",
-        page_name: "Collection_all"
-      };
-      this.axios.post(url, art).then(function (response) {
+      var url = "EveryCollection";
+
+      this.axios.post(url).then(function (response) {
         _this.all_pento_list = response.data;
       });
     },
     pento_all_modal: function pento_all_modal(design_no) {
       var _this2 = this;
 
-      var url = "all_col_pop";
+      var url = "CollectionValue";
       var art = {
-        kinds: "Page",
-        category: "collection_default",
-        detailed_value: design_no
+        design_no: design_no
       };
       this.axios.post(url, art).then(function (response) {
         _this2.select_pento_list = response.data;
@@ -21972,15 +21955,25 @@ module.exports = {
       var _this3 = this;
 
       console.log(design_no);
-      var url = "buy_pento_col";
+      var url = "Buy";
       var art = {
-        kinds: "Contents",
-        method_id: "Subscribe",
-        category: "collection",
-        detailed_value: design_no
+        design_no: design_no,
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
         _this3.temp = response.data;
+      });
+    },
+    lisk_it: function lisk_it(design_no) {
+      var _this4 = this;
+
+      var url = "Recommend";
+      var art = {
+        design_no: design_no,
+        user_no: sessionStorage.getItem("user_number")
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this4.temp = response.data;
       });
     }
   }
@@ -41027,10 +41020,7 @@ var render = function() {
                 _c("figure", { staticClass: "info_effect" }, [
                   _c("img", {
                     attrs: {
-                      src:
-                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                        list.tale_image +
-                        ".jpg"
+                      src: "http://localhost:8000" + list.tale_image + ".jpg"
                     }
                   }),
                   _vm._v(" "),
@@ -41066,7 +41056,7 @@ var render = function() {
                   return _c(
                     "div",
                     {
-                      key: item_bkt.tale_title,
+                      key: item_bkt.title,
                       staticClass: "obj-bkt",
                       on: {
                         click: function($event) {
@@ -41077,15 +41067,12 @@ var render = function() {
                     [
                       _c("img", {
                         attrs: {
-                          src:
-                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                            item_bkt.tale_image0 +
-                            ".jpg"
+                          src: "http://localhost:8000" + item_bkt.tale_image0
                         }
                       }),
                       _vm._v(
                         "\n                " +
-                          _vm._s(item_bkt.tale_title) +
+                          _vm._s(item_bkt.title) +
                           "\n            "
                       )
                     ]
@@ -41109,9 +41096,18 @@ var render = function() {
                   "\n            "
               ),
               _vm._v(" "),
-              _c("vs-button", { attrs: { "vs-type": "primary-filled" } }, [
-                _vm._v("구매하기")
-              ])
+              _c(
+                "vs-button",
+                {
+                  attrs: { "vs-type": "primary-filled" },
+                  on: {
+                    click: function($event) {
+                      _vm.basket_list_buy(_vm.basket_item)
+                    }
+                  }
+                },
+                [_vm._v("구매하기")]
+              )
             ],
             1
           )
@@ -41140,10 +41136,7 @@ var render = function() {
                 _c("div", { staticClass: "story-modal-left-main" }, [
                   _c("img", {
                     attrs: {
-                      src:
-                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                        _vm.select_item.tale_image0 +
-                        ".jpg"
+                      src: "http://localhost:8000" + _vm.select_item.tale_image0
                     }
                   })
                 ]),
@@ -41163,9 +41156,8 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                            _vm.select_item.tale_image1 +
-                            ".jpg"
+                            "http://localhost:8000" +
+                            _vm.select_item.tale_image1
                         }
                       })
                     ]
@@ -41185,9 +41177,8 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                            _vm.select_item.tale_image2 +
-                            ".jpg"
+                            "http://localhost:8000" +
+                            _vm.select_item.tale_image2
                         }
                       })
                     ]
@@ -41207,9 +41198,8 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                            _vm.select_item.tale_image3 +
-                            ".jpg"
+                            "http://localhost:8000" +
+                            _vm.select_item.tale_image3
                         }
                       })
                     ]
@@ -41229,9 +41219,8 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                            _vm.select_item.tale_image4 +
-                            ".jpg"
+                            "http://localhost:8000" +
+                            _vm.select_item.tale_image4
                         }
                       })
                     ]
@@ -41242,14 +41231,14 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "story-modal-right" }, [
               _c("div", { staticClass: "story-modal-right-title" }, [
-                _c("h2", [_vm._v(_vm._s(_vm.select_item.tale_title))])
+                _c("h2", [_vm._v(_vm._s(_vm.select_item.title))])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "story-modal-right-info" }, [
                 _vm._v(
                   "\n                        " +
-                    _vm._s(_vm.select_item.tale_info) +
-                    "\n                    仲良しそれぞれちがう魅力を持っている子豚三匹！\n                    その子豚兄弟の前に怖いウルフがでってきた？！！\n                    ウルフと子豚兄弟はどうなるかな！\n                    子豚の話を読んでみよう！\n                "
+                    _vm._s(_vm.select_item.tale_explain) +
+                    "\n\n                "
                 )
               ]),
               _vm._v(" "),
@@ -41422,7 +41411,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 7vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 95vh;\r\n\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    overflow: scroll;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 30%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 1fr 1fr;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\r\n  border-top: 1px solid slategray;\n}\n.btn-div-design button {\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1vw;\r\n  color: white;\r\n  background: transparent;\n}\n.btn-div-design-1 {\r\n  background-color: #60a0ff;\n}\n.btn-div-design-2 {\r\n  background-color: #141c35;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}", ""]);
+exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 7vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 95vh;\r\n\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    overflow: scroll;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 30%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 1fr 1fr;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\r\n  border-top: 1px solid slategray;\n}\n.btn-div-design button {\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1vw;\r\n  color: white;\r\n  background: transparent;\n}\n.btn-div-design-1 {\r\n  background-color: #60a0ff;\n}\n.btn-div-design-2 {\r\n  background-color: #141c35;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.border-style{\r\n  border : 1px solid silver;\n}", ""]);
 
 // exports
 
@@ -54341,9 +54330,32 @@ var render = function() {
     { staticClass: "rank-page-div" },
     [
       _c("div", { staticClass: "rank-page-div-body" }, [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "rank-page-div-1" },
+          _vm._l(_vm.game_record, function(game_list) {
+            return _c(
+              "div",
+              {
+                staticClass: "rank-page-div-1-sub",
+                on: {
+                  click: function($event) {
+                    _vm.load_user_play(game_list.design_no)
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "http://localhost:8000" + game_list.imitated_image
+                  }
+                })
+              ]
+            )
+          })
+        ),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "rank-page-div-3" }, [
           _c(
@@ -54458,30 +54470,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rank-page-div-1" }, [
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-1-sub" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -55972,11 +55960,22 @@ var render = function() {
                 }
               },
               [
-                _vm._m(1, true),
+                _c("div", { staticClass: "content-index" }, [
+                  _c("span", [_vm._v(_vm._s(list.design_title))]),
+                  _vm._v(" "),
+                  _c("hr", { staticStyle: { color: "white" } }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("작성자 : " + _vm._s(list.nickname))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("난이도 : " + _vm._s(list.level))]),
+                  _vm._v(
+                    "\n                    갈비찜을 밥위에 얹어주세용 \n                    갈비찜을 밥위에 비벼주세용\n                    내가제일 좋아하는 갈비찜 덮밥\n                    아아~아아아~ 냠냠!\n                "
+                  )
+                ]),
                 _vm._v(" "),
                 _c("img", {
                   staticClass: "content-img",
-                  attrs: { src: list.file_name }
+                  attrs: { src: "http://localhost:8000" + list.design_image }
                 })
               ]
             )
@@ -56051,7 +56050,8 @@ var render = function() {
                           text: "추천하셨습니다~고마워요!",
                           color: "danger",
                           icon: "favorite"
-                        })
+                        }),
+                          _vm.lisk_it(select_pento.design_no)
                       }
                     }
                   },
@@ -56085,21 +56085,6 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "col-share-banner-sub-2" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-index" }, [
-      _c("span", [_vm._v("장난감들")]),
-      _vm._v(" "),
-      _c("hr", { staticStyle: { color: "white" } }),
-      _vm._v(" "),
-      _c("p", [_vm._v("작성자 : 김똘똘")]),
-      _vm._v(
-        "\n                    갈비찜을 밥위에 얹어주세용 \n                    갈비찜을 밥위에 비벼주세용\n                    내가제일 좋아하는 갈비찜 덮밥\n                    아아~아아아~ 냠냠!\n                "
-      )
     ])
   }
 ]

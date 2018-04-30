@@ -22,9 +22,8 @@ export default {
   created() {
     this.$eventBus.$on("login_function", userinfo => {
       //외부객체
-      let uri = "userlogin";
+      let uri = "Login";
       let temp = {
-        kinds: "Login",
         user_id: userinfo.userid,
         user_pw: userinfo.userpw
       };
@@ -32,10 +31,11 @@ export default {
         //서버로 http통신 요청
         response => {
           //response 받은 값 이야기 정보 함수에 전송
-          this.user_temp.user_nickname = response.data.user_nickname;
-          this.user_temp.user_number = response.data.user_no;
-          this.user_temp.user_image = response.data.image;
-          this.user_temp.user_point = response.data.user_point;
+          console.log(response.data[0].user_no);
+          this.user_temp.user_nickname = response.data[0].user_nickname;
+          this.user_temp.user_number = response.data[0].user_no;
+          this.user_temp.user_image = response.data[0].image;
+          this.user_temp.user_point = response.data[0].user_point;
           if (this.user_temp.user_number) {
             this.login_opertion(true);
           } else this.login_opertion(false);

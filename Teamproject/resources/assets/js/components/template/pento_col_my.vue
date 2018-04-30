@@ -73,21 +73,18 @@ export default {
   methods: {
     my_pento_page: function() {
       //펜토마이페이지 불러버리기~
-      let url = "col_my";
+      let url = "MyCollection";
       let art = {
-        kinds: "Page",
-        page_name: "Collection"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
         this.pento_list = response.data;
       });
     },
     pento_my_modal: function(design_no) {
-      let url = "my_col_pop";
+      let url = "CollectionValue";
       let art = {
-        kinds: "Page",
-        category: "collection_default",
-        detailed_value: design_no
+        design_no: design_no
       };
       this.axios.post(url, art).then(response => {
         this.select_pento_list = response.data;

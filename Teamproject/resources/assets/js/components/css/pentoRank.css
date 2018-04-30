@@ -76,3 +76,6 @@
   text-align: center;
   border-top: 1px solid silver;
 }
+.border-style{
+  border : 1px solid silver;
+}

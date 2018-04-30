@@ -5,15 +5,10 @@ dev . KANG SANG UN
     <div class="rank-page-div">
         <div class="rank-page-div-body">
               <div class="rank-page-div-1">
-                 <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
-                   <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
-                  <div class="rank-page-div-1-sub"></div>
+                 <div class="rank-page-div-1-sub" v-for="game_list in game_record"
+                @click="load_user_play(game_list.design_no)">
+                      <img v-bind:src="'http://localhost:8000'+ game_list.imitated_image">
+                 </div>
               </div>
               <div class="rank-page-div-2">
                 <div class="rank-page-div-2-sub-1">
@@ -92,7 +87,7 @@ export default {
   },
   mounted() {
     this.load_frd_play();
-    //this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
+    this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
   },
   data() {
     return {
@@ -128,26 +123,22 @@ export default {
   methods: {
     //랭크 페이지의 함수 정의
     search_my_play: function() {
-      let url = "Rank_list"; //기록 메뉴
+      let url = "Rank"; //기록 메뉴
       let art = {
-        kinds: "Page",
-        page_name: "Rank"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
         this.game_record = response.data;
       });
     },
-    load_user_play: function(select_game) {
-      let url = "select_game_rank"; //나의 현재 기록
+    load_user_play: function(design_no) {
+      let url = "RankRecordValue"; //나의 현재 기록
       let art = {
-        kinds: "Page",
-        category: "Rank",
-        detailed_value: select_game.design_no
+        user_no: sessionStorage.getItem("user_number"),
+        design_no: design_no
       };
-      this.user_play_games = select_game;
       this.axios.post(url, art).then(response => {
-        this.frd_rank_record = response.data.userRank;
-        this.user_rank_record = response.data.userRecord;
+        this.user_rank_record = response.data;
       });
 
       this.load_frd_play(true, this.frd_rank_record);

@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
-class arduinoInfoTableSeeder extends Seeder
+
+class ArduinoInfoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +19,7 @@ class arduinoInfoTableSeeder extends Seeder
             'GSTARN86T5GJ27', 'PIZAEF22F8DF98', 'PWOORF31T8UJ00', 'BEEVEE35A8UJ12', 'MIAUEE17T7UJ69',
             'POGIAS05T7UJ64', 'HYAEN19T5KJO94', 'YONJMN22T5UJ49'
         ];
-// 시 배열 -> addHours의 매개변수로 사용하기위해 현재 시에 값만큼 더한 값
+        // 시간 배열 -> addHours의 매개변수로 사용하기위해 현재 시에 값만큼 더한 값
         $hourArray =
             [
                 1, 2, 3, 4, 5,

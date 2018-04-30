@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class userProfileTableSeeder extends Seeder
+class UserProfileTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -29,11 +29,9 @@ class userProfileTableSeeder extends Seeder
                     'user_no'               => $userNo,
                     'user_photo'            => $userID . "_1",
                     'user_intro'            => $userID . "'s introduce",
-                    'user_point'            => random_int(0, 10000),
+                    'user_point'            => ((random_int(0, 5)) * 500),
                     'user_grade'            => random_int(1, 5),
                     'user_nickname'         => $userID,
-                    'registered_date'            => Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
-                    'updated_date'            => Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
                 ]
             );
         }

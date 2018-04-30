@@ -16,15 +16,16 @@
             <div class="col-share-list-layout">
                 <div v-for="list in all_pento_list"  class="content-layout" @click="pento_all_modal(list.design_no)">
                     <div class="content-index">
-                        <span>장난감들</span>
+                        <span>{{list.design_title}}</span>
                         <hr style="color : white;">
-                        <p>작성자 : 김똘똘</p>
+                        <p>작성자 : {{list.nickname}}</p>
+                        <p>난이도 : {{list.level}}</p>
                         갈비찜을 밥위에 얹어주세용 
                         갈비찜을 밥위에 비벼주세용
                         내가제일 좋아하는 갈비찜 덮밥
                         아아~아아아~ 냠냠!
                     </div>
-                    <img v-bind:src="list.file_name" class="content-img">
+                    <img v-bind:src="'http://localhost:8000'+list.design_image" class="content-img">
                 </div>
             </div>
             
@@ -50,7 +51,7 @@
                         ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">구독</button>
                         <button class="modal-btn-2"
                                 @click="$vs.notify({title:'추천!',
-                                text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'})"
+                                text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'}),lisk_it(select_pento.design_no)"
                                 vs-type="danger-flat">추천</button>
                     </div>
 
@@ -82,21 +83,16 @@ export default {
   methods: {
     all_pento_page: function() {
       //펜토마이페이지 불러버리기~
-      let url = "col_all";
-      let art = {
-        kinds: "Page",
-        page_name: "Collection_all"
-      };
-      this.axios.post(url, art).then(response => {
+      let url = "EveryCollection";
+
+      this.axios.post(url).then(response => {
         this.all_pento_list = response.data;
       });
     },
     pento_all_modal: function(design_no) {
-      let url = "all_col_pop";
+      let url = "CollectionValue";
       let art = {
-        kinds: "Page",
-        category: "collection_default",
-        detailed_value: design_no
+        design_no: design_no
       };
       this.axios.post(url, art).then(response => {
         this.select_pento_list = response.data;
@@ -106,12 +102,20 @@ export default {
     },
     buy_pento_col: function(design_no) {
       console.log(design_no);
-      let url = "buy_pento_col";
+      let url = "Buy";
       let art = {
-        kinds: "Contents",
-        method_id: "Subscribe",
-        category: "collection",
-        detailed_value: design_no
+        design_no: design_no,
+        user_no: sessionStorage.getItem("user_number")
+      };
+      this.axios.post(url, art).then(response => {
+        this.temp = response.data;
+      });
+    },
+    lisk_it: function(design_no) {
+      let url = "Recommend";
+      let art = {
+        design_no: design_no,
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
         this.temp = response.data;

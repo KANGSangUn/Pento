@@ -26,30 +26,31 @@ class FairyTale extends Model
                                 (
                                     'ft.fairy_tale_no',
                                     'ft.tale_title',
-                                    'ft.tale_explain',
                                     DB::raw('concat( "' . $routeName . '", ti.tale_image) as tale_image')
                                 )
-                                ->where('ti.type_no', 1)
                                 ->where('ti.tale_image', 'regexp', '_[1]$')
                                 ->orderBy('ft.tale_title')
                                 ->get();
 
+        // 결과가 빈 객체일 경우
         if ($webTaleList == "[]")
         {
             return "select fail";
         }
+
+        // 동화 목록 반환
        return $webTaleList;
 
     }
 
-    // unity 에서 호출할 때
 
 
+    // 유니티에서 동화목록을 반환
     static public function getStoryListUnity()
     {
 
         // 동화 이미지의 경로 검색
-        $routeName           =      ImageRoute::getImageRoute('story');
+        $routeName           =      ImageRoute::getImageRoute('storyPage');
 
         // 유니티의 목록을 출력할 때 동화번호, 제목, 이미지, 설명 반환
         $unityTaleList       =      DB::table('fairy_tales as ft')
@@ -61,30 +62,22 @@ class FairyTale extends Model
                                                 DB::raw('concat( "' . $routeName . '", ti.tale_image) as tale_image'),
                                                 'ft.tale_explain'
                                             )
-                                            ->where('ti.type_no', 2)
-                                            ->where('ti.tale_image', 'regexp', '_[6]$')
+                                            ->where('ti.tale_image', 'regexp', '_[1]$')
                                             ->orderBy('ft.tale_title')
                                             ->get();
 
 
 
-        $total =
-            [
-            'fairy_info' => $unityTaleList
-            ];
+        if ($unityTaleList == "[]")
+        {
+            return "fail select!";
+        }
 
 
-        return $total;
+        return $unityTaleList;
     }
 
-    static public function getMyStoryNum($user_no)
-    {
-        $buyNumResult = BuyStory::select('fairy_tale_no')
-            ->where('user_no', $user_no)
-            ->get();
 
-        return $buyNumResult;
-    }
 
     //동화 상세설명
 
@@ -104,7 +97,6 @@ class FairyTale extends Model
                                         'ft.tale_price')
                                     ->where('ti.tale_image', 'regexp', '_[12345]$')
                                     ->where('ft.fairy_tale_no', $taleNum)
-                                    ->orderBy('ft.tale_title')
                                     ->get();
 
         if ($taleInfo == "[]")
@@ -113,6 +105,7 @@ class FairyTale extends Model
         }
         return $taleInfo;
     }
+
 }
 
 

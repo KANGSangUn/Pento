@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
-class imageRouteTableSeeder extends Seeder
+class ImageRouteTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class imageRouteTableSeeder extends Seeder
     public function run()
     {
         // 이미지 루트 dummy data
-        $routeArray = ['/images/storypage/', '/images/userpage/', '/images/pentoimg/', 'Images/Story/'];
+        $routeArray = ['/images/storyPage/', '/images/userPage/', '/images/imitatedPento/', '/images/everyPento/'];
 
         // $routeArray 배열 길이만큼 반복
         for ($i = 0; $i < count($routeArray); $i++) {
@@ -22,7 +22,6 @@ class imageRouteTableSeeder extends Seeder
                 [
                     'route_name'        =>  $routeArray[$i],
                     'registered_date'        =>  Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
-                    'updated_date'        =>  Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
                 ]
             );
         }

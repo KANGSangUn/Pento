@@ -17,23 +17,56 @@ Route::get('/',function (){
 });
 
 //Route::post('/con_router','Main_Controller@asd');
-/*동화 페이지*/
-Route::post('/storypagereq','Main_Controller@Load_Controller_Web');//storypage 동화목록 불러오기
-Route::post('/userlogin','Main_Controller@Load_Controller_Web');
-Route::post('/logout','Main_Controller@Load_Controller_Web');
-Route::post('/storyinfo','Main_Controller@Load_Controller_Web');
-Route::post('/buystory','Main_Controller@Load_Controller_Web');
-Route::post('/pentomyuser','Main_Controller@Load_Controller_Web');
-Route::post('/pentomyfrd','Main_Controller@Load_Controller_Web');
-Route::post('/frd_search','Main_Controller@Load_Controller_Web');
-Route::post('/user_story','Main_Controller@Load_Controller_Web');
-Route::post('/Rank_list','Main_Controller@Load_Controller_Web');
-Route::post('/select_game_rank','Main_Controller@Load_Controller_Web');
-Route::post('/col_my','Main_Controller@Load_Controller_Web');
-Route::post('/my_col_pop','Main_Controller@Load_Controller_Web');
-Route::post('/col_all','Main_Controller@Load_Controller_Web');
-Route::post('/all_col_pop','Main_Controller@Load_Controller_Web');
-Route::post('/buy_pento_col','Main_Controller@Load_Controller_Web');
+/*로그인*/
+Route::post('/Login','Web_Functions@Login');
+// 동화리스트 초기값
+Route::post('/StoryList','Web_DefaultValue@StoryList');
+
+// 동화 상세설명
+Route::post('/StoryValue','Web_DetailValue@StoryValue');
+
+// 나만의 컬렉션 초기값
+Route::post('/MyCollection','Web_DefaultValue@MyCollection');
+
+// 모두의 컬렉션 초기값
+Route::post('/EveryCollection','Web_DefaultValue@EveryCollection');
+
+// 컬렉션 구독하기
+Route::post('/Buy','Web_Functions@Buy');
+
+//장바구니 구매
+Route::post('/Buylists','Web_Functions@MyBasket');
+// 컬렉션 추천하기
+Route::post('/Recommend','Web_Functions@Recommend');
+
+// 도안 상세정보 불러오기
+Route::post('/CollectionValue','Web_DetailValue@CollectionValue');
+
+// 마이페이지 초기값
+Route::post('/MyPage','Web_DefaultValue@MyPage');
+
+// 친구페이지 초기값
+Route::post('/Friends','Web_DefaultValue@Friends');
+
+// 친구 검색
+Route::post('/SearchValue','Web_Functions@SearchValue');
+
+// 친구 추가
+Route::post('/AddFriend','Web_Functions@AddFriend');
+
+// 친구 삭제
+Route::post('/DeleteFriend','Web_Functions@DeleteFriend');
+
+// 랭크페이지 초기값
+Route::post('/Rank','Web_DefaultValue@Rank');
+
+// 랭크페이지 검색값
+Route::post('/RankSearchValue','Web_DetailValue@RankSearchValue');
+
+// 랭크페이지 기록반환
+Route::post('/RankRecordValue','Web_DetailValue@RankRecordValue');
+
+
 /*내 정보*/
 
 /*랭킹*/

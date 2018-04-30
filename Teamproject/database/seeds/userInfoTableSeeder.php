@@ -3,13 +3,14 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class userInfoTableSeeder extends Seeder
+class UserInfoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
      * @return void
      */
+
     public function run()
     {
         // 회원 아이디 dummy data
@@ -53,8 +54,8 @@ class userInfoTableSeeder extends Seeder
                 [
                     'user_id'           => $userIDs[$i],
                     'user_pw'           => bcrypt($userPWs[$i]), // 암호화 188자 길이를 가짐
-                    'registered_date'        => Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
-                    'updated_date'        => Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
+                    'registered_date'   => Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
+                    'updated_date'      => Carbon::now()->addHour(9)->format('Y-m-d H:i:s'),
                 ]
             );
         }

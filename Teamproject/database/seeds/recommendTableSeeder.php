@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class recommendTableSeeder extends Seeder
+class RecommendTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,53 +12,47 @@ class recommendTableSeeder extends Seeder
      */
     public function run()
     {
-        // 회원번호 dummy data
-        $userArray =
+        //
+        $userNumArray =
             [
-                90, 2, 3, 4, 52,
-                11, 15, 19, 7, 5,
-                10, 88, 23, 37, 99,
-                76, 36, 98
+                1, 1, 1, 2, 4,
+                5, 10, 11, 30, 12,
+                42, 90, 10, 52, 36,
+                42, 55, 52, 53, 52,
+                11, 12, 36, 40, 32,
+                11, 11, 12, 12, 15,
+                72, 88, 89, 70, 69,
+                30, 42, 40, 32, 31,
+                22, 23, 24, 25, 26,
+                41, 44, 49, 71, 62,
+                53, 63, 38, 51, 50
             ];
-
         $imitatedNumArray =
             [
-                1, 1, 1, 1, 2,
-                2, 3, 4, 5, 1,
-                3, 4, 4, 3, 2,
-                1, 5, 3, 2, 1
-            ];
-        // 시 배열 -> addHours의 매개변수로 사용하기위해 현재 시에 값만큼 더한 값
-        $hourArray =
-            [
-                1, 2, 3, 4, 5,
-                6, 7, 1, 2, 3,
-                4, 5, 6, 7, 5,
-                5, 5, 3];
-        // 분 배열 -> addMinutes 매개변수로 사용하기위해 현재 분에 값만큼 더한 값
-        $minuteArray =
-            [
-                8, 5, 3,
-                46, 57, 16, 27, 38,
-                58, 50, 46, 17, 25,
-                15, 27, 32, 41, 53
+                1, 2, 20, 11, 1,
+                1, 2, 20, 20, 10,
+                12, 13, 14, 15, 24,
+                1, 13, 19, 9, 20,
+                6, 4, 4, 5, 1,
+                11, 1, 12, 15, 17,
+                6, 7, 8, 9, 10,
+                22, 23, 1, 11, 1,
+                7, 7, 2, 2, 1,
+                3, 4, 5, 6, 7,
+                1, 2, 1, 2, 1
 
             ];
 
-
-        // $userArray 배열의 길이만큼 반복
-        for ($i = 0; $i < count($userArray); $i++) {
-            // 추천테이블에 회원번호, 카테고리번호, 게시글 번호 insert
-
-             DB::table('recommends')->insert(
-                 [
-                     'user_no'               =>  $userArray[$i],
-                     'imitated_no'           =>  $imitatedNumArray[$i],
-                     'registered_date'            =>  Carbon::now()->addHour($hourArray[$i])->addMinute($minuteArray[$i])->format('Y-m-d H:i:s'),
-                 ]
-
-             );
+        for ($i = 0; $i < count($userNumArray); $i++)
+        {
+            DB::table('recommends')->insert
+            (
+                [
+                    'user_no' => $userNumArray[$i],
+                    'imitated_no' => $imitatedNumArray[$i],
+                    'registered_date' => Carbon::now()
+                ]
+            );
         }
-
     }
 }

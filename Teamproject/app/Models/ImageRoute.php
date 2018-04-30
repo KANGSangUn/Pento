@@ -15,8 +15,8 @@ class ImageRoute extends Model
         (
             'storyPage'     =>  1,
             'userPage'      =>  2,
-            'pentoImg'      =>  3,
-            'story'         =>  4,
+            'imitatedPento' =>  3,
+            'everyPento'    =>  4
         );
 
         // 경로번호로 경로명 찾아 반환
