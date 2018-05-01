@@ -6,25 +6,31 @@ dev . KANG SANG UN
         <div class="rank-page-div-body">
               <div class="rank-page-div-1">
                  <div class="rank-page-div-1-sub" v-for="game_list in game_record"
-                @click="load_user_play(game_list.design_no)">
+                @click="load_user_play(game_list.design_no,game_list.imitated_image)">
                       <img v-bind:src="'http://localhost:8000'+ game_list.imitated_image">
                  </div>
               </div>
               <div class="rank-page-div-2">
-                <div class="rank-page-div-2-sub-1">
+                <div class="spinner" id="loadding">
+                </div>
+                <div class="rank-page-div-2-sub-1" id="user-game-1">
                   <div></div>
-                  <div style="text-align :center">
+                  <div class="game_image" style="text-align :center">
                   <!-- 이미지 노출 -->
-                    <img src="http://localhost:8000/images/collection/pentoimg1.png">
+                    <img :src='"http://localhost:8000"+user_game_record.game_img'>
                   </div>
                    <div></div>
                 </div>
-                <div class="rank-page-div-2-sub-2">
-                  <div>헬리꼽타</div>
+                <div class="rank-page-div-2-sub-2" id="user-game-2">
+                  <div class="game-title">{{user_game_record.game_title}}</div>
                   <div 
                   class="rank-page-div-2-sub-2-sub">
-                  <div>클리어시간</div><div>평균기록</div><div>날짜</div>
-                  <div>클리어시간</div><div>평균기록</div><div>날짜</div>
+                  <div class="game-index">클리어시간</div>
+                  <div class="game-index">평균기록</div>
+                  <div class="game-index">날짜</div>
+                  <div class="game-data">{{user_game_record.game_cleartime}}</div>
+                  <div class="game-data">{{user_game_record.game_avgtime}}</div>
+                  <div class="game-data">{{user_game_record.game_date}}</div>
                   </div>
                 </div>
               </div>
@@ -35,34 +41,21 @@ dev . KANG SANG UN
                   :height="150"></bar-chart> 
                 </div>
                 <div class="rank-page-div-3-sub-2">
-                  <div class="border-style" id="rank-div">
-                    <div>
-                      <div v-if="rank_btn===true" v-for="user_rank in frd_rank_record" class="ranking">
-                        {{user_rank.rank}}
-                        {{user_rank.user_nickname}}
-                        {{user_rank.cleartime}}
-                      </div>
-                      <div v-if="rank_btn===false" v-for="user_rank in user_rank_record" class="ranking">
-                          {{user_rank.cleartime}}
-                          {{user_rank.register_date}}
+                  <div id="rank-div">
+                    <div class="rank-div-title">ランキング</div>
+                    <div class="rank-div-contents">
+                      <div  class="rank-div-contents-content" v-for="ranking in user_rank_record">
+                        <span
+                        style="background:skyblue; color:white"
+                        >{{ranking.rank}}</span>
+                        <span>{{ranking.user_nickname}}</span>
+                        <span>{{ranking.clear_time}}</span>
                       </div>
                     </div>
-                      <div class="btn-div-design">
-                        <div class="btn-div-design-1">
-                          <button @click="load_frd_play(true)">
-                            친구 랭킹
-                          </button>
-                        </div>
-                        <div class="btn-div-design-2" @click="load_frd_play(false)">
-                            <button>
-                              월드 랭킹
-                            </button>
-                        </div>
-                      </div>
                   </div>
-                    <div>
+                   <div>
                     <pie-chart :chart-data="piedatasets"></pie-chart>
-                  </div>
+                   </div>
                 </div>
               </div>
           </div>
@@ -86,7 +79,6 @@ export default {
     BarChart: BarChart
   },
   mounted() {
-    this.load_frd_play();
     this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
   },
   data() {
@@ -94,29 +86,17 @@ export default {
       linedatasets: null,
       piedatasets: null,
       radardatasets: null,
-      search_rank: [],
-      search_frd: "",
-      game_record: {},
-      user_play_games: [],
-      frd_rank_record: [],
       user_rank_record: [],
+      user_game_record: {
+        game_img: "/images/web/rank.png",
+        game_title: "왼쪽 메뉴에서 기록을 선택 해 주세요",
+        game_date: "빨리",
+        game_cleartime: "빨리",
+        game_avgtime: "빨리"
+      },
+      game_record: [],
       rank_btn: null,
-      frdname: ["pakg", "asdkw", "asdkwk1", "goodgoo", "asdw"],
-      frdrecoed: [
-        this.getRandomInt(),
-        this.getRandomInt(),
-        this.getRandomInt(),
-        this.getRandomInt(),
-        this.getRandomInt()
-      ],
-      datacolor: [
-        "#6ef864",
-        "#ffba63",
-        "#3079f8",
-        "#f86077",
-        "#38a21e",
-        "#d44ac2"
-      ]
+      datacolor: ["#6ef864", "#ffba63", "#f86077", "#38a21e", "#d44ac2"]
     };
   },
 
@@ -131,59 +111,91 @@ export default {
         this.game_record = response.data;
       });
     },
-    load_user_play: function(design_no) {
+    load_user_play: function(design_no, imgs) {
+      this.padein();
+      this.loding();
       let url = "RankRecordValue"; //나의 현재 기록
       let art = {
         user_no: sessionStorage.getItem("user_number"),
         design_no: design_no
       };
-      this.axios.post(url, art).then(response => {
-        this.user_rank_record = response.data;
-      });
 
-      this.load_frd_play(true, this.frd_rank_record);
+      this.axios.post(url, art).then(response => {
+        this.padeout();
+        this.user_game_record.game_img = imgs;
+        this.user_game_record.game_title = response.data.title[0].design_title;
+        this.user_game_record.game_cleartime =
+          response.data.userRecord[0].clear_time;
+        this.user_game_record.game_date =
+          response.data.userRecord[0].registered_date;
+        this.user_game_record.game_avgtime = response.data.avgTime[0].avgTime;
+        this.user_rank_record = response.data.userRank;
+        this.load_frd_play(this.user_rank_record);
+      });
     },
-    load_frd_play: function() //                temp,frd_record
-    {
-      //                this.frdname=[];
-      //                this.frdrecoed=[];
-      //                for(let i=0; i<frd_record.length;i++){
-      //                    this.frdname.push(frd_record[i].user_nickname);
-      //                    this.frdrecoed.push(this.getRandomInt());
-      //                }
-      //                this.rank_btn = temp;
+    loding: function() {
+      let lodding = document.getElementById("loadding");
+      lodding.style.display = "block";
+      lodding.style.width = "50px";
+      lodding.style.height = "50px";
+    },
+    padein: function() {
+      let lodding2 = document.getElementById("user-game-1");
+      let lodding3 = document.getElementById("user-game-2");
+      lodding2.style.display = "none";
+      lodding3.style.display = "none";
+    },
+    padeout: function() {
+      let lodding = document.getElementById("loadding");
+      let lodding2 = document.getElementById("user-game-1");
+      let lodding3 = document.getElementById("user-game-2");
+      lodding.style.display = "none";
+      lodding2.style.display = "grid";
+      lodding3.style.display = "grid";
+    },
+    load_frd_play: function(recorddata) {
+      let frdname = [];
+      let frdrecord = [];
+
+      recorddata.forEach(function(item) {
+        frdname.push(item.user_nickname);
+        frdrecord.push(item.put_number);
+      });
       this.piedatasets = {
-        labels: this.frdname,
+        labels: frdname,
         datasets: [
           {
             backgroundColor: this.datacolor,
-            data: this.frdrecoed
+            data: frdrecord
           }
-        ]
+        ],
+        scale: {
+          ticks: {
+            min: 50,
+            max: 50,
+            beginAtZero: false,
+            stepSize: 1
+          }
+        }
       };
       this.Linedatasets = {
-        labels: this.frdname,
+        labels: frdname,
         datasets: [
           {
             backgroundColor: this.datacolor,
-            data: this.frdrecoed
+            data: frdrecord
           }
-        ]
-      };
-      this.radardatasets = {
-        labels: this.frdname,
-        datasets: [
-          {
-            backgroundColor: "#f8b213",
-            data: this.frdrecoed
+        ],
+        scale: {
+          ticks: {
+            min: 50,
+            max: 50,
+            beginAtZero: false,
+            stepSize: 1
           }
-        ]
+        }
       };
-    },
-    getRandomInt() {
-      return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     }
   }
 };
 </script>
-<sc

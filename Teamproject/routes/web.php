@@ -45,6 +45,9 @@ Route::post('/CollectionValue','Web_DetailValue@CollectionValue');
 // 마이페이지 초기값
 Route::post('/MyPage','Web_DefaultValue@MyPage');
 
+// 동화 구매정보 초기값
+Route::post('/BuyList','Web_DefaultValue@BuyList');
+
 // 친구페이지 초기값
 Route::post('/Friends','Web_DefaultValue@Friends');
 

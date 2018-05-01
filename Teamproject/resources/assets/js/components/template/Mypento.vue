@@ -66,30 +66,27 @@ export default {
   methods: {
     load_user_info: function() {
       //서버로 유저 정보 요청
-      let url = "pentomyuser";
+      let url = "MyPage";
       let art = {
-        kinds: "Page",
-        page_name: "MyInfo"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
         this.Item_list = response.data;
       });
     },
     load_user_frd: function() {
-      let url = "pentomyfrd";
+      let url = "Friends";
       let art = {
-        kinds: "Page",
-        page_name: "Friends"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
         this.frd_list = response.data;
       });
     },
     load_user_story: function() {
-      let url = "user_story";
+      let url = "BuyList";
       let art = {
-        kinds: "Page",
-        page_name: "BuyList"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
         this.buy_list = response.data;

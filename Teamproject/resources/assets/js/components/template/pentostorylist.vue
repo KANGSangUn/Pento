@@ -21,7 +21,7 @@ dev . KANG SANG UN
                 <div class="booklist">
                     <div v-for="list in story" class="list_item" @click='openStory(list)'>
                         <figure class="info_effect">
-                            <img v-bind:src="'http://localhost:8000'+(list.tale_image)+'.jpg'"/>
+                            <img v-bind:src="'http://localhost:8000'+(list.tale_image)"/>
                             <figcaption>
                                 <h2>{{list.tale_title}}</h2>
                             </figcaption>

@@ -28,7 +28,7 @@ class FairyTale extends Model
                                     'ft.tale_title',
                                     DB::raw('concat( "' . $routeName . '", ti.tale_image) as tale_image')
                                 )
-                                ->where('ti.tale_image', 'regexp', '_[1]$')
+                                ->where('ti.tale_image', 'regexp', '_[1]')
                                 ->orderBy('ft.tale_title')
                                 ->get();
 
@@ -95,7 +95,7 @@ class FairyTale extends Model
                                         DB::raw('concat( "' . $routeName . '", ti.tale_image) as tale_image'),
                                         'ft.tale_explain',
                                         'ft.tale_price')
-                                    ->where('ti.tale_image', 'regexp', '_[12345]$')
+                                    ->where('ti.tale_image', 'regexp', '_[12345]')
                                     ->where('ft.fairy_tale_no', $taleNum)
                                     ->get();
 

@@ -8036,13 +8036,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -8057,7 +8050,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     BarChart: __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__["a" /* default */]
   },
   mounted: function mounted() {
-    this.load_frd_play();
     this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
   },
   data: function data() {
@@ -8065,16 +8057,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       linedatasets: null,
       piedatasets: null,
       radardatasets: null,
-      search_rank: [],
-      search_frd: "",
-      game_record: {},
-      user_play_games: [],
-      frd_rank_record: [],
       user_rank_record: [],
+      user_game_record: {
+        game_img: "/images/web/rank.png",
+        game_title: "왼쪽 메뉴에서 기록을 선택 해 주세요",
+        game_date: "빨리",
+        game_cleartime: "빨리",
+        game_avgtime: "빨리"
+      },
+      game_record: [],
       rank_btn: null,
-      frdname: ["pakg", "asdkw", "asdkwk1", "goodgoo", "asdw"],
-      frdrecoed: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
-      datacolor: ["#6ef864", "#ffba63", "#3079f8", "#f86077", "#38a21e", "#d44ac2"]
+      datacolor: ["#6ef864", "#ffba63", "#f86077", "#38a21e", "#d44ac2"]
     };
   },
 
@@ -8092,53 +8085,86 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.game_record = response.data;
       });
     },
-    load_user_play: function load_user_play(design_no) {
+    load_user_play: function load_user_play(design_no, imgs) {
       var _this2 = this;
 
+      this.padein();
+      this.loding();
       var url = "RankRecordValue"; //나의 현재 기록
       var art = {
         user_no: sessionStorage.getItem("user_number"),
         design_no: design_no
       };
-      this.axios.post(url, art).then(function (response) {
-        _this2.user_rank_record = response.data;
-      });
 
-      this.load_frd_play(true, this.frd_rank_record);
+      this.axios.post(url, art).then(function (response) {
+        _this2.padeout();
+        _this2.user_game_record.game_img = imgs;
+        _this2.user_game_record.game_title = response.data.title[0].design_title;
+        _this2.user_game_record.game_cleartime = response.data.userRecord[0].clear_time;
+        _this2.user_game_record.game_date = response.data.userRecord[0].registered_date;
+        _this2.user_game_record.game_avgtime = response.data.avgTime[0].avgTime;
+        _this2.user_rank_record = response.data.userRank;
+        _this2.load_frd_play(_this2.user_rank_record);
+      });
     },
-    load_frd_play: function load_frd_play() //                temp,frd_record
-    {
-      //                this.frdname=[];
-      //                this.frdrecoed=[];
-      //                for(let i=0; i<frd_record.length;i++){
-      //                    this.frdname.push(frd_record[i].user_nickname);
-      //                    this.frdrecoed.push(this.getRandomInt());
-      //                }
-      //                this.rank_btn = temp;
+    loding: function loding() {
+      var lodding = document.getElementById("loadding");
+      lodding.style.display = "block";
+      lodding.style.width = "50px";
+      lodding.style.height = "50px";
+    },
+    padein: function padein() {
+      var lodding2 = document.getElementById("user-game-1");
+      var lodding3 = document.getElementById("user-game-2");
+      lodding2.style.display = "none";
+      lodding3.style.display = "none";
+    },
+    padeout: function padeout() {
+      var lodding = document.getElementById("loadding");
+      var lodding2 = document.getElementById("user-game-1");
+      var lodding3 = document.getElementById("user-game-2");
+      lodding.style.display = "none";
+      lodding2.style.display = "grid";
+      lodding3.style.display = "grid";
+    },
+    load_frd_play: function load_frd_play(recorddata) {
+      var frdname = [];
+      var frdrecord = [];
+
+      recorddata.forEach(function (item) {
+        frdname.push(item.user_nickname);
+        frdrecord.push(item.put_number);
+      });
       this.piedatasets = {
-        labels: this.frdname,
+        labels: frdname,
         datasets: [{
           backgroundColor: this.datacolor,
-          data: this.frdrecoed
-        }]
+          data: frdrecord
+        }],
+        scale: {
+          ticks: {
+            min: 50,
+            max: 50,
+            beginAtZero: false,
+            stepSize: 1
+          }
+        }
       };
       this.Linedatasets = {
-        labels: this.frdname,
+        labels: frdname,
         datasets: [{
           backgroundColor: this.datacolor,
-          data: this.frdrecoed
-        }]
+          data: frdrecord
+        }],
+        scale: {
+          ticks: {
+            min: 50,
+            max: 50,
+            beginAtZero: false,
+            stepSize: 1
+          }
+        }
       };
-      this.radardatasets = {
-        labels: this.frdname,
-        datasets: [{
-          backgroundColor: "#f8b213",
-          data: this.frdrecoed
-        }]
-      };
-    },
-    getRandomInt: function getRandomInt() {
-      return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     }
   }
 });
@@ -21646,10 +21672,9 @@ module.exports = {
       var _this = this;
 
       //서버로 유저 정보 요청
-      var url = "pentomyuser";
+      var url = "MyPage";
       var art = {
-        kinds: "Page",
-        page_name: "MyInfo"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
         _this.Item_list = response.data;
@@ -21658,10 +21683,9 @@ module.exports = {
     load_user_frd: function load_user_frd() {
       var _this2 = this;
 
-      var url = "pentomyfrd";
+      var url = "Friends";
       var art = {
-        kinds: "Page",
-        page_name: "Friends"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
         _this2.frd_list = response.data;
@@ -21670,10 +21694,9 @@ module.exports = {
     load_user_story: function load_user_story() {
       var _this3 = this;
 
-      var url = "user_story";
+      var url = "BuyList";
       var art = {
-        kinds: "Page",
-        page_name: "BuyList"
+        user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
         _this3.buy_list = response.data;
@@ -21792,6 +21815,12 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21833,8 +21862,7 @@ module.exports = {
       });
 
       this.$refs.col_modal.open();
-    },
-    delect_my_col: function delect_my_col() {}
+    }
   }
 });
 
@@ -21844,9 +21872,6 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-//
-//
-//
 //
 //
 //
@@ -41019,9 +41044,7 @@ var render = function() {
               [
                 _c("figure", { staticClass: "info_effect" }, [
                   _c("img", {
-                    attrs: {
-                      src: "http://localhost:8000" + list.tale_image + ".jpg"
-                    }
+                    attrs: { src: "http://localhost:8000" + list.tale_image }
                   }),
                   _vm._v(" "),
                   _c("figcaption", [
@@ -41411,7 +41434,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 7vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 95vh;\r\n\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    overflow: scroll;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 30%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 1fr 1fr;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.8fr 0.2fr;\n}\n.btn-div-design {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\r\n  border-top: 1px solid slategray;\n}\n.btn-div-design button {\r\n  width: 100%;\r\n  height: 100%;\r\n  font-size: 1vw;\r\n  color: white;\r\n  background: transparent;\n}\n.btn-div-design-1 {\r\n  background-color: #60a0ff;\n}\n.btn-div-design-2 {\r\n  background-color: #141c35;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.border-style{\r\n  border : 1px solid silver;\n}", ""]);
+exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 20%;\r\n    overflow-x:hidden; overflow-y:auto;\r\n    border : 1px solid silver;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n  padding : 1vh;\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  padding : 1vh;\r\n  grid-column-gap: 0.5vh;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\r\n        border : 1px solid silver;\n}\n.game-index{\r\n  background: orange;\r\n  color : white;\r\n  font-size : 2vh;\n}\n.game-data{\r\n  font-size : 2vh;\r\n  border-bottom: 1px solid silver;\r\n  border-left: 1px solid silver;\r\n  border-right: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.9fr;\r\n  border-right: 1px solid silver;\n}\n.rank-div-title{\r\n  background: orange;\r\n  text-align: center;\r\n  font-size: 3vh;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.rank-div-contents{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.5fr 0.6fr;\n}\n.rank-div-contents-content{\r\n  text-align: center\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
 
 // exports
 
@@ -54340,7 +54363,10 @@ var render = function() {
                 staticClass: "rank-page-div-1-sub",
                 on: {
                   click: function($event) {
-                    _vm.load_user_play(game_list.design_no)
+                    _vm.load_user_play(
+                      game_list.design_no,
+                      game_list.imitated_image
+                    )
                   }
                 }
               },
@@ -54355,7 +54381,73 @@ var render = function() {
           })
         ),
         _vm._v(" "),
-        _vm._m(0),
+        _c("div", { staticClass: "rank-page-div-2" }, [
+          _c("div", { staticClass: "spinner", attrs: { id: "loadding" } }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "rank-page-div-2-sub-1",
+              attrs: { id: "user-game-1" }
+            },
+            [
+              _c("div"),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "game_image",
+                  staticStyle: { "text-align": "center" }
+                },
+                [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "http://localhost:8000" + _vm.user_game_record.game_img
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div")
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "rank-page-div-2-sub-2",
+              attrs: { id: "user-game-2" }
+            },
+            [
+              _c("div", { staticClass: "game-title" }, [
+                _vm._v(_vm._s(_vm.user_game_record.game_title))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "rank-page-div-2-sub-2-sub" }, [
+                _c("div", { staticClass: "game-index" }, [
+                  _vm._v("클리어시간")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "game-index" }, [_vm._v("평균기록")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "game-index" }, [_vm._v("날짜")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "game-data" }, [
+                  _vm._v(_vm._s(_vm.user_game_record.game_cleartime))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "game-data" }, [
+                  _vm._v(_vm._s(_vm.user_game_record.game_avgtime))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "game-data" }, [
+                  _vm._v(_vm._s(_vm.user_game_record.game_date))
+                ])
+              ])
+            ]
+          )
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "rank-page-div-3" }, [
           _c(
@@ -54374,86 +54466,35 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "rank-page-div-3-sub-2" }, [
-            _c(
-              "div",
-              { staticClass: "border-style", attrs: { id: "rank-div" } },
-              [
-                _c(
-                  "div",
-                  [
-                    _vm._l(_vm.frd_rank_record, function(user_rank) {
-                      return _vm.rank_btn === true
-                        ? _c("div", { staticClass: "ranking" }, [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(user_rank.rank) +
-                                "\n                    " +
-                                _vm._s(user_rank.user_nickname) +
-                                "\n                    " +
-                                _vm._s(user_rank.cleartime) +
-                                "\n                  "
-                            )
-                          ])
-                        : _vm._e()
-                    }),
-                    _vm._v(" "),
-                    _vm._l(_vm.user_rank_record, function(user_rank) {
-                      return _vm.rank_btn === false
-                        ? _c("div", { staticClass: "ranking" }, [
-                            _vm._v(
-                              "\n                      " +
-                                _vm._s(user_rank.cleartime) +
-                                "\n                      " +
-                                _vm._s(user_rank.register_date) +
-                                "\n                  "
-                            )
-                          ])
-                        : _vm._e()
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "btn-div-design" }, [
-                  _c("div", { staticClass: "btn-div-design-1" }, [
-                    _c(
-                      "button",
-                      {
-                        on: {
-                          click: function($event) {
-                            _vm.load_frd_play(true)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                        친구 랭킹\n                      "
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
+            _c("div", { attrs: { id: "rank-div" } }, [
+              _c("div", { staticClass: "rank-div-title" }, [
+                _vm._v("ランキング")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "rank-div-contents" },
+                _vm._l(_vm.user_rank_record, function(ranking) {
+                  return _c(
                     "div",
-                    {
-                      staticClass: "btn-div-design-2",
-                      on: {
-                        click: function($event) {
-                          _vm.load_frd_play(false)
-                        }
-                      }
-                    },
+                    { staticClass: "rank-div-contents-content" },
                     [
-                      _c("button", [
-                        _vm._v(
-                          "\n                          월드 랭킹\n                        "
-                        )
-                      ])
+                      _c(
+                        "span",
+                        {
+                          staticStyle: { background: "skyblue", color: "white" }
+                        },
+                        [_vm._v(_vm._s(ranking.rank))]
+                      ),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(ranking.user_nickname))]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(ranking.clear_time))])
                     ]
                   )
-                ])
-              ]
-            ),
+                })
+              )
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -54469,42 +54510,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rank-page-div-2" }, [
-      _c("div", { staticClass: "rank-page-div-2-sub-1" }, [
-        _c("div"),
-        _vm._v(" "),
-        _c("div", { staticStyle: { "text-align": "center" } }, [
-          _c("img", {
-            attrs: {
-              src: "http://localhost:8000/images/collection/pentoimg1.png"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "rank-page-div-2-sub-2" }, [
-        _c("div", [_vm._v("헬리꼽타")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "rank-page-div-2-sub-2-sub" }, [
-          _c("div", [_vm._v("클리어시간")]),
-          _c("div", [_vm._v("평균기록")]),
-          _c("div", [_vm._v("날짜")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("클리어시간")]),
-          _c("div", [_vm._v("평균기록")]),
-          _c("div", [_vm._v("날짜")])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -55680,7 +55686,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: 100vh;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  padding: 1.5vw;\r\n  width: 40%;\r\n  height: 50%;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: center;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
 
 // exports
 
@@ -55720,7 +55726,11 @@ var render = function() {
                       }
                     }
                   },
-                  [_c("img", { attrs: { src: "", src: pento_imgs.file_name } })]
+                  [
+                    _c("img", {
+                      attrs: { src: "", src: pento_imgs.design_image }
+                    })
+                  ]
                 )
               })
             )
@@ -55732,49 +55742,66 @@ var render = function() {
               ref: "col_modal",
               attrs: { width: "60vw", "overlay-theme": "dark" }
             },
-            _vm._l(_vm.select_pento_list, function(select_pento) {
+            _vm._l(_vm.select_pento_list.design_info, function(select_pento) {
               return _c("div", { staticClass: "col-my-modal-layout" }, [
                 _c("div", { staticClass: "col-my-modal-layout-sub-1" }, [
                   _c("div", [
                     _c("img", {
-                      attrs: { src: "", src: select_pento.file_name }
+                      attrs: { src: "", src: select_pento.design_image }
                     })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "modal-btn",
-                      on: {
-                        click: function($event) {
-                          _vm.delect_my_col()
-                        }
-                      }
-                    },
-                    [_vm._v("삭제")]
-                  )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-my-modal-layout-sub-2" }, [
                   _c("table", [
                     _c("tr", { staticClass: "my-modal-layout-tr-tilte" }, [
-                      _c("td", { attrs: { height: "10%", colspan: "2" } }, [
-                        _vm._v(_vm._s(select_pento.design_title))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", { staticClass: "my-modal-layout-tr-index" }, [
-                      _c("td", { attrs: { height: "5%", width: "50%" } }, [
-                        _vm._v(_vm._s(select_pento.user_nickname))
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { attrs: { height: "5%" } }, [
+                      _c("td", { attrs: { height: "15%", colspan: "2" } }, [
+                        _c("div", { staticClass: "title-box" }),
                         _vm._v(
-                          "난이도 : " +
-                            _vm._s(select_pento.level_of_difficultly)
+                          "\r\n                          " +
+                            _vm._s(select_pento.design_title)
                         )
                       ])
                     ]),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      {
+                        staticClass: "my-modal-layout-tr-index",
+                        attrs: { height: "7%" }
+                      },
+                      [
+                        _c("td", { attrs: { width: "50%" } }, [
+                          _vm._v(
+                            "작성자 : " + _vm._s(select_pento.user_nickname)
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "난이도 : " +
+                              _vm._s(_vm.select_pento_list.recommendNumSum)
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      {
+                        staticClass: "my-modal-layout-tr-index",
+                        attrs: { height: "7%" }
+                      },
+                      [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v(
+                            "제작일 : " +
+                              _vm._s(select_pento.registered_date) +
+                              "\r\n                        "
+                          )
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
                     _c("tr", { staticClass: "my-modal-layout-tr-index-2" }, [
                       _c("td", { attrs: { colspan: "2" } }, [
@@ -55920,7 +55947,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.6fr 0.4fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
 
 // exports
 
@@ -55967,10 +55994,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", [_vm._v("작성자 : " + _vm._s(list.nickname))]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("난이도 : " + _vm._s(list.level))]),
-                  _vm._v(
-                    "\n                    갈비찜을 밥위에 얹어주세용 \n                    갈비찜을 밥위에 비벼주세용\n                    내가제일 좋아하는 갈비찜 덮밥\n                    아아~아아아~ 냠냠!\n                "
-                  )
+                  _c("p", [_vm._v("난이도 : " + _vm._s(list.level))])
                 ]),
                 _vm._v(" "),
                 _c("img", {
@@ -55993,11 +56017,13 @@ var render = function() {
           ref: "col_modal2",
           attrs: { width: "60vw", "overlay-theme": "dark" }
         },
-        _vm._l(_vm.select_pento_list, function(select_pento) {
+        _vm._l(_vm.select_pento_list.design_info, function(select_pento) {
           return _c("div", { staticClass: "col-share-modal-layout" }, [
             _c("div", { staticClass: "col-share-modal-layout-sub-1" }, [
               _c("div", [
-                _c("img", { attrs: { src: "", src: select_pento.file_name } })
+                _c("img", {
+                  attrs: { src: "", src: select_pento.design_image }
+                })
               ])
             ]),
             _vm._v(" "),
@@ -56012,7 +56038,13 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("p", [
-                _vm._v("난이도 : " + _vm._s(select_pento.level_of_difficultly))
+                _vm._v(
+                  "난이도 : " + _vm._s(_vm.select_pento_list.recommendNumSum)
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("제작일 : " + _vm._s(select_pento.registered_date))
               ]),
               _vm._v(" "),
               _c("span", [_vm._v(_vm._s(select_pento.design_explain))]),

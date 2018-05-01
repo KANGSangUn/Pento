@@ -3,48 +3,78 @@
     height: 100%;
 }
 .rank-page-div-body{
-    padding-top : 7vh;
+    padding-top : 8vh;
     padding-bottom: 1vh;
     margin: auto;
     width: 90%;
-    height: 95vh;
-
+    height: 90vh;
+    margin-bottom: 8vh;
     display: grid;
     grid-template-columns: 20% 40% 40%;
     grid-column-gap: 1vh;
 }
 .rank-page-div-1{
     height: 80vh;
-    overflow: scroll;
     display : grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 30%;
-
+    grid-auto-rows: 20%;
+    overflow-x:hidden; overflow-y:auto;
+    border : 1px solid silver;
+}
+.rank-page-div-1-sub{
+  transition: 0.3s;
+}
+.rank-page-div-1-sub:hover{
+  background : orange;
+}
+.rank-page-div-1-sub img{
+  padding : 1vh;
+  width: 100%;
+  height: 100%;
 }
 .rank-page-div-2-sub-1{
   display: grid;
   grid-template-rows: 0.5fr 2fr 0.5fr;
 }
+
 .rank-page-div-2-sub-2{
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.4fr 0.4fr;
+}
+.game-title{
+  font-size : 4vh;
 }
 .rank-page-div-2-sub-2 div{
   text-align: center;
 }
 .rank-page-div-2-sub-2-sub{
   display: grid;
+  padding : 1vh;
+  grid-column-gap: 0.5vh;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.4fr 1fr;
 }
 .rank-page-div-2{
     display: grid;
     grid-template-rows: 70% 30%;
+        border : 1px solid silver;
+}
+.game-index{
+  background: orange;
+  color : white;
+  font-size : 2vh;
+}
+.game-data{
+  font-size : 2vh;
+  border-bottom: 1px solid silver;
+  border-left: 1px solid silver;
+  border-right: 1px solid silver;
 }
 .rank-page-div-3{
     display: grid;
     grid-template-rows: 50% 50%;
     grid-auto-rows: 1fr;
+    border : 1px solid silver;
 }
 .rank-page-div-3-sub-2{
     display: grid;
@@ -52,30 +82,59 @@
 }
 #rank-div {
   display: grid;
-  grid-template-rows: 0.8fr 0.2fr;
+  grid-template-rows: 0.1fr 0.9fr;
+  border-right: 1px solid silver;
 }
-.btn-div-design {
-  display: grid;
-  grid-template-columns: 0.5fr 0.5fr;
-  border-top: 1px solid slategray;
-}
-.btn-div-design button {
-  width: 100%;
-  height: 100%;
-  font-size: 1vw;
-  color: white;
-  background: transparent;
-}
-.btn-div-design-1 {
-  background-color: #60a0ff;
-}
-.btn-div-design-2 {
-  background-color: #141c35;
+
+.rank-div-title{
+  background: orange;
+  text-align: center;
+  font-size: 3vh;
 }
 .ranking {
   text-align: center;
   border-top: 1px solid silver;
 }
-.border-style{
-  border : 1px solid silver;
+.rank-div-contents{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.rank-div-contents-content{
+  display: grid;
+  grid-template-columns: 0.1fr 0.5fr 0.6fr;
+}
+.rank-div-contents-content{
+  text-align: center
+}
+.spinner {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  display: none;
+  margin: 100px auto;
+  transition: 0.3s;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    background-color: rgb(255, 170, 72);
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    background-color: rgb(252, 255, 82);
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    background-color: rgb(149, 255, 50);
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

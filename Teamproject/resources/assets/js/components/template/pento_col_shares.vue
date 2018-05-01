@@ -20,10 +20,6 @@
                         <hr style="color : white;">
                         <p>작성자 : {{list.nickname}}</p>
                         <p>난이도 : {{list.level}}</p>
-                        갈비찜을 밥위에 얹어주세용 
-                        갈비찜을 밥위에 비벼주세용
-                        내가제일 좋아하는 갈비찜 덮밥
-                        아아~아아아~ 냠냠!
                     </div>
                     <img v-bind:src="'http://localhost:8000'+list.design_image" class="content-img">
                 </div>
@@ -33,16 +29,17 @@
         </div>
         <br>
         <sweet-modal ref="col_modal2" width="60vw" overlay-theme="dark">
-            <div class="col-share-modal-layout" v-for="select_pento in select_pento_list">
+            <div class="col-share-modal-layout" v-for="select_pento in select_pento_list.design_info">
                 <div class="col-share-modal-layout-sub-1">
                     <div>
-                        <img src v-bind:src='select_pento.file_name'/>
+                        <img src v-bind:src='select_pento.design_image'/>
                     </div>
                 </div>
                 <div class="col-share-modal-layout-sub-2">
                     <div class="modal-2-sub-1"><div></div>{{select_pento.design_title}}</div>
                     <h4>작성자 : {{select_pento.user_nickname}}</h4>
-                    <p>난이도 : {{select_pento.level_of_difficultly}}</p>
+                    <p>난이도 : {{select_pento_list.recommendNumSum}}</p>
+                    <p>제작일 : {{select_pento.registered_date}}</p>
                     <span>{{select_pento.design_explain}}</span>
                     <div class="modal-2-sub-4">
                         <button class="modal-btn-1"@click="
@@ -127,7 +124,7 @@ export default {
 <style>
 .col-share-main-layout {
   display: grid;
-  grid-template-rows: 0.6fr 0.4fr 0.3fr;
+  grid-template-rows: 0.4fr 0.6fr 0.3fr;
 }
 .col-share-banner-layout {
   margin: 50px auto;
@@ -187,7 +184,7 @@ export default {
   padding: 1.5vw;
   text-align: left;
   display: grid;
-  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;
+  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;
 }
 .modal-2-sub-1 {
   font-size: 2vw;
@@ -216,12 +213,13 @@ export default {
   position: relative;
 }
 .content-index {
+  padding: 2vh;
   overflow: hidden;
   z-index: 10;
   color: transparent;
   position: absolute;
   width: 0px;
-  background: rgba(10, 30, 180, 0.5);
+  background: transparent;
   height: 100%;
   transition: 0.35s;
 }
@@ -234,6 +232,7 @@ export default {
 .content-layout:hover .content-index {
   color: white;
   display: inline-block;
+  background: rgba(10, 30, 180, 0.5);
   width: 50%;
 }
 

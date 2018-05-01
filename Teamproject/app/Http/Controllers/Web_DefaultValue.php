@@ -85,6 +85,7 @@ class Web_DefaultValue extends Controller
         $this->return_value = Follow::getFollowList($request->input('user_no'));
 
         // View로 반환
+        
         return $this->return_value;
     }
 

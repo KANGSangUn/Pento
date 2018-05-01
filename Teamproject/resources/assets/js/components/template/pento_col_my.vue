@@ -11,28 +11,34 @@
         <div class="my-main-pento-list">
             <div id="my-main-list">
                 <div v-for="pento_imgs in pento_list" @click="pento_my_modal(pento_imgs.design_no)">
-                    <img src v-bind:src='pento_imgs.file_name'/>
+                    <img src v-bind:src='pento_imgs.design_image'/>
                 </div>
             </div>
         </div>
         <sweet-modal ref="col_modal" width="60vw" overlay-theme="dark">
-            <div class="col-my-modal-layout" v-for="select_pento in select_pento_list">
+            <div class="col-my-modal-layout" v-for="select_pento in select_pento_list.design_info">
                 <div class="col-my-modal-layout-sub-1">
                     <div>
-                    <img src v-bind:src='select_pento.file_name'/>
+                    <img src v-bind:src='select_pento.design_image'/>
                     </div>
-                      <button
-                    class="modal-btn" @click="delect_my_col()"
-                    >삭제</button>
+              
                 </div>
                 <div class="col-my-modal-layout-sub-2">
                 <table>
                       <tr class="my-modal-layout-tr-tilte">
-                        <td height="10%" colspan="2">{{select_pento.design_title}}</td>
+                        <td height="15%" colspan="2">
+                          <div class="title-box"></div>
+                          {{select_pento.design_title}}</td>
+                  
                       </tr>
-                      <tr class="my-modal-layout-tr-index">
-                        <td height="5%" width="50%">{{select_pento.user_nickname}}</td>
-                        <td height="5%">난이도 : {{select_pento.level_of_difficultly}}</td>            
+                     
+                      <tr height="7%" class="my-modal-layout-tr-index">
+                        <td  width="50%">작성자 : {{select_pento.user_nickname}}</td>
+                        <td>난이도 : {{select_pento_list.recommendNumSum}}</td>            
+                      </tr>
+                      <tr  height="7%" class="my-modal-layout-tr-index">
+                        <td colspan="2" >제작일 : {{select_pento.registered_date}}
+                        </td>
                       </tr>
                       <tr class="my-modal-layout-tr-index-2">
                         <td colspan="2">
@@ -91,8 +97,7 @@ export default {
       });
 
       this.$refs.col_modal.open();
-    },
-    delect_my_col: function() {}
+    }
   }
 };
 </script>
@@ -106,7 +111,7 @@ export default {
 .col-my-main-div {
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
-  height: 100vh;
+  height: auto;
 }
 #my-main-banner {
   font-weight: 200;
@@ -146,9 +151,15 @@ export default {
   border-bottom: 1px solid silver;
 }
 .col-my-modal-layout-sub-1 img {
-  padding: 1.5vw;
-  width: 40%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
+}
+.title-box {
+  margin-right: 0.5vw;
+  float: left;
+  width: 5px;
+  height: 3vw;
+  background-color: orange;
 }
 .col-my-modal-layout-sub-2 {
   height: auto;
@@ -163,11 +174,15 @@ export default {
   transition: 0.3s;
 }
 .col-my-modal-layout-sub-2 table {
-  text-align: center;
+  text-align: left;
   margin: auto;
   padding: 2vh;
   width: 90%;
   height: 100%;
+}
+
+.col-my-modal-layout-sub-2 td {
+  vertical-align: baseline;
 }
 .my-modal-layout-tr-tilte {
   font-size: 4vh;
