@@ -23,7 +23,7 @@ class Web_Functions extends Controller
     public function Login(Request $request){
 
         if(session()->has('user_no') && session('user_id') == $request->input('user_id')){
-            return 'false';
+            return 'null';
         }
 
         // DB에서 데이터 가져오기
@@ -31,7 +31,7 @@ class Web_Functions extends Controller
 
         if($this->return_value == 'Invalid id' || $this->return_value == 'Invalid password'){
 
-            $this->return_value = 'false';
+            $this->return_value = 'null';
         }
 
         return $this->return_value;
@@ -67,7 +67,7 @@ class Web_Functions extends Controller
     // 인자값 : 유저번호, 동화번호
     public function MyBasket(Request $request){
 
-        $array_storys = array(1,1,1,2,2,2,3,3,3,4,4,4,5,5,5);
+        $array_storys = $request->input('story_no');
         $array_storys_result =  array_unique($array_storys);
 
 //        $array_storys = $request->input('story_no');
@@ -124,7 +124,7 @@ class Web_Functions extends Controller
         // DB에서 데이터 가져오기
         $this->return_value = Follow::findFollowerID ($request->input('friends_id'));
 
-        if($this->return_value != 'true'){
+        if($this->return_value == 'select fail'){
             $this->return_value = 'false';
         }
 

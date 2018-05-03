@@ -35,7 +35,7 @@
     }
     #main-body-2{
         background-color: #f6f7f1;
-        background-image: url("http://localhost:8000/images/newweb/main_banner_2.jpg");
+        background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -90,12 +90,13 @@
         grid-template-columns: 0.5fr 0.5fr;
     }
     .main-body-3-1{
-        background-image: url("http://localhost:8000/images/newweb/main_banner_3.jpg");
+        background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg");
         background-size: contain;
     }
     .main-body-3-2{
-        text-align: center;
+        text-align: right;
         padding: 5vw;
+        padding-right: 30vh;
     }
     .main-body-3-2 p{
         font-family:'Mplus 1p',sans-serif;
@@ -117,11 +118,11 @@
         background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); 
         background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); 
         *****/
-        background-image: url("http://localhost:8000/images/newweb/main_banner_4.jpg");
+        background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg");
         background-repeat: no-repeat;
         background-size : cover;
         background-attachment: fixed;
-        text-align: center;
+        text-align: left;
         margin : auto;
         width: 100vw;
         height: 70vh;
@@ -130,10 +131,13 @@
     }
     .main-body-4-1{
         color : white;
-        padding: 8vw;
+        padding-top : 20vh;
+        padding-left: 15vh
+   
     }
     .main-body-4-2{
-        padding : 6vw;
+        text-align: center;
+        padding : 7vw;
     }
     #main-body-4 p{
         font-family:'Mplus 1p',sans-serif;

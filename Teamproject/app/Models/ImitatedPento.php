@@ -190,7 +190,7 @@ class ImitatedPento extends Model
                                     DB::raw('concat ("' . $routeName .'", imitated_image) as imitated_image')
                                 )
                                 ->where('user_no', $userNum)
-                                ->where('division_no', 0)
+                                // ->where('division_no', 0)
                                 ->groupby('design_no')
                                 ->orderby('registered_date', 'desc')
                                 ->get();

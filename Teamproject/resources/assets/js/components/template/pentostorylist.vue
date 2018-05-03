@@ -21,7 +21,7 @@ dev . KANG SANG UN
                 <div class="booklist">
                     <div v-for="list in story" class="list_item" @click='openStory(list)'>
                         <figure class="info_effect">
-                            <img v-bind:src="'http://localhost:8000'+(list.tale_image)"/>
+                            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(list.tale_image)"/>
                             <figcaption>
                                 <h2>{{list.tale_title}}</h2>
                             </figcaption>
@@ -35,7 +35,7 @@ dev . KANG SANG UN
                   <transition-group name="list" tag="div" id="basket">
                     <!-- 동화 삭제 애니메이션을 위한 트렌지션 그룹 -->
                     <div v-for="item_bkt in basket_item"  v-bind:key="item_bkt.title" class="obj-bkt" @click="delect_Item(item_bkt)">
-                        <img  v-bind:src="'http://localhost:8000'+(item_bkt.tale_image0)"/>
+                        <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(item_bkt.tale_image0)"/>
                         {{item_bkt.title}}
                     </div>
                   </transition-group>
@@ -54,20 +54,20 @@ dev . KANG SANG UN
                     <div style="float: left" class="story-modal-left">
                       
                         <div class="story-modal-left-main">
-                            <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image0)"/>
+                            <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image0)"/>
                         </div>
                         <div class="story-modal-left-sub">
                             <div class="story-modal-images" @click="thunail_change(select_item.tale_image1)">
-                                <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image1)"/>
+                                <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image1)"/>
                             </div>
                             <div class="story-modal-images" @click="thunail_change(select_item.tale_image2)">
-                                <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image2)"/>
+                                <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image2)"/>
                                                             </div>
                             <div class="story-modal-images" @click="thunail_change(select_item.tale_image3)">
-                               <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image3)"/>
+                               <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image3)"/>
                             </div>
                             <div class="story-modal-images" @click="thunail_change(select_item.tale_image4)">
-                                 <img  v-bind:src="'http://localhost:8000'+(select_item.tale_image4)"/>
+                                 <img  v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image4)"/>
                             </div>
 
                         </div>

@@ -12,7 +12,7 @@ dev . KANG SANG UN
                             >
                         <!--유저 기본 정보 div-->
                         <div v-for="user_info in Item_list">
-                            <img v-bind:src="'http://localhost:8000'+user_info.image+'.png'" class="userimg"/>
+                            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_info.image+'.png'" class="userimg"/>
                             <h1>こんにちは! {{user_info.user_nickname}}</h1>
                             <h2>保有ミノ : {{user_info.user_point}}</h2>
                             <h2 style="margin-top : 2vh;">紹介</h2>
@@ -31,7 +31,7 @@ dev . KANG SANG UN
                             id="mypento_sub_div3">
                         <div class="my-tale-list">
                             <div class="my-tele-list-sub" v-for="buylist in buy_list">
-                                <img v-bind:src="'http://localhost:8000'+buylist.tale_image+'.jpg'">
+                                <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+buylist.tale_image">
                             </div>
                         </div>
                     

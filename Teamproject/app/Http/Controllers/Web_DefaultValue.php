@@ -28,7 +28,7 @@ class Web_DefaultValue extends Controller
     public function StoryList(){
 
         // DB에서 데이터 가져오기
-        $this->return_value = FairyTale::getStoryListWeb ();
+        $this->return_value = FairyTale::getStoryListWeb();
 
         // View로 반환
         return $this->return_value;
@@ -85,7 +85,6 @@ class Web_DefaultValue extends Controller
         $this->return_value = Follow::getFollowList($request->input('user_no'));
 
         // View로 반환
-        
         return $this->return_value;
     }
 

@@ -7694,6 +7694,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_components$created$c = {
@@ -21342,41 +21344,40 @@ module.exports = {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    data: function data() {
-        return {
-            frd_values: ''
-        };
-    },
-    mounted: function mounted() {
-        this.page_up();
-    },
+  data: function data() {
+    return {
+      frd_values: ""
+    };
+  },
+  mounted: function mounted() {
+    this.page_up();
+  },
 
-    components: {
-        'hid_nav': __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__["a" /* default */]
+  components: {
+    hid_nav: __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__["a" /* default */]
+  },
+  methods: {
+    openNav: function openNav() {
+      document.getElementById("mySidenav").style.width = "450px";
     },
-    methods: {
-        openNav: function openNav() {
-            document.getElementById("mySidenav").style.width = "450px";
-        },
-        page_up: function page_up() {
-            window.scrollTo(0, 0);
-        },
-        frd_search: function frd_search(hid_nav) {
-            var _this = this;
+    page_up: function page_up() {
+      window.scrollTo(0, 0);
+    },
+    frd_search: function frd_search(hid_nav) {
+      var _this = this;
 
-            //친구 추가 함수 완성
-            var url = "frd_search";
-            var art = {
-                'kinds': 'Friends',
-                'method_id': 'Search',
-                'friends_name': hid_nav
-            };
-            this.axios.post(url).then(function (response) {
-                _this.frd_values = response.data;
-            });
-        }
-
+      //친구 추가 함수 완성
+      var url = "frd_search";
+      var art = {
+        kinds: "Friends",
+        method_id: "Search",
+        friends_name: hid_nav
+      };
+      this.axios.post(url).then(function (response) {
+        _this.frd_values = response.data;
+      });
     }
+  }
 });
 
 /***/ }),
@@ -21495,7 +21496,6 @@ module.exports = {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   /*header req value*/
-  props: ["frd_value"],
   created: function created() {
     var _this = this;
 
@@ -21503,7 +21503,6 @@ module.exports = {
       _this.login_register(login_type);
       _this.login_susandfail();
     });
-    console.log(this.login_type);
   },
   data: function data() {
     return {
@@ -21512,6 +21511,8 @@ module.exports = {
         userpw: ""
       },
       frd_name: [],
+      frd_list: [],
+      search_result: [],
       register_type: "",
       login_type: {
         user_login: sessionStorage.getItem("user_session"),
@@ -21532,11 +21533,9 @@ module.exports = {
     /*friend add modal open*/
     hidden_menu: function hidden_menu() {
       this.$refs.frd_modal.open();
+      this.user_frd_list();
     },
-    /*fried Search function*/
-    frd_Search: function frd_Search() {
-      this.$emit("frd_search", this.frd_name);
-    },
+
     /*hidden bar close*/
     closeNav: function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
@@ -21583,6 +21582,42 @@ module.exports = {
       } else {
         this.$refs.loginno.open();
       }
+    },
+
+    user_frd_list: function user_frd_list() {
+      var _this2 = this;
+
+      var url = "Friends";
+      var art = {
+        user_no: sessionStorage.getItem("user_number")
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this2.frd_list = response.data;
+      });
+    },
+    /*fried Search function*/
+    user_frd_search: function user_frd_search() {
+      var _this3 = this;
+
+      var url = "SearchValue";
+      var art = {
+        friends_id: this.frd_name
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this3.search_result = response.data;
+      });
+    },
+    user_frd_add: function user_frd_add(frd_name) {
+      var _this4 = this;
+
+      var url = "AddFriend";
+      var art = {
+        user_no: sessionStorage.getItem("user_number"),
+        friends_no: frd_name
+      };
+      this.axios.post(url, art).then(function (response) {
+        _this4.search_result = response.data;
+      });
     },
     login_btn: function login_btn(condition) {
       if (condition) {
@@ -40519,7 +40554,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : auto auto 5vh auto;\r\n        width: 99vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        text-align: center;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://localhost:8000/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding: 8vw;\n}\n.main-body-4-2{\r\n        padding : 6vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}", ""]);
+exports.push([module.i, "\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : auto auto 5vh auto;\r\n        width: 99vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        text-align: right;\r\n        padding: 5vw;\r\n        padding-right: 30vh;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}", ""]);
 
 // exports
 
@@ -40588,7 +40623,10 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "footer-middle" }, [
         _c("img", {
-          attrs: { src: "http://localhost:8000/images/web/main_logo.png" }
+          attrs: {
+            src:
+              "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png"
+          }
         }),
         _vm._v(" "),
         _c("br"),
@@ -40662,7 +40700,10 @@ var render = function() {
           _c("div", { staticClass: "main-page-menu-sub-banner" }, [
             _c("img", {
               staticClass: "menu-img",
-              attrs: { src: "http://localhost:8000/images/web/loginimage.png" }
+              attrs: {
+                src:
+                  "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png"
+              }
             }),
             _vm._v(" "),
             _vm._m(4)
@@ -40677,7 +40718,10 @@ var render = function() {
               _c("router-link", { attrs: { to: { name: "pentostorylist" } } }, [
                 _c("img", {
                   staticClass: "menu-img",
-                  attrs: { src: "http://localhost:8000/images/web/story.png" }
+                  attrs: {
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png"
+                  }
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "menu-title" }, [
@@ -40711,7 +40755,10 @@ var render = function() {
               _c("router-link", { attrs: { to: { name: "pentoRank" } } }, [
                 _c("img", {
                   staticClass: "menu-img",
-                  attrs: { src: "http://localhost:8000/images/web/ranking.png" }
+                  attrs: {
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png"
+                  }
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "menu-title" }, [
@@ -40748,7 +40795,8 @@ var render = function() {
                 _c("img", {
                   staticClass: "menu-img",
                   attrs: {
-                    src: "http://localhost:8000/images/web/collection.png"
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png"
                   }
                 }),
                 _vm._v(" "),
@@ -40793,7 +40841,8 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("img", {
         attrs: {
-          src: "http://localhost:8000/images/newweb/main_sub_banner_1.png"
+          src:
+            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_sub_banner_1.png"
         }
       })
     ])
@@ -40853,12 +40902,16 @@ var staticRenderFns = [
       { staticClass: "main-body-banner-1", attrs: { id: "main-body-4" } },
       [
         _c("div", { staticClass: "main-body-4-1" }, [
-          _c("p", [_vm._v("CREATE YOUR PENTO")]),
+          _c("p", [_vm._v("準備できていますか？")]),
+          _vm._v(" "),
+          _c("span", [_vm._v("ペントを楽しむために")]),
+          _c("br"),
           _vm._v(" "),
           _c("span", [_vm._v("必要なのはあなたの")]),
           _c("br"),
           _vm._v(" "),
-          _c("span", [_vm._v("想像力だけ,何でも作れる")])
+          _c("span", [_vm._v("想像力だけ,何でも作れる")]),
+          _c("br")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "main-body-4-2" }, [
@@ -40988,7 +41041,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://localhost:8000/images/web/storypage_banner.jpg\") ;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.story-modal-left-sub{\r\n    display: grid;\r\n    grid-column-gap: 0.2vw;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(255, 182, 47);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #f1a720;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 1.8fr 0.3fr 0.5fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-btn button{\r\n    width: 45%;\r\n    height: 100%;\r\n    font-size : 1.2vw;\n}", ""]);
+exports.push([module.i, "\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.story-modal-left-sub{\r\n    display: grid;\r\n    grid-column-gap: 0.2vw;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(255, 182, 47);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #f1a720;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 1.8fr 0.3fr 0.5fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-btn button{\r\n    width: 45%;\r\n    height: 100%;\r\n    font-size : 1.2vw;\n}", ""]);
 
 // exports
 
@@ -41044,7 +41097,11 @@ var render = function() {
               [
                 _c("figure", { staticClass: "info_effect" }, [
                   _c("img", {
-                    attrs: { src: "http://localhost:8000" + list.tale_image }
+                    attrs: {
+                      src:
+                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                        list.tale_image
+                    }
                   }),
                   _vm._v(" "),
                   _c("figcaption", [
@@ -41090,7 +41147,9 @@ var render = function() {
                     [
                       _c("img", {
                         attrs: {
-                          src: "http://localhost:8000" + item_bkt.tale_image0
+                          src:
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                            item_bkt.tale_image0
                         }
                       }),
                       _vm._v(
@@ -41159,7 +41218,9 @@ var render = function() {
                 _c("div", { staticClass: "story-modal-left-main" }, [
                   _c("img", {
                     attrs: {
-                      src: "http://localhost:8000" + _vm.select_item.tale_image0
+                      src:
+                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                        _vm.select_item.tale_image0
                     }
                   })
                 ]),
@@ -41179,7 +41240,7 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://localhost:8000" +
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
                             _vm.select_item.tale_image1
                         }
                       })
@@ -41200,7 +41261,7 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://localhost:8000" +
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
                             _vm.select_item.tale_image2
                         }
                       })
@@ -41221,7 +41282,7 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://localhost:8000" +
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
                             _vm.select_item.tale_image3
                         }
                       })
@@ -41242,7 +41303,7 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://localhost:8000" +
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
                             _vm.select_item.tale_image4
                         }
                       })
@@ -54373,7 +54434,9 @@ var render = function() {
               [
                 _c("img", {
                   attrs: {
-                    src: "http://localhost:8000" + game_list.imitated_image
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                      game_list.imitated_image
                   }
                 })
               ]
@@ -54403,7 +54466,8 @@ var render = function() {
                   _c("img", {
                     attrs: {
                       src:
-                        "http://localhost:8000" + _vm.user_game_record.game_img
+                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                        _vm.user_game_record.game_img
                     }
                   })
                 ]
@@ -54713,7 +54777,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://localhost:8000/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid gray;\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
+exports.push([module.i, "\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
 
 // exports
 
@@ -54755,7 +54819,9 @@ var render = function() {
                 staticClass: "userimg",
                 attrs: {
                   src:
-                    "http://localhost:8000" + _vm.login_type.user_image + ".png"
+                    "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                    _vm.login_type.user_image +
+                    ".png"
                 }
               }),
               _vm._v(" "),
@@ -54882,37 +54948,49 @@ var render = function() {
           _c("div", { staticClass: "add_frd_modal" }, [
             _c("div", { staticClass: "add_frd_modal_sub1" }, [
               _c("div", { staticClass: "frd_board" }, [
-                _c(
-                  "table",
-                  [
-                    _c("thead", [
-                      _c("tr", { staticClass: "uppercase" }, [
-                        _c("th", [_vm._v("検索結果")]),
+                _c("table", [
+                  _c("thead", [
+                    _c("tr", { staticClass: "uppercase" }, [
+                      _c("th", [_vm._v("検索結果")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(" +")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    { staticClass: "frd-tbody" },
+                    _vm._l(_vm.search_result, function(frdresult) {
+                      return _c("tr", [
+                        _c("td", { staticClass: "frd-table-td-1" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(frdresult.user_nickname) +
+                              "\n                                "
+                          )
+                        ]),
                         _vm._v(" "),
-                        _c("th", [_vm._v(" +")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(5, function(as) {
-                      return _c("tbody", [
-                        _c("tr", [
-                          _c("td", { staticClass: "frd-table-td-1" }, [
-                            _vm._v("as")
-                          ]),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "frd-table-td-2" }, [
-                            _c("button", [
+                        _c("td", { staticClass: "frd-table-td-2" }, [
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.user_frd_add(frdresult.user_no)
+                                }
+                              }
+                            },
+                            [
                               _vm._v(
                                 "\n                                 +\n                                "
                               )
-                            ])
-                          ])
+                            ]
+                          )
                         ])
                       ])
                     })
-                  ],
-                  2
-                )
+                  )
+                ])
               ])
             ]),
             _vm._v(" "),
@@ -54944,7 +55022,7 @@ var render = function() {
                   staticClass: "frd-btn",
                   on: {
                     click: function($event) {
-                      _vm.frd_Search()
+                      _vm.user_frd_search()
                     }
                   }
                 },
@@ -54954,7 +55032,7 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "frd_list" },
-                _vm._l(_vm.frd_value, function(frd) {
+                _vm._l(_vm.frd_list, function(frd) {
                   return _c("li", [
                     _vm._v(
                       "\n                        " +
@@ -55128,7 +55206,10 @@ var render = function() {
             { staticClass: "sub_btn", attrs: { to: { name: "main" } } },
             [
               _c("img", {
-                attrs: { src: "http://localhost:8000/images/web/logo3.png" }
+                attrs: {
+                  src:
+                    "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/logo3.png"
+                }
               })
             ]
           ),
@@ -55284,7 +55365,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 5vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 4vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n.userimg{\r\n    margin-bottom : 2vh;\n}\n.mypento-sub-div-content-2{\r\n    background: gold\n}\n#mypento_sub_div3 {\r\n     padding : 5vh;\r\n    overflow: scroll;\r\n    margin : auto;\r\n    background-color: #141c35;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://localhost:8000/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\r\n    grid-row-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
+exports.push([module.i, "\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 5vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 4vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n.userimg{\r\n    margin-bottom : 2vh;\n}\n.mypento-sub-div-content-2{\r\n    background: gold\n}\n#mypento_sub_div3 {\r\n     padding : 5vh;\r\n    overflow: scroll;\r\n    margin : auto;\r\n    background-color: #141c35;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\r\n    grid-row-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
 
 // exports
 
@@ -55330,7 +55411,9 @@ var render = function() {
                         staticClass: "userimg",
                         attrs: {
                           src:
-                            "http://localhost:8000" + user_info.image + ".png"
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                            user_info.image +
+                            ".png"
                         }
                       }),
                       _vm._v(" "),
@@ -55389,9 +55472,8 @@ var render = function() {
                         _c("img", {
                           attrs: {
                             src:
-                              "http://localhost:8000" +
-                              buylist.tale_image +
-                              ".jpg"
+                              "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                              buylist.tale_image
                           }
                         })
                       ])
@@ -55518,7 +55600,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.pento-router {\r\n  background-image: url(\"http://localhost:8000/images/web/collection_main.jpg\");\r\n  width: 100%;\r\n  height: auto;\n}\n.pento-router-body {\r\n  padding-top: 20vh;\r\n  margin: auto auto 20vh auto;\r\n  width: 80vw;\r\n  height: auto;\r\n  display: grid;\r\n  grid-column-gap: 1vw;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-menu {\r\n  color: rgb(8, 9, 43);\r\n  background: white;\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n.col-menu:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n}\n.menu-sub {\r\n  padding: 1vw;\r\n  text-align: center;\r\n  font-size: 2vw;\n}\n.menu-sub span {\r\n  font-weight: 400;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.col-menu:hover {\r\n  color: white;\r\n  background: blueviolet;\n}\r\n", ""]);
+exports.push([module.i, "\n.pento-router {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection_main.jpg\");\r\n  width: 100%;\r\n  height: auto;\n}\n.pento-router-body {\r\n  padding-top: 20vh;\r\n  margin: auto auto 20vh auto;\r\n  width: 80vw;\r\n  height: auto;\r\n  display: grid;\r\n  grid-column-gap: 1vw;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-menu {\r\n  color: rgb(8, 9, 43);\r\n  background: white;\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n.col-menu:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n}\n.menu-sub {\r\n  padding: 1vw;\r\n  text-align: center;\r\n  font-size: 2vw;\n}\n.menu-sub span {\r\n  font-weight: 400;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.col-menu:hover {\r\n  color: white;\r\n  background: blueviolet;\n}\r\n", ""]);
 
 // exports
 
@@ -55547,7 +55629,8 @@ var render = function() {
               _c("div", { staticClass: "menu-sub" }, [
                 _c("img", {
                   attrs: {
-                    src: "http://localhost:8000/images/web/mypentoimg.png"
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/mypentoimg.png"
                   }
                 }),
                 _vm._v(" "),
@@ -55563,7 +55646,8 @@ var render = function() {
               _c("div", { staticClass: "menu-sub" }, [
                 _c("img", {
                   attrs: {
-                    src: "http://localhost:8000/images/web/allpentoimg.png"
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/allpentoimg.png"
                   }
                 }),
                 _vm._v(" "),
@@ -55686,7 +55770,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://localhost:8000/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
 
 // exports
 
@@ -55947,7 +56031,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
 
 // exports
 
@@ -55999,7 +56083,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("img", {
                   staticClass: "content-img",
-                  attrs: { src: "http://localhost:8000" + list.design_image }
+                  attrs: {
+                    src:
+                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                      list.design_image
+                  }
                 })
               ]
             )

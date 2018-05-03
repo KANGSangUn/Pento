@@ -119,7 +119,7 @@ export default {
   color: white;
   font-size: 7vh;
   padding-top: 15vh;
-  background-image: url("http://localhost:8000/images/web/col_my_page_banner.jpg");
+  background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg");
   background-size: cover;
 }
 #my-main-list {

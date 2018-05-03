@@ -86,7 +86,7 @@ class Buylist extends Model
                                 )
                                 ->where('bl.user_no', '=', $userNum)
 //                                ->where('ti.type_no', 1)
-                                ->where('ti.tale_image', 'regexp', '_1$')
+                                ->where('ti.tale_image', 'regexp', '_1')
                                 ->orderBy('ft.tale_title')
                                 ->get();
 

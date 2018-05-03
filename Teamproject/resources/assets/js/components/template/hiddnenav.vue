@@ -5,7 +5,7 @@ dev . KANG SANG UN
     <div id="mySidenav" class="sidenav"><!--히든 네비게이션-->
         <div class="hidden-menu-1"  v-if="login_type.user_login!='null'">
             <button class="closebtn" @click="closeNav()">Ⅹ</button>
-            <img v-bind:src="'http://localhost:8000'+login_type.user_image+'.png'" class="userimg"/>
+            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+login_type.user_image+'.png'" class="userimg"/>
             <p>こんにちは！{{login_type.user_name}}さん</p>
             <router-link class="menu"  :to="{name:'Mypento'}">MY PENTO</router-link>
             <a @click="hidden_menu()">友達探し</a>
@@ -42,11 +42,13 @@ dev . KANG SANG UN
                                     <th> +</th>
                                 </tr>
                                 </thead>
-                                <tbody v-for="as in 5">
-                                <tr >
-                                    <td class="frd-table-td-1">as</td>
+                            <tbody class="frd-tbody">
+                                <tr v-for="frdresult in search_result" >
+                                    <td class="frd-table-td-1">
+                                        {{frdresult.user_nickname}}
+                                    </td>
                                     <td class="frd-table-td-2">
-                                    <button>
+                                    <button v-on:click="user_frd_add(frdresult.user_no)">
                                      +
                                     </button>
                                     </td>
@@ -61,9 +63,9 @@ dev . KANG SANG UN
                                   vs-label-placeholder="名前を入力してください。"
                                   v-model="frd_name"/>
                     </div>
-                    <button class="frd-btn" v-on:click="frd_Search()" >サーチ</button>
+                    <button class="frd-btn" v-on:click="user_frd_search()" >サーチ</button>
                     <div class="frd_list">
-                        <li v-for="frd in frd_value">
+                        <li v-for="frd in frd_list">
                             {{frd.user_nickname}}
                         </li>
                     </div>
@@ -82,7 +84,7 @@ dev . KANG SANG UN
                     <vs-input vs-icon="lock"
                               vs-label-placeholder="Password"
                               v-model="userinfo.userpw"/>
-                    <vs-button vs-type="primary-filled" @click="user()">LOGIN</vs-button>
+                    <vs-button vs-type="primary-filled" v-on:click="user()">LOGIN</vs-button>
                 </div>
             </div>
             <div class="register-view" v-if="register_type==false">
@@ -90,17 +92,15 @@ dev . KANG SANG UN
             </div>
             </div>
         </sweet-modal>
-
-
         <sweet-modal icon="success" ref="loginok" class="login_btn">
             Login success!
-            <vs-button vs-type="primary-filled" @click="login_btn(true)"></vs-button>
+            <vs-button vs-type="primary-filled" v-on:click="login_btn(true)"></vs-button>
 
         </sweet-modal>
         <sweet-modal ref="loginno"
                      icon="error"  overlay-theme="dark" modal-theme="dark">
             Login Fail!
-            <vs-button vs-type="primary-filled" @click="login_btn(false)">로그인 실패!</vs-button>
+            <vs-button vs-type="primary-filled" v-on:click="login_btn(false)">로그인 실패!</vs-button>
         </sweet-modal>
 
     </div>
@@ -109,13 +109,11 @@ dev . KANG SANG UN
 <script>
 export default {
   /*header req value*/
-  props: ["frd_value"],
   created() {
     this.$eventBus.$on("login_success", login_type => {
       this.login_register(login_type);
       this.login_susandfail();
     });
-    console.log(this.login_type);
   },
   data() {
     return {
@@ -124,6 +122,8 @@ export default {
         userpw: ""
       },
       frd_name: [],
+      frd_list: [],
+      search_result: [],
       register_type: "",
       login_type: {
         user_login: sessionStorage.getItem("user_session"),
@@ -143,11 +143,9 @@ export default {
     /*friend add modal open*/
     hidden_menu: function() {
       this.$refs.frd_modal.open();
+      this.user_frd_list();
     },
-    /*fried Search function*/
-    frd_Search: function() {
-      this.$emit("frd_search", this.frd_name);
-    },
+
     /*hidden bar close*/
     closeNav: function() {
       document.getElementById("mySidenav").style.width = "0";
@@ -194,6 +192,35 @@ export default {
       } else {
         this.$refs.loginno.open();
       }
+    },
+    user_frd_list: function() {
+      let url = "Friends";
+      let art = {
+        user_no: sessionStorage.getItem("user_number")
+      };
+      this.axios.post(url, art).then(response => {
+        this.frd_list = response.data;
+      });
+    },
+    /*fried Search function*/
+    user_frd_search: function() {
+      let url = "SearchValue";
+      let art = {
+        friends_id: this.frd_name
+      };
+      this.axios.post(url, art).then(response => {
+        this.search_result = response.data;
+      });
+    },
+    user_frd_add: function(frd_name) {
+      let url = "AddFriend";
+      let art = {
+        user_no: sessionStorage.getItem("user_number"),
+        friends_no: frd_name
+      };
+      this.axios.post(url, art).then(response => {
+        this.search_result = response.data;
+      });
     },
     login_btn(condition) {
       if (condition) {

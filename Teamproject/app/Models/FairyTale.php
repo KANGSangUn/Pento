@@ -62,7 +62,7 @@ class FairyTale extends Model
                                                 DB::raw('concat( "' . $routeName . '", ti.tale_image) as tale_image'),
                                                 'ft.tale_explain'
                                             )
-                                            ->where('ti.tale_image', 'regexp', '_[1]$')
+                                            ->where('ti.tale_image', 'regexp', '_[1]')
                                             ->orderBy('ft.tale_title')
                                             ->get();
 

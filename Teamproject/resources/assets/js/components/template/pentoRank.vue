@@ -7,7 +7,7 @@ dev . KANG SANG UN
               <div class="rank-page-div-1">
                  <div class="rank-page-div-1-sub" v-for="game_list in game_record"
                 @click="load_user_play(game_list.design_no,game_list.imitated_image)">
-                      <img v-bind:src="'http://localhost:8000'+ game_list.imitated_image">
+                      <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+ game_list.imitated_image">
                  </div>
               </div>
               <div class="rank-page-div-2">
@@ -17,7 +17,7 @@ dev . KANG SANG UN
                   <div></div>
                   <div class="game_image" style="text-align :center">
                   <!-- 이미지 노출 -->
-                    <img :src='"http://localhost:8000"+user_game_record.game_img'>
+                    <img :src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com"+user_game_record.game_img'>
                   </div>
                    <div></div>
                 </div>

@@ -5,7 +5,7 @@
                 <router-link :to="{name:'pento_col_my'}">
                 <div class="col-menu">
                     <div class="menu-sub">
-                        <img src="http://localhost:8000/images/web/mypentoimg.png">
+                        <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/mypentoimg.png">
                         <br>
                         <span>私のペント</span>
                     </div>
@@ -17,7 +17,7 @@
                 <router-link :to="{name:'pento_col_all'}">
                 <div class="col-menu">
                     <div class="menu-sub">
-                        <img src="http://localhost:8000/images/web/allpentoimg.png">
+                        <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/allpentoimg.png">
                         <br>
                         <span>皆のペント</span>
                     </div>
@@ -41,7 +41,7 @@ export default {
 
 <style>
 .pento-router {
-  background-image: url("http://localhost:8000/images/web/collection_main.jpg");
+  background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection_main.jpg");
   width: 100%;
   height: auto;
 }

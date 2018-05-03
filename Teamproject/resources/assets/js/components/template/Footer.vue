@@ -7,7 +7,7 @@ dev . KANG SANG UN
           
         </div>
         <div class="footer-middle">
-                <img src="http://localhost:8000/images/web/main_logo.png">
+                <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png">
                 <br>
                 <a  href="https://github.com/KANGSangUn/Pento">
                 <i class="fab fa-vuejs fa-2x"></i>

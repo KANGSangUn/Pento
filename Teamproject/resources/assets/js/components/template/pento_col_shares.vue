@@ -21,7 +21,7 @@
                         <p>작성자 : {{list.nickname}}</p>
                         <p>난이도 : {{list.level}}</p>
                     </div>
-                    <img v-bind:src="'http://localhost:8000'+list.design_image" class="content-img">
+                    <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+list.design_image" class="content-img">
                 </div>
             </div>
             
@@ -140,7 +140,7 @@ export default {
   background: purple;
 }
 #col-share-banner-sub-2 {
-  background-image: url("http://localhost:8000/images/web/col_all_banner.jpg");
+  background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

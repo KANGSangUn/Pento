@@ -88,7 +88,7 @@
     grid-template-columns: 0.5fr 0.5fr;
 }
 .login-view{
-    background-image: url("http://localhost:8000/images/web/loginpage.png");
+    background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png");
     background-size: cover;
 }
 .login-form{
@@ -119,11 +119,17 @@
 .frd_board{
     text-align: center;
     font-size : 2vh;
+    
 }
 .frd_board table{
-    border : 1px solid gray;
+    border : 1px solid rgb(128, 128, 128);
     margin : 2rem auto;
     width: 85%;
+    
+}
+.frd-tbody{
+    overflow-x: hidden;
+    overflow-y: auto
 }
 .frd-table-td-1{
     width: 80%;

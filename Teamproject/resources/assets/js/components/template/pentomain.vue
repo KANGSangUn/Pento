@@ -4,7 +4,7 @@
         <div class="main-body-1">
             <p class="main-body-p-1">WELCOME</p>
             <p class="main-body-p-2">MY NAME IS PENTO!</p>
-            <img src="http://localhost:8000/images/newweb/main_sub_banner_1.png">
+            <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_sub_banner_1.png">
         </div>
         <!-- 두번째 배너 -->
         <div class="main-body-2" id="main-body-2">
@@ -31,9 +31,11 @@
         <!-- 4번째 배너 -->
         <div id="main-body-4" class="main-body-banner-1">
             <div class="main-body-4-1">
-                <p>CREATE YOUR PENTO</p>
+                <p>準備できていますか？</p>
+                <span>ペントを楽しむために</span><br/>
                 <span>必要なのはあなたの</span><br/>
-                <span>想像力だけ,何でも作れる</span>
+                <span>想像力だけ,何でも作れる</span><br/>
+                
             </div>
             <div class='main-body-4-2'>
                  <iframe width="70%" height="100%"
@@ -58,7 +60,7 @@
         <div class="main-body-3">
             <div class="main-body-menu">
                 <div class="main-page-menu-sub-banner">
-                         <img class="menu-img" v-bind:src="'http://localhost:8000/images/web/loginimage.png'"/>
+                         <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png'"/>
                             <div class="menu-title" >
                                 <!-- 메뉴 배너 텍스트 -->
                               <p>まるで、花のようだ。</p>
@@ -69,7 +71,7 @@
                     <!--스토리 리스트 이동 html-->
                     <div class="main-page-menu-sub">
                           <router-link :to="{name:'pentostorylist'}">
-                         <img  class="menu-img" v-bind:src="'http://localhost:8000/images/web/story.png'"/>
+                         <img  class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png'"/>
                             <div class="menu-title" >
                               <span>Pento Story</span>
                               <p>行こう、物語の中に。</p>
@@ -86,7 +88,7 @@
                 <!-- 랭킹 페이지 이동 -->
                          <div class="main-page-menu-sub">
                              <router-link :to="{name:'pentoRank'}">
-                                 <img class="menu-img" src="http://localhost:8000/images/web/ranking.png">
+                                 <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png">
                                 <div class="menu-title" >
                                 <span>Pento Rank</span>
                                   <p>ランキング、チャート</p>
@@ -103,7 +105,7 @@
                 <!-- 컬렉션 페이지 이동 -->
                         <div class="main-page-menu-sub">
                             <router-link :to="{name:'pento_col'}">
-                                <img class="menu-img" src="http://localhost:8000/images/web/collection.png"/>
+                                <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png"/>
                                 <div class="menu-title" >
                                 <span>Pento Collections</span>
                                 <p>皆のペント</p>

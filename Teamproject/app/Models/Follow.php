@@ -39,7 +39,7 @@ class Follow extends Model
     // 친구 검색
     static public function findFollowerID($findFollowerId)
     {
-        $followerResult     =     DB::table('user_profiles')
+        return $followerResult     =     DB::table('user_profiles')
                             ->select('user_no', 'user_nickname', 'user_intro')
                             ->where('user_nickname', 'regexp', $findFollowerId)
                             ->get();
