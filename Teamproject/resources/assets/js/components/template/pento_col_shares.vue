@@ -42,19 +42,38 @@
                     <p>제작일 : {{select_pento.registered_date}}</p>
                     <span>{{select_pento.design_explain}}</span>
                     <div class="modal-2-sub-4">
-                        <button class="modal-btn-1"@click="
+                        <button class="modal-btn-1" @click="
                         $vs.notify({title:'구독했습니다!',
                         text:'구독했습니다! 게임에서 만나요!',color:'warning',position:'top-center'})
                         ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">구독</button>
-                        <button class="modal-btn-2"
-                                @click="$vs.notify({title:'추천!',
-                                text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'}),lisk_it(select_pento.design_no)"
-                                vs-type="danger-flat">추천</button>
-                    </div>
-
+                        
+                   
+                  </div>
                 </div>
-                
+                <div class="col-share-modal-layout-sub-3">
+                  <span>皆の作品</span>
+                  <div v-for="user_pento in select_pento_list.side_image"　
+                  class="col-share-modal-layouy-sub-3-img" @click="user_design_pento(user_pento)">
+                    <img src v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_pento.imitated_image"/>
+                  </div>
+                </div>
+          </div>
+        </sweet-modal>
+        <sweet-modal  ref="user_pento" overlay-theme="dark">
+          <div class="user_design_pento_modal">
+            <div>
+            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_design_list.imitated_image">
             </div>
+            <div>
+              <p>{{user_design_list.design_title}}</p>
+              <p>{{user_design_list.user_nickname}}</p>
+            <span> Hit : {{user_design_list.reNum}}</span>
+           <button class="modal-btn-2"
+            @click="$vs.notify({title:'추천!',
+            text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'}),lisk_it(user_design_list.imitated_no)"
+            vs-type="danger-flat">추천</button>
+            </div>
+          </div>
         </sweet-modal>
         <!-- footer -->
         <footers></footers>
@@ -74,7 +93,8 @@ export default {
     return {
       all_pento_list: {},
       select_pento_list: {}, //펜토미노를 선택 할 때 담을 변수
-      temp: []
+      temp: [],
+      user_design_list: []
     };
   },
   methods: {
@@ -107,6 +127,10 @@ export default {
       this.axios.post(url, art).then(response => {
         this.temp = response.data;
       });
+    },
+    user_design_pento: function(temp) {
+      this.user_design_list = temp;
+      this.$refs.user_pento.open();
     },
     lisk_it: function(design_no) {
       let url = "Recommend";
@@ -151,8 +175,8 @@ export default {
 }
 .col-share-modal-layout {
   display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
-  height: auto;
+  grid-template-columns: 40% 40% 20%;
+  height: 48vh;
 }
 .modal-btn-1 {
   font-size: 1.5vw;
@@ -185,6 +209,19 @@ export default {
   text-align: left;
   display: grid;
   grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;
+}
+.col-share-modal-layout-sub-3 {
+  overflow-y: auto;
+}
+.col-share-modal-layouy-sub-3-img {
+  padding: 2vh;
+  transition: 0.3s;
+}
+.col-share-modal-layouy-sub-3-img img {
+  border-radius: 10px;
+}
+.col-share-modal-layouy-sub-3-img:hover {
+  background: orange;
 }
 .modal-2-sub-1 {
   font-size: 2vw;
@@ -243,5 +280,9 @@ export default {
   height: auto;
   transition: 0.4s ease;
   backface-visibility: hidden;
+}
+.user_design_pento_modal {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 </style>

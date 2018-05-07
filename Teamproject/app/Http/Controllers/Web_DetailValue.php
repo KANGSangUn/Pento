@@ -47,6 +47,11 @@ class Web_DetailValue extends Controller
         // DB에서 데이터 가져오기
         $this->return_value = PentoDesign::getPentoInfo($request->input('design_no'));
 
+        // Side image 데이터 가공
+        $result_query_SideImage= ImitatedPento::getReImitatedPentoList($request->input('design_no'));
+
+        $this->return_value['side_image'] = $result_query_SideImage;
+
         // View로 반환
         return $this->return_value;
     }

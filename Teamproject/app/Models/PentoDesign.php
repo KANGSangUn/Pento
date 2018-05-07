@@ -274,7 +274,6 @@ class PentoDesign extends Model
                 ]
             );
 
-
             // 방금 저장한 도안의 번호와 등록날짜 가져오기
             $dataResult         =   PentoDesign::getDesignData($designArray['coordinate_value']);
 
@@ -293,11 +292,11 @@ class PentoDesign extends Model
             if ($errorCode == 1062)
             {
                 // 문자열 반환
-                echo 'Duplicate Coordinate Values!';
+                return 'Duplicate Coordinate Values!';
             }
             else
             {
-                echo $errorCode;
+                return $errorCode;
             }
         }
 

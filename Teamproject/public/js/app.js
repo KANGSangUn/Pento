@@ -21974,6 +21974,25 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -21988,7 +22007,8 @@ module.exports = {
     return {
       all_pento_list: {},
       select_pento_list: {}, //펜토미노를 선택 할 때 담을 변수
-      temp: []
+      temp: [],
+      user_design_list: []
     };
   },
 
@@ -22028,6 +22048,10 @@ module.exports = {
       this.axios.post(url, art).then(function (response) {
         _this3.temp = response.data;
       });
+    },
+    user_design_pento: function user_design_pento(temp) {
+      this.user_design_list = temp;
+      this.$refs.user_pento.open();
     },
     lisk_it: function lisk_it(design_no) {
       var _this4 = this;
@@ -56032,7 +56056,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 0.6fr 0.4fr;\r\n  height: auto;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr 0.3fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.col-share-modal-layout-sub-3 {\r\n  overflow-y: auto;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-filter: blur(4px);\r\n          filter: blur(4px);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 50% 50%;\n}\r\n", ""]);
 
 // exports
 
@@ -56157,31 +56181,92 @@ var render = function() {
                     }
                   },
                   [_vm._v("구독")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "modal-btn-2",
-                    attrs: { "vs-type": "danger-flat" },
-                    on: {
-                      click: function($event) {
-                        _vm.$vs.notify({
-                          title: "추천!",
-                          text: "추천하셨습니다~고마워요!",
-                          color: "danger",
-                          icon: "favorite"
-                        }),
-                          _vm.lisk_it(select_pento.design_no)
-                      }
-                    }
-                  },
-                  [_vm._v("추천")]
                 )
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-share-modal-layout-sub-3" },
+              [
+                _c("span", [_vm._v("皆の作品")]),
+                _vm._v(" "),
+                _vm._l(_vm.select_pento_list.side_image, function(user_pento) {
+                  return _c(
+                    "div",
+                    {
+                      staticClass: "col-share-modal-layouy-sub-3-img",
+                      on: {
+                        click: function($event) {
+                          _vm.user_design_pento(user_pento)
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "",
+                          src:
+                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                            user_pento.imitated_image
+                        }
+                      })
+                    ]
+                  )
+                })
+              ],
+              2
+            )
           ])
         })
+      ),
+      _vm._v(" "),
+      _c(
+        "sweet-modal",
+        { ref: "user_pento", attrs: { "overlay-theme": "dark" } },
+        [
+          _c("div", { staticClass: "user_design_pento_modal" }, [
+            _c("div", [
+              _c("img", {
+                attrs: {
+                  src:
+                    "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                    _vm.user_design_list.imitated_image
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("p", [_vm._v(_vm._s(_vm.user_design_list.design_title))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.user_design_list.user_nickname))]),
+              _vm._v(" "),
+              _c("span", [
+                _vm._v(" Hit : " + _vm._s(_vm.user_design_list.reNum))
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "modal-btn-2",
+                  attrs: { "vs-type": "danger-flat" },
+                  on: {
+                    click: function($event) {
+                      _vm.$vs.notify({
+                        title: "추천!",
+                        text: "추천하셨습니다~고마워요!",
+                        color: "danger",
+                        icon: "favorite"
+                      }),
+                        _vm.lisk_it(_vm.user_design_list.imitated_no)
+                    }
+                  }
+                },
+                [_vm._v("추천")]
+              )
+            ])
+          ])
+        ]
       ),
       _vm._v(" "),
       _c("footers")
