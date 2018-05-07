@@ -3,16 +3,15 @@ dev . KANG SANG UN
 -->
 <template>
     <div id="mySidenav" class="sidenav"><!--히든 네비게이션-->
-        <div class="hidden-menu-1"  v-if="login_type.user_login!='null'">
+        <div class="hidden-menu-1"  v-if="login_type.user_login!=null">
             <button class="closebtn" @click="closeNav()">Ⅹ</button>
             <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+login_type.user_image+'.png'" class="userimg"/>
             <p>こんにちは！{{login_type.user_name}}さん</p>
             <router-link class="menu"  :to="{name:'Mypento'}">MY PENTO</router-link>
             <a @click="hidden_menu()">友達探し</a>
             <vs-button vs-type="primary-filled" @click="logout()">logout</vs-button>
-
         </div>
-        <div class="hidden-menu-1" v-if="login_type.user_login==='null'">
+        <div class="hidden-menu-1" v-else>
             <button class="closebtn" @click="closeNav()">Ⅹ</button>
             <vs-button vs-type="primary-filled" @click="register_btn(true)">Login</vs-button>
         </div>
@@ -112,7 +111,6 @@ export default {
   created() {
     this.$eventBus.$on("login_success", login_type => {
       this.login_register(login_type);
-      this.login_susandfail();
     });
   },
   data() {
@@ -166,6 +164,10 @@ export default {
     },
     /*logout function*/
     logout: function() {
+      this.userinfo = {
+        userid: "",
+        userpw: ""
+      };
       let url = "logout";
       let art = {
         kinds: "Logout"
@@ -173,22 +175,25 @@ export default {
       //                <input type="submit" value="로그아웃"> O O
       //                <input type="hidden" value="Logout" name="kinds">
       this.axios.post(url, art).then();
-      sessionStorage.setItem("user_session", "null");
+      sessionStorage.removeItem("user_session");
       sessionStorage.removeItem("user_nickname");
       sessionStorage.removeItem("user_number");
       sessionStorage.removeItem("user_image");
       sessionStorage.removeItem("user_point");
       this.login_type = {
-        user_login: "null",
+        user_login: null,
         user_name: null,
-        user_number: "",
-        user_image: "",
-        user_point: ""
+        user_number: null,
+        user_image: null,
+        user_point: null
       };
+      this.closeNav();
     },
     login_register(condition) {
+      console.log(condition);
       if (condition) {
         this.$refs.loginok.open();
+        this.login_susandfail();
       } else {
         this.$refs.loginno.open();
       }

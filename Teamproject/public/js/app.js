@@ -6774,15 +6774,15 @@ process.umask = function() { return 0; };
       _this.axios.post(uri, temp).then(
       //서버로 http통신 요청
       function (response) {
-        //response 받은 값 이야기 정보 함수에 전송
-        console.log(response.data[0].user_no);
-        _this.user_temp.user_nickname = response.data[0].user_nickname;
-        _this.user_temp.user_number = response.data[0].user_no;
-        _this.user_temp.user_image = response.data[0].image;
-        _this.user_temp.user_point = response.data[0].user_point;
-        if (_this.user_temp.user_number) {
+        if (response.data != null) {
+          _this.user_temp.user_nickname = response.data[0].user_nickname;
+          _this.user_temp.user_number = response.data[0].user_no;
+          _this.user_temp.user_image = response.data[0].image;
+          _this.user_temp.user_point = response.data[0].user_point;
           _this.login_opertion(true);
-        } else _this.login_opertion(false);
+        } else {
+          _this.login_opertion(false);
+        }
       });
       //if문 처리 후das
     });
@@ -8152,7 +8152,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }
       };
-      this.Linedatasets = {
+      this.linedatasets = {
         labels: frdname,
         datasets: [{
           backgroundColor: this.datacolor,
@@ -21492,7 +21492,6 @@ module.exports = {
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   /*header req value*/
@@ -21501,7 +21500,6 @@ module.exports = {
 
     this.$eventBus.$on("login_success", function (login_type) {
       _this.login_register(login_type);
-      _this.login_susandfail();
     });
   },
   data: function data() {
@@ -21556,6 +21554,10 @@ module.exports = {
     },
     /*logout function*/
     logout: function logout() {
+      this.userinfo = {
+        userid: "",
+        userpw: ""
+      };
       var url = "logout";
       var art = {
         kinds: "Logout"
@@ -21563,22 +21565,25 @@ module.exports = {
       //                <input type="submit" value="로그아웃"> O O
       //                <input type="hidden" value="Logout" name="kinds">
       this.axios.post(url, art).then();
-      sessionStorage.setItem("user_session", "null");
+      sessionStorage.removeItem("user_session");
       sessionStorage.removeItem("user_nickname");
       sessionStorage.removeItem("user_number");
       sessionStorage.removeItem("user_image");
       sessionStorage.removeItem("user_point");
       this.login_type = {
-        user_login: "null",
+        user_login: null,
         user_name: null,
-        user_number: "",
-        user_image: "",
-        user_point: ""
+        user_number: null,
+        user_image: null,
+        user_point: null
       };
+      this.closeNav();
     },
     login_register: function login_register(condition) {
+      console.log(condition);
       if (condition) {
         this.$refs.loginok.open();
+        this.login_susandfail();
       } else {
         this.$refs.loginno.open();
       }
@@ -54520,7 +54525,7 @@ var render = function() {
             [
               _c("bar-chart", {
                 attrs: {
-                  "chart-data": _vm.Linedatasets,
+                  "chart-data": _vm.linedatasets,
                   width: 250,
                   height: 150
                 }
@@ -54797,7 +54802,7 @@ var render = function() {
     "div",
     { staticClass: "sidenav", attrs: { id: "mySidenav" } },
     [
-      _vm.login_type.user_login != "null"
+      _vm.login_type.user_login != null
         ? _c(
             "div",
             { staticClass: "hidden-menu-1" },
@@ -54864,10 +54869,7 @@ var render = function() {
             ],
             1
           )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.login_type.user_login === "null"
-        ? _c(
+        : _c(
             "div",
             { staticClass: "hidden-menu-1" },
             [
@@ -54898,8 +54900,7 @@ var render = function() {
               )
             ],
             1
-          )
-        : _vm._e(),
+          ),
       _vm._v(" "),
       _c(
         "div",

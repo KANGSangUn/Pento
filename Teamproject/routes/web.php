@@ -19,6 +19,11 @@ Route::get('/',function (){
 //Route::post('/con_router','Main_Controller@asd');
 /*로그인*/
 Route::post('/Login','Web_Functions@Login');
+
+// 로그아웃
+Route::post('/logout',function(){
+    return "null";
+});
 // 동화리스트 초기값
 Route::post('/StoryList','Web_DefaultValue@StoryList');
 

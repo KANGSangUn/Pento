@@ -30,15 +30,15 @@ export default {
       this.axios.post(uri, temp).then(
         //서버로 http통신 요청
         response => {
-          //response 받은 값 이야기 정보 함수에 전송
-          console.log(response.data[0].user_no);
-          this.user_temp.user_nickname = response.data[0].user_nickname;
-          this.user_temp.user_number = response.data[0].user_no;
-          this.user_temp.user_image = response.data[0].image;
-          this.user_temp.user_point = response.data[0].user_point;
-          if (this.user_temp.user_number) {
+          if (response.data != null) {
+            this.user_temp.user_nickname = response.data[0].user_nickname;
+            this.user_temp.user_number = response.data[0].user_no;
+            this.user_temp.user_image = response.data[0].image;
+            this.user_temp.user_point = response.data[0].user_point;
             this.login_opertion(true);
-          } else this.login_opertion(false);
+          } else {
+            this.login_opertion(false);
+          }
         }
       );
       //if문 처리 후das

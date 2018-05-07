@@ -36,7 +36,7 @@ dev . KANG SANG UN
               </div>
               <div class="rank-page-div-3">
                 <div class="rank-page-div-3-sub-1">
-                  <bar-chart :chart-data="Linedatasets"
+                  <bar-chart :chart-data="linedatasets"
                   :width="250"
                   :height="150"></bar-chart> 
                 </div>
@@ -178,7 +178,7 @@ export default {
           }
         }
       };
-      this.Linedatasets = {
+      this.linedatasets = {
         labels: frdname,
         datasets: [
           {
