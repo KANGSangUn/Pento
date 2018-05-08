@@ -118,7 +118,6 @@ export default {
       this.$refs.col_modal2.open();
     },
     buy_pento_col: function(design_no) {
-      console.log(design_no);
       let url = "Buy";
       let art = {
         design_no: design_no,
@@ -248,6 +247,7 @@ export default {
 
 .content-layout {
   position: relative;
+  overflow: hidden;
 }
 .content-index {
   padding: 2vh;
@@ -264,7 +264,7 @@ export default {
   font-size: 2vh;
 }
 .content-layout:hover .content-img {
-  filter: blur(4px);
+  transform: scale(1.2);
 }
 .content-layout:hover .content-index {
   color: white;
