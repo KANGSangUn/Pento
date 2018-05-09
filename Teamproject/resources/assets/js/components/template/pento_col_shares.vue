@@ -1,3 +1,6 @@
+<!-- 
+  dev . Kang sangun
+ -->
 <template>
     <div class="col-share-main-layout">
         <!-- banner layout -->
@@ -61,10 +64,10 @@
         </sweet-modal>
         <sweet-modal  ref="user_pento" overlay-theme="dark">
           <div class="user_design_pento_modal">
-            <div>
+            <div class="user_design_pento_modal-1">
             <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_design_list.imitated_image">
             </div>
-            <div>
+            <div class="user_design_pento_modal-2">
               <p>{{user_design_list.design_title}}</p>
               <p>{{user_design_list.user_nickname}}</p>
             <span> Hit : {{user_design_list.reNum}}</span>
@@ -284,5 +287,9 @@ export default {
 .user_design_pento_modal {
   display: grid;
   grid-template-columns: 50% 50%;
+}
+.user_design_pento_modal-2 {
+  display: grid;
+  grid-template-rows: 10% 30% 30% 30%;
 }
 </style>

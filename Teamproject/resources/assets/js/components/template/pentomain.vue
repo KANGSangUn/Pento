@@ -1,3 +1,6 @@
+<!-- 
+  dev . Kang sangun
+ -->
 <template>
     <div class="main-body">
         <!-- 첫번째 배너 -->

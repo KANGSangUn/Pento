@@ -226,6 +226,7 @@ export default {
       this.axios.post(url, art).then(response => {
         this.search_result = response.data;
       });
+      this.user_frd_list();
     },
     login_btn(condition) {
       if (condition) {

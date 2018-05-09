@@ -1,4 +1,8 @@
+<!-- 
+  dev . Kang sangun
+ -->
 <template>
+
         <div class="pento-router">
             <!--나만의 펜토미노-->
             <div class="pento-router-body">

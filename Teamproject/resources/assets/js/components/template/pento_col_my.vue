@@ -1,3 +1,6 @@
+<!-- 
+  dev . Kang sangun
+ -->
 <template>
 <div class="col-my-page">
     <div class="col-my-main-div">
