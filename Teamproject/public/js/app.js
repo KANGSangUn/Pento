@@ -6749,6 +6749,9 @@ process.umask = function() { return 0; };
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
@@ -7695,7 +7698,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_components$created$c = {
@@ -7703,6 +7705,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
   created: function created() {
+    //page default scroll view
     window.scrollTo(0, 0);
   }
 }, _defineProperty(_components$created$c, "created", function created() {
@@ -7711,8 +7714,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   window.removeEventListener("scroll", this.handleScroll);
 }), _defineProperty(_components$created$c, "methods", {
   handleScroll: function handleScroll(event) {
-    if (window.scrollY > 250) {
-      //스크롤 내릴 때 css 이벤트 발생!
+    if (window.scrollY > 400) {
+      //css scroll event
       document.getElementById("event-1-1").style.color = "#2a2a2a";
       document.getElementById("event-1-2").style.color = "#2a2a2a";
       document.getElementById("event-1").style.marginTop = "-3%";
@@ -7825,11 +7828,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -7838,26 +7836,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      story: [], //이야기 리스트 데이터 값을 담는 변수
-      select_item: [], //선택한 이야기의 정보를 담는 변수
+      story: [],
+      select_item: [],
       story_list_no: [],
-      basket_item: [], //장바구니 데이터
+      basket_item: [],
       backgroundLoading: "#ee9e19",
       temp: "",
       all_price: 0
     };
   },
   mounted: function mounted() {
-    window.scrollTo(0, 0); //페이지를 맨 위로 올리기
-    this.page_loading();
-    this.storylists(); //선언된 함수를 실행
+    window.scrollTo(0, 0); //pento Page default scroll View
+    this.page_loading(); //lazy loading function
+    this.storylists(); //story page rendering
   },
 
   methods: {
     page_loading: function page_loading() {
       var _this = this;
 
-      //페이지 로딩
+      //Lazy loading
       this.$vs.loading({
         background: this.backgroundLoading,
         color: "rgb(255, 255, 255)"
@@ -7869,12 +7867,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     storylists: function storylists() {
       var _this2 = this;
 
-      //함수선언
       var uri = "StoryList";
       this.axios.post(uri).then(
-      //서버로 http통신 요청
+      //server http request
       function (response) {
-        //response 받은 값 이야기 정보 함수에 전송
+        //get response data
+        //set data
         _this2.story = response.data;
       });
     },
@@ -7882,7 +7880,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     openStory: function openStory(items) {
       var _this3 = this;
 
-      //동화 클릭시 동화 모달 이벤트 출력
+      //item click in modal
       var url = "StoryValue";
       var art = {
         story_no: items
@@ -7897,7 +7895,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     alert: function alert(color, story_number) {
       var _this4 = this;
 
-      //구매하기 버튼
+      //buy function
       var uri = "Buy";
       var art = {
         story_no: story_number,
@@ -7917,7 +7915,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$refs.bkt_modal.open();
     },
     like_it: function like_it(items) {
-      //장바구니 넣기 함
+      //item in basket
       this.story_list_no.push(items.fairy_tale_no);
       this.all_price += items.tale_price;
       this.basket_item.push(items);
@@ -7925,6 +7923,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     basket_list_buy: function basket_list_buy(items) {
       var _this5 = this;
 
+      //  buy the basket list
       var uri = "Buylists";
       var art = {
         story_no: this.story_list_no,
@@ -7944,15 +7943,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.story_list_no = [];
       this.all_price = 0;
       this.$refs.bkt_modal.close();
-
-      //this.basket_item 를 이용한 함수 구현
+      //basket list default setting
     },
     delect_Item: function delect_Item(this_items) {
-      //삭제할 동화목록을 없에는 함수
+      //delect in basket in item
       this.all_price -= this_items.tale_price;
-      // const deleteItem = this.basket_item.findIndex(function(item) {
-      //   return item.id === this_items.id;
-      // });
       var delectitem = this.basket_item.indexOf(this_items);
       this.basket_item.splice(delectitem, 1);
     },
@@ -8032,12 +8027,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -8052,10 +8041,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     BarChart: __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__["a" /* default */]
   },
   mounted: function mounted() {
-    this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
+    window.scrollTo(0, 0);
+    this.search_my_play(); //page rendering
   },
   data: function data() {
     return {
+      //defualt value setting
       linedatasets: null,
       piedatasets: null,
       radardatasets: null,
@@ -8079,7 +8070,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     search_my_play: function search_my_play() {
       var _this = this;
 
-      var url = "Rank"; //기록 메뉴
+      var url = "Rank"; //user game data get
       var art = {
         user_no: sessionStorage.getItem("user_number")
       };
@@ -8090,16 +8081,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     load_user_play: function load_user_play(design_no, imgs) {
       var _this2 = this;
 
+      //Wait for http respones
       this.padein();
       this.loding();
-      var url = "RankRecordValue"; //나의 현재 기록
+      var url = "RankRecordValue";
       var art = {
         user_no: sessionStorage.getItem("user_number"),
         design_no: design_no
       };
 
       this.axios.post(url, art).then(function (response) {
+        //http loding
         _this2.padeout();
+        //값 입력
         _this2.user_game_record.game_img = imgs;
         _this2.user_game_record.game_title = response.data.title[0].design_title;
         _this2.user_game_record.game_cleartime = response.data.userRecord[0].clear_time;
@@ -8109,6 +8103,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this2.load_frd_play(_this2.user_rank_record);
       });
     },
+    //loading function
     loding: function loding() {
       var lodding = document.getElementById("loadding");
       lodding.style.display = "block";
@@ -21354,6 +21349,7 @@ module.exports = {
   },
 
   components: {
+    //navigation
     hid_nav: __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__["a" /* default */]
   },
   methods: {
@@ -21366,7 +21362,7 @@ module.exports = {
     frd_search: function frd_search(hid_nav) {
       var _this = this;
 
-      //친구 추가 함수 완성
+      //search friend
       var url = "frd_search";
       var art = {
         kinds: "Friends",
@@ -21385,12 +21381,6 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -21680,14 +21670,6 @@ module.exports = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21695,6 +21677,7 @@ module.exports = {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
   mounted: function mounted() {
+    window.scrollTo(0, 0);
     this.load_user_info();
     this.load_user_frd();
     this.load_user_story();
@@ -21704,7 +21687,6 @@ module.exports = {
       Item_list: "",
       frd_list: [],
       buy_list: []
-      //각 항목의 유저의 값을 담을 변수
     };
   },
 
@@ -21712,7 +21694,6 @@ module.exports = {
     load_user_info: function load_user_info() {
       var _this = this;
 
-      //서버로 유저 정보 요청
       var url = "MyPage";
       var art = {
         user_no: sessionStorage.getItem("user_number")
@@ -21721,6 +21702,7 @@ module.exports = {
         _this.Item_list = response.data;
       });
     },
+    //serach user friends
     load_user_frd: function load_user_frd() {
       var _this2 = this;
 
@@ -21732,6 +21714,7 @@ module.exports = {
         _this2.frd_list = response.data;
       });
     },
+    //User buylist information
     load_user_story: function load_user_story() {
       var _this3 = this;
 
@@ -21790,6 +21773,10 @@ module.exports = {
 /* harmony default export */ __webpack_exports__["a"] = ({
   components: {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
+  },
+  //pento Page default scroll View
+  created: function created() {
+    window.scrollTo(0, 0);
   }
 });
 
@@ -21862,6 +21849,7 @@ module.exports = {
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21869,6 +21857,7 @@ module.exports = {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
   created: function created() {
+    window.scrollTo(0, 0);
     this.my_pento_page();
   },
   data: function data() {
@@ -21994,6 +21983,7 @@ module.exports = {
 //
 //
 //
+//
 
 
 
@@ -22002,12 +21992,13 @@ module.exports = {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
   created: function created() {
+    window.scrollTo(0, 0);
     this.all_pento_page();
   },
   data: function data() {
     return {
       all_pento_list: {},
-      select_pento_list: {}, //펜토미노를 선택 할 때 담을 변수
+      select_pento_list: {},
       temp: [],
       user_design_list: []
     };
@@ -22017,7 +22008,7 @@ module.exports = {
     all_pento_page: function all_pento_page() {
       var _this = this;
 
-      //펜토마이페이지 불러버리기~
+      //page rendering
       var url = "EveryCollection";
 
       this.axios.post(url).then(function (response) {
@@ -22027,6 +22018,7 @@ module.exports = {
     pento_all_modal: function pento_all_modal(design_no) {
       var _this2 = this;
 
+      //open the modal
       var url = "CollectionValue";
       var art = {
         design_no: design_no
@@ -22034,12 +22026,12 @@ module.exports = {
       this.axios.post(url, art).then(function (response) {
         _this2.select_pento_list = response.data;
       });
-
       this.$refs.col_modal2.open();
     },
     buy_pento_col: function buy_pento_col(design_no) {
       var _this3 = this;
 
+      //buy item
       var url = "Buy";
       var art = {
         design_no: design_no,
@@ -22050,12 +22042,14 @@ module.exports = {
       });
     },
     user_design_pento: function user_design_pento(temp) {
+      //open the user desing item modal
       this.user_design_list = temp;
       this.$refs.user_pento.open();
     },
     lisk_it: function lisk_it(design_no) {
       var _this4 = this;
 
+      //like button
       var url = "Recommend";
       var art = {
         design_no: design_no,
@@ -22105,6 +22099,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_template_pento_col_main_vue__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_template_pento_col_my_vue__ = __webpack_require__(297);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_template_pento_col_shares_vue__ = __webpack_require__(301);
+/*
+dev . kang sang un
+*/
 
 
 
@@ -40583,7 +40580,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : auto auto 5vh auto;\r\n        width: 99vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        text-align: right;\r\n        padding: 5vw;\r\n        padding-right: 30vh;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 100vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : auto auto 5vh auto;\r\n        width: 99vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        text-align: right;\r\n        padding: 5vw;\r\n        padding-right: 30vh;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}", ""]);
 
 // exports
 
@@ -40763,11 +40760,9 @@ var render = function() {
                       "\n                            ペントですからできる"
                     ),
                     _c("br"),
-                    _vm._v("\n                            皆の想像力を"),
+                    _vm._v(" 皆の想像力を\n                            "),
                     _c("br"),
-                    _vm._v(
-                      "\n                            会いましょう \n                         "
-                    )
+                    _vm._v(" 会いましょう\n                        ")
                   ])
                 ])
               ])
@@ -40796,17 +40791,13 @@ var render = function() {
                   _c("p", [_vm._v("ランキング、チャート")]),
                   _vm._v(" "),
                   _c("div", { staticClass: "menu-index" }, [
-                    _vm._v(
-                      "\n                                記録からランキング"
-                    ),
+                    _vm._v("\n                            記録からランキング"),
                     _c("br"),
                     _vm._v(
-                      "\n                                さらにデータチャートまで"
+                      " さらにデータチャートまで\n                            "
                     ),
                     _c("br"),
-                    _vm._v(
-                      "\n                                見てみましょう。\n                            "
-                    )
+                    _vm._v(" 見てみましょう。\n                        ")
                   ])
                 ])
               ])
@@ -40836,14 +40827,12 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "menu-index" }, [
                     _vm._v(
-                      "\n                                ペントでしか会えない"
+                      "\n                            ペントでしか会えない"
                     ),
                     _c("br"),
-                    _vm._v("\n                                特別な物語を"),
+                    _vm._v(" 特別な物語を\n                            "),
                     _c("br"),
-                    _vm._v(
-                      "\n                                会いましょ\n                            "
-                    )
+                    _vm._v(" 会いましょ\n                        ")
                   ])
                 ])
               ])
@@ -40890,7 +40879,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("span", { attrs: { id: "event-1-2" } }, [
-            _vm._v("\n                ペントミノをもっと楽しく、面白く")
+            _vm._v("\n                    ペントミノをもっと楽しく、面白く")
           ])
         ])
       ]
@@ -41070,7 +41059,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.story-modal-left-sub{\r\n    display: grid;\r\n    grid-column-gap: 0.2vw;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(255, 182, 47);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #f1a720;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 1.8fr 0.3fr 0.5fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-btn button{\r\n    width: 45%;\r\n    height: 100%;\r\n    font-size : 1.2vw;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.story-modal-left-sub{\r\n    display: grid;\r\n    grid-column-gap: 0.2vw;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(255, 182, 47);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #f1a720;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 1.8fr 0.3fr 0.5fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-btn button{\r\n    width: 45%;\r\n    height: 100%;\r\n    font-size : 1.2vw;\n}", ""]);
 
 // exports
 
@@ -41105,7 +41094,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                BASKET\n            ")]
+            [_vm._v("\n                        BASKET\n              ")]
           )
         ]),
         _vm._v(" "),
@@ -41181,11 +41170,7 @@ var render = function() {
                             item_bkt.tale_image0
                         }
                       }),
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(item_bkt.title) +
-                          "\n            "
-                      )
+                      _vm._v(" " + _vm._s(item_bkt.title) + "\n        ")
                     ]
                   )
                 })
@@ -41201,11 +41186,7 @@ var render = function() {
               _c("span", { staticStyle: { "font-size": "1.5vh" } }, [
                 _vm._v("클릭 시 장바구니에서 제거 됩니다.")
               ]),
-              _vm._v(
-                "\n            총 금액 : " +
-                  _vm._s(_vm.all_price) +
-                  "\n            "
-              ),
+              _vm._v(" 총 금액 : " + _vm._s(_vm.all_price) + "\n      "),
               _vm._v(" "),
               _c(
                 "vs-button",
@@ -41349,9 +41330,9 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "story-modal-right-info" }, [
                 _vm._v(
-                  "\n                        " +
+                  "\n          " +
                     _vm._s(_vm.select_item.tale_explain) +
-                    "\n\n                "
+                    "\n\n        "
                 )
               ]),
               _vm._v(" "),
@@ -41524,7 +41505,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 20%;\r\n    overflow-x:hidden; overflow-y:auto;\r\n    border : 1px solid silver;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n  padding : 1vh;\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  padding : 1vh;\r\n  grid-column-gap: 0.5vh;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\r\n        border : 1px solid silver;\n}\n.game-index{\r\n  background: orange;\r\n  color : white;\r\n  font-size : 2vh;\n}\n.game-data{\r\n  font-size : 2vh;\r\n  border-bottom: 1px solid silver;\r\n  border-left: 1px solid silver;\r\n  border-right: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.9fr;\r\n  border-right: 1px solid silver;\n}\n.rank-div-title{\r\n  background: orange;\r\n  text-align: center;\r\n  font-size: 3vh;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.rank-div-contents{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.5fr 0.6fr;\n}\n.rank-div-contents-content{\r\n  text-align: center\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 20%;\r\n    overflow-x:hidden; overflow-y:auto;\r\n    border : 1px solid silver;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n  padding : 1vh;\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  padding : 1vh;\r\n  grid-column-gap: 0.5vh;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\r\n        border : 1px solid silver;\n}\n.game-index{\r\n  background: orange;\r\n  color : white;\r\n  font-size : 2vh;\n}\n.game-data{\r\n  font-size : 2vh;\r\n  border-bottom: 1px solid silver;\r\n  border-left: 1px solid silver;\r\n  border-right: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.9fr;\r\n  border-right: 1px solid silver;\n}\n.rank-div-title{\r\n  background: orange;\r\n  text-align: center;\r\n  font-size: 3vh;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.rank-div-contents{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.5fr 0.6fr;\n}\n.rank-div-contents-content{\r\n  text-align: center\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
 
 // exports
 
@@ -54707,7 +54688,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.7);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n}\r\n", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.7);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n}\r\n", ""]);
 
 // exports
 
@@ -54806,7 +54787,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
 
 // exports
 
@@ -54935,25 +54916,25 @@ var render = function() {
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "main" } } },
-            [_vm._v("\n            Main\n        ")]
+            [_vm._v("\n      Main\n    ")]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "pentostorylist" } } },
-            [_vm._v("\n            StoryList\n        ")]
+            [_vm._v("\n      StoryList\n    ")]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "pento_col" } } },
-            [_vm._v("\n            Pento Collection\n        ")]
+            [_vm._v("\n      Pento Collection\n    ")]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "pentoRank" } } },
-            [_vm._v("\n            Pento Rank\n        ")]
+            [_vm._v("\n      Pento Rank\n    ")]
           )
         ],
         1
@@ -54989,9 +54970,9 @@ var render = function() {
                       return _c("tr", [
                         _c("td", { staticClass: "frd-table-td-1" }, [
                           _vm._v(
-                            "\n                                    " +
+                            "\n                  " +
                               _vm._s(frdresult.user_nickname) +
-                              "\n                                "
+                              "\n                "
                           )
                         ]),
                         _vm._v(" "),
@@ -55005,11 +54986,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [
-                              _vm._v(
-                                "\n                                 +\n                                "
-                              )
-                            ]
+                            [_vm._v("+")]
                           )
                         ])
                       ])
@@ -55060,9 +55037,9 @@ var render = function() {
                 _vm._l(_vm.frd_list, function(frd) {
                   return _c("li", [
                     _vm._v(
-                      "\n                        " +
+                      "\n            " +
                         _vm._s(frd.user_nickname) +
-                        "\n                    "
+                        "\n          "
                     )
                   ])
                 })
@@ -55151,7 +55128,7 @@ var render = function() {
           attrs: { icon: "success" }
         },
         [
-          _vm._v("\n        Login success!\n        "),
+          _vm._v("\n    Login success!\n    "),
           _c("vs-button", {
             attrs: { "vs-type": "primary-filled" },
             on: {
@@ -55175,7 +55152,7 @@ var render = function() {
           }
         },
         [
-          _vm._v("\n        Login Fail!\n        "),
+          _vm._v("\n    Login Fail!\n    "),
           _c(
             "vs-button",
             {
@@ -55390,7 +55367,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 5vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 4vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n.userimg{\r\n    margin-bottom : 2vh;\n}\n.mypento-sub-div-content-2{\r\n    background: gold\n}\n#mypento_sub_div3 {\r\n     padding : 5vh;\r\n    overflow: scroll;\r\n    margin : auto;\r\n    background-color: #141c35;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\r\n    grid-row-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 5vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 4vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n.userimg{\r\n    margin-bottom : 2vh;\n}\n.mypento-sub-div-content-2{\r\n    background: gold\n}\n#mypento_sub_div3 {\r\n     padding : 5vh;\r\n    overflow: scroll;\r\n    margin : auto;\r\n    background-color: #141c35;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\r\n    grid-row-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
 
 // exports
 
@@ -55469,9 +55446,9 @@ var render = function() {
                       _vm._l(_vm.frd_list, function(frdlist) {
                         return _c("li", [
                           _vm._v(
-                            "\n                        " +
+                            "\n            " +
                               _vm._s(frdlist.user_nickname) +
-                              "\n                    "
+                              "\n          "
                           )
                         ])
                       })
@@ -55867,7 +55844,7 @@ var render = function() {
                       _c("td", { attrs: { height: "15%", colspan: "2" } }, [
                         _c("div", { staticClass: "title-box" }),
                         _vm._v(
-                          "\r\n                          " +
+                          "\n                " +
                             _vm._s(select_pento.design_title)
                         )
                       ])
@@ -55906,7 +55883,7 @@ var render = function() {
                           _vm._v(
                             "제작일 : " +
                               _vm._s(select_pento.registered_date) +
-                              "\r\n                        "
+                              "\n              "
                           )
                         ])
                       ]
@@ -55915,9 +55892,9 @@ var render = function() {
                     _c("tr", { staticClass: "my-modal-layout-tr-index-2" }, [
                       _c("td", { attrs: { colspan: "2" } }, [
                         _vm._v(
-                          "\r\n                          " +
+                          "\n                " +
                             _vm._s(select_pento.design_explain) +
-                            "\r\n                        "
+                            "\n              "
                         )
                       ])
                     ])
@@ -55941,15 +55918,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "my-main-banner" } }, [
-      _vm._v("\r\n            あなたが"),
+      _vm._v("\n      あなたが"),
       _c("br"),
-      _vm._v("\r\n            作った"),
+      _vm._v(" 作った\n      "),
       _c("br"),
-      _vm._v("\r\n            選んだ"),
+      _vm._v(" 選んだ\n      "),
       _c("br"),
-      _vm._v("\r\n            ペントを"),
+      _vm._v(" ペントを\n      "),
       _c("br"),
-      _vm._v("\r\n            見よう。\r\n        ")
+      _vm._v(" 見よう。\n    ")
     ])
   }
 ]

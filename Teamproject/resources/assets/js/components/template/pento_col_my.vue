@@ -2,67 +2,65 @@
   dev . Kang sangun
  -->
 <template>
-<div class="col-my-page">
+  <div class="col-my-page">
     <div class="col-my-main-div">
-        <div id="my-main-banner">
-            あなたが<br>
-            作った<br>
-            選んだ<br>
-            ペントを<br>
-            見よう。
+      <div id="my-main-banner">
+        あなたが<br> 作った
+        <br> 選んだ
+        <br> ペントを
+        <br> 見よう。
+      </div>
+      <div class="my-main-pento-list">
+        <div id="my-main-list">
+          <div v-for="pento_imgs in pento_list" @click="pento_my_modal(pento_imgs.design_no)">
+            <img src v-bind:src='pento_imgs.design_image' />
+          </div>
         </div>
-        <div class="my-main-pento-list">
-            <div id="my-main-list">
-                <div v-for="pento_imgs in pento_list" @click="pento_my_modal(pento_imgs.design_no)">
-                    <img src v-bind:src='pento_imgs.design_image'/>
-                </div>
+      </div>
+      <sweet-modal ref="col_modal" width="60vw" overlay-theme="dark">
+        <div class="col-my-modal-layout" v-for="select_pento in select_pento_list.design_info">
+          <div class="col-my-modal-layout-sub-1">
+            <div>
+              <img src v-bind:src='select_pento.design_image' />
             </div>
+  
+          </div>
+          <div class="col-my-modal-layout-sub-2">
+            <table>
+              <tr class="my-modal-layout-tr-tilte">
+                <td height="15%" colspan="2">
+                  <div class="title-box"></div>
+                  {{select_pento.design_title}}</td>
+  
+              </tr>
+  
+              <tr height="7%" class="my-modal-layout-tr-index">
+                <td width="50%">작성자 : {{select_pento.user_nickname}}</td>
+                <td>난이도 : {{select_pento_list.recommendNumSum}}</td>
+              </tr>
+              <tr height="7%" class="my-modal-layout-tr-index">
+                <td colspan="2">제작일 : {{select_pento.registered_date}}
+                </td>
+              </tr>
+              <tr class="my-modal-layout-tr-index-2">
+                <td colspan="2">
+                  {{select_pento.design_explain}}
+                </td>
+              </tr>
+            </table>
+            <!-- <h2>{{select_pento.design_title}}</h2>
+                      <h4>작성자 : {{select_pento.user_nickname}}</h4>
+                      <p>난이도 : {{select_pento.level_of_difficultly}}</p>
+                      <span>{{select_pento.design_explain}}</span>
+                      <button
+                      class="modal-btn"
+                      >삭제</button> -->
+          </div>
         </div>
-        <sweet-modal ref="col_modal" width="60vw" overlay-theme="dark">
-            <div class="col-my-modal-layout" v-for="select_pento in select_pento_list.design_info">
-                <div class="col-my-modal-layout-sub-1">
-                    <div>
-                    <img src v-bind:src='select_pento.design_image'/>
-                    </div>
-              
-                </div>
-                <div class="col-my-modal-layout-sub-2">
-                <table>
-                      <tr class="my-modal-layout-tr-tilte">
-                        <td height="15%" colspan="2">
-                          <div class="title-box"></div>
-                          {{select_pento.design_title}}</td>
-                  
-                      </tr>
-                     
-                      <tr height="7%" class="my-modal-layout-tr-index">
-                        <td  width="50%">작성자 : {{select_pento.user_nickname}}</td>
-                        <td>난이도 : {{select_pento_list.recommendNumSum}}</td>            
-                      </tr>
-                      <tr  height="7%" class="my-modal-layout-tr-index">
-                        <td colspan="2" >제작일 : {{select_pento.registered_date}}
-                        </td>
-                      </tr>
-                      <tr class="my-modal-layout-tr-index-2">
-                        <td colspan="2">
-                          {{select_pento.design_explain}}
-                        </td>
-                      </tr>
-                </table>
-                    <!-- <h2>{{select_pento.design_title}}</h2>
-                    <h4>작성자 : {{select_pento.user_nickname}}</h4>
-                    <p>난이도 : {{select_pento.level_of_difficultly}}</p>
-                    <span>{{select_pento.design_explain}}</span>
-                    <button
-                    class="modal-btn"
-                    >삭제</button> -->
-                </div>
-            </div>
-        </sweet-modal>
+      </sweet-modal>
     </div>
- <footers></footers>
-</div>
-
+    <footers></footers>
+  </div>
 </template>
 <script>
 import footers from "../template/Footer.vue";
@@ -71,6 +69,7 @@ export default {
     footers: footers
   },
   created() {
+    window.scrollTo(0, 0);
     this.my_pento_page();
   },
   data() {

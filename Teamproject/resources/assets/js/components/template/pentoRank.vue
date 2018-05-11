@@ -2,66 +2,60 @@
 dev . KANG SANG UN
 -->
 <template>
-    <div class="rank-page-div">
-        <div class="rank-page-div-body">
-              <div class="rank-page-div-1">
-                 <div class="rank-page-div-1-sub" v-for="game_list in game_record"
-                @click="load_user_play(game_list.design_no,game_list.imitated_image)">
-                      <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+ game_list.imitated_image">
-                 </div>
-              </div>
-              <div class="rank-page-div-2">
-                <div class="spinner" id="loadding">
-                </div>
-                <div class="rank-page-div-2-sub-1" id="user-game-1">
-                  <div></div>
-                  <div class="game_image" style="text-align :center">
-                  <!-- 이미지 노출 -->
-                    <img :src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com"+user_game_record.game_img'>
-                  </div>
-                   <div></div>
-                </div>
-                <div class="rank-page-div-2-sub-2" id="user-game-2">
-                  <div class="game-title">{{user_game_record.game_title}}</div>
-                  <div 
-                  class="rank-page-div-2-sub-2-sub">
-                  <div class="game-index">클리어시간</div>
-                  <div class="game-index">평균기록</div>
-                  <div class="game-index">날짜</div>
-                  <div class="game-data">{{user_game_record.game_cleartime}}</div>
-                  <div class="game-data">{{user_game_record.game_avgtime}}</div>
-                  <div class="game-data">{{user_game_record.game_date}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="rank-page-div-3">
-                <div class="rank-page-div-3-sub-1">
-                  <bar-chart :chart-data="linedatasets"
-                  :width="250"
-                  :height="150"></bar-chart> 
-                </div>
-                <div class="rank-page-div-3-sub-2">
-                  <div id="rank-div">
-                    <div class="rank-div-title">ランキング</div>
-                    <div class="rank-div-contents">
-                      <div  class="rank-div-contents-content" v-for="ranking in user_rank_record">
-                        <span
-                        style="background:skyblue; color:white"
-                        >{{ranking.rank}}</span>
-                        <span>{{ranking.user_nickname}}</span>
-                        <span>{{ranking.clear_time}}</span>
-                      </div>
-                    </div>
-                  </div>
-                   <div>
-                    <pie-chart :chart-data="piedatasets"></pie-chart>
-                   </div>
-                </div>
-              </div>
+  <div class="rank-page-div">
+    <div class="rank-page-div-body">
+      <div class="rank-page-div-1">
+        <div class="rank-page-div-1-sub" v-for="game_list in game_record" @click="load_user_play(game_list.design_no,game_list.imitated_image)">
+          <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+ game_list.imitated_image">
+        </div>
+      </div>
+      <div class="rank-page-div-2">
+        <div class="spinner" id="loadding">
+        </div>
+        <div class="rank-page-div-2-sub-1" id="user-game-1">
+          <div></div>
+          <div class="game_image" style="text-align :center">
+            <!-- 이미지 노출 -->
+            <img :src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com"+user_game_record.game_img'>
           </div>
-        <footers></footers> <!--footer area-->
+          <div></div>
+        </div>
+        <div class="rank-page-div-2-sub-2" id="user-game-2">
+          <div class="game-title">{{user_game_record.game_title}}</div>
+          <div class="rank-page-div-2-sub-2-sub">
+            <div class="game-index">클리어시간</div>
+            <div class="game-index">평균기록</div>
+            <div class="game-index">날짜</div>
+            <div class="game-data">{{user_game_record.game_cleartime}}</div>
+            <div class="game-data">{{user_game_record.game_avgtime}}</div>
+            <div class="game-data">{{user_game_record.game_date}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="rank-page-div-3">
+        <div class="rank-page-div-3-sub-1">
+          <bar-chart :chart-data="linedatasets" :width="250" :height="150"></bar-chart>
+        </div>
+        <div class="rank-page-div-3-sub-2">
+          <div id="rank-div">
+            <div class="rank-div-title">ランキング</div>
+            <div class="rank-div-contents">
+              <div class="rank-div-contents-content" v-for="ranking in user_rank_record">
+                <span style="background:skyblue; color:white">{{ranking.rank}}</span>
+                <span>{{ranking.user_nickname}}</span>
+                <span>{{ranking.clear_time}}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <pie-chart :chart-data="piedatasets"></pie-chart>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <footers></footers>
+    <!--footer area-->
+  </div>
 </template>
 <style src="../css/pentoRank.css"></style>
 
@@ -79,10 +73,12 @@ export default {
     BarChart: BarChart
   },
   mounted() {
-    this.search_my_play(); //페이지 실행시 모든 게임 기록 값 출력
+    window.scrollTo(0, 0);
+    this.search_my_play(); //page rendering
   },
   data() {
     return {
+      //defualt value setting
       linedatasets: null,
       piedatasets: null,
       radardatasets: null,
@@ -103,7 +99,7 @@ export default {
   methods: {
     //랭크 페이지의 함수 정의
     search_my_play: function() {
-      let url = "Rank"; //기록 메뉴
+      let url = "Rank"; //user game data get
       let art = {
         user_no: sessionStorage.getItem("user_number")
       };
@@ -112,16 +108,19 @@ export default {
       });
     },
     load_user_play: function(design_no, imgs) {
+      //Wait for http respones
       this.padein();
       this.loding();
-      let url = "RankRecordValue"; //나의 현재 기록
+      let url = "RankRecordValue";
       let art = {
         user_no: sessionStorage.getItem("user_number"),
         design_no: design_no
       };
 
       this.axios.post(url, art).then(response => {
+        //http loding
         this.padeout();
+        //값 입력
         this.user_game_record.game_img = imgs;
         this.user_game_record.game_title = response.data.title[0].design_title;
         this.user_game_record.game_cleartime =
@@ -133,6 +132,7 @@ export default {
         this.load_frd_play(this.user_rank_record);
       });
     },
+    //loading function
     loding: function() {
       let lodding = document.getElementById("loadding");
       lodding.style.display = "block";

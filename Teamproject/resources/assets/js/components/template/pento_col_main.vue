@@ -2,43 +2,43 @@
   dev . Kang sangun
  -->
 <template>
-
-        <div class="pento-router">
-            <!--나만의 펜토미노-->
-            <div class="pento-router-body">
-                <router-link :to="{name:'pento_col_my'}">
-                <div class="col-menu">
-                    <div class="menu-sub">
-                        <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/mypentoimg.png">
-                        <br>
-                        <span>私のペント</span>
-                    </div>
-                </div>
-                </router-link>
-
-
-                <!--모두의 펜토미노-->
-                <router-link :to="{name:'pento_col_all'}">
-                <div class="col-menu">
-                    <div class="menu-sub">
-                        <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/allpentoimg.png">
-                        <br>
-                        <span>皆のペント</span>
-                    </div>
-                </div>
-                </router-link>
-            </div>
-            <footers></footers>
+  <div class="pento-router">
+    <!--My Pento Page rendering-->
+    <div class="pento-router-body">
+      <router-link :to="{name:'pento_col_my'}">
+        <div class="col-menu">
+          <div class="menu-sub">
+            <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/mypentoimg.png">
+            <br>
+            <span>私のペント</span>
+          </div>
         </div>
-
-
-
+      </router-link>
+  
+  
+      <!--All pento Page rendering-->
+      <router-link :to="{name:'pento_col_all'}">
+        <div class="col-menu">
+          <div class="menu-sub">
+            <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/allpentoimg.png">
+            <br>
+            <span>皆のペント</span>
+          </div>
+        </div>
+      </router-link>
+    </div>
+    <footers></footers>
+  </div>
 </template>
 <script>
 import footers from "../template/Footer.vue";
 export default {
   components: {
     footers: footers
+  },
+  //pento Page default scroll View
+  created() {
+    window.scrollTo(0, 0);
   }
 };
 </script>

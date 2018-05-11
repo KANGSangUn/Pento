@@ -2,85 +2,83 @@
   dev . Kang sangun
  -->
 <template>
-    <div class="col-share-main-layout">
-        <!-- banner layout -->
-        <div class="col-share-banner-layout">
-            <div id='col-share-banner-sub-1'>
-                <p>PENTOPENTO</p>
-                <p>PENTOPENTO</p>
-                <p>PENTOPENTO</p>
-                <p>PENTOPENTO</p>
-            </div>
-            <div id='col-share-banner-sub-2'></div>
-        </div> 
-        <!-- contents layout -->
-        <div class="col-share-contents-layout">
-            <div></div>
-            <div class="col-share-list-layout">
-                <div v-for="list in all_pento_list"  class="content-layout" @click="pento_all_modal(list.design_no)">
-                    <div class="content-index">
-                        <span>{{list.design_title}}</span>
-                        <hr style="color : white;">
-                        <p>작성자 : {{list.nickname}}</p>
-                        <p>난이도 : {{list.level}}</p>
-                    </div>
-                    <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+list.design_image" class="content-img">
-                </div>
-            </div>
-            
-            <div></div>
-        </div>
-        <br>
-        <sweet-modal ref="col_modal2" width="60vw" overlay-theme="dark">
-            <div class="col-share-modal-layout" v-for="select_pento in select_pento_list.design_info">
-                <div class="col-share-modal-layout-sub-1">
-                    <div>
-                        <img src v-bind:src='select_pento.design_image'/>
-                    </div>
-                </div>
-                <div class="col-share-modal-layout-sub-2">
-                    <div class="modal-2-sub-1"><div></div>{{select_pento.design_title}}</div>
-                    <h4>작성자 : {{select_pento.user_nickname}}</h4>
-                    <p>난이도 : {{select_pento_list.recommendNumSum}}</p>
-                    <p>제작일 : {{select_pento.registered_date}}</p>
-                    <span>{{select_pento.design_explain}}</span>
-                    <div class="modal-2-sub-4">
-                        <button class="modal-btn-1" @click="
-                        $vs.notify({title:'구독했습니다!',
-                        text:'구독했습니다! 게임에서 만나요!',color:'warning',position:'top-center'})
-                        ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">구독</button>
-                        
-                   
-                  </div>
-                </div>
-                <div class="col-share-modal-layout-sub-3">
-                  <span>皆の作品</span>
-                  <div v-for="user_pento in select_pento_list.side_image"　
-                  class="col-share-modal-layouy-sub-3-img" @click="user_design_pento(user_pento)">
-                    <img src v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_pento.imitated_image"/>
-                  </div>
-                </div>
-          </div>
-        </sweet-modal>
-        <sweet-modal  ref="user_pento" overlay-theme="dark">
-          <div class="user_design_pento_modal">
-            <div class="user_design_pento_modal-1">
-            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_design_list.imitated_image">
-            </div>
-            <div class="user_design_pento_modal-2">
-              <p>{{user_design_list.design_title}}</p>
-              <p>{{user_design_list.user_nickname}}</p>
-            <span> Hit : {{user_design_list.reNum}}</span>
-           <button class="modal-btn-2"
-            @click="$vs.notify({title:'추천!',
-            text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'}),lisk_it(user_design_list.imitated_no)"
-            vs-type="danger-flat">추천</button>
-            </div>
-          </div>
-        </sweet-modal>
-        <!-- footer -->
-        <footers></footers>
+  <div class="col-share-main-layout">
+    <!-- banner layout -->
+    <div class="col-share-banner-layout">
+      <div id='col-share-banner-sub-1'>
+        <p>PENTOPENTO</p>
+        <p>PENTOPENTO</p>
+        <p>PENTOPENTO</p>
+        <p>PENTOPENTO</p>
+      </div>
+      <div id='col-share-banner-sub-2'></div>
     </div>
+    <!-- contents layout -->
+    <div class="col-share-contents-layout">
+      <div></div>
+      <div class="col-share-list-layout">
+        <div v-for="list in all_pento_list" class="content-layout" @click="pento_all_modal(list.design_no)">
+          <div class="content-index">
+            <span>{{list.design_title}}</span>
+            <hr style="color : white;">
+            <p>작성자 : {{list.nickname}}</p>
+            <p>난이도 : {{list.level}}</p>
+          </div>
+          <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+list.design_image" class="content-img">
+        </div>
+      </div>
+  
+      <div></div>
+    </div>
+    <br>
+    <sweet-modal ref="col_modal2" width="60vw" overlay-theme="dark">
+      <div class="col-share-modal-layout" v-for="select_pento in select_pento_list.design_info">
+        <div class="col-share-modal-layout-sub-1">
+          <div>
+            <img src v-bind:src='select_pento.design_image' />
+          </div>
+        </div>
+        <div class="col-share-modal-layout-sub-2">
+          <div class="modal-2-sub-1">
+            <div></div>{{select_pento.design_title}}</div>
+          <h4>작성자 : {{select_pento.user_nickname}}</h4>
+          <p>난이도 : {{select_pento_list.recommendNumSum}}</p>
+          <p>제작일 : {{select_pento.registered_date}}</p>
+          <span>{{select_pento.design_explain}}</span>
+          <div class="modal-2-sub-4">
+            <button class="modal-btn-1" @click="
+                          $vs.notify({title:'구독했습니다!',
+                          text:'구독했습니다! 게임에서 만나요!',color:'warning',position:'top-center'})
+                          ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">구독</button>
+  
+  
+          </div>
+        </div>
+        <div class="col-share-modal-layout-sub-3">
+          <span>皆の作品</span>
+          <div v-for="user_pento in select_pento_list.side_image" 　 class="col-share-modal-layouy-sub-3-img" @click="user_design_pento(user_pento)">
+            <img src v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_pento.imitated_image" />
+          </div>
+        </div>
+      </div>
+    </sweet-modal>
+    <sweet-modal ref="user_pento" overlay-theme="dark">
+      <div class="user_design_pento_modal">
+        <div class="user_design_pento_modal-1">
+          <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_design_list.imitated_image">
+        </div>
+        <div class="user_design_pento_modal-2">
+          <p>{{user_design_list.design_title}}</p>
+          <p>{{user_design_list.user_nickname}}</p>
+          <span> Hit : {{user_design_list.reNum}}</span>
+          <button class="modal-btn-2" @click="$vs.notify({title:'추천!',
+              text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'}),lisk_it(user_design_list.imitated_no)" vs-type="danger-flat">추천</button>
+        </div>
+      </div>
+    </sweet-modal>
+    <!-- footer -->
+    <footers></footers>
+  </div>
 </template>
 <script>
 import footers from "../template/Footer.vue";
@@ -90,19 +88,20 @@ export default {
     footers: footers
   },
   created() {
+    window.scrollTo(0, 0);
     this.all_pento_page();
   },
   data() {
     return {
       all_pento_list: {},
-      select_pento_list: {}, //펜토미노를 선택 할 때 담을 변수
+      select_pento_list: {},
       temp: [],
       user_design_list: []
     };
   },
   methods: {
     all_pento_page: function() {
-      //펜토마이페이지 불러버리기~
+      //page rendering
       let url = "EveryCollection";
 
       this.axios.post(url).then(response => {
@@ -110,6 +109,7 @@ export default {
       });
     },
     pento_all_modal: function(design_no) {
+      //open the modal
       let url = "CollectionValue";
       let art = {
         design_no: design_no
@@ -117,10 +117,10 @@ export default {
       this.axios.post(url, art).then(response => {
         this.select_pento_list = response.data;
       });
-
       this.$refs.col_modal2.open();
     },
     buy_pento_col: function(design_no) {
+      //buy item
       let url = "Buy";
       let art = {
         design_no: design_no,
@@ -131,10 +131,12 @@ export default {
       });
     },
     user_design_pento: function(temp) {
+      //open the user desing item modal
       this.user_design_list = temp;
       this.$refs.user_pento.open();
     },
     lisk_it: function(design_no) {
+      //like button
       let url = "Recommend";
       let art = {
         design_no: design_no,
