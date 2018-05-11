@@ -9,18 +9,18 @@ developed 2018 01 ~ 2018 06
 Web site address : http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com
 <hr>
 Developers
-
+<br>
 -Game Contents- <br>
 정현우<br>
 정지민
 
--Hardware<br>
+-Hardware-<br>
 최요한
 
--Database & Back-end<br>
+-Database & Back-end-<br>
 성경임<br>
 김영문
 
-Web Front-end & Web Design<br>
+Web Front-end & Web Design-<br>
 강상운
 
