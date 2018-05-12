@@ -23,7 +23,7 @@
       <div id="main-body-3" class="main-body-banner-1">
           <div class="main-body-3-1">
           </div>
-          <div class="main-body-3-2">
+          <div id="evnet-2" class="main-body-3-2">
               <p>ペントミノ</p>
               <p>もう詰らない</p>
               <span>それで準備しました</span><br/>
@@ -47,15 +47,6 @@
                       </iframe>
           </div>
       </div>
-      <!--<div class="main-body-2" id="main-body-5">-->
-      <!--<div class="menu-1">-->
-      <!--이 부분은 이쁘나 렉이 너무 심함-->
-      <!--<p>Pixel Artで会う</p>-->
-      <!--<p>ペントの</p>-->
-      <!--<p>特別なコンテンツ</p>-->
-      <!--</div>-->
-      <!--</div>-->
-  
       <!-- 메뉴 배너 -->
       <div class="main-body-3">
           <div class="main-body-menu">
@@ -139,11 +130,15 @@ export default {
   },
   methods: {
     handleScroll: function(event) {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 450) {
         //css scroll event
         document.getElementById("event-1-1").style.color = "#2a2a2a";
         document.getElementById("event-1-2").style.color = "#2a2a2a";
         document.getElementById("event-1").style.marginTop = "-3%";
+      }
+      if (window.scrollY > 1200) {
+        document.getElementById("evnet-2").style.paddingRight = "30vh";
+        document.getElementById("evnet-2").style.color = "#2a2a2a";
       }
     }
   }
