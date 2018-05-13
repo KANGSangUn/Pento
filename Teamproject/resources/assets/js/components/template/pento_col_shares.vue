@@ -152,7 +152,7 @@ export default {
 <style>
 .col-share-main-layout {
   display: grid;
-  grid-template-rows: 0.4fr 0.6fr 0.3fr;
+  grid-template-rows: 0.4fr 0.6fr;
 }
 .col-share-banner-layout {
   margin: 50px auto;

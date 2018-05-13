@@ -3,15 +3,15 @@
  -->
 <template>
   <div class="main-body">
-      <!-- 첫번째 배너 -->
+      <!-- first banner -->
       <div class="main-body-1">
           <p class="main-body-p-1">WELCOME</p>
           <p class="main-body-p-2">MY NAME IS PENTO!</p>
           <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_sub_banner_1.png">
       </div>
-      <!-- 두번째 배너 -->
+      <!-- second banner -->
       <div class="main-body-2" id="main-body-2">
-          <!-- 베너 텍스트 이벤트를 위한 id할당 -->
+          <!-- text event id -->
           <div id="event-1">
               <p id="event-1-1">
                   PENTO</p>
@@ -19,7 +19,7 @@
                       ペントミノをもっと楽しく、面白く</span>
           </div>
       </div>
-      <!-- 3번째 배너 -->
+      <!-- Third banner  -->
       <div id="main-body-3" class="main-body-banner-1">
           <div class="main-body-3-1">
           </div>
@@ -31,7 +31,7 @@
               <span>ずっと遊びましょう</span>
           </div>
       </div>
-      <!-- 4번째 배너 -->
+      <!-- Fourth banner -->
       <div id="main-body-4" class="main-body-banner-1">
           <div class="main-body-4-1">
               <p>準備できていますか？</p>
@@ -47,20 +47,20 @@
                       </iframe>
           </div>
       </div>
-      <!-- 메뉴 배너 -->
+      <!-- menu banner -->
       <div class="main-body-3">
           <div class="main-body-menu">
               <div class="main-page-menu-sub-banner">
                   <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png'"
                   />
                   <div class="menu-title">
-                      <!-- 메뉴 배너 텍스트 -->
+                      <!-- banner text -->
                       <p>まるで、花のようだ。</p>
                   </div>
               </div>
           </div>
           <div class="main-body-menu" id="menu-ex">
-              <!--스토리 리스트 이동 html-->
+              <!--Story page render html-->
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pentostorylist'}">
                       <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png'"
@@ -77,7 +77,7 @@
               </div>
           </div>
           <div class="main-body-menu">
-              <!-- 랭킹 페이지 이동 -->
+              <!-- ranking page render -->
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pentoRank'}">
                       <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png">
@@ -93,7 +93,7 @@
               </div>
           </div>
           <div class="main-body-menu">
-              <!-- 컬렉션 페이지 이동 -->
+              <!-- collection page render -->
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pento_col'}">
                       <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png" />
