@@ -7,29 +7,45 @@ dev . KANG SANG UN
           
         </div>
         <div class="footer-middle">
-                <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png">
-                <br>
-                <a  href="https://github.com/KANGSangUn/Pento">
-                <i class="fab fa-vuejs fa-2x"></i>
-                <i class="fab fa-laravel fa-2x"></i>
-                <i  class="fab fa-github fa-2x" ></i>
-                </a>
-                <br>
-                <p>Developed Team Horenso</p>
+          <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png">
+            <br>
+            
+            <i class="fab fa-vuejs fa-2x"></i>
+            <i class="fab fa-laravel fa-2x"></i>
+            <a  href="https://github.com/KANGSangUn/Pento">
+            <i  class="fab fa-github fa-2x" ></i>
+            </a>
+            <br>
+            <p>{{footer_text_1}}</p>
         </div>
         <div class="footer-right">
-            <p style="border-bottom : 1px solid white">Developers</p>
-            Unity 정현우<br>
-            Leap Motion 정지민<br>
-            Arduino 최요한<br>
-            Database 성경임<br>
-            Back-end 김영문<br>
-            Front-end 강상운
+  
+<p style="border-bottom : 1px solid white">{{$appname}}</p> 
+            <!-- <p style="border-bottom : 1px solid white">{{footer_text_2}}</p> -->
+               
+            <ul>
+              <li v-for="dev in dev_names">
+                  {{dev}}
+              </li>
+            </ul>
         </div>
         <!-- 두번째 줄 -->
     
     </div>
 </template>
+<script>
+import lang from "../htmltext/text";
+export default {
+  data() {
+    return {
+      //HTML에 배치될 텍스트
+      footer_text_1: lang.footer["footer_text_1"],
+      footer_text_2: lang.footer["footer_text_2"],
+      dev_names: lang.footer["dev_name"]
+    };
+  }
+};
+</script>
 
 <style>
 .footer-div {

@@ -300,9 +300,10 @@ export default {
 }
 .user_design_pento_modal {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
 }
 .user_design_pento_modal-2 {
+  padding-left: 1vw;
   display: grid;
   grid-template-rows: 15% 25% 30% 30%;
 }

@@ -12,9 +12,7 @@ dev . KANG SANG UN
       <div class="stp_text">
         <!--리스트의 장바구니 메뉴와 타이틀 -->
         <span>STORY LIST</span>
-        <button @click="openBasket()">
-                          BASKET
-                </button>
+        <button @click="openBasket()">BASKET</button>
       </div>
       <!-- 동화 리스트 출력 -->
       <div class="booklist">

@@ -184,7 +184,6 @@ export default {
       this.closeNav();
     },
     login_register(condition) {
-      console.log(condition);
       if (condition) {
         this.$refs.loginok.open();
         this.login_susandfail();
