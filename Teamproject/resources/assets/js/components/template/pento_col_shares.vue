@@ -6,23 +6,28 @@
     <!-- banner layout -->
     <div class="col-share-banner-layout">
       <div id='col-share-banner-sub-1'>
-        <p>PENTOPENTO</p>
-        <p>PENTOPENTO</p>
-        <p>PENTOPENTO</p>
-        <p>PENTOPENTO</p>
+        <p>みんなが</p>
+        <p>作った</p>
+        <p>いろいろな</p>
+        <p>ペント</p>
       </div>
       <div id='col-share-banner-sub-2'></div>
     </div>
     <!-- contents layout -->
     <div class="col-share-contents-layout">
       <div></div>
+      <div class="content-banner-text">
+        <span>皆のペントリスト</span>
+      </div>
+      <div></div>
+      <div></div>
       <div class="col-share-list-layout">
         <div v-for="list in all_pento_list" class="content-layout" @click="pento_all_modal(list.design_no)">
           <div class="content-index">
             <span>{{list.design_title}}</span>
             <hr style="color : white;">
-            <p>작성자 : {{list.nickname}}</p>
-            <p>난이도 : {{list.level}}</p>
+            <p>メーカー : {{list.nickname}}</p>
+            <p>レベル : {{list.level}}</p>
           </div>
           <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+list.design_image" class="content-img">
         </div>
@@ -41,15 +46,15 @@
         <div class="col-share-modal-layout-sub-2">
           <div class="modal-2-sub-1">
             <div></div>{{select_pento.design_title}}</div>
-          <h4>작성자 : {{select_pento.user_nickname}}</h4>
-          <p>난이도 : {{select_pento_list.recommendNumSum}}</p>
-          <p>제작일 : {{select_pento.registered_date}}</p>
+          <h4>メーカー : {{select_pento.user_nickname}}</h4>
+          <p>HIT : {{select_pento_list.recommendNumSum}}</p>
+          <p>製作費 : {{select_pento.registered_date}}</p>
           <span>{{select_pento.design_explain}}</span>
           <div class="modal-2-sub-4">
             <button class="modal-btn-1" @click="
-                          $vs.notify({title:'구독했습니다!',
-                          text:'구독했습니다! 게임에서 만나요!',color:'warning',position:'top-center'})
-                          ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">구독</button>
+                          $vs.notify({title:'こうどく完了!',
+                          text:'購読しました。ゲームで会いましょう!',color:'warning',position:'top-center'})
+                          ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">こうどく</button>
   
   
           </div>
@@ -62,17 +67,18 @@
         </div>
       </div>
     </sweet-modal>
-    <sweet-modal ref="user_pento" overlay-theme="dark">
+    <sweet-modal ref="user_pento" overlay-theme="dark" title="皆のペント">
       <div class="user_design_pento_modal">
         <div class="user_design_pento_modal-1">
           <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_design_list.imitated_image">
         </div>
         <div class="user_design_pento_modal-2">
           <p>{{user_design_list.design_title}}</p>
-          <p>{{user_design_list.user_nickname}}</p>
-          <span> Hit : {{user_design_list.reNum}}</span>
-          <button class="modal-btn-2" @click="$vs.notify({title:'추천!',
-              text:'추천하셨습니다~고마워요!',color:'danger',icon:'favorite'}),lisk_it(user_design_list.imitated_no)" vs-type="danger-flat">추천</button>
+          <span>製作者：{{user_design_list.user_nickname}}</span>
+          <span style="font-size:3vh;"> <i class="fas fa-heart" style="color:#f87b7b;"></i> {{user_design_list.reNum}}</span>
+          <button class="modal-btn-2" @click="$vs.notify({title:'いいですよ!',
+              text:'いいねー!',color:'danger',icon:'favorite'}),lisk_it(user_design_list.imitated_no)" vs-type="danger-flat">
+               いいね！ </button>
         </div>
       </div>
     </sweet-modal>
@@ -143,13 +149,14 @@ export default {
         user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(response => {
-        this.temp = response.data;
+        this.user_design_list.reNum = response.data;
       });
     }
   }
 };
 </script>
 <style>
+@import url("https://fonts.googleapis.com/earlyaccess/mplus1p.css");
 .col-share-main-layout {
   display: grid;
   grid-template-rows: 0.4fr 0.6fr;
@@ -157,7 +164,7 @@ export default {
 .col-share-banner-layout {
   margin: 50px auto;
   display: grid;
-  grid-template-columns: 0.3fr 1fr;
+  grid-template-columns: 0.3fr 0.7fr;
   width: 100vw;
   height: 60vh;
 }
@@ -165,10 +172,15 @@ export default {
   color: white;
   padding: 5vh;
   font-size: 4vw;
-  background: purple;
+  background: green;
+}
+#col-share-banner-sub-1 p {
+  font-weight: 200;
+  font-family: "Mplus 1p", sans-serif;
 }
 #col-share-banner-sub-2 {
-  background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg");
+  /* background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg"); */
+  background-image: url("http://localhost:8000/images/web/col_all_banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -241,7 +253,7 @@ export default {
 }
 .modal-2-sub-4 {
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-columns: 1fr;
 }
 .col-share-list-layout {
   display: grid;
@@ -292,6 +304,18 @@ export default {
 }
 .user_design_pento_modal-2 {
   display: grid;
-  grid-template-rows: 10% 30% 30% 30%;
+  grid-template-rows: 15% 25% 30% 30%;
+}
+.user_design_pento_modal-2 p {
+  font-size: 3vh;
+}
+.content-banner-text {
+  margin-top: -3vh;
+  margin-bottom: 2vh;
+}
+.content-banner-text span {
+  font-weight: 200;
+  font-family: "Mplus 1p", sans-serif;
+  font-size: 5vh;
 }
 </style>

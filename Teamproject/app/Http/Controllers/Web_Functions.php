@@ -11,8 +11,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Buylist;
 use App\Models\Collection;
+use App\Models\FairyTale;
 use App\Models\Follow;
 use App\Models\UserInfo;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Models\Recommend;
 
@@ -23,7 +25,7 @@ class Web_Functions extends Controller
     public function Login(Request $request){
 
         if(session()->has('user_no') && session('user_id') == $request->input('user_id')){
-            return 'null';
+            return 'false';
         }
 
         // DB에서 데이터 가져오기
@@ -31,7 +33,7 @@ class Web_Functions extends Controller
 
         if($this->return_value == 'Invalid id' || $this->return_value == 'Invalid password'){
 
-            $this->return_value = 'null';
+            $this->return_value = 'false';
         }
 
         return $this->return_value;
@@ -50,6 +52,20 @@ class Web_Functions extends Controller
         }
         // 동화를 구매할때
         else{
+
+            // DB에서 회원의 돈 가져오기
+            $result_query_userInfo = UserProfile::myPageUserInfo($request->input('user_no'));
+
+            // DB에서 동화의 가격 가져오기
+            $result_query_storyInfo = FairyTale::getStoryInfo($request->input('story_no'));
+
+            // 동화의 가격과 회원이 가진 돈을 비교
+            if($result_query_storyInfo[0]->tale_price > $result_query_userInfo[0]->user_point){
+
+                // 회원의 돈이 부족하면 구매불가
+                return 'nocash';
+            }
+
             // DB에서 데이터 가져오기
             $this->return_value = Buylist::buyStory($request->input('user_no'),$request->input('story_no'));
         }
@@ -68,6 +84,8 @@ class Web_Functions extends Controller
     public function MyBasket(Request $request){
 
         $array_storys = $request->input('story_no');
+//        $array_storys = array(3,6,9,4,1,2,4,5,1,9,10,11,3,2,4,1,5,2,6,3,4,5,9,8,7,6,5,4,3,2,1,10,11,9,4,3,2,5,6,1,2,6,8,6,1,2,3,4,5,6,7,8,9,10,11,11,10,9,8,7,6,5,4,3,2,1);
+//        $array_storys = array(1);
         $array_storys_result =  array_unique($array_storys);
 
 //        $array_storys = $request->input('story_no');
@@ -110,8 +128,10 @@ class Web_Functions extends Controller
     public function Recommend(Request $request){
 
         // DB에서 데이터 가져오기
-        $this->return_value = Recommend::recommend ($request->input('user_no'),
-                                                        $request->input('design_no'));
+        $result_query = Recommend::recommend ($request->input('user_no'),$request->input('design_no'));
+
+        // 데이터 가공
+        $this->return_value = $result_query[0]->recommendNum;
 
         // View로 반환
         return $this->return_value;

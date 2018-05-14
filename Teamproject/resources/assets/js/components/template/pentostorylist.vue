@@ -85,8 +85,8 @@ dev . KANG SANG UN
   
             <vs-button vs-type="success-filled" @click="alert('success',select_item.fairy_tale_no)">Buy</vs-button>
             <vs-button @click="$vs.notify(
-                                          {title:'장바구니에 추가 되었습니다.',
-                                          text:'최고에요!',
+                                          {title:'買い物かごに入れました！',
+                                          text:'ゲームで会いましょう!',
                                           color:'success',
                                           icon:'favorite'}),like_it(select_item)" vs-type="success-filled">Basket</vs-button>
           </div>
@@ -166,9 +166,9 @@ export default {
         this.temp = response.data;
       });
       this.$vs.alert({
-        title: "구매 완료!",
-        text: this.select_item.tale_title + "를 구매하셨습니다!",
-        textConfirm: "확인",
+        title: "こうどく完了!",
+        text: this.select_item.tale_title + "をこうどくしました!",
+        textConfirm: "OK",
         color: color
       });
     },
@@ -193,9 +193,9 @@ export default {
       });
 
       this.$vs.alert({
-        title: "구매 완료!",
-        text: "구매하셨습니다!",
-        textConfirm: "확인",
+        title: "こうどく完了!",
+        text: "こうどくしました!",
+        textConfirm: "OK",
         color: "success"
       });
       this.basket_item = [];

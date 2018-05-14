@@ -26,10 +26,6 @@ class Recommend extends Model
                         'registered_date'   => Carbon::now(),
                     ]
                 );
-
-            // 추천 성공
-            return "true";
-
         }
 
         catch (QueryException $e)
@@ -45,15 +41,16 @@ class Recommend extends Model
                     ->where('user_no', $userNum)
                     ->where('imitated_no', $imitatedNum)
                     ->delete();
-
-                // 추천해제
-                return "false";
-
             }
             else
             {
                 return $errorCode;
             }
         }
+
+        return DB::table('recommends')->select(DB::raw('count(*) as recommendNum'))->where('imitated_no', $imitatedNum)->get();
     }
+
+
+
 }

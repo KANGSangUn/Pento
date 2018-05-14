@@ -7900,9 +7900,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this4.temp = response.data;
       });
       this.$vs.alert({
-        title: "구매 완료!",
-        text: this.select_item.tale_title + "를 구매하셨습니다!",
-        textConfirm: "확인",
+        title: "こうどく完了!",
+        text: this.select_item.tale_title + "をこうどくしました!",
+        textConfirm: "OK",
         color: color
       });
     },
@@ -7929,9 +7929,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
 
       this.$vs.alert({
-        title: "구매 완료!",
-        text: "구매하셨습니다!",
-        textConfirm: "확인",
+        title: "こうどく完了!",
+        text: "こうどくしました!",
+        textConfirm: "OK",
         color: "success"
       });
       this.basket_item = [];
@@ -21979,6 +21979,12 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -22051,7 +22057,7 @@ module.exports = {
         user_no: sessionStorage.getItem("user_number")
       };
       this.axios.post(url, art).then(function (response) {
-        _this4.temp = response.data;
+        _this4.user_design_list.reNum = response.data;
       });
     }
   }
@@ -41359,8 +41365,8 @@ var render = function() {
                       on: {
                         click: function($event) {
                           _vm.$vs.notify({
-                            title: "장바구니에 추가 되었습니다.",
-                            text: "최고에요!",
+                            title: "買い物かごに入れました！",
+                            text: "ゲームで会いましょう!",
                             color: "success",
                             icon: "favorite"
                           }),
@@ -56025,10 +56031,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 1fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: purple;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.col-share-modal-layout-sub-3 {\r\n  overflow-y: auto;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 50% 50%;\n}\n.user_design_pento_modal-2 {\r\n  display: grid;\r\n  grid-template-rows: 10% 30% 30% 30%;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  /* background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\"); */\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.col-share-modal-layout-sub-3 {\r\n  overflow-y: auto;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 50% 50%;\n}\n.user_design_pento_modal-2 {\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\r\n", ""]);
 
 // exports
 
@@ -56053,6 +56059,12 @@ var render = function() {
       _c("div", { staticClass: "col-share-contents-layout" }, [
         _c("div"),
         _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div"),
+        _vm._v(" "),
+        _c("div"),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "col-share-list-layout" },
@@ -56073,9 +56085,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("hr", { staticStyle: { color: "white" } }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("작성자 : " + _vm._s(list.nickname))]),
+                  _c("p", [_vm._v("メーカー : " + _vm._s(list.nickname))]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("난이도 : " + _vm._s(list.level))])
+                  _c("p", [_vm._v("レベル : " + _vm._s(list.level))])
                 ]),
                 _vm._v(" "),
                 _c("img", {
@@ -56119,17 +56131,15 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("h4", [
-                _vm._v("작성자 : " + _vm._s(select_pento.user_nickname))
+                _vm._v("メーカー : " + _vm._s(select_pento.user_nickname))
               ]),
               _vm._v(" "),
               _c("p", [
-                _vm._v(
-                  "난이도 : " + _vm._s(_vm.select_pento_list.recommendNumSum)
-                )
+                _vm._v("HIT : " + _vm._s(_vm.select_pento_list.recommendNumSum))
               ]),
               _vm._v(" "),
               _c("p", [
-                _vm._v("제작일 : " + _vm._s(select_pento.registered_date))
+                _vm._v("製作費 : " + _vm._s(select_pento.registered_date))
               ]),
               _vm._v(" "),
               _c("span", [_vm._v(_vm._s(select_pento.design_explain))]),
@@ -56143,8 +56153,8 @@ var render = function() {
                     on: {
                       click: function($event) {
                         _vm.$vs.notify({
-                          title: "구독했습니다!",
-                          text: "구독했습니다! 게임에서 만나요!",
+                          title: "こうどく完了!",
+                          text: "購読しました。ゲームで会いましょう!",
                           color: "warning",
                           position: "top-center"
                         }),
@@ -56152,7 +56162,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("구독")]
+                  [_vm._v("こうどく")]
                 )
               ])
             ]),
@@ -56195,7 +56205,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "sweet-modal",
-        { ref: "user_pento", attrs: { "overlay-theme": "dark" } },
+        {
+          ref: "user_pento",
+          attrs: { "overlay-theme": "dark", title: "皆のペント" }
+        },
         [
           _c("div", { staticClass: "user_design_pento_modal" }, [
             _c("div", { staticClass: "user_design_pento_modal-1" }, [
@@ -56211,10 +56224,16 @@ var render = function() {
             _c("div", { staticClass: "user_design_pento_modal-2" }, [
               _c("p", [_vm._v(_vm._s(_vm.user_design_list.design_title))]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.user_design_list.user_nickname))]),
-              _vm._v(" "),
               _c("span", [
-                _vm._v(" Hit : " + _vm._s(_vm.user_design_list.reNum))
+                _vm._v("製作者：" + _vm._s(_vm.user_design_list.user_nickname))
+              ]),
+              _vm._v(" "),
+              _c("span", { staticStyle: { "font-size": "3vh" } }, [
+                _c("i", {
+                  staticClass: "fas fa-heart",
+                  staticStyle: { color: "#f87b7b" }
+                }),
+                _vm._v(" " + _vm._s(_vm.user_design_list.reNum))
               ]),
               _vm._v(" "),
               _c(
@@ -56225,8 +56244,8 @@ var render = function() {
                   on: {
                     click: function($event) {
                       _vm.$vs.notify({
-                        title: "추천!",
-                        text: "추천하셨습니다~고마워요!",
+                        title: "いいですよ!",
+                        text: "いいねー!",
                         color: "danger",
                         icon: "favorite"
                       }),
@@ -56234,7 +56253,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("추천")]
+                [_vm._v("\n             いいね！ ")]
               )
             ])
           ])
@@ -56253,16 +56272,24 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-share-banner-layout" }, [
       _c("div", { attrs: { id: "col-share-banner-sub-1" } }, [
-        _c("p", [_vm._v("PENTOPENTO")]),
+        _c("p", [_vm._v("みんなが")]),
         _vm._v(" "),
-        _c("p", [_vm._v("PENTOPENTO")]),
+        _c("p", [_vm._v("作った")]),
         _vm._v(" "),
-        _c("p", [_vm._v("PENTOPENTO")]),
+        _c("p", [_vm._v("いろいろな")]),
         _vm._v(" "),
-        _c("p", [_vm._v("PENTOPENTO")])
+        _c("p", [_vm._v("ペント")])
       ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "col-share-banner-sub-2" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content-banner-text" }, [
+      _c("span", [_vm._v("皆のペントリスト")])
     ])
   }
 ]
