@@ -8,28 +8,32 @@ dev . KANG SANG UN
       <button class="closebtn" @click="closeNav()">Ⅹ</button>
       <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+login_type.user_image+'.png'" class="userimg"
       />
-      <p>こんにちは！{{login_type.user_name}}さん</p>
-      <router-link class="menu" :to="{name:'Mypento'}">MY PENTO</router-link>
-      <a @click="hidden_menu()">友達探し</a>
-      <vs-button vs-type="primary-filled" @click="logout()">logout</vs-button>
+      <p>
+        {{nav_text.nav_main_text[0]}}
+        {{login_type.user_name}}
+        {{nav_text.nav_main_text[1]}}
+      </p>
+      <router-link class="menu" :to="{name:'Mypento'}">{{nav_text.nav_main_text[2]}}</router-link>
+      <a @click="hidden_menu()">{{nav_text.nav_main_text[3]}}</a>
+      <vs-button vs-type="primary-filled" @click="logout()">{{nav_text.nav_login_text[1]}}</vs-button>
     </div>
     <div class="hidden-menu-1" v-else>
       <button class="closebtn" @click="closeNav()">Ⅹ</button>
-      <vs-button vs-type="primary-filled" @click="register_btn(true)">Login</vs-button>
+      <vs-button vs-type="primary-filled" @click="register_btn(true)">{{nav_text.nav_login_text[0]}}</vs-button>
     </div>
     <div class="hidden-menu-2">
-      <span>MENU</span>
+      <span>{{nav_text.nav_menu_text[0]}}</span>
       <router-link class="menu" :to="{name:'main'}">
-        Main
+        {{nav_text.nav_menu_text[1]}}
       </router-link>
       <router-link class="menu" :to="{name:'pentostorylist'}">
-        StoryList
+        {{nav_text.nav_menu_text[2]}}
       </router-link>
       <router-link class="menu" :to="{name:'pento_col'}">
-        Pento Collection
+        {{nav_text.nav_menu_text[3]}}
       </router-link>
       <router-link class="menu" :to="{name:'pentoRank'}">
-        Pento Rank
+        {{nav_text.nav_menu_text[4]}}
       </router-link>
     </div>
     <sweet-modal title="Friend Search" ref='frd_modal' overlay-theme="dark" width="50%">
@@ -39,7 +43,7 @@ dev . KANG SANG UN
             <table>
               <thead>
                 <tr class="uppercase">
-                  <th>検索結果</th>
+                  <th>{{nav_text.nav_frd_text[0]}}</th>
                   <th> +</th>
                 </tr>
               </thead>
@@ -60,7 +64,7 @@ dev . KANG SANG UN
           <div class="select_frd">
             <vs-input vs-icon="search" vs-label-placeholder="名前を入力してください。" v-model="frd_name" />
           </div>
-          <button class="frd-btn" v-on:click="user_frd_search()">サーチ</button>
+          <button class="frd-btn" v-on:click="user_frd_search()">{{nav_text.nav_frd_text[1]}}</button>
           <div class="frd_list">
             <li v-for="frd in frd_list">
               {{frd.user_nickname}}
@@ -74,10 +78,10 @@ dev . KANG SANG UN
         <div class="register-view" v-if="register_type==true">
           <div class="login-view"></div>
           <div class="login-form">
-            <p>LOGIN</p>
+            <p>{{nav_text.nav_login_text[1]}}</p>
             <vs-input vs-icon="perm_identity" vs-label-placeholder="Id" v-model="userinfo.userid" />
             <vs-input vs-icon="lock" vs-label-placeholder="Password" v-model="userinfo.userpw" />
-            <vs-button vs-type="primary-filled" v-on:click="user()">LOGIN</vs-button>
+            <vs-button vs-type="primary-filled" v-on:click="user()">{{nav_text.nav_login_text[1]}}</vs-button>
           </div>
         </div>
         <div class="register-view" v-if="register_type==false">
@@ -87,19 +91,20 @@ dev . KANG SANG UN
       <!-- 로그인 성공 모달 -->
     </sweet-modal>
     <sweet-modal icon="success" ref="loginok" class="login_btn">
-      Login success!
-      <vs-button vs-type="primary-filled" v-on:click="login_btn(true)"></vs-button>
+      {{nav_text.nav_login_text[2]}}
+      <vs-button vs-type="primary-filled" v-on:click="login_btn(true)">{{nav_text.nav_login_text[4]}}</vs-button>
       <!-- 로그인 실패 모달 -->
     </sweet-modal>
     <sweet-modal ref="loginno" icon="error" overlay-theme="dark" modal-theme="dark">
-      Login Fail!
-      <vs-button vs-type="primary-filled" v-on:click="login_btn(false)">로그인 실패!</vs-button>
+      {{nav_text.nav_login_text[3]}}
+      <vs-button vs-type="primary-filled" v-on:click="login_btn(false)">{{nav_text.nav_login_text[4]}}</vs-button>
     </sweet-modal>
 
   </div>
 </template>
 <style src="../css/hiddennav.css"></style>
 <script>
+import lang from "../htmltext/text";
 export default {
   /*header req value*/
   created() {
@@ -109,6 +114,7 @@ export default {
   },
   data() {
     return {
+      nav_text: lang.navigation,
       userinfo: {
         userid: "",
         userpw: ""

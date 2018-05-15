@@ -5038,7 +5038,7 @@ function normalizeComponent (
 "use strict";
 
 
-var bind = __webpack_require__(19);
+var bind = __webpack_require__(18);
 var isBuffer = __webpack_require__(177);
 
 /*global toString:true*/
@@ -5482,7 +5482,7 @@ module.exports.Rectangle = __webpack_require__(245);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(26);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -6435,10 +6435,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(20);
+    adapter = __webpack_require__(19);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(20);
+    adapter = __webpack_require__(19);
   }
   return adapter;
 }
@@ -6814,42 +6814,6 @@ process.umask = function() { return 0; };
 
 /***/ }),
 /* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    main: {
-        main_banner_1_text: ['WELCOME', 'MY NAME IS PENTO!'],
-        main_banner_2_text: ['PENTO', 'ペントミノをもっと楽しく、面白く'],
-        main_banner_3_text: ['ペントミノ', 'もう詰らない', 'それで準備しました', 'PENTOのコンテンツ', 'ずっと遊びましょう'],
-        main_banner_4_text: ['準備できていますか？', 'ペントを楽しむために', '必要なのはあなたの', '想像力だけ,何でも作れる'],
-        main_banner_5_text: ['まるで、花のようだ。'],
-        main_banner_6_text: ['Pento Story', '行こう、物語の中に。', 'ペントですからできる', '皆の想像力を', '会いましょう'],
-        main_banner_7_text: ['Pento Rank', 'ランキング、チャート', '記録からランキング', 'さらにデータチャートまで', ' 見てみましょう。'],
-        main_banner_8_text: ['Pento Collections', '皆のペント', 'ペントでしか会えない', '特別な物語を', '会いましょ'],
-        main_banner_9_text: ['']
-    },
-    story: {},
-    collection: {},
-    rank: {},
-    mypage: {},
-    footer: {
-        'footer_text_1': 'Developed Team Horenso',
-        'footer_text_2': 'Developers',
-        'dev_name': {
-            Unity: "정현우",
-            "Leap Motion": "정지민",
-            Arduino: "최요한",
-            Database: "성경임",
-            "Back-end": "김영문",
-            "Front-end": "강상운"
-        }
-    }
-});
-
-/***/ }),
-/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6867,7 +6831,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6878,7 +6842,7 @@ var settle = __webpack_require__(180);
 var buildURL = __webpack_require__(182);
 var parseHeaders = __webpack_require__(183);
 var isURLSameOrigin = __webpack_require__(184);
-var createError = __webpack_require__(21);
+var createError = __webpack_require__(20);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(185);
 
 module.exports = function xhrAdapter(config) {
@@ -7054,7 +7018,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7079,7 +7043,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7091,7 +7055,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7117,7 +7081,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7554,7 +7518,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7605,12 +7569,12 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
 var _components$data$crea;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -7765,14 +7729,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _components$data$crea);
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(18);
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -7819,11 +7780,67 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 });
 
 /***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    main: {
+        main_banner_1_text: ['WELCOME', 'MY NAME IS PENTO!'],
+        main_banner_2_text: ['PENTO', 'ペントミノをもっと楽しく、面白く'],
+        main_banner_3_text: ['ペントミノ', 'もう詰らない', 'それで準備しました', 'PENTOのコンテンツ', 'ずっと遊びましょう'],
+        main_banner_4_text: ['準備できていますか？', 'ペントを楽しむために', '必要なのはあなたの', '想像力だけ,何でも作れる'],
+        main_banner_5_text: ['まるで、花のようだ。'],
+        main_banner_6_text: ['Pento Story', '行こう、物語の中に。', 'ペントですからできる', '皆の想像力を', '会いましょう'],
+        main_banner_7_text: ['Pento Rank', 'ランキング、チャート', '記録からランキング', 'さらにデータチャートまで', ' 見てみましょう。'],
+        main_banner_8_text: ['Pento Collections', '皆のペント', 'ペントでしか会えない', '特別な物語を', '会いましょ']
+    },
+    story: {
+        story_page_banner: ['物語の中に', '入りましょう。'],
+        story_page_title: ['STORY LIST', 'BASKET'],
+        story_page_basket: ['画像をクリックすると買い物かごから消します。', '金額', '購入'],
+        story_page_item: ['購入', '買い物かご']
+    },
+    collection: {
+        collection_main_text: ['私のペント', '皆のペント'],
+        collection_my_banner_text: ['あなたが', '作った', '選んだ', 'ペントを', '見よう。'],
+        collection_my_item_text: ['つくり', 'レベル', '製作日'],
+        collection_share_banner_text: ['みんなが', '作った', 'いろいろな', 'ペント'],
+        collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
+    },
+    rank: {
+        rank_main_text: ['クリアタイム', '記録', 'Date', 'ランキング']
+    },
+    mypage: ['こんにちは', '保有ミノ', '紹介', 'My Friend'],
+    header: ['Storylist', 'Pento Collection', 'Pento Rank', 'Menu'],
+    navigation: {
+        nav_main_text: ['こんにちは！', 'さん', 'MY PENTO', '友達探し'],
+        nav_login_text: ['Login', 'Logout', 'こんにちは！', 'IDとパスワードが間違いました。', 'OK'],
+        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank'],
+        nav_frd_text: ['検索結果', 'サーチ']
+    },
+    footer: {
+        'footer_text_1': 'Developed Team Horenso',
+        'footer_text_2': 'Developers',
+        'dev_name': {
+            Unity: "정현우",
+            "Leap Motion": "정지민",
+            Arduino: "최요한",
+            Database: "성경임",
+            "Back-end": "김영문",
+            "Front-end": "강상운"
+        }
+    }
+});
+
+/***/ }),
 /* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -7921,6 +7938,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -7929,6 +7955,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
+      story_text: __WEBPACK_IMPORTED_MODULE_1__htmltext_text__["a" /* default */].story,
       story: [],
       select_item: [],
       story_list_no: [],
@@ -8058,7 +8085,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_Radar_js__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_Pie_js__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__template_Footer_vue__ = __webpack_require__(9);
 //
 //
 //
@@ -8128,7 +8156,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   components: {
-    footers: __WEBPACK_IMPORTED_MODULE_3__template_Footer_vue__["a" /* default */],
+    footers: __WEBPACK_IMPORTED_MODULE_4__template_Footer_vue__["a" /* default */],
     RadarChart: __WEBPACK_IMPORTED_MODULE_0__js_Radar_js__["a" /* default */],
     PieChart: __WEBPACK_IMPORTED_MODULE_1__js_Pie_js__["a" /* default */],
     BarChart: __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__["a" /* default */]
@@ -8140,16 +8168,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       //defualt value setting
+      rank_text: __WEBPACK_IMPORTED_MODULE_3__htmltext_text__["a" /* default */].rank,
       linedatasets: null,
       piedatasets: null,
       radardatasets: null,
       user_rank_record: [],
       user_game_record: {
         game_img: "/images/web/rank.png",
-        game_title: "왼쪽 메뉴에서 기록을 선택 해 주세요",
-        game_date: "빨리",
-        game_cleartime: "빨리",
-        game_avgtime: "빨리"
+        game_title: "左のリストから記録を確認しよう",
+        game_date: "0",
+        game_cleartime: "00：00：00",
+        game_avgtime: "0"
       },
       game_record: [],
       rank_btn: null,
@@ -21408,6 +21437,7 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -21434,6 +21464,7 @@ module.exports = {
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
+      header_text: __WEBPACK_IMPORTED_MODULE_1__htmltext_text__["a" /* default */].header,
       frd_values: ""
     };
   },
@@ -21443,7 +21474,7 @@ module.exports = {
 
   components: {
     //navigation
-    hid_nav: __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__["a" /* default */]
+    hidnav: __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__["a" /* default */]
   },
   methods: {
     openNav: function openNav() {
@@ -21474,6 +21505,7 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -21575,6 +21607,11 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   /*header req value*/
@@ -21587,6 +21624,7 @@ module.exports = {
   },
   data: function data() {
     return {
+      nav_text: __WEBPACK_IMPORTED_MODULE_0__htmltext_text__["a" /* default */].navigation,
       userinfo: {
         userid: "",
         userpw: ""
@@ -21724,6 +21762,7 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -21762,6 +21801,7 @@ module.exports = {
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21776,6 +21816,7 @@ module.exports = {
   },
   data: function data() {
     return {
+      mypage_text: __WEBPACK_IMPORTED_MODULE_1__htmltext_text__["a" /* default */].mypage,
       Item_list: "",
       frd_list: [],
       buy_list: []
@@ -21828,6 +21869,7 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -21860,12 +21902,19 @@ module.exports = {
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   components: {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
+  data: function data() {
+    return {
+      collection_text: __WEBPACK_IMPORTED_MODULE_1__htmltext_text__["a" /* default */].collection
+    };
+  },
+
   //pento Page default scroll View
   created: function created() {
     window.scrollTo(0, 0);
@@ -21878,6 +21927,7 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
 //
 //
 //
@@ -21937,11 +21987,7 @@ module.exports = {
 //
 //
 //
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21954,6 +22000,7 @@ module.exports = {
   },
   data: function data() {
     return {
+      mycol_text: __WEBPACK_IMPORTED_MODULE_1__htmltext_text__["a" /* default */].collection,
       pento_list: "", //펜토미노 페이지 값을 담을 변수
       select_pento_list: {} //펜토미노를 선택 할 때 담을 변수
     };
@@ -21994,6 +22041,16 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -22095,6 +22152,7 @@ module.exports = {
   },
   data: function data() {
     return {
+      shcol_text: __WEBPACK_IMPORTED_MODULE_1__htmltext_text__["a" /* default */].collection,
       all_pento_list: {},
       select_pento_list: {},
       temp: [],
@@ -36329,7 +36387,7 @@ module.exports = __webpack_require__(176);
 
 
 var utils = __webpack_require__(6);
-var bind = __webpack_require__(19);
+var bind = __webpack_require__(18);
 var Axios = __webpack_require__(178);
 var defaults = __webpack_require__(14);
 
@@ -36364,9 +36422,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(23);
+axios.Cancel = __webpack_require__(22);
 axios.CancelToken = __webpack_require__(192);
-axios.isCancel = __webpack_require__(22);
+axios.isCancel = __webpack_require__(21);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -36519,7 +36577,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(21);
+var createError = __webpack_require__(20);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -36954,7 +37012,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(6);
 var transformData = __webpack_require__(189);
-var isCancel = __webpack_require__(22);
+var isCancel = __webpack_require__(21);
 var defaults = __webpack_require__(14);
 var isAbsoluteURL = __webpack_require__(190);
 var combineURLs = __webpack_require__(191);
@@ -37114,7 +37172,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(23);
+var Cancel = __webpack_require__(22);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -37240,7 +37298,7 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModal_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModal_vue__ = __webpack_require__(23);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_loader_lib_template_compiler_index_id_data_v_8745db4c_hasScoped_false_optionsId_0_buble_transforms_vue_loader_lib_selector_type_template_index_0_SweetModal_vue__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -37613,7 +37671,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModalTab_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModalTab_vue__ = __webpack_require__(24);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_loader_lib_template_compiler_index_id_data_v_6fe2aeea_hasScoped_false_optionsId_0_buble_transforms_vue_loader_lib_selector_type_template_index_0_SweetModalTab_vue__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -40589,7 +40647,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentomain_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentomain_vue__ = __webpack_require__(25);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d921c37c_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_pentomain_vue__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -40761,14 +40819,20 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "footer-right" }, [
       _c("p", { staticStyle: { "border-bottom": "1px solid white" } }, [
-        _vm._v(_vm._s(_vm.$appname))
+        _vm._v(_vm._s(_vm.footer_text_2))
       ]),
       _vm._v(" "),
       _c(
         "ul",
-        _vm._l(_vm.dev_names, function(dev) {
+        _vm._l(_vm.dev_names, function(dev, key) {
           return _c("li", [
-            _vm._v("\n                  " + _vm._s(dev) + "\n              ")
+            _vm._v(
+              "\n              " +
+                _vm._s(key) +
+                "  " +
+                _vm._s(dev) +
+                "\n          "
+            )
           ])
         })
       )
@@ -41196,11 +41260,17 @@ var render = function() {
     "div",
     { staticClass: "story_main", attrs: { id: "story_main" } },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "stp_thumbnail" }, [
+        _c("p", { staticClass: "stp_thumbnail-p" }, [
+          _vm._v("\n      " + _vm._s(_vm.story_text.story_page_banner[0])),
+          _c("br"),
+          _vm._v("\n       " + _vm._s(_vm.story_text.story_page_banner[1]))
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "stp_body", attrs: { id: "story-body" } }, [
         _c("div", { staticClass: "stp_text" }, [
-          _c("span", [_vm._v("STORY LIST")]),
+          _c("span", [_vm._v(_vm._s(_vm.story_text.story_page_title[0]))]),
           _vm._v(" "),
           _c(
             "button",
@@ -41211,7 +41281,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("BASKET")]
+            [_vm._v(_vm._s(_vm.story_text.story_page_title[1]))]
           )
         ]),
         _vm._v(" "),
@@ -41301,9 +41371,15 @@ var render = function() {
             { staticClass: "basket-price" },
             [
               _c("span", { staticStyle: { "font-size": "1.5vh" } }, [
-                _vm._v("클릭 시 장바구니에서 제거 됩니다.")
+                _vm._v(_vm._s(_vm.story_text.story_page_basket[0]))
               ]),
-              _vm._v(" 총 금액 : " + _vm._s(_vm.all_price) + "\n      "),
+              _vm._v(
+                " " +
+                  _vm._s(_vm.story_text.story_page_basket[1]) +
+                  " : " +
+                  _vm._s(_vm.all_price) +
+                  "\n      "
+              ),
               _vm._v(" "),
               _c(
                 "vs-button",
@@ -41315,7 +41391,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("구매하기")]
+                [_vm._v(_vm._s(_vm.story_text.story_page_basket[2]))]
               )
             ],
             1
@@ -41471,7 +41547,13 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Buy")]
+                    [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(_vm.story_text.story_page_item[0]) +
+                          "\n          "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -41490,7 +41572,13 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Basket")]
+                    [
+                      _vm._v(
+                        "\n               " +
+                          _vm._s(_vm.story_text.story_page_item[1]) +
+                          "\n          "
+                      )
+                    ]
                   )
                 ],
                 1
@@ -41505,20 +41593,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "stp_thumbnail" }, [
-      _c("p", { staticClass: "stp_thumbnail-p" }, [
-        _vm._v("ものがたり"),
-        _c("br"),
-        _vm._v("さいこう")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -54617,12 +54692,16 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "rank-page-div-2-sub-2-sub" }, [
                 _c("div", { staticClass: "game-index" }, [
-                  _vm._v("클리어시간")
+                  _vm._v(_vm._s(_vm.rank_text.rank_main_text[0]))
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "game-index" }, [_vm._v("평균기록")]),
+                _c("div", { staticClass: "game-index" }, [
+                  _vm._v(_vm._s(_vm.rank_text.rank_main_text[1]))
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "game-index" }, [_vm._v("날짜")]),
+                _c("div", { staticClass: "game-index" }, [
+                  _vm._v(_vm._s(_vm.rank_text.rank_main_text[2]))
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "game-data" }, [
                   _vm._v(_vm._s(_vm.user_game_record.game_cleartime))
@@ -54659,7 +54738,7 @@ var render = function() {
           _c("div", { staticClass: "rank-page-div-3-sub-2" }, [
             _c("div", { attrs: { id: "rank-div" } }, [
               _c("div", { staticClass: "rank-div-title" }, [
-                _vm._v("ランキング")
+                _vm._v(_vm._s(_vm.rank_text.rank_main_text[3]))
               ]),
               _vm._v(" "),
               _c(
@@ -54805,7 +54884,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.7);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n}\r\n", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.473);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n}\r\n", ""]);
 
 // exports
 
@@ -54954,14 +55033,20 @@ var render = function() {
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "こんにちは！" + _vm._s(_vm.login_type.user_name) + "さん"
+                  "\n      " +
+                    _vm._s(_vm.nav_text.nav_main_text[0]) +
+                    "\n      " +
+                    _vm._s(_vm.login_type.user_name) +
+                    "\n      " +
+                    _vm._s(_vm.nav_text.nav_main_text[1]) +
+                    "\n    "
                 )
               ]),
               _vm._v(" "),
               _c(
                 "router-link",
                 { staticClass: "menu", attrs: { to: { name: "Mypento" } } },
-                [_vm._v("MY PENTO")]
+                [_vm._v(_vm._s(_vm.nav_text.nav_main_text[2]))]
               ),
               _vm._v(" "),
               _c(
@@ -54973,7 +55058,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("友達探し")]
+                [_vm._v(_vm._s(_vm.nav_text.nav_main_text[3]))]
               ),
               _vm._v(" "),
               _c(
@@ -54986,7 +55071,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("logout")]
+                [_vm._v(_vm._s(_vm.nav_text.nav_login_text[1]))]
               )
             ],
             1
@@ -55018,7 +55103,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Login")]
+                [_vm._v(_vm._s(_vm.nav_text.nav_login_text[0]))]
               )
             ],
             1
@@ -55028,30 +55113,46 @@ var render = function() {
         "div",
         { staticClass: "hidden-menu-2" },
         [
-          _c("span", [_vm._v("MENU")]),
+          _c("span", [_vm._v(_vm._s(_vm.nav_text.nav_menu_text[0]))]),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "main" } } },
-            [_vm._v("\n      Main\n    ")]
+            [
+              _vm._v(
+                "\n      " + _vm._s(_vm.nav_text.nav_menu_text[1]) + "\n    "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "pentostorylist" } } },
-            [_vm._v("\n      StoryList\n    ")]
+            [
+              _vm._v(
+                "\n      " + _vm._s(_vm.nav_text.nav_menu_text[2]) + "\n    "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "pento_col" } } },
-            [_vm._v("\n      Pento Collection\n    ")]
+            [
+              _vm._v(
+                "\n      " + _vm._s(_vm.nav_text.nav_menu_text[3]) + "\n    "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "menu", attrs: { to: { name: "pentoRank" } } },
-            [_vm._v("\n      Pento Rank\n    ")]
+            [
+              _vm._v(
+                "\n      " + _vm._s(_vm.nav_text.nav_menu_text[4]) + "\n    "
+              )
+            ]
           )
         ],
         1
@@ -55074,7 +55175,7 @@ var render = function() {
                 _c("table", [
                   _c("thead", [
                     _c("tr", { staticClass: "uppercase" }, [
-                      _c("th", [_vm._v("検索結果")]),
+                      _c("th", [_vm._v(_vm._s(_vm.nav_text.nav_frd_text[0]))]),
                       _vm._v(" "),
                       _c("th", [_vm._v(" +")])
                     ])
@@ -55145,7 +55246,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("サーチ")]
+                [_vm._v(_vm._s(_vm.nav_text.nav_frd_text[1]))]
               ),
               _vm._v(" "),
               _c(
@@ -55182,7 +55283,7 @@ var render = function() {
                     "div",
                     { staticClass: "login-form" },
                     [
-                      _c("p", [_vm._v("LOGIN")]),
+                      _c("p", [_vm._v(_vm._s(_vm.nav_text.nav_login_text[1]))]),
                       _vm._v(" "),
                       _c("vs-input", {
                         attrs: {
@@ -55222,7 +55323,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("LOGIN")]
+                        [_vm._v(_vm._s(_vm.nav_text.nav_login_text[1]))]
                       )
                     ],
                     1
@@ -55245,15 +55346,19 @@ var render = function() {
           attrs: { icon: "success" }
         },
         [
-          _vm._v("\n    Login success!\n    "),
-          _c("vs-button", {
-            attrs: { "vs-type": "primary-filled" },
-            on: {
-              click: function($event) {
-                _vm.login_btn(true)
+          _vm._v("\n    " + _vm._s(_vm.nav_text.nav_login_text[2]) + "\n    "),
+          _c(
+            "vs-button",
+            {
+              attrs: { "vs-type": "primary-filled" },
+              on: {
+                click: function($event) {
+                  _vm.login_btn(true)
+                }
               }
-            }
-          })
+            },
+            [_vm._v(_vm._s(_vm.nav_text.nav_login_text[4]))]
+          )
         ],
         1
       ),
@@ -55269,7 +55374,7 @@ var render = function() {
           }
         },
         [
-          _vm._v("\n    Login Fail!\n    "),
+          _vm._v("\n    " + _vm._s(_vm.nav_text.nav_login_text[3]) + "\n    "),
           _c(
             "vs-button",
             {
@@ -55280,7 +55385,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("로그인 실패!")]
+            [_vm._v(_vm._s(_vm.nav_text.nav_login_text[4]))]
           )
         ],
         1
@@ -55339,19 +55444,19 @@ var render = function() {
               staticClass: "sub_btn",
               attrs: { to: { name: "pentostorylist" } }
             },
-            [_vm._v("StoryList")]
+            [_vm._v(_vm._s(_vm.header_text[0]))]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "sub_btn", attrs: { to: { name: "pento_col" } } },
-            [_vm._v("Pento Collection")]
+            [_vm._v(_vm._s(_vm.header_text[1]))]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "sub_btn", attrs: { to: { name: "pentoRank" } } },
-            [_vm._v("Pento Rank")]
+            [_vm._v(_vm._s(_vm.header_text[2]))]
           ),
           _vm._v(" "),
           _c(
@@ -55364,7 +55469,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("MY page")]
+            [_vm._v(_vm._s(_vm.header_text[3]))]
           )
         ],
         1
@@ -55372,7 +55477,7 @@ var render = function() {
       _vm._v(" "),
       _c("div"),
       _vm._v(" "),
-      _c("hid_nav", {
+      _c("hidnav", {
         attrs: { frd_value: _vm.frd_values },
         on: { frd_search: _vm.frd_search }
       })
@@ -55537,15 +55642,23 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("h1", [
-                        _vm._v("こんにちは! " + _vm._s(user_info.user_nickname))
+                        _vm._v(
+                          _vm._s(_vm.mypage_text[0]) +
+                            " " +
+                            _vm._s(user_info.user_nickname)
+                        )
                       ]),
                       _vm._v(" "),
                       _c("h2", [
-                        _vm._v("保有ミノ : " + _vm._s(user_info.user_point))
+                        _vm._v(
+                          _vm._s(_vm.mypage_text[1]) +
+                            " : " +
+                            _vm._s(user_info.user_point)
+                        )
                       ]),
                       _vm._v(" "),
                       _c("h2", { staticStyle: { "margin-top": "2vh" } }, [
-                        _vm._v("紹介")
+                        _vm._v(_vm._s(_vm.mypage_text[2]))
                       ]),
                       _vm._v(" "),
                       _c("span", { staticStyle: { "font-size": "2vh" } }, [
@@ -55558,7 +55671,7 @@ var render = function() {
                     "div",
                     { staticClass: "mypento-sub-div-content-2" },
                     [
-                      _c("h1", [_vm._v("MY Frined")]),
+                      _c("h1", [_vm._v(_vm._s(_vm.mypage_text[3]))]),
                       _vm._v(" "),
                       _vm._l(_vm.frd_list, function(frdlist) {
                         return _c("li", [
@@ -55755,7 +55868,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c("span", [_vm._v("私のペント")])
+                _c("span", [
+                  _vm._v(_vm._s(_vm.collection_text.collection_main_text[0]))
+                ])
               ])
             ])
           ]),
@@ -55772,7 +55887,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c("span", [_vm._v("皆のペント")])
+                _c("span", [
+                  _vm._v(_vm._s(_vm.collection_text.collection_main_text[1]))
+                ])
               ])
             ])
           ])
@@ -55889,7 +56006,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-banner p {\r\n  padding-left: 4vh;\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
 
 // exports
 
@@ -55913,7 +56030,17 @@ var render = function() {
         "div",
         { staticClass: "col-my-main-div" },
         [
-          _vm._m(0),
+          _c(
+            "div",
+            { attrs: { id: "my-main-banner" } },
+            _vm._l(_vm.mycol_text.collection_my_banner_text, function(
+              banner_text
+            ) {
+              return _c("p", [
+                _vm._v("\n      " + _vm._s(banner_text) + "\n      ")
+              ])
+            })
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "my-main-pento-list" }, [
             _c(
@@ -55976,14 +56103,25 @@ var render = function() {
                       [
                         _c("td", { attrs: { width: "50%" } }, [
                           _vm._v(
-                            "작성자 : " + _vm._s(select_pento.user_nickname)
+                            "\n                " +
+                              _vm._s(
+                                _vm.mycol_text.collection_my_item_text[0]
+                              ) +
+                              " - " +
+                              _vm._s(select_pento.user_nickname) +
+                              "\n                "
                           )
                         ]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "난이도 : " +
-                              _vm._s(_vm.select_pento_list.recommendNumSum)
+                            "\n                " +
+                              _vm._s(
+                                _vm.mycol_text.collection_my_item_text[1]
+                              ) +
+                              " - " +
+                              _vm._s(_vm.select_pento_list.recommendNumSum) +
+                              "\n                "
                           )
                         ])
                       ]
@@ -55998,9 +56136,13 @@ var render = function() {
                       [
                         _c("td", { attrs: { colspan: "2" } }, [
                           _vm._v(
-                            "제작일 : " +
+                            "\n                " +
+                              _vm._s(
+                                _vm.mycol_text.collection_my_item_text[2]
+                              ) +
+                              " - " +
                               _vm._s(select_pento.registered_date) +
-                              "\n              "
+                              "\n                "
                           )
                         ])
                       ]
@@ -56029,24 +56171,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "my-main-banner" } }, [
-      _vm._v("\n      あなたが"),
-      _c("br"),
-      _vm._v(" 作った\n      "),
-      _c("br"),
-      _vm._v(" 選んだ\n      "),
-      _c("br"),
-      _vm._v(" ペントを\n      "),
-      _c("br"),
-      _vm._v(" 見よう。\n    ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -56170,12 +56295,30 @@ var render = function() {
     "div",
     { staticClass: "col-share-main-layout" },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "col-share-banner-layout" }, [
+        _c(
+          "div",
+          { attrs: { id: "col-share-banner-sub-1" } },
+          _vm._l(_vm.shcol_text.collection_share_banner_text, function(
+            banner_text
+          ) {
+            return _c("p", [
+              _vm._v("\n      " + _vm._s(banner_text) + "\n      ")
+            ])
+          })
+        ),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "col-share-banner-sub-2" } })
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-share-contents-layout" }, [
         _c("div"),
         _vm._v(" "),
-        _vm._m(1),
+        _c("div", { staticClass: "content-banner-text" }, [
+          _c("span", [
+            _vm._v(_vm._s(_vm.shcol_text.collection_share_content_text[0]))
+          ])
+        ]),
         _vm._v(" "),
         _c("div"),
         _vm._v(" "),
@@ -56201,9 +56344,21 @@ var render = function() {
                   _vm._v(" "),
                   _c("hr", { staticStyle: { color: "white" } }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("メーカー : " + _vm._s(list.nickname))]),
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(_vm.shcol_text.collection_share_content_text[1]) +
+                        " : " +
+                        _vm._s(list.nickname)
+                    )
+                  ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("レベル : " + _vm._s(list.level))])
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(_vm.shcol_text.collection_share_content_text[2]) +
+                        " : " +
+                        _vm._s(list.level)
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("img", {
@@ -56247,15 +56402,27 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("h4", [
-                _vm._v("メーカー : " + _vm._s(select_pento.user_nickname))
+                _vm._v(
+                  _vm._s(_vm.shcol_text.collection_share_content_text[1]) +
+                    " : " +
+                    _vm._s(select_pento.user_nickname)
+                )
               ]),
               _vm._v(" "),
               _c("p", [
-                _vm._v("HIT : " + _vm._s(_vm.select_pento_list.recommendNumSum))
+                _c("i", {
+                  staticClass: "fas fa-heart",
+                  staticStyle: { color: "#f87b7b" }
+                }),
+                _vm._v(" : " + _vm._s(_vm.select_pento_list.recommendNumSum))
               ]),
               _vm._v(" "),
               _c("p", [
-                _vm._v("製作費 : " + _vm._s(select_pento.registered_date))
+                _vm._v(
+                  _vm._s(_vm.shcol_text.collection_share_content_text[4]) +
+                    " : " +
+                    _vm._s(select_pento.registered_date)
+                )
               ]),
               _vm._v(" "),
               _c("span", [_vm._v(_vm._s(select_pento.design_explain))]),
@@ -56278,7 +56445,12 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("こうどく")]
+                  [
+                    _vm._v(
+                      _vm._s(_vm.shcol_text.collection_share_content_text[6]) +
+                        "\n          "
+                    )
+                  ]
                 )
               ])
             ]),
@@ -56287,7 +56459,12 @@ var render = function() {
               "div",
               { staticClass: "col-share-modal-layout-sub-3" },
               [
-                _c("span", [_vm._v("皆の作品")]),
+                _c("span", [
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.shcol_text.collection_share_content_text[5])
+                  )
+                ]),
                 _vm._v(" "),
                 _vm._l(_vm.select_pento_list.side_image, function(user_pento) {
                   return _c(
@@ -56338,10 +56515,22 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "user_design_pento_modal-2" }, [
-              _c("p", [_vm._v(_vm._s(_vm.user_design_list.design_title))]),
+              _c("p", [
+                _vm._v(
+                  "\n          " +
+                    _vm._s(_vm.user_design_list.design_title) +
+                    "\n        "
+                )
+              ]),
               _vm._v(" "),
               _c("span", [
-                _vm._v("製作者：" + _vm._s(_vm.user_design_list.user_nickname))
+                _vm._v(
+                  "\n          " +
+                    _vm._s(_vm.shcol_text.collection_share_content_text[1]) +
+                    "：" +
+                    _vm._s(_vm.user_design_list.user_nickname) +
+                    "\n        "
+                )
               ]),
               _vm._v(" "),
               _c("span", { staticStyle: { "font-size": "3vh" } }, [
@@ -56349,7 +56538,7 @@ var render = function() {
                   staticClass: "fas fa-heart",
                   staticStyle: { color: "#f87b7b" }
                 }),
-                _vm._v(" " + _vm._s(_vm.user_design_list.reNum))
+                _vm._v(_vm._s(_vm.user_design_list.reNum) + "\n        ")
               ]),
               _vm._v(" "),
               _c(
@@ -56369,7 +56558,13 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n             いいね！ ")]
+                [
+                  _vm._v(
+                    "\n          " +
+                      _vm._s(_vm.shcol_text.collection_share_content_text[3]) +
+                      " \n        "
+                  )
+                ]
               )
             ])
           ])
@@ -56381,34 +56576,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-share-banner-layout" }, [
-      _c("div", { attrs: { id: "col-share-banner-sub-1" } }, [
-        _c("p", [_vm._v("みんなが")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("作った")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("いろいろな")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("ペント")])
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "col-share-banner-sub-2" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-banner-text" }, [
-      _c("span", [_vm._v("皆のペントリスト")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {

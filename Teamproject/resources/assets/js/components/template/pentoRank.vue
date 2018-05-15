@@ -23,9 +23,9 @@ dev . KANG SANG UN
         <div class="rank-page-div-2-sub-2" id="user-game-2">
           <div class="game-title">{{user_game_record.game_title}}</div>
           <div class="rank-page-div-2-sub-2-sub">
-            <div class="game-index">클리어시간</div>
-            <div class="game-index">평균기록</div>
-            <div class="game-index">날짜</div>
+            <div class="game-index">{{rank_text.rank_main_text[0]}}</div>
+            <div class="game-index">{{rank_text.rank_main_text[1]}}</div>
+            <div class="game-index">{{rank_text.rank_main_text[2]}}</div>
             <div class="game-data">{{user_game_record.game_cleartime}}</div>
             <div class="game-data">{{user_game_record.game_avgtime}}</div>
             <div class="game-data">{{user_game_record.game_date}}</div>
@@ -38,7 +38,7 @@ dev . KANG SANG UN
         </div>
         <div class="rank-page-div-3-sub-2">
           <div id="rank-div">
-            <div class="rank-div-title">ランキング</div>
+            <div class="rank-div-title">{{rank_text.rank_main_text[3]}}</div>
             <div class="rank-div-contents">
               <div class="rank-div-contents-content" v-for="ranking in user_rank_record">
                 <span style="background:skyblue; color:white">{{ranking.rank}}</span>
@@ -63,7 +63,7 @@ dev . KANG SANG UN
 import RadarChart from "../js/Radar.js";
 import PieChart from "../js/Pie.js";
 import BarChart from "../js/Bar.js";
-
+import lang from "../htmltext/text";
 import footers from "../template/Footer.vue";
 export default {
   components: {
@@ -79,16 +79,17 @@ export default {
   data() {
     return {
       //defualt value setting
+      rank_text: lang.rank,
       linedatasets: null,
       piedatasets: null,
       radardatasets: null,
       user_rank_record: [],
       user_game_record: {
         game_img: "/images/web/rank.png",
-        game_title: "왼쪽 메뉴에서 기록을 선택 해 주세요",
-        game_date: "빨리",
-        game_cleartime: "빨리",
-        game_avgtime: "빨리"
+        game_title: "左のリストから記録を確認しよう",
+        game_date: "0",
+        game_cleartime: "00：00：00",
+        game_avgtime: "0"
       },
       game_record: [],
       rank_btn: null,

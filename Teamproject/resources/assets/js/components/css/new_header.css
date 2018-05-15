@@ -6,7 +6,7 @@ dev : Kang Sangun
     height: auto;
     display: grid;
     position: fixed;
-    background : rgba(0, 0, 0, 0.7);
+    background : rgba(0, 0, 0, 0.473);
     grid-template-columns: 0.15fr 0.7fr 0.15fr;
     z-index: 30;
     transition-duration:0.4s;

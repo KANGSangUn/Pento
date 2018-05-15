@@ -5,14 +5,16 @@ dev . KANG SANG UN
 <template>
   <div class="story_main" id="story_main">
     <div class="stp_thumbnail">
-      <p class="stp_thumbnail-p">ものがたり<br>さいこう</p>
+      <p class="stp_thumbnail-p">
+        {{story_text.story_page_banner[0]}}<br>
+         {{story_text.story_page_banner[1]}}</p>
       <!--상단 배너 -->
     </div>
     <div class="stp_body" id="story-body">
       <div class="stp_text">
         <!--리스트의 장바구니 메뉴와 타이틀 -->
-        <span>STORY LIST</span>
-        <button @click="openBasket()">BASKET</button>
+        <span>{{story_text.story_page_title[0]}}</span>
+        <button @click="openBasket()">{{story_text.story_page_title[1]}}</button>
       </div>
       <!-- 동화 리스트 출력 -->
       <div class="booklist">
@@ -37,9 +39,9 @@ dev . KANG SANG UN
         </transition-group>
       </div>
       <div class="basket-price">
-        <span style="font-size:1.5vh;">클릭 시 장바구니에서 제거 됩니다.</span> 총 금액 : {{all_price}}
+        <span style="font-size:1.5vh;">{{story_text.story_page_basket[0]}}</span> {{story_text.story_page_basket[1]}} : {{all_price}}
         <!-- 총 금액 !!!!!!!!!!함수가 가끔식 고장남 고치기 -->
-        <vs-button vs-type="primary-filled" @click="basket_list_buy(basket_item)">구매하기</vs-button>
+        <vs-button vs-type="primary-filled" @click="basket_list_buy(basket_item)">{{story_text.story_page_basket[2]}}</vs-button>
       </div>
     </sweet-modal>
     <!-- 동화 상세정보 출력 -->
@@ -80,13 +82,19 @@ dev . KANG SANG UN
             <h2>{{select_item.tale_price}}</h2>
           </div>
           <div class="story-modal-right-btn">
-  
-            <vs-button vs-type="success-filled" @click="alert('success',select_item.fairy_tale_no)">Buy</vs-button>
+            <vs-button vs-type="success-filled" 
+                @click="alert('success',select_item.fairy_tale_no)">
+                {{story_text.story_page_item[0]}}
+            </vs-button>
             <vs-button @click="$vs.notify(
-                                          {title:'買い物かごに入れました！',
-                                          text:'ゲームで会いましょう!',
-                                          color:'success',
-                                          icon:'favorite'}),like_it(select_item)" vs-type="success-filled">Basket</vs-button>
+                {title:'買い物かごに入れました！',
+                 text:'ゲームで会いましょう!',
+                 color:'success',
+                 icon:'favorite'}),
+                 like_it(select_item)"
+                 vs-type="success-filled">
+                 {{story_text.story_page_item[1]}}
+            </vs-button>
           </div>
           <!--구독버튼-->
         </div>
@@ -97,12 +105,14 @@ dev . KANG SANG UN
 </template>
 <script>
 import footers from "../template/Footer.vue";
+import lang from "../htmltext/text";
 export default {
   components: {
     footers: footers
   },
   data() {
     return {
+      story_text: lang.story,
       story: [],
       select_item: [],
       story_list_no: [],

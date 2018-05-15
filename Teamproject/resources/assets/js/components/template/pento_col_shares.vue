@@ -6,10 +6,9 @@
     <!-- banner layout -->
     <div class="col-share-banner-layout">
       <div id='col-share-banner-sub-1'>
-        <p>みんなが</p>
-        <p>作った</p>
-        <p>いろいろな</p>
-        <p>ペント</p>
+        <p v-for='banner_text in shcol_text.collection_share_banner_text'>
+        {{banner_text}}
+        </p>
       </div>
       <div id='col-share-banner-sub-2'></div>
     </div>
@@ -17,7 +16,7 @@
     <div class="col-share-contents-layout">
       <div></div>
       <div class="content-banner-text">
-        <span>皆のペントリスト</span>
+        <span>{{shcol_text.collection_share_content_text[0]}}</span>
       </div>
       <div></div>
       <div></div>
@@ -26,8 +25,8 @@
           <div class="content-index">
             <span>{{list.design_title}}</span>
             <hr style="color : white;">
-            <p>メーカー : {{list.nickname}}</p>
-            <p>レベル : {{list.level}}</p>
+            <p>{{shcol_text.collection_share_content_text[1]}} : {{list.nickname}}</p>
+            <p>{{shcol_text.collection_share_content_text[2]}} : {{list.level}}</p>
           </div>
           <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+list.design_image" class="content-img">
         </div>
@@ -46,22 +45,23 @@
         <div class="col-share-modal-layout-sub-2">
           <div class="modal-2-sub-1">
             <div></div>{{select_pento.design_title}}</div>
-          <h4>メーカー : {{select_pento.user_nickname}}</h4>
-          <p>HIT : {{select_pento_list.recommendNumSum}}</p>
-          <p>製作費 : {{select_pento.registered_date}}</p>
+          <h4>{{shcol_text.collection_share_content_text[1]}} : {{select_pento.user_nickname}}</h4>
+          <p><i class="fas fa-heart" style="color:#f87b7b;"></i> : {{select_pento_list.recommendNumSum}}</p>
+          <p>{{shcol_text.collection_share_content_text[4]}} : {{select_pento.registered_date}}</p>
           <span>{{select_pento.design_explain}}</span>
           <div class="modal-2-sub-4">
             <button class="modal-btn-1" @click="
-                          $vs.notify({title:'こうどく完了!',
-                          text:'購読しました。ゲームで会いましょう!',color:'warning',position:'top-center'})
-                          ,buy_pento_col(select_pento.design_no)" vs-type="warning-flat">こうどく</button>
-  
-  
+               $vs.notify({title:'こうどく完了!',
+               text:'購読しました。ゲームで会いましょう!',color:'warning',position:'top-center'}),
+               buy_pento_col(select_pento.design_no)" vs-type="warning-flat">{{shcol_text.collection_share_content_text[6]}}
+            </button>
           </div>
         </div>
         <div class="col-share-modal-layout-sub-3">
-          <span>皆の作品</span>
-          <div v-for="user_pento in select_pento_list.side_image" 　 class="col-share-modal-layouy-sub-3-img" @click="user_design_pento(user_pento)">
+          <span> {{shcol_text.collection_share_content_text[5]}}</span>
+          <div v-for="user_pento in select_pento_list.side_image" 
+            class="col-share-modal-layouy-sub-3-img" 
+            @click="user_design_pento(user_pento)">
             <img src v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_pento.imitated_image" />
           </div>
         </div>
@@ -73,12 +73,21 @@
           <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_design_list.imitated_image">
         </div>
         <div class="user_design_pento_modal-2">
-          <p>{{user_design_list.design_title}}</p>
-          <span>製作者：{{user_design_list.user_nickname}}</span>
-          <span style="font-size:3vh;"> <i class="fas fa-heart" style="color:#f87b7b;"></i> {{user_design_list.reNum}}</span>
-          <button class="modal-btn-2" @click="$vs.notify({title:'いいですよ!',
-              text:'いいねー!',color:'danger',icon:'favorite'}),lisk_it(user_design_list.imitated_no)" vs-type="danger-flat">
-               いいね！ </button>
+          <p>
+            {{user_design_list.design_title}}
+          </p>
+          <span>
+            {{shcol_text.collection_share_content_text[1]}}：{{user_design_list.user_nickname}}
+          </span>
+          <span style="font-size:3vh;">
+            <i class="fas fa-heart" style="color:#f87b7b;"></i>{{user_design_list.reNum}}
+          </span>
+          <button class="modal-btn-2" 
+            @click="$vs.notify({title:'いいですよ!',
+            text:'いいねー!',color:'danger',icon:'favorite'}),
+            lisk_it(user_design_list.imitated_no)" vs-type="danger-flat">
+            {{shcol_text.collection_share_content_text[3]}} 
+          </button>
         </div>
       </div>
     </sweet-modal>
@@ -88,7 +97,7 @@
 </template>
 <script>
 import footers from "../template/Footer.vue";
-
+import lang from "../htmltext/text";
 export default {
   components: {
     footers: footers
@@ -99,6 +108,7 @@ export default {
   },
   data() {
     return {
+      shcol_text: lang.collection,
       all_pento_list: {},
       select_pento_list: {},
       temp: [],

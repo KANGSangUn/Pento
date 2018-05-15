@@ -19,13 +19,10 @@ dev . KANG SANG UN
             <p>{{footer_text_1}}</p>
         </div>
         <div class="footer-right">
-  
-<p style="border-bottom : 1px solid white">{{$appname}}</p> 
-            <!-- <p style="border-bottom : 1px solid white">{{footer_text_2}}</p> -->
-               
+            <p style="border-bottom : 1px solid white">{{footer_text_2}}</p>   
             <ul>
-              <li v-for="dev in dev_names">
-                  {{dev}}
+              <li v-for="(dev,key) in dev_names">
+                  {{key}}  {{dev}}
               </li>
             </ul>
         </div>

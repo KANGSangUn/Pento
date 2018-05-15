@@ -10,7 +10,7 @@
           <div class="menu-sub">
             <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/mypentoimg.png">
             <br>
-            <span>私のペント</span>
+            <span>{{collection_text.collection_main_text[0]}}</span>
           </div>
         </div>
       </router-link>
@@ -22,7 +22,7 @@
           <div class="menu-sub">
             <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/allpentoimg.png">
             <br>
-            <span>皆のペント</span>
+            <span>{{collection_text.collection_main_text[1]}}</span>
           </div>
         </div>
       </router-link>
@@ -32,9 +32,15 @@
 </template>
 <script>
 import footers from "../template/Footer.vue";
+import lang from "../htmltext/text";
 export default {
   components: {
     footers: footers
+  },
+  data() {
+    return {
+      collection_text: lang.collection
+    };
   },
   //pento Page default scroll View
   created() {

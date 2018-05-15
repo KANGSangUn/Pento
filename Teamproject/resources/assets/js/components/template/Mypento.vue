@@ -10,13 +10,13 @@ dev . KANG SANG UN
           <div v-for="user_info in Item_list">
             <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_info.image+'.png'" class="userimg"
             />
-            <h1>こんにちは! {{user_info.user_nickname}}</h1>
-            <h2>保有ミノ : {{user_info.user_point}}</h2>
-            <h2 style="margin-top : 2vh;">紹介</h2>
+            <h1>{{mypage_text[0]}} {{user_info.user_nickname}}</h1>
+            <h2>{{mypage_text[1]}} : {{user_info.user_point}}</h2>
+            <h2 style="margin-top : 2vh;">{{mypage_text[2]}}</h2>
             <span style="font-size : 2vh">{{user_info.user_intro}}</span>
           </div>
           <div class="mypento-sub-div-content-2">
-            <h1>MY Frined</h1>
+            <h1>{{mypage_text[3]}}</h1>
             <li v-for="frdlist in frd_list">
               {{frdlist.user_nickname}}
             </li>
@@ -38,6 +38,7 @@ dev . KANG SANG UN
 <style src="../css/mypento.css"></style>
 <script>
 import footers from "../template/Footer.vue";
+import lang from "../htmltext/text";
 export default {
   components: {
     footers: footers
@@ -50,6 +51,7 @@ export default {
   },
   data() {
     return {
+      mypage_text: lang.mypage,
       Item_list: "",
       frd_list: [],
       buy_list: []

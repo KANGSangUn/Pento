@@ -8,22 +8,23 @@ dev . KANG SANG UN
       <router-link class="sub_btn" :to="{name:'main'}">
         <img v-bind:src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/logo3.png"'>
       </router-link>
-      <router-link class="sub_btn" :to="{name:'pentostorylist'}">StoryList</router-link>
-      <router-link class="sub_btn" :to="{name:'pento_col'}">Pento Collection</router-link>
-      <router-link class="sub_btn" :to="{name:'pentoRank'}">Pento Rank</router-link>
-      <div class="sub_btn" @click="openNav()">MY page</div>
+      <router-link class="sub_btn" :to="{name:'pentostorylist'}">{{header_text[0]}}</router-link>
+      <router-link class="sub_btn" :to="{name:'pento_col'}">{{header_text[1]}}</router-link>
+      <router-link class="sub_btn" :to="{name:'pentoRank'}">{{header_text[2]}}</router-link>
+      <div class="sub_btn" @click="openNav()">{{header_text[3]}}</div>
     </div>
     <div></div>
-    <hid_nav v-bind:frd_value="frd_values" v-on:frd_search="frd_search"></hid_nav>
+    <hidnav v-bind:frd_value="frd_values" v-on:frd_search="frd_search"></hidnav>
   </div>
 </template>
 <style src="../css/new_header.css"></style>
 <script>
 import hiddne_nav from "../template/hiddnenav.vue";
-
+import lang from "../htmltext/text";
 export default {
   data() {
     return {
+      header_text: lang.header,
       frd_values: ""
     };
   },
@@ -32,7 +33,7 @@ export default {
   },
   components: {
     //navigation
-    hid_nav: hiddne_nav
+    hidnav: hiddne_nav
   },
   methods: {
     openNav: function() {

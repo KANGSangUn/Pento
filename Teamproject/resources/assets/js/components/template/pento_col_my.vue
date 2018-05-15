@@ -5,10 +5,9 @@
   <div class="col-my-page">
     <div class="col-my-main-div">
       <div id="my-main-banner">
-        あなたが<br> 作った
-        <br> 選んだ
-        <br> ペントを
-        <br> 見よう。
+        <p v-for='banner_text in mycol_text.collection_my_banner_text'>
+        {{banner_text}}
+        </p>
       </div>
       <div class="my-main-pento-list">
         <div id="my-main-list">
@@ -31,16 +30,19 @@
                 <td height="15%" colspan="2">
                   <div class="title-box"></div>
                   {{select_pento.design_title}}</td>
-  
-              </tr>
-  
-              <tr height="7%" class="my-modal-layout-tr-index">
-                <td width="50%">작성자 : {{select_pento.user_nickname}}</td>
-                <td>난이도 : {{select_pento_list.recommendNumSum}}</td>
               </tr>
               <tr height="7%" class="my-modal-layout-tr-index">
-                <td colspan="2">제작일 : {{select_pento.registered_date}}
-                </td>
+                <td width="50%">
+                  {{mycol_text.collection_my_item_text[0]}} - {{select_pento.user_nickname}}
+                  </td>
+                <td>
+                  {{mycol_text.collection_my_item_text[1]}} - {{select_pento_list.recommendNumSum}}
+                  </td>
+              </tr>
+              <tr height="7%" class="my-modal-layout-tr-index">
+                <td colspan="2">
+                  {{mycol_text.collection_my_item_text[2]}} - {{select_pento.registered_date}}
+                  </td>
               </tr>
               <tr class="my-modal-layout-tr-index-2">
                 <td colspan="2">
@@ -48,13 +50,6 @@
                 </td>
               </tr>
             </table>
-            <!-- <h2>{{select_pento.design_title}}</h2>
-                      <h4>작성자 : {{select_pento.user_nickname}}</h4>
-                      <p>난이도 : {{select_pento.level_of_difficultly}}</p>
-                      <span>{{select_pento.design_explain}}</span>
-                      <button
-                      class="modal-btn"
-                      >삭제</button> -->
           </div>
         </div>
       </sweet-modal>
@@ -64,6 +59,7 @@
 </template>
 <script>
 import footers from "../template/Footer.vue";
+import lang from "../htmltext/text";
 export default {
   components: {
     footers: footers
@@ -74,6 +70,7 @@ export default {
   },
   data() {
     return {
+      mycol_text: lang.collection,
       pento_list: "", //펜토미노 페이지 값을 담을 변수
       select_pento_list: {} //펜토미노를 선택 할 때 담을 변수
     };
@@ -116,13 +113,16 @@ export default {
   height: auto;
 }
 #my-main-banner {
-  font-weight: 200;
-  font-family: "Mplus 1p", sans-serif;
   color: white;
   font-size: 7vh;
   padding-top: 15vh;
   background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg");
   background-size: cover;
+}
+#my-main-banner p {
+  padding-left: 4vh;
+  font-weight: 200;
+  font-family: "Mplus 1p", sans-serif;
 }
 #my-main-list {
   padding-top: 5vh;
