@@ -60,6 +60,7 @@ dev . KANG SANG UN
 <style src="../css/pentoRank.css"></style>
 
 <script>
+//Chartデータを処理するCALSSFILE
 import RadarChart from "../js/Radar.js";
 import PieChart from "../js/Pie.js";
 import BarChart from "../js/Bar.js";
@@ -110,6 +111,7 @@ export default {
     },
     load_user_play: function(design_no, imgs) {
       //Wait for http respones
+      //loading event start
       this.padein();
       this.loding();
       let url = "RankRecordValue";
@@ -117,9 +119,8 @@ export default {
         user_no: sessionStorage.getItem("user_number"),
         design_no: design_no
       };
-
       this.axios.post(url, art).then(response => {
-        //http loding
+        //loading event end
         this.padeout();
         //값 입력
         this.user_game_record.game_img = imgs;
@@ -157,7 +158,7 @@ export default {
     load_frd_play: function(recorddata) {
       let frdname = [];
       let frdrecord = [];
-
+      //テータをPUSH
       recorddata.forEach(function(item) {
         frdname.push(item.user_nickname);
         frdrecord.push(item.put_number);

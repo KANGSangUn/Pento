@@ -10,8 +10,6 @@ dev : Kang Sangun
     grid-template-columns: 0.15fr 0.7fr 0.15fr;
     z-index: 30;
     transition-duration:0.4s;
-
-
 }
 .sub_logo{
     text-align: center;
@@ -43,9 +41,16 @@ dev : Kang Sangun
 
 @media (max-width: 700px) {
     .body_sub, .list_board, .main_body {
-        width: 100%
+        width: 100%;
+        font-size : 15px;
     }
 
     .baskets, .main_left, .menu_btn {
         display: none
-    }}
+    }
+    .sub_header {
+   
+    display: none;
+    
+}
+}

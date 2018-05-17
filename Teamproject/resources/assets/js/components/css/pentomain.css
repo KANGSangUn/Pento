@@ -251,3 +251,14 @@ dev : Kang Sangun
         transition: 1s;
         color: transparent;
     }
+    @media screen and (max-width : 500px){
+        .main-body-1{
+            text-align: center;
+            background-color: #ffaf2f;
+            margin : auto;
+            width: 100vw;
+            height: 50vh;
+            overflow: hidden;
+        }
+
+    }

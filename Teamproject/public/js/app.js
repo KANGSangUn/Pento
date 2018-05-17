@@ -4583,7 +4583,7 @@
 "use strict";
 
 
-module.exports = __webpack_require__(12);
+module.exports = __webpack_require__(13);
 module.exports.easing = __webpack_require__(234);
 module.exports.canvas = __webpack_require__(235);
 module.exports.options = __webpack_require__(236);
@@ -5038,7 +5038,7 @@ function normalizeComponent (
 "use strict";
 
 
-var bind = __webpack_require__(18);
+var bind = __webpack_require__(19);
 var isBuffer = __webpack_require__(177);
 
 /*global toString:true*/
@@ -5343,6 +5343,61 @@ module.exports = {
 
 /***/ }),
 /* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    main: {
+        main_banner_1_text: ['WELCOME', 'MY NAME IS PENTO!'],
+        main_banner_2_text: ['PENTO', 'ペントミノをもっと楽しく、面白く'],
+        main_banner_3_text: ['ペントミノ', 'もう詰らない', 'それで準備しました', 'PENTOのコンテンツ', 'ずっと遊びましょう'],
+        main_banner_4_text: ['準備できていますか？', 'ペントを楽しむために', '必要なのはあなたの', '想像力だけ,何でも作れる'],
+        main_banner_5_text: ['まるで、花のようだ。'],
+        main_banner_6_text: ['Pento Story', '行こう、物語の中に。', 'ペントですからできる', '皆の想像力を', '会いましょう'],
+        main_banner_7_text: ['Pento Rank', 'ランキング、チャート', '記録からランキング', 'さらにデータチャートまで', ' 見てみましょう。'],
+        main_banner_8_text: ['Pento Collections', '皆のペント', 'ペントでしか会えない', '特別な物語を', '会いましょ']
+    },
+    story: {
+        story_page_banner: ['物語の中に', '入りましょう。'],
+        story_page_title: ['STORY LIST', 'BASKET'],
+        story_page_basket: ['画像をクリックすると買い物かごから消します。', '金額', '購入'],
+        story_page_item: ['購入', '買い物かご']
+    },
+    collection: {
+        collection_main_text: ['私のペント', '皆のペント'],
+        collection_my_banner_text: ['あなたが', '作った', '選んだ', 'ペントを', '見よう。'],
+        collection_my_item_text: ['つくり', 'レベル', '製作日'],
+        collection_share_banner_text: ['みんなが', '作った', 'いろいろな', 'ペント'],
+        collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
+    },
+    rank: {
+        rank_main_text: ['クリアタイム', '記録', 'Date', 'ランキング']
+    },
+    mypage: ['こんにちは', '保有ミノ', '紹介', 'My Friend'],
+    header: ['Storylist', 'Pento Collection', 'Pento Rank', 'Menu'],
+    navigation: {
+        nav_main_text: ['こんにちは！', 'さん', 'MY PENTO', '友達探し'],
+        nav_login_text: ['Login', 'Logout', 'こんにちは！', 'IDとパスワードが間違いました。', 'OK'],
+        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank'],
+        nav_frd_text: ['検索結果', 'サーチ']
+    },
+    footer: {
+        'footer_text_1': 'Developed Team Horenso',
+        'footer_text_2': 'Developers',
+        'dev_name': {
+            Unity: "정현우",
+            "Leap Motion": "정지민",
+            Arduino: "최요한",
+            Database: "성경임",
+            "Back-end": "김영문",
+            "Front-end": "강상운"
+        }
+    }
+});
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5464,7 +5519,7 @@ module.exports = Element;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5478,11 +5533,11 @@ module.exports.Rectangle = __webpack_require__(245);
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(27);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -5536,7 +5591,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5962,7 +6017,7 @@ module.exports = {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6039,7 +6094,7 @@ module.exports = {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6385,7 +6440,7 @@ helpers.getValueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 var g;
@@ -6412,7 +6467,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6435,10 +6490,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(19);
+    adapter = __webpack_require__(20);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(19);
+    adapter = __webpack_require__(20);
   }
   return adapter;
 }
@@ -6509,10 +6564,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6549,7 +6604,7 @@ var VueCharts = {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -6739,7 +6794,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6813,7 +6868,7 @@ process.umask = function() { return 0; };
 });
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6831,7 +6886,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6842,7 +6897,7 @@ var settle = __webpack_require__(180);
 var buildURL = __webpack_require__(182);
 var parseHeaders = __webpack_require__(183);
 var isURLSameOrigin = __webpack_require__(184);
-var createError = __webpack_require__(20);
+var createError = __webpack_require__(21);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(185);
 
 module.exports = function xhrAdapter(config) {
@@ -7018,7 +7073,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7043,7 +7098,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7055,7 +7110,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7081,7 +7136,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7518,7 +7573,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7569,12 +7624,12 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 var _components$data$crea;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -7729,11 +7784,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _components$data$crea);
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -7780,67 +7835,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 });
 
 /***/ }),
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    main: {
-        main_banner_1_text: ['WELCOME', 'MY NAME IS PENTO!'],
-        main_banner_2_text: ['PENTO', 'ペントミノをもっと楽しく、面白く'],
-        main_banner_3_text: ['ペントミノ', 'もう詰らない', 'それで準備しました', 'PENTOのコンテンツ', 'ずっと遊びましょう'],
-        main_banner_4_text: ['準備できていますか？', 'ペントを楽しむために', '必要なのはあなたの', '想像力だけ,何でも作れる'],
-        main_banner_5_text: ['まるで、花のようだ。'],
-        main_banner_6_text: ['Pento Story', '行こう、物語の中に。', 'ペントですからできる', '皆の想像力を', '会いましょう'],
-        main_banner_7_text: ['Pento Rank', 'ランキング、チャート', '記録からランキング', 'さらにデータチャートまで', ' 見てみましょう。'],
-        main_banner_8_text: ['Pento Collections', '皆のペント', 'ペントでしか会えない', '特別な物語を', '会いましょ']
-    },
-    story: {
-        story_page_banner: ['物語の中に', '入りましょう。'],
-        story_page_title: ['STORY LIST', 'BASKET'],
-        story_page_basket: ['画像をクリックすると買い物かごから消します。', '金額', '購入'],
-        story_page_item: ['購入', '買い物かご']
-    },
-    collection: {
-        collection_main_text: ['私のペント', '皆のペント'],
-        collection_my_banner_text: ['あなたが', '作った', '選んだ', 'ペントを', '見よう。'],
-        collection_my_item_text: ['つくり', 'レベル', '製作日'],
-        collection_share_banner_text: ['みんなが', '作った', 'いろいろな', 'ペント'],
-        collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
-    },
-    rank: {
-        rank_main_text: ['クリアタイム', '記録', 'Date', 'ランキング']
-    },
-    mypage: ['こんにちは', '保有ミノ', '紹介', 'My Friend'],
-    header: ['Storylist', 'Pento Collection', 'Pento Rank', 'Menu'],
-    navigation: {
-        nav_main_text: ['こんにちは！', 'さん', 'MY PENTO', '友達探し'],
-        nav_login_text: ['Login', 'Logout', 'こんにちは！', 'IDとパスワードが間違いました。', 'OK'],
-        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank'],
-        nav_frd_text: ['検索結果', 'サーチ']
-    },
-    footer: {
-        'footer_text_1': 'Developed Team Horenso',
-        'footer_text_2': 'Developers',
-        'dev_name': {
-            Unity: "정현우",
-            "Leap Motion": "정지민",
-            Arduino: "최요한",
-            Database: "성경임",
-            "Back-end": "김영문",
-            "Front-end": "강상운"
-        }
-    }
-});
-
-/***/ }),
 /* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -8085,8 +8085,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_Radar_js__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_Pie_js__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__htmltext_text__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__template_Footer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__htmltext_text__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__template_Footer_vue__ = __webpack_require__(10);
 //
 //
 //
@@ -8149,6 +8149,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
+//Chartデータを処理するCALSSFILE
 
 
 
@@ -8204,6 +8205,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       //Wait for http respones
+      //loading event start
       this.padein();
       this.loding();
       var url = "RankRecordValue";
@@ -8211,9 +8213,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         user_no: sessionStorage.getItem("user_number"),
         design_no: design_no
       };
-
       this.axios.post(url, art).then(function (response) {
-        //http loding
+        //loading event end
         _this2.padeout();
         //값 입력
         _this2.user_game_record.game_img = imgs;
@@ -8249,7 +8250,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     load_frd_play: function load_frd_play(recorddata) {
       var frdname = [];
       var frdrecord = [];
-
+      //テータをPUSH
       recorddata.forEach(function (item) {
         frdname.push(item.user_nickname);
         frdrecord.push(item.put_number);
@@ -21437,7 +21438,7 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -21505,7 +21506,7 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -21761,8 +21762,8 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -21868,8 +21869,8 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -21926,8 +21927,8 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -22040,8 +22041,8 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
 //
 //
 //
@@ -33302,7 +33303,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(166).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(166).setImmediate))
 
 /***/ }),
 /* 166 */
@@ -33369,7 +33370,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
 /* 167 */
@@ -33562,14 +33563,14 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(17)))
 
 /***/ }),
 /* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(18);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6dd1125c_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -36387,9 +36388,9 @@ module.exports = __webpack_require__(176);
 
 
 var utils = __webpack_require__(6);
-var bind = __webpack_require__(18);
+var bind = __webpack_require__(19);
 var Axios = __webpack_require__(178);
-var defaults = __webpack_require__(14);
+var defaults = __webpack_require__(15);
 
 /**
  * Create an instance of Axios
@@ -36422,9 +36423,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(22);
+axios.Cancel = __webpack_require__(23);
 axios.CancelToken = __webpack_require__(192);
-axios.isCancel = __webpack_require__(21);
+axios.isCancel = __webpack_require__(22);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -36472,7 +36473,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(14);
+var defaults = __webpack_require__(15);
 var utils = __webpack_require__(6);
 var InterceptorManager = __webpack_require__(187);
 var dispatchRequest = __webpack_require__(188);
@@ -36577,7 +36578,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(20);
+var createError = __webpack_require__(21);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -37012,8 +37013,8 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(6);
 var transformData = __webpack_require__(189);
-var isCancel = __webpack_require__(21);
-var defaults = __webpack_require__(14);
+var isCancel = __webpack_require__(22);
+var defaults = __webpack_require__(15);
 var isAbsoluteURL = __webpack_require__(190);
 var combineURLs = __webpack_require__(191);
 
@@ -37172,7 +37173,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(22);
+var Cancel = __webpack_require__(23);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -37298,7 +37299,7 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModal_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModal_vue__ = __webpack_require__(24);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_loader_lib_template_compiler_index_id_data_v_8745db4c_hasScoped_false_optionsId_0_buble_transforms_vue_loader_lib_selector_type_template_index_0_SweetModal_vue__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -37671,7 +37672,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModalTab_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_vue_loader_lib_selector_type_script_index_0_SweetModalTab_vue__ = __webpack_require__(25);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_loader_lib_template_compiler_index_id_data_v_6fe2aeea_hasScoped_false_optionsId_0_buble_transforms_vue_loader_lib_selector_type_template_index_0_SweetModalTab_vue__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -40647,7 +40648,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentomain_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_pentomain_vue__ = __webpack_require__(26);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d921c37c_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_pentomain_vue__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
@@ -40736,7 +40737,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 100vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : 3vh auto 5vh auto;\r\n        width: 96vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color : transparent;\r\n        text-align: right;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color: inherit;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color: inherit;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 100vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : 3vh auto 5vh auto;\r\n        width: 96vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color : transparent;\r\n        text-align: right;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color: inherit;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color: inherit;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n@media screen and (max-width : 500px){\n.main-body-1{\r\n            text-align: center;\r\n            background-color: #ffaf2f;\r\n            margin : auto;\r\n            width: 100vw;\r\n            height: 50vh;\r\n            overflow: hidden;\n}\n}", ""]);
 
 // exports
 
@@ -41707,7 +41708,7 @@ exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.rank-page-div{\r\n   
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(16);
 
 
 var reactiveProp = __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["d" /* mixins */].reactiveProp;
@@ -41934,13 +41935,13 @@ Chart.helpers = __webpack_require__(1);
 __webpack_require__(237)(Chart);
 
 Chart.defaults = __webpack_require__(2);
-Chart.Element = __webpack_require__(7);
-Chart.elements = __webpack_require__(8);
+Chart.Element = __webpack_require__(8);
+Chart.elements = __webpack_require__(9);
 Chart.Interaction = __webpack_require__(31);
-Chart.layouts = __webpack_require__(10);
+Chart.layouts = __webpack_require__(11);
 Chart.platform = __webpack_require__(32);
 Chart.plugins = __webpack_require__(33);
-Chart.Ticks = __webpack_require__(11);
+Chart.Ticks = __webpack_require__(12);
 
 __webpack_require__(248)(Chart);
 __webpack_require__(249)(Chart);
@@ -42110,7 +42111,7 @@ module.exports = function() {
 "use strict";
 
 
-var helpers = __webpack_require__(12);
+var helpers = __webpack_require__(13);
 
 /**
  * Easing functions adapted from Robert Penner's easing equations.
@@ -42367,7 +42368,7 @@ helpers.easingEffects = effects;
 "use strict";
 
 
-var helpers = __webpack_require__(12);
+var helpers = __webpack_require__(13);
 
 /**
  * @namespace Chart.helpers.canvas
@@ -42588,7 +42589,7 @@ helpers.drawRoundedRectangle = function(ctx) {
 "use strict";
 
 
-var helpers = __webpack_require__(12);
+var helpers = __webpack_require__(13);
 
 /**
  * @alias Chart.helpers.options
@@ -44497,7 +44498,7 @@ module.exports = {
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
 
 defaults._set('global', {
@@ -44611,7 +44612,7 @@ module.exports = Element.extend({
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
 
 var globalDefaults = defaults.global;
@@ -44709,7 +44710,7 @@ module.exports = Element.extend({
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
 
 var defaultColor = defaults.global.defaultColor;
@@ -44822,7 +44823,7 @@ module.exports = Element.extend({
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 
 defaults._set('global', {
 	elements: {
@@ -45532,7 +45533,7 @@ helpers.removeEvent = removeEventListener;
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
 
 defaults._set('global', {
@@ -45712,7 +45713,7 @@ module.exports = function(Chart) {
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
 var Interaction = __webpack_require__(31);
-var layouts = __webpack_require__(10);
+var layouts = __webpack_require__(11);
 var platform = __webpack_require__(32);
 var plugins = __webpack_require__(33);
 
@@ -47002,7 +47003,7 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var layouts = __webpack_require__(10);
+var layouts = __webpack_require__(11);
 
 module.exports = function(Chart) {
 
@@ -47054,9 +47055,9 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(11);
+var Ticks = __webpack_require__(12);
 
 defaults._set('scale', {
 	display: true,
@@ -47997,7 +47998,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
 
 defaults._set('global', {
@@ -49286,7 +49287,7 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(11);
+var Ticks = __webpack_require__(12);
 
 module.exports = function(Chart) {
 
@@ -49483,7 +49484,7 @@ module.exports = function(Chart) {
 
 
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(11);
+var Ticks = __webpack_require__(12);
 
 /**
  * Generate a set of logarithmic ticks
@@ -49838,7 +49839,7 @@ module.exports = function(Chart) {
 
 var defaults = __webpack_require__(2);
 var helpers = __webpack_require__(1);
-var Ticks = __webpack_require__(11);
+var Ticks = __webpack_require__(12);
 
 module.exports = function(Chart) {
 
@@ -51459,7 +51460,7 @@ webpackContext.id = 261;
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('bar', {
@@ -51970,7 +51971,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('bubble', {
@@ -52157,7 +52158,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('doughnut', {
@@ -52463,7 +52464,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('line', {
@@ -52803,7 +52804,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('polarArea', {
@@ -53032,7 +53033,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('radar', {
@@ -53397,7 +53398,7 @@ module.exports.title = __webpack_require__(279);
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(8);
+var elements = __webpack_require__(9);
 var helpers = __webpack_require__(1);
 
 defaults._set('global', {
@@ -53716,9 +53717,9 @@ module.exports = {
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
-var layouts = __webpack_require__(10);
+var layouts = __webpack_require__(11);
 
 var noop = helpers.noop;
 
@@ -54299,9 +54300,9 @@ module.exports = {
 
 
 var defaults = __webpack_require__(2);
-var Element = __webpack_require__(7);
+var Element = __webpack_require__(8);
 var helpers = __webpack_require__(1);
-var layouts = __webpack_require__(10);
+var layouts = __webpack_require__(11);
 
 var noop = helpers.noop;
 
@@ -54555,7 +54556,7 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(16);
 /**
  * Created by rkdtk on 2018-04-12.
  */
@@ -54580,7 +54581,7 @@ var reactiveProp = __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["d" /* mixins */].r
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(16);
 /**
  * Created by rkdtk on 2018-04-12.
  */
@@ -54884,7 +54885,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.473);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n}\r\n", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.473);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%;\r\n        font-size : 15px;\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n.sub_header {\r\n   \r\n    display: none;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -56275,7 +56276,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  /* background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\"); */\r\n  background-image: url(\"http://localhost:8000/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.col-share-modal-layout-sub-3 {\r\n  overflow-y: auto;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.user_design_pento_modal-2 {\r\n  padding-left: 1vw;\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.col-share-modal-layout-sub-3 {\r\n  overflow-y: auto;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.user_design_pento_modal-2 {\r\n  padding-left: 1vw;\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\r\n", ""]);
 
 // exports
 

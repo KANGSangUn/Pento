@@ -189,8 +189,7 @@ export default {
   font-family: "Mplus 1p", sans-serif;
 }
 #col-share-banner-sub-2 {
-  /* background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg"); */
-  background-image: url("http://localhost:8000/images/web/col_all_banner.jpg");
+  background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
