@@ -48,7 +48,6 @@ dev . KANG SANG UN
     <sweet-modal ref='modal' overlay-theme="dark" width="50vw" title="Faerie tale">
       <div class="story-modal">
         <div style="float: left" class="story-modal-left">
-  
           <div class="story-modal-left-main">
             <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+(select_item.tale_image0)" />
           </div>
@@ -79,14 +78,14 @@ dev . KANG SANG UN
           </div>
           <!--내용-->
           <div class="story-modal-right-price">
-            <h2>{{select_item.tale_price}}</h2>
+            {{select_item.tale_price}}ミノ
           </div>
           <div class="story-modal-right-btn">
-            <vs-button vs-type="success-filled" 
+            <button vs-type="success-filled" 
                 @click="alert('success',select_item.fairy_tale_no)">
                 {{story_text.story_page_item[0]}}
-            </vs-button>
-            <vs-button @click="$vs.notify(
+            </button>
+            <button @click="$vs.notify(
                 {title:'買い物かごに入れました！',
                  text:'ゲームで会いましょう!',
                  color:'success',
@@ -94,7 +93,7 @@ dev . KANG SANG UN
                  like_it(select_item)"
                  vs-type="success-filled">
                  {{story_text.story_page_item[1]}}
-            </vs-button>
+            </button>
           </div>
           <!--구독버튼-->
         </div>
@@ -117,7 +116,7 @@ export default {
       select_item: [],
       story_list_no: [],
       basket_item: [],
-      backgroundLoading: "#ee9e19",
+      backgroundLoading: "#1abff1",
       temp: "",
       all_price: 0
     };

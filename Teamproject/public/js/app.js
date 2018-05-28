@@ -5539,12 +5539,12 @@ module.exports.Rectangle = __webpack_require__(245);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(27);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
 var disposed = false
 function injectStyle (context) {
   if (disposed) return
-  __webpack_require__(218)
+  __webpack_require__(317)
 }
 /* script */
 
@@ -5556,14 +5556,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-01553ad6"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -7748,6 +7748,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -7945,7 +7950,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -7960,7 +7964,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       select_item: [],
       story_list_no: [],
       basket_item: [],
-      backgroundLoading: "#ee9e19",
+      backgroundLoading: "#1abff1",
       temp: "",
       all_price: 0
     };
@@ -21901,8 +21905,6 @@ module.exports = {
 //
 //
 //
-//
-//
 
 
 
@@ -22259,7 +22261,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /*
 dev . kang sang un
 */
-
+//ライブラリー登録
 
 
 
@@ -22275,6 +22277,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_6_vuesax___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_axios___default.a, __WEBPACK_IMPORTED_MODULE_4_axios___default.a);
 
+//components登録
 
 
 
@@ -22285,6 +22288,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$eventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
+//Routing登録
 var routes = [{
 	name: 'main',
 	path: '/',
@@ -40737,129 +40741,15 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        text-align: center;\r\n        padding: 5vw;\r\n        background-color: #ffaf2f;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 100vh;\r\n        overflow: hidden;\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 200;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : 3vh auto 5vh auto;\r\n        width: 96vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-column-gap: 1vh;\r\n        grid-row-gap:  1vh;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color : transparent;\r\n        text-align: right;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color: inherit;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color: inherit;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{ \r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\r\n       -webkit-filter: blur(5px) opacity(.8);\r\n               filter: blur(5px) opacity(.8);\n}\n.menu-title{\r\n        color : rgb(0, 0, 0);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:Arial, Helvetica, sans-serif;\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n@media screen and (max-width : 500px){\n.main-body-1{\r\n            text-align: center;\r\n            background-color: #ffaf2f;\r\n            margin : auto;\r\n            width: 100vw;\r\n            height: 50vh;\r\n            overflow: hidden;\n}\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.main-body{\r\n        margin: auto ;\r\n        display : grid;\r\n        grid-template-rows: 1fr 1fr 1.5fr;\r\n        grid-row-gap: 0.8vh;\r\n        width: 100vw;\r\n        height: 100vh;\n}\n.main-body-1{\r\n        background-image: url('http://localhost:8000/images/newimage/main_banner.jpg');\r\n        text-align: center;\r\n        padding: 5vw;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 100vh;\r\n        background-size: contain;\r\n        overflow: hidden;\r\n        display: grid;\r\n        grid-template-columns: 1fr 1fr 1fr;\n}\n.main-body-1-sub{\r\n        margin-top: 13em;\r\n        padding : 3em;\r\n        width:100%;\r\n        height:40%;\r\n        background: rgba(17, 17, 20, 0.507);\n}\n.main-body-p-1{\r\n        font-weight: 100;\r\n        font-size : 2vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-p-2{\r\n        font-weight: 100;\r\n        font-size : 3vw;\r\n        color : white;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-1 img{\r\n        max-width: 100%;\r\n        height: auto;\n}\n#main-body-2{\r\n        background-color: #f6f7f1;\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_2.jpg\");\r\n        background-size: contain;\r\n        background-repeat: no-repeat;\r\n        background-position: center;\n}\n.main-body-2{\r\n        padding : 5vw;\r\n        text-align: center;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\n}\n#main-body-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 600;\r\n     \r\n        font-size: 3vw;\n}\n#main-body-2 span{\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\r\n    \r\n        font-size: 2vw;\n}\n.main-body-banner-1{\r\n        height: 70vh;\n}\n#main-body-3{\r\n        background: #ffffff;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 400;\r\n        color : #2a2a2a;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 300;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : #2a2a2a;\r\n        font-size: 1vw;\n}\n.main-body-3{\r\n        margin : 3vh auto 5vh auto;\r\n        width: 95vw;\r\n        height: 128vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-3-1{\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_3.jpg\");\r\n        background-size: contain;\n}\n.main-body-3-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color : transparent;\r\n        text-align: right;\r\n        padding: 5vw;\n}\n.main-body-3-2 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        color: inherit;\r\n        font-size: 3vw;\n}\n.main-body-3-2 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color: inherit;\r\n        font-size: 2vw;\n}\n#main-body-3-4 img{\r\n        text-align: center;\n}\n#main-body-4{\r\n        /* background: #c5f5f7;  \r\n        background: -webkit-linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        background: linear-gradient(to bottom, #c5f5f7, #BFEFEF, #b9ecef); \r\n        *****/\r\n        background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_banner_4.jpg\");\r\n        background-repeat: no-repeat;\r\n        background-size : cover;\r\n        background-attachment: fixed;\r\n        text-align: left;\r\n        margin : auto;\r\n        width: 100vw;\r\n        height: 70vh;\r\n        display: grid;\r\n        grid-template-columns: 0.5fr 0.5fr;\n}\n.main-body-4-1{\r\n        color : white;\r\n        padding-top : 20vh;\r\n        padding-left: 15vh\n}\n.main-body-4-2{\r\n        text-align: center;\r\n        padding : 7vw;\n}\n#main-body-4 p{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-weight: 300;\r\n        font-size: 3vw;\n}\n#main-body-4 span{\r\n        font-weight: 100;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        font-size: 2vw;\n}\n.menu-1 p{\r\n        font-weight: 100;\r\n        text-align: left;\r\n        color : white;\r\n        font-size: 5vw;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-body-menu{\r\n        width: 100%;\r\n        height: 100%;\n}\r\n\r\n    /* Media queries */\n.main-page-menu-sub{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub p{\r\n        font-size: 2vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner{\r\n        width: 100%;\r\n        height: 100%;\r\n        overflow: hidden;\r\n        position: relative;\n}\n.main-page-menu-sub-banner p{\r\n        font-size: 3vh;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.main-page-menu-sub-banner img{\r\n        width: 100%;\r\n        height: 100%;\n}\n.main-page-menu-sub img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\n}\n.main-page-menu-sub:hover .menu-index{ \r\n       width: 60%;\r\n       color : white;\r\n       background: rgba(0,0,0,0.7);\n}\n.main-page-menu-sub:hover .menu-title span{ \r\n\r\n       color : rgb(49, 49, 49);\n}\n.main-page-menu-sub:hover .menu-img{\r\n       -webkit-transform: scale(1.2);\r\n               transform: scale(1.2);\n}\n.menu-title{\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : rgb(49, 49, 49);\r\n        width: 100%;\r\n        -webkit-transition: 0.3s;\r\n        transition: 0.3s;\r\n        position: absolute;\r\n        top : 3%;\r\n         font-weight: 300;\r\n        text-align: center;\n}\n.menu-index{\r\n        padding : 6vh;\r\n        font-size: 3vh;\r\n        -webkit-transition: 0.45s;\r\n        transition: 0.45s;\r\n        color : transparent;\r\n        background: transparent;\r\n        margin: 10vh auto;\r\n        text-align: center;\r\n        width:20%;\r\n        font-weight: 200;\r\n        font-family:'Mplus 1p',sans-serif;\n}\n.menu-title span{\r\n        padding : 2vh;\r\n        -webkit-transition: 0.4s;\r\n        transition: 0.4s;\r\n        font-size : 4.5vh;\r\n        font-family:'Mplus 1p',sans-serif;\r\n        color : rgb(49, 49, 49);\n}\n#event-1{\r\n        color : transparent;\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        margin-top : -10%;\n}\n#event-1-1{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n#event-1-2{\r\n        -webkit-transition: 1s;\r\n        transition: 1s;\r\n        color: transparent;\n}\n@media screen and (max-width : 500px){\n.main-body-1{\r\n            text-align: center;\r\n            background-color: #ffaf2f;\r\n            margin : auto;\r\n            width: 100vw;\r\n            height: 50vh;\r\n            overflow: hidden;\n}\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 218 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(219);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__(4).default
-var update = add("4597ebdd", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"scoped\":false,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"scoped\":false,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.footer-div {\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  margin-top: 1vh;\r\n  text-align: center;\r\n  background: gray;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle {\r\n  padding: 5vh;\n}\n.footer-right {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 220 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "footer-div" }, [
-    _c("div", { staticClass: "footer-left" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "footer-middle" }, [
-      _c("img", {
-        attrs: {
-          src:
-            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png"
-        }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("i", { staticClass: "fab fa-vuejs fa-2x" }),
-      _vm._v(" "),
-      _c("i", { staticClass: "fab fa-laravel fa-2x" }),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.footer_text_1))])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "footer-right" }, [
-      _c("p", { staticStyle: { "border-bottom": "1px solid white" } }, [
-        _vm._v(_vm._s(_vm.footer_text_2))
-      ]),
-      _vm._v(" "),
-      _c(
-        "ul",
-        _vm._l(_vm.dev_names, function(dev, key) {
-          return _c("li", [
-            _vm._v(
-              "\n              " +
-                _vm._s(key) +
-                "  " +
-                _vm._s(dev) +
-                "\n          "
-            )
-          ])
-        })
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "https://github.com/KANGSangUn/Pento" } }, [
-      _c("i", { staticClass: "fab fa-github fa-2x" })
-    ])
-  }
-]
-render._withStripped = true
-
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-01553ad6", { render: render, staticRenderFns: staticRenderFns })
-  }
-}
-
-/***/ }),
+/* 218 */,
+/* 219 */,
+/* 220 */,
 /* 221 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40875,20 +40765,18 @@ var render = function() {
     { staticClass: "main-body" },
     [
       _c("div", { staticClass: "main-body-1" }, [
-        _c("p", { staticClass: "main-body-p-1" }, [
-          _vm._v(_vm._s(_vm.main_text.main_banner_1_text[0]))
-        ]),
+        _c("div"),
+        _c("div"),
         _vm._v(" "),
-        _c("p", { staticClass: "main-body-p-2" }, [
-          _vm._v(_vm._s(_vm.main_text.main_banner_1_text[1]))
-        ]),
-        _vm._v(" "),
-        _c("img", {
-          attrs: {
-            src:
-              "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_sub_banner_1.png"
-          }
-        })
+        _c("div", { staticClass: "main-body-1-sub" }, [
+          _c("p", { staticClass: "main-body-p-1" }, [
+            _vm._v(_vm._s(_vm.main_text.main_banner_1_text[0]))
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "main-body-p-2" }, [
+            _vm._v(_vm._s(_vm.main_text.main_banner_1_text[1]))
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "main-body-2", attrs: { id: "main-body-2" } }, [
@@ -40954,10 +40842,7 @@ var render = function() {
           _c("div", { staticClass: "main-page-menu-sub-banner" }, [
             _c("img", {
               staticClass: "menu-img",
-              attrs: {
-                src:
-                  "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png"
-              }
+              attrs: { src: "http://localhost:8000/images/newimage/menu1.jpg" }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "menu-title" }, [
@@ -40975,8 +40860,7 @@ var render = function() {
                 _c("img", {
                   staticClass: "menu-img",
                   attrs: {
-                    src:
-                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png"
+                    src: "http://localhost:8000/images/newimage/menu2.jpg"
                   }
                 }),
                 _vm._v(" "),
@@ -41024,8 +40908,7 @@ var render = function() {
                 _c("img", {
                   staticClass: "menu-img",
                   attrs: {
-                    src:
-                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png"
+                    src: "http://localhost:8000/images/newimage/menu3.jpg"
                   }
                 }),
                 _vm._v(" "),
@@ -41073,8 +40956,7 @@ var render = function() {
                 _c("img", {
                   staticClass: "menu-img",
                   attrs: {
-                    src:
-                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png"
+                    src: "http://localhost:8000/images/newimage/menu4.jpg"
                   }
                 }),
                 _vm._v(" "),
@@ -41241,7 +41123,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.story-modal-left-sub{\r\n    display: grid;\r\n    grid-column-gap: 0.2vw;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(255, 182, 47);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #f1a720;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.8fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding : 1vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 1.8fr 0.3fr 0.5fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-btn button{\r\n    width: 45%;\r\n    height: 100%;\r\n    font-size : 1.2vw;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://localhost:8000/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #26a7da;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-info{\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.2vw;\n}\n.story-modal-right-btn button:hover{\r\n    background: red;\n}", ""]);
 
 // exports
 
@@ -41531,59 +41413,58 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "story-modal-right-price" }, [
-                _c("h2", [_vm._v(_vm._s(_vm.select_item.tale_price))])
+                _vm._v(
+                  "\n          " +
+                    _vm._s(_vm.select_item.tale_price) +
+                    "ミノ\n        "
+                )
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "story-modal-right-btn" },
-                [
-                  _c(
-                    "vs-button",
-                    {
-                      attrs: { "vs-type": "success-filled" },
-                      on: {
-                        click: function($event) {
-                          _vm.alert("success", _vm.select_item.fairy_tale_no)
-                        }
+              _c("div", { staticClass: "story-modal-right-btn" }, [
+                _c(
+                  "button",
+                  {
+                    attrs: { "vs-type": "success-filled" },
+                    on: {
+                      click: function($event) {
+                        _vm.alert("success", _vm.select_item.fairy_tale_no)
                       }
-                    },
-                    [
-                      _vm._v(
-                        "\n              " +
-                          _vm._s(_vm.story_text.story_page_item[0]) +
-                          "\n          "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      attrs: { "vs-type": "success-filled" },
-                      on: {
-                        click: function($event) {
-                          _vm.$vs.notify({
-                            title: "買い物かごに入れました！",
-                            text: "ゲームで会いましょう!",
-                            color: "success",
-                            icon: "favorite"
-                          }),
-                            _vm.like_it(_vm.select_item)
-                        }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(_vm.story_text.story_page_item[0]) +
+                        "\n          "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    attrs: { "vs-type": "success-filled" },
+                    on: {
+                      click: function($event) {
+                        _vm.$vs.notify({
+                          title: "買い物かごに入れました！",
+                          text: "ゲームで会いましょう!",
+                          color: "success",
+                          icon: "favorite"
+                        }),
+                          _vm.like_it(_vm.select_item)
                       }
-                    },
-                    [
-                      _vm._v(
-                        "\n               " +
-                          _vm._s(_vm.story_text.story_page_item[1]) +
-                          "\n          "
-                      )
-                    ]
-                  )
-                ],
-                1
-              )
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n               " +
+                        _vm._s(_vm.story_text.story_page_item[1]) +
+                        "\n          "
+                    )
+                  ]
+                )
+              ])
             ])
           ])
         ]
@@ -56592,6 +56473,132 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(318);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(4).default
+var update = add("0f038840", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-01553ad6\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-01553ad6\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.footer-div[data-v-01553ad6] {\r\n  background-image: url(\"http://localhost:8000/images/newimage/footer01.jpg\");\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle[data-v-01553ad6] {\r\n  padding: 5vh;\n}\n.footer-right[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i[data-v-01553ad6] {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 319 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "footer-div" }, [
+    _c("div", { staticClass: "footer-left" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "footer-middle" }, [
+      _c("img", {
+        attrs: {
+          src:
+            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png"
+        }
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("i", { staticClass: "fab fa-vuejs fa-2x" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "fab fa-laravel fa-2x" }),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.footer_text_1))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "footer-right" }, [
+      _c("p", { staticStyle: { "border-bottom": "1px solid white" } }, [
+        _vm._v(_vm._s(_vm.footer_text_2))
+      ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        _vm._l(_vm.dev_names, function(dev, key) {
+          return _c("li", [
+            _vm._v(
+              "\n              " +
+                _vm._s(key) +
+                "  " +
+                _vm._s(dev) +
+                "\n          "
+            )
+          ])
+        })
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "https://github.com/KANGSangUn/Pento" } }, [
+      _c("i", { staticClass: "fab fa-github fa-2x" })
+    ])
+  }
+]
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-01553ad6", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
 
 /***/ })
 /******/ ]);

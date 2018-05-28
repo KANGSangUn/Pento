@@ -1,6 +1,7 @@
 /*
 dev . kang sang un
 */
+//ライブラリー登録
 import Vue from 'vue'
 import App from './App.vue';
 import VueRouter from 'vue-router';
@@ -10,13 +11,13 @@ import SweetModal from 'sweet-modal-vue/src/plugin.js';
 import Vuesax from 'vuesax';
 import 'vuesax/dist/vuesax.css';
 import vuescrollor from 'vue-scrollactive';
-
 Vue.use(vuescrollor);
 Vue.use(SweetModal);
 Vue.use(VueRouter);
 Vue.use(Vuesax);
 Vue.use(VueAxios, axios);
 
+//components登録
 import main from './components/template/pentomain.vue';
 import pentostorylist from './components/template/pentostorylist.vue';
 import pentoRank from './components/template/pentoRank.vue';
@@ -27,6 +28,7 @@ import pento_col_my from './components/template/pento_col_my.vue';
 import pento_col_all from './components/template/pento_col_shares.vue';
 
 Vue.prototype.$eventBus = new Vue();
+//Routing登録
 const routes = [
 	{
 		name: 'main',

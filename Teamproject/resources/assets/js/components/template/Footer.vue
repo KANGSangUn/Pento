@@ -44,15 +44,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .footer-div {
+  background-image: url("http://localhost:8000/images/newimage/footer01.jpg");
   position: relative;
   bottom: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin-top: 1vh;
   text-align: center;
-  background: gray;
   width: 100%;
   height: auto;
   color: white;

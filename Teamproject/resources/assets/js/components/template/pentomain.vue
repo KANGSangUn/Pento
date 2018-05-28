@@ -5,9 +5,12 @@
   <div class="main-body">
       <!-- first banner -->
       <div class="main-body-1">
+          <div></div><div></div>
+          <div class="main-body-1-sub">
           <p class="main-body-p-1">{{main_text.main_banner_1_text[0]}}</p>
           <p class="main-body-p-2">{{main_text.main_banner_1_text[1]}}</p>
-          <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_sub_banner_1.png">
+          <!-- <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newweb/main_sub_banner_1.png"> -->
+         </div>
       </div>
       <!-- second banner -->
       <div class="main-body-2" id="main-body-2">
@@ -48,8 +51,8 @@
       <div class="main-body-3">
           <div class="main-body-menu">
               <div class="main-page-menu-sub-banner">
-                  <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png'"
-                  />
+                  <!-- <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png'"/> -->
+                  <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu1.jpg'"/>
                   <div class="menu-title">
                       <!-- banner text -->
                       <p>{{main_text.main_banner_5_text[0]}}</p>
@@ -60,8 +63,8 @@
               <!--Story page render html-->
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pentostorylist'}">
-                      <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png'"
-                      />
+                      <!-- <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png'"/> -->
+                      <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu2.jpg'"/>
                       <div class="menu-title">
                           <span>{{main_text.main_banner_6_text[0]}}</span>
                           <p>{{main_text.main_banner_6_text[1]}}</p>
@@ -78,7 +81,8 @@
               <!-- ranking page render -->
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pentoRank'}">
-                      <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png">
+                      <!-- <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png"> -->
+                      <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu3.jpg'"/>
                       <div class="menu-title">
                          <span>{{main_text.main_banner_7_text[0]}}</span>
                           <p>{{main_text.main_banner_7_text[1]}}</p>
@@ -95,9 +99,10 @@
               <!-- collection page render -->
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pento_col'}">
-                      <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png" />
-                      <div class="menu-title">
-              <span>{{main_text.main_banner_8_text[0]}}</span>
+                      <!-- <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png" /> -->
+                     <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu4.jpg'"/>
+                     <div class="menu-title">
+                         <span>{{main_text.main_banner_8_text[0]}}</span>
                           <p>{{main_text.main_banner_8_text[1]}}</p>
                           <div class="menu-index">
                               {{main_text.main_banner_8_text[2]}} <br> 
@@ -151,3 +156,4 @@ export default {
 };
 </script>
 <style src='../css/pentomain.css'>
+</style>

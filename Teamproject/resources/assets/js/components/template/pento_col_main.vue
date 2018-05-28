@@ -14,8 +14,6 @@
           </div>
         </div>
       </router-link>
-  
-  
       <!--All pento Page rendering-->
       <router-link :to="{name:'pento_col_all'}">
         <div class="col-menu">
