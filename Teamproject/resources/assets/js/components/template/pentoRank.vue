@@ -4,53 +4,63 @@ dev . KANG SANG UN
 <template>
   <div class="rank-page-div">
     <div class="rank-page-div-body">
-      <div class="rank-page-div-1">
-        <div class="rank-page-div-1-sub" v-for="game_list in game_record" @click="load_user_play(game_list.design_no,game_list.imitated_image)">
-          <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+ game_list.imitated_image">
+    
+      <div class="rank-page-div-1">  
+        <div class="rank-page-title">
+          RANKS
+        </div>
+        <div class="rank-page-list">
+          <div class="rank-page-div-1-sub" v-for="game_list in game_record" @click="load_user_play(game_list.design_no,game_list.imitated_image)">
+            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+ game_list.imitated_image">
+          </div>
         </div>
       </div>
       <div class="rank-page-div-2">
-        <div class="spinner" id="loadding">
-        </div>
-        <div class="rank-page-div-2-sub-1" id="user-game-1">
-          <div></div>
-          <div class="game_image" style="text-align :center">
-            <!-- 이미지 노출 -->
-            <img :src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com"+user_game_record.game_img'>
+          <div class="spinner" id="loadding">
           </div>
-          <div></div>
-        </div>
-        <div class="rank-page-div-2-sub-2" id="user-game-2">
-          <div class="game-title">{{user_game_record.game_title}}</div>
-          <div class="rank-page-div-2-sub-2-sub">
-            <div class="game-index">{{rank_text.rank_main_text[0]}}</div>
-            <div class="game-index">{{rank_text.rank_main_text[1]}}</div>
-            <div class="game-index">{{rank_text.rank_main_text[2]}}</div>
-            <div class="game-data">{{user_game_record.game_cleartime}}</div>
-            <div class="game-data">{{user_game_record.game_avgtime}}</div>
-            <div class="game-data">{{user_game_record.game_date}}</div>
+          <div class="rank-page-div-2-game-image" id="user-game-1">
+              <img :src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com"+user_game_record.game_img'>
           </div>
-        </div>
+          <div class="rank-page-div-2-game-data" id="user-game-2">
+            <div id="rank-title-layout">
+              {{user_game_record.game_title}}
+              </div>
+            <div class="rank-data-layout">
+              <div>{{rank_text.rank_main_text[0]}}</div>
+              <div>{{user_game_record.game_cleartime}}</div>
+            </div>
+            <div class="rank-data-layout">
+              <div>{{rank_text.rank_main_text[1]}}</div>
+              <div>{{user_game_record.game_avgtime}}</div>
+            </div>
+            <div class="rank-data-layout">
+              <div>{{rank_text.rank_main_text[2]}}</div>
+              <div>{{user_game_record.game_date}}</div>
+            </div>
+          </div>
       </div>
       <div class="rank-page-div-3">
         <div class="rank-page-div-3-sub-1">
-          <bar-chart :chart-data="linedatasets" :width="250" :height="150"></bar-chart>
+          <bar-chart :chart-data="linedatasets" :width="250" :height="100"></bar-chart>
         </div>
-        <div class="rank-page-div-3-sub-2">
-          <div id="rank-div">
-            <div class="rank-div-title">{{rank_text.rank_main_text[3]}}</div>
-            <div class="rank-div-contents">
-              <div class="rank-div-contents-content" v-for="ranking in user_rank_record">
-                <span style="background:skyblue; color:white">{{ranking.rank}}</span>
-                <span>{{ranking.user_nickname}}</span>
-                <span>{{ranking.clear_time}}</span>
+          <div>
+            <pie-chart :chart-data="piedatasets" :width="250" :height="99"></pie-chart>
+          </div>
+          <div class="rank-page-div-3-sub-2">
+            <div id="rank-div">
+              <div class="rank-div-title">{{rank_text.rank_main_text[3]}}</div>
+              <div class="rank-div-contents">
+                <div class="rank-div-contents-content" v-for="ranking in user_rank_record">
+                  <span style="background:skyblue; color:white">
+                  {{ranking.rank}}
+                  </span>
+                  <span>{{ranking.user_nickname}}</span>
+                  <span>{{ranking.clear_time}}</span>
+                </div>
               </div>
             </div>
           </div>
-          <div>
-            <pie-chart :chart-data="piedatasets"></pie-chart>
-          </div>
-        </div>
+        
       </div>
     </div>
     <footers></footers>
@@ -152,7 +162,7 @@ export default {
       let lodding2 = document.getElementById("user-game-1");
       let lodding3 = document.getElementById("user-game-2");
       lodding.style.display = "none";
-      lodding2.style.display = "grid";
+      lodding2.style.display = "block";
       lodding3.style.display = "grid";
     },
     load_frd_play: function(recorddata) {

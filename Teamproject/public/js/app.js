@@ -5539,12 +5539,12 @@ module.exports.Rectangle = __webpack_require__(245);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(27);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_01553ad6_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
 var disposed = false
 function injectStyle (context) {
   if (disposed) return
-  __webpack_require__(317)
+  __webpack_require__(218)
 }
 /* script */
 
@@ -7949,7 +7949,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -8152,6 +8151,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 //Chartデータを処理するCALSSFILE
 
@@ -8248,7 +8257,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var lodding2 = document.getElementById("user-game-1");
       var lodding3 = document.getElementById("user-game-2");
       lodding.style.display = "none";
-      lodding2.style.display = "grid";
+      lodding2.style.display = "block";
       lodding3.style.display = "grid";
     },
     load_frd_play: function load_frd_play(recorddata) {
@@ -40747,9 +40756,123 @@ exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.main-body{\r\n       
 
 
 /***/ }),
-/* 218 */,
-/* 219 */,
-/* 220 */,
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(219);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(4).default
+var update = add("0f038840", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-01553ad6\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-01553ad6\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.footer-div[data-v-01553ad6] {\r\n  background-image: url(\"http://localhost:8000/images/newimage/footer01.jpg\");\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle[data-v-01553ad6] {\r\n  padding: 5vh;\n}\n.footer-right[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i[data-v-01553ad6] {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 220 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "footer-div" }, [
+    _c("div", { staticClass: "footer-left" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "footer-middle" }, [
+      _c("img", {
+        attrs: {
+          src:
+            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png"
+        }
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("i", { staticClass: "fab fa-vuejs fa-2x" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "fab fa-laravel fa-2x" }),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.footer_text_1))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "footer-right" }, [
+      _c("p", { staticStyle: { "border-bottom": "1px solid white" } }, [
+        _vm._v(_vm._s(_vm.footer_text_2))
+      ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        _vm._l(_vm.dev_names, function(dev, key) {
+          return _c("li", [
+            _vm._v(
+              "\n              " +
+                _vm._s(key) +
+                "  " +
+                _vm._s(dev) +
+                "\n          "
+            )
+          ])
+        })
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "https://github.com/KANGSangUn/Pento" } }, [
+      _c("i", { staticClass: "fab fa-github fa-2x" })
+    ])
+  }
+]
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-01553ad6", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
+
+/***/ }),
 /* 221 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41123,7 +41246,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://localhost:8000/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #26a7da;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-info{\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.2vw;\n}\n.story-modal-right-btn button:hover{\r\n    background: red;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://localhost:8000/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n      overflow: auto;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #26a7da;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n\r\n    font-size: 1.5vw;\n}\n.story-modal-right-info{\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    color : white;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.2vw;\n}\n.story-modal-right-btn button:hover{\r\n    background:green;\r\n    color : black;\n}", ""]);
 
 // exports
 
@@ -41408,7 +41531,7 @@ var render = function() {
                 _vm._v(
                   "\n          " +
                     _vm._s(_vm.select_item.tale_explain) +
-                    "\n\n        "
+                    "\n        "
                 )
               ]),
               _vm._v(" "),
@@ -41416,7 +41539,7 @@ var render = function() {
                 _vm._v(
                   "\n          " +
                     _vm._s(_vm.select_item.tale_price) +
-                    "ミノ\n        "
+                    "mino\n        "
                 )
               ]),
               _vm._v(" "),
@@ -41576,10 +41699,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height: 80vh;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 20%;\r\n    overflow-x:hidden; overflow-y:auto;\r\n    border : 1px solid silver;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n  padding : 1vh;\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2-sub-2 div{\r\n  text-align: center;\n}\n.rank-page-div-2-sub-2-sub{\r\n  display: grid;\r\n  padding : 1vh;\r\n  grid-column-gap: 0.5vh;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 0.4fr 1fr;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 70% 30%;\r\n        border : 1px solid silver;\n}\n.game-index{\r\n  background: orange;\r\n  color : white;\r\n  font-size : 2vh;\n}\n.game-data{\r\n  font-size : 2vh;\r\n  border-bottom: 1px solid silver;\r\n  border-left: 1px solid silver;\r\n  border-right: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 50% 50%;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.9fr;\r\n  border-right: 1px solid silver;\n}\n.rank-div-title{\r\n  background: orange;\r\n  text-align: center;\r\n  font-size: 3vh;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.rank-div-contents{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.5fr 0.6fr;\n}\n.rank-div-contents-content{\r\n  text-align: center\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n@font-face{\r\n   font-family:'Mine crafter'; \r\n   src:url('http://localhost:8000/font/Minecrafter.Reg.ttf')\n}\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height:81vh; \r\n    display: grid;\r\n    grid-template-rows: 0.05fr 1fr;  \r\n    border : 1px solid silver;\n}\n.rank-page-title{\r\n  font-size : 2em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  padding-left: 1vw;\r\n  padding-top: 1vw;\n}\n.rank-page-list{\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 20%;\r\n    padding-right: 0.5vw;\r\n    padding-left: 0.5vw;\r\n    overflow-x:hidden; overflow-y:auto;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding : 0.5vw;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    border : 1px solid silver;\r\n    height: 81vh;\n}\n.rank-page-div-2-game-image{\r\n  padding : 8vh;\n}\n.rank-page-div-2-game-image{\r\n  text-align: center;\n}\n.rank-page-div-2-game-data{\r\n  display: grid;\r\n  grid-template-rows: 1fr 1fr 1fr 1fr;\r\n  padding-left : 2em;\r\n  padding-right : 2em;\n}\n#rank-title-layout{\r\n  font-family:'Mplus 1p',sans-serif;\r\n  font-weight: 300;\r\n  font-size: 2.5em;\n}\n.rank-data-layout{\r\n  font-weight: 300;\r\n  font-family:'Mplus 1p',sans-serif;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  font-size : 1.5em;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 33% 33% 33%;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.9fr;\r\n  border-right: 1px solid silver;\n}\n.rank-div-title{\r\n  background: orange;\r\n  text-align: center;\r\n  font-size: 3vh;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.rank-div-contents{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.5fr 0.6fr;\n}\n.rank-div-contents-content{\r\n  text-align: center\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
 
 // exports
 
@@ -54498,35 +54621,41 @@ var render = function() {
     { staticClass: "rank-page-div" },
     [
       _c("div", { staticClass: "rank-page-div-body" }, [
-        _c(
-          "div",
-          { staticClass: "rank-page-div-1" },
-          _vm._l(_vm.game_record, function(game_list) {
-            return _c(
-              "div",
-              {
-                staticClass: "rank-page-div-1-sub",
-                on: {
-                  click: function($event) {
-                    _vm.load_user_play(
-                      game_list.design_no,
-                      game_list.imitated_image
-                    )
+        _c("div", { staticClass: "rank-page-div-1" }, [
+          _c("div", { staticClass: "rank-page-title" }, [
+            _vm._v("\n        RANKS\n      ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "rank-page-list" },
+            _vm._l(_vm.game_record, function(game_list) {
+              return _c(
+                "div",
+                {
+                  staticClass: "rank-page-div-1-sub",
+                  on: {
+                    click: function($event) {
+                      _vm.load_user_play(
+                        game_list.design_no,
+                        game_list.imitated_image
+                      )
+                    }
                   }
-                }
-              },
-              [
-                _c("img", {
-                  attrs: {
-                    src:
-                      "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                      game_list.imitated_image
-                  }
-                })
-              ]
-            )
-          })
-        ),
+                },
+                [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                        game_list.imitated_image
+                    }
+                  })
+                ]
+              )
+            })
+          )
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "rank-page-div-2" }, [
           _c("div", { staticClass: "spinner", attrs: { id: "loadding" } }),
@@ -54534,68 +54663,51 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "rank-page-div-2-sub-1",
+              staticClass: "rank-page-div-2-game-image",
               attrs: { id: "user-game-1" }
             },
             [
-              _c("div"),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "game_image",
-                  staticStyle: { "text-align": "center" }
-                },
-                [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                        _vm.user_game_record.game_img
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c("div")
+              _c("img", {
+                attrs: {
+                  src:
+                    "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                    _vm.user_game_record.game_img
+                }
+              })
             ]
           ),
           _vm._v(" "),
           _c(
             "div",
             {
-              staticClass: "rank-page-div-2-sub-2",
+              staticClass: "rank-page-div-2-game-data",
               attrs: { id: "user-game-2" }
             },
             [
-              _c("div", { staticClass: "game-title" }, [
-                _vm._v(_vm._s(_vm.user_game_record.game_title))
+              _c("div", { attrs: { id: "rank-title-layout" } }, [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.user_game_record.game_title) +
+                    "\n            "
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "rank-page-div-2-sub-2-sub" }, [
-                _c("div", { staticClass: "game-index" }, [
-                  _vm._v(_vm._s(_vm.rank_text.rank_main_text[0]))
-                ]),
+              _c("div", { staticClass: "rank-data-layout" }, [
+                _c("div", [_vm._v(_vm._s(_vm.rank_text.rank_main_text[0]))]),
                 _vm._v(" "),
-                _c("div", { staticClass: "game-index" }, [
-                  _vm._v(_vm._s(_vm.rank_text.rank_main_text[1]))
-                ]),
+                _c("div", [_vm._v(_vm._s(_vm.user_game_record.game_cleartime))])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "rank-data-layout" }, [
+                _c("div", [_vm._v(_vm._s(_vm.rank_text.rank_main_text[1]))]),
                 _vm._v(" "),
-                _c("div", { staticClass: "game-index" }, [
-                  _vm._v(_vm._s(_vm.rank_text.rank_main_text[2]))
-                ]),
+                _c("div", [_vm._v(_vm._s(_vm.user_game_record.game_avgtime))])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "rank-data-layout" }, [
+                _c("div", [_vm._v(_vm._s(_vm.rank_text.rank_main_text[2]))]),
                 _vm._v(" "),
-                _c("div", { staticClass: "game-data" }, [
-                  _vm._v(_vm._s(_vm.user_game_record.game_cleartime))
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "game-data" }, [
-                  _vm._v(_vm._s(_vm.user_game_record.game_avgtime))
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "game-data" }, [
-                  _vm._v(_vm._s(_vm.user_game_record.game_date))
-                ])
+                _c("div", [_vm._v(_vm._s(_vm.user_game_record.game_date))])
               ])
             ]
           )
@@ -54610,8 +54722,18 @@ var render = function() {
                 attrs: {
                   "chart-data": _vm.linedatasets,
                   width: 250,
-                  height: 150
+                  height: 100
                 }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _c("pie-chart", {
+                attrs: { "chart-data": _vm.piedatasets, width: 250, height: 99 }
               })
             ],
             1
@@ -54636,7 +54758,13 @@ var render = function() {
                         {
                           staticStyle: { background: "skyblue", color: "white" }
                         },
-                        [_vm._v(_vm._s(ranking.rank))]
+                        [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(ranking.rank) +
+                              "\n                "
+                          )
+                        ]
                       ),
                       _vm._v(" "),
                       _c("span", [_vm._v(_vm._s(ranking.user_nickname))]),
@@ -54646,13 +54774,7 @@ var render = function() {
                   )
                 })
               )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              [_c("pie-chart", { attrs: { "chart-data": _vm.piedatasets } })],
-              1
-            )
+            ])
           ])
         ])
       ]),
@@ -56473,132 +56595,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(318);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__(4).default
-var update = add("0f038840", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-01553ad6\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-01553ad6\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Footer.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 318 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.footer-div[data-v-01553ad6] {\r\n  background-image: url(\"http://localhost:8000/images/newimage/footer01.jpg\");\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle[data-v-01553ad6] {\r\n  padding: 5vh;\n}\n.footer-right[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i[data-v-01553ad6] {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 319 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "footer-div" }, [
-    _c("div", { staticClass: "footer-left" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "footer-middle" }, [
-      _c("img", {
-        attrs: {
-          src:
-            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png"
-        }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("i", { staticClass: "fab fa-vuejs fa-2x" }),
-      _vm._v(" "),
-      _c("i", { staticClass: "fab fa-laravel fa-2x" }),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.footer_text_1))])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "footer-right" }, [
-      _c("p", { staticStyle: { "border-bottom": "1px solid white" } }, [
-        _vm._v(_vm._s(_vm.footer_text_2))
-      ]),
-      _vm._v(" "),
-      _c(
-        "ul",
-        _vm._l(_vm.dev_names, function(dev, key) {
-          return _c("li", [
-            _vm._v(
-              "\n              " +
-                _vm._s(key) +
-                "  " +
-                _vm._s(dev) +
-                "\n          "
-            )
-          ])
-        })
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "https://github.com/KANGSangUn/Pento" } }, [
-      _c("i", { staticClass: "fab fa-github fa-2x" })
-    ])
-  }
-]
-render._withStripped = true
-
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-01553ad6", { render: render, staticRenderFns: staticRenderFns })
-  }
-}
 
 /***/ })
 /******/ ]);

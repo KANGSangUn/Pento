@@ -78,6 +78,7 @@ dev : Kang Sangun
     margin: auto;
     transition: 0.5s;
     display: grid;
+      overflow: auto;
     grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
 }
 
@@ -198,11 +199,13 @@ figure.info_effect:hover h2{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .story-modal-right{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding :1.4vw;
     display: grid;
     grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;
 }
 .story-modal-right-title{
+
     font-size: 1.5vw;
 }
 .story-modal-right-info{
@@ -219,11 +222,13 @@ figure.info_effect:hover h2{
     width: 49%;
     height: 100%;
     border-radius: 0;
+    color : white;
     margin: 0;
     padding : 0;
     transition: 0.5s;
     font-size : 1.2vw;
 }
 .story-modal-right-btn button:hover{
-    background: red;
+    background:green;
+    color : black;
 }

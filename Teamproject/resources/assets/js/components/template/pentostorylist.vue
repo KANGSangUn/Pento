@@ -74,11 +74,10 @@ dev . KANG SANG UN
   
           <div class="story-modal-right-info">
             {{select_item.tale_explain}}
-  
           </div>
           <!--내용-->
           <div class="story-modal-right-price">
-            {{select_item.tale_price}}ミノ
+            {{select_item.tale_price}}mino
           </div>
           <div class="story-modal-right-btn">
             <button vs-type="success-filled" 
