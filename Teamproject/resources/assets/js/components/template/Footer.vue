@@ -49,7 +49,7 @@ export default {
 @import url("https://fonts.googleapis.com/earlyaccess/mplus1p.css");
 
 .footer-div {
-  background-image: url("http://localhost:8000/images/newimage/footer01.jpg");
+  background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newimage/footer01.jpg");
   position: relative;
   bottom: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

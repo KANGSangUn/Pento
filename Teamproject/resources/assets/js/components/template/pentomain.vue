@@ -52,7 +52,7 @@
           <div class="main-body-menu">
               <div class="main-page-menu-sub-banner">
                   <!-- <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginimage.png'"/> -->
-                  <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu1.jpg'"/>
+                  <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newimage/menu1.jpg'"/>
                   <div class="menu-title">
                       <!-- banner text -->
                       <p>{{main_text.main_banner_5_text[0]}}</p>
@@ -64,7 +64,7 @@
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pentostorylist'}">
                       <!-- <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/story.png'"/> -->
-                      <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu2.jpg'"/>
+                      <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newimage/menu2.jpg'"/>
                       <div class="menu-title">
                           <span>{{main_text.main_banner_6_text[0]}}</span>
                           <p>{{main_text.main_banner_6_text[1]}}</p>
@@ -82,7 +82,7 @@
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pentoRank'}">
                       <!-- <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/ranking.png"> -->
-                      <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu3.jpg'"/>
+                      <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newimage/menu3.jpg'"/>
                       <div class="menu-title">
                          <span>{{main_text.main_banner_7_text[0]}}</span>
                           <p>{{main_text.main_banner_7_text[1]}}</p>
@@ -100,7 +100,7 @@
               <div class="main-page-menu-sub">
                   <router-link :to="{name:'pento_col'}">
                       <!-- <img class="menu-img" src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection.png" /> -->
-                     <img class="menu-img" v-bind:src="'http://localhost:8000/images/newimage/menu4.jpg'"/>
+                     <img class="menu-img" v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/newimage/menu4.jpg'"/>
                      <div class="menu-title">
                          <span>{{main_text.main_banner_8_text[0]}}</span>
                           <p>{{main_text.main_banner_8_text[1]}}</p>

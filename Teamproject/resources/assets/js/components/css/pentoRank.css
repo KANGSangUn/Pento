@@ -5,7 +5,8 @@ dev : Kang Sangun
  
  @font-face{
    font-family:'Mine crafter'; 
-   src:url('http://localhost:8000/font/Minecrafter.Reg.ttf')
+   src:url('font/Minecrafter.Reg.ttf');
+   /* src:url('http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/font/Minecrafter.Reg.ttf') */
 }
 
 .rank-page-div{

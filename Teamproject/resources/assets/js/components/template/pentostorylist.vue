@@ -212,9 +212,12 @@ export default {
     },
     delect_Item: function(this_items) {
       //delect in basket in item
-      this.all_price -= this_items.tale_price;
+
       const delectitem = this.basket_item.indexOf(this_items);
       this.basket_item.splice(delectitem, 1);
+      console.log(this_items.tale_price);
+      this.all_price = this.all_price - this_items.tale_price;
+      this_items = 0;
     },
     thunail_change: function(image) {
       this.select_item.tale_image0 = image;
