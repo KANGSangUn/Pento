@@ -20,7 +20,7 @@ dev : Kang Sangun
     height: 90vh;
     margin-bottom: 8vh;
     display: grid;
-    grid-template-columns: 20% 40% 40%;
+    grid-template-columns: 0.4fr 0.6fr 0.8fr;
     grid-column-gap: 1vh;
 }
 
@@ -34,13 +34,21 @@ dev : Kang Sangun
   font-size : 2em;
   font-family: "Mine crafter";
   font-weight: 200;
-  padding-left: 1vw;
-  padding-top: 1vw;
+  background: rgb(72, 116, 240);
+
+}
+.rank-page-title p{
+  font-size : 1em;
+  font-family: "Mine crafter";
+  font-weight: 200;
+  color : white;
+  padding :1vw;
+
 }
 .rank-page-list{
     display : grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 20%;
+    grid-auto-rows: 25%;
     padding-right: 0.5vw;
     padding-left: 0.5vw;
     overflow-x:hidden; overflow-y:auto;
@@ -78,64 +86,118 @@ dev : Kang Sangun
 }
 .rank-page-div-2-game-image{
   padding : 8vh;
-}
-.rank-page-div-2-game-image{
   text-align: center;
 }
 .rank-page-div-2-game-data{
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr;
   padding-left : 2em;
   padding-right : 2em;
 
 }
 #rank-title-layout{
-  font-family:'Mplus 1p',sans-serif;
-  font-weight: 300;
-  font-size: 2.5em;
+  font-family:'Mine crafter';
+  font-weight: 200;
+  font-size: 2.1em;
+  padding : 1vh;
+  color : white;
+  background: rgb(72, 116, 240);
 }
 .rank-data-layout{
-  font-weight: 300;
-  font-family:'Mplus 1p',sans-serif;
+  padding : 1vh;
   display: grid;
-  grid-template-columns: 0.3fr 0.7fr;
+  font-size : 1.2em;
+  grid-template-columns: 0.4fr 0.6fr;
+}
+.rank-data-layout div{
   font-size : 1.5em;
+  font-weight: 300;
+  padding-top : 1vh;
+  font-family:'Mine crafter';
+  border-bottom: 1px solid silver;
 }
 .rank-page-div-3{
     display: grid;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-rows: 1fr 0.8fr;
     grid-auto-rows: 1fr;
     border : 1px solid silver;
+    padding : 2vh;
 }
-.rank-page-div-3-sub-2{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-#rank-div {
+.rank-page-div-3-chr-1{
   display: grid;
-  grid-template-rows: 0.1fr 0.9fr;
-  border-right: 1px solid silver;
-}
+  grid-template-columns: 1fr 1fr;
 
-.rank-div-title{
-  background: orange;
-  text-align: center;
-  font-size: 3vh;
 }
-.ranking {
-  text-align: center;
-  border-top: 1px solid silver;
+.rank-div-3-title{
+  color: white;
+  padding : 1vh;
+  background: rgb(72, 116, 240);
+  font-size : 2em;
+  font-family:'Mine crafter';
+  font-weight: 400;
+}
+.rank-page-div-3-chr-2{
+  padding-top:1vh;
+  display: grid;
+  grid-template-rows: 0.15fr 1fr;
+  overflow: auto;
+
+}
+.rank-div-title{
+  color: white;
+  padding : 1vh;
+  background: rgb(72, 116, 240);
+  font-size : 2em;
+  font-family:'Mine crafter';
+  font-weight: 400;
 }
 .rank-div-contents{
-  overflow-x: hidden;
-  overflow-y: auto;
+  display: grid;
+  grid-row-gap: 0.3em;
+
 }
+ .rank-div-contents-content div{
+  font-size : 2em;
+  font-family:'Mine crafter';
+  font-weight: 400;
+  padding : 0.5vh;
+  padding-left: 0;
+
+}
+
+/*
+.rank-title-span{
+   background:skyblue;
+   color:white;
+   margin-right: 0.5em;
+} */
+.ranking-number p{
+  color:white;
+  background: skyblue;
+  margin-right: 1.5em;
+  display:table-cell; 
+  text-align:center; 
+  vertical-align:middle;
+  font-family:'Mine crafter';
+}
+.ranking-number{ 
+  display:table;
+  height: 100%;
+  margin-right: 1vh;
+  grid-area: ranking-number;
+}
+.rankname{ grid-area: rankname; }
+.rankdata{ grid-area: rankdate; }
+.username{ grid-area: username; }
+.userdate{ grid-area: userdate; }
 .rank-div-contents-content{
   display: grid;
-  grid-template-columns: 0.1fr 0.5fr 0.6fr;
-}
-.rank-div-contents-content{
-  text-align: center
+  grid-template-areas:
+  'ranking-number rankname username'
+  'ranking-number rankdate userdate';
+  grid-template-columns: 0.3fr 0.5fr 1fr;
+
+  
 }
 .spinner {
   width: 0;

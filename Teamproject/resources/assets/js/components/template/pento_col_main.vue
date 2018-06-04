@@ -51,6 +51,7 @@ export default {
 .pento-router {
   background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection_main.jpg");
   width: 100%;
+  background-size: contain;
   height: auto;
 }
 .pento-router-body {
@@ -60,7 +61,7 @@ export default {
   height: auto;
   display: grid;
   grid-column-gap: 1vw;
-  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-columns: 1fr 1fr;
 }
 .col-menu {
   color: rgb(8, 9, 43);

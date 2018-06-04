@@ -7,19 +7,27 @@ dev . KANG SANG UN
       <vs-tabs vs-color="rgb(72, 150, 2)">
         <vs-tab vs-label="私のデータ" @click="debugsss()" class="mypento_sub_div" id="mypento_sub_div1">
           <!--유저 기본 정보 div-->
-          <div v-for="user_info in Item_list">
-            <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_info.image+'.png'" class="userimg"
-            />
-            <h1>{{mypage_text[0]}} {{user_info.user_nickname}}</h1>
-            <h2>{{mypage_text[1]}} : {{user_info.user_point}}</h2>
-            <h2 style="margin-top : 2vh;">{{mypage_text[2]}}</h2>
-            <span style="font-size : 2vh">{{user_info.user_intro}}</span>
+          <div v-for="user_info in Item_list" class="mypento-info">
+            <div>
+              <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+user_info.image+'.png'" class="userimg"
+              />
+            </div>
+            <div style="font-size:2.3em">{{user_info.user_nickname}}</div>
+            <div style="font-size:1.8em">{{mypage_text[1]}} : {{user_info.user_point}}</div>
+            <div class="mypento-intro">        
+              {{user_info.user_intro}}
+            </div>
+
           </div>
           <div class="mypento-sub-div-content-2">
-            <h1>{{mypage_text[3]}}</h1>
-            <li v-for="frdlist in frd_list">
+            <div style="font-size:2.3em">
+              {{mypage_text[3]}}
+            </div>
+            <div style="font-size:1.5em; padding-top:1.5em;">
+                <li v-for="frdlist in frd_list" v-bind:key="frdlist">
               {{frdlist.user_nickname}}
-            </li>
+                </li>
+            </div>
           </div>
         </vs-tab>
         <vs-tab vs-label="私の物語" class="mypento_sub_div" id="mypento_sub_div3">

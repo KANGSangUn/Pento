@@ -5,8 +5,11 @@ dev : Kang Sangun
     width: 100%;
     height: 100%
 }
+.mypento_main_div span{
+    font-size : 1.3em;
+}
 .mypento_div {
-    padding-top: 5vw;
+    padding-top: 4vw;
     margin: auto;
     width: 70%;
     height: 100%
@@ -16,44 +19,49 @@ dev : Kang Sangun
 }
 #mypento_sub_div1 {
     display: grid;
-    grid-template-columns : 1fr 1fr;
-    background-color: #47b7df;
+    grid-template-columns : 1.2fr 0.8fr;
+    background-color: #55c5ee;
 }
-#mypento_sub_div1 div{
-    padding: 4vw;
+.mypento-info{
+    padding : 10vh;
+    display: grid;
+    grid-template-rows: 0.87fr 0.15fr 0.3fr 1fr;
+    text-align: center
 }
-#mypento_sub_div1{
-    width: 100%;
-    margin: auto;
-    text-align: center;
+.mypento-info img{
+    border: 10px solid rgb(24, 36, 59);
+    border-radius: 50%;
 }
-.userimg{
-    margin-bottom : 2vh;
+.mypento-intro{
+    font-size : 2em;
+    padding : 3vh;
+    border : 1px solid transparent;
+    background: white;
 }
 .mypento-sub-div-content-2{
-    background: gold
+    background: orange;
+    padding : 10vh;
+    display: grid;
+    grid-template-rows: 0.1fr 0.8fr;
 }
-#mypento_sub_div3 {
-     padding : 5vh;
-    overflow: scroll;
-    margin : auto;
-    background-color: #141c35;
+.mypento-sub-div-content-2 div{
+    border-bottom: 3px solid rgb(255, 255, 255);
 }
-.booklistpage{
-    background-size: cover;
-    background-image: url("http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/booklist.png");
+#mypento_sub_div3{
+    background: rgb(25, 35, 56);
+ 
 }
 .my-tale-list{
-    width: 100%;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr ;
-    grid-column-gap: 1vw;
-    grid-row-gap: 1vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    overflow: auto;
+    height: 100%;
+    
 }
 .my-tele-list-sub{
     text-align: center;
-    width: 15vw;
-    height: 20vw;
+    padding : 6vh 3vh 3vh 3vh;
+ 
 }
 .my-tele-list-sub img{
     width: 100%;

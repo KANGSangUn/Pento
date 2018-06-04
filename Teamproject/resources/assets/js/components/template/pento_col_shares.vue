@@ -35,7 +35,7 @@
       <div></div>
     </div>
     <br>
-    <sweet-modal ref="col_modal2" width="60vw" overlay-theme="dark">
+    <sweet-modal ref="col_modal2" width="60vw" overlay-theme="dark"  title="皆のペント">
       <div class="col-share-modal-layout" v-for="select_pento in select_pento_list.design_info">
         <div class="col-share-modal-layout-sub-1">
           <div>
@@ -45,15 +45,16 @@
         <div class="col-share-modal-layout-sub-2">
           <div class="modal-2-sub-1">
             <div></div>{{select_pento.design_title}}</div>
-          <h4>{{shcol_text.collection_share_content_text[1]}} : {{select_pento.user_nickname}}</h4>
-          <p><i class="fas fa-heart" style="color:#f87b7b;"></i> : {{select_pento_list.recommendNumSum}}</p>
+          <p>{{shcol_text.collection_share_content_text[1]}} : {{select_pento.user_nickname}}</p>
           <p>{{shcol_text.collection_share_content_text[4]}} : {{select_pento.registered_date}}</p>
+          <p style="font-size:2vw;"><i class="fas fa-heart" style="color:#f87b7b; "></i>  {{select_pento_list.recommendNumSum}}</p>
           <span>{{select_pento.design_explain}}</span>
           <div class="modal-2-sub-4">
             <button class="modal-btn-1" @click="
                $vs.notify({title:'こうどく完了!',
                text:'購読しました。ゲームで会いましょう!',color:'warning',position:'top-center'}),
-               buy_pento_col(select_pento.design_no)" vs-type="warning-flat">{{shcol_text.collection_share_content_text[6]}}
+               buy_pento_col(select_pento.design_no)">
+               {{shcol_text.collection_share_content_text[6]}}
             </button>
           </div>
         </div>
@@ -80,7 +81,7 @@
             {{shcol_text.collection_share_content_text[1]}}：{{user_design_list.user_nickname}}
           </span>
           <span style="font-size:3vh;">
-            <i class="fas fa-heart" style="color:#f87b7b;"></i>{{user_design_list.reNum}}
+            <i class="fas fa-heart" style="color:#f87b7b; margin-right:1vw;"></i>{{user_design_list.reNum}}
           </span>
           <button class="modal-btn-2" 
             @click="$vs.notify({title:'いいですよ!',
@@ -172,7 +173,7 @@ export default {
   grid-template-rows: 0.4fr 0.6fr;
 }
 .col-share-banner-layout {
-  margin: 50px auto;
+  margin: 49px auto;
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
   width: 100vw;
@@ -208,11 +209,12 @@ export default {
   background-color: white;
   border: 2px #f8b213 solid;
   transition: 0.3s;
+  height: 100%;
 }
 .modal-btn-1:hover {
   color: white;
   background-color: #f8b213;
-  border: #f8b213;
+  border: 2px #f8b213 solid;
 }
 .modal-btn-2 {
   font-size: 1.5vw;
@@ -230,13 +232,23 @@ export default {
   height: 100%;
 }
 .col-share-modal-layout-sub-2 {
-  padding: 1.5vw;
+  padding-left: 1.5vw;
   text-align: left;
   display: grid;
-  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;
+  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.7fr 0.27fr;
+}
+.col-share-modal-layout-sub-2 p {
+  font-size: 1.3em;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 .col-share-modal-layout-sub-3 {
+  text-align: center;
+  font-size: 1.3em;
   overflow-y: auto;
+}
+.col-share-modal-layout-sub-3 span {
+  font-size: 1.3em;
 }
 .col-share-modal-layouy-sub-3-img {
   padding: 2vh;

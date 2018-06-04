@@ -78,10 +78,10 @@ dev . KANG SANG UN
         <div class="register-view" v-if="register_type==true">
           <div class="login-view"></div>
           <div class="login-form">
-            <p>{{nav_text.nav_login_text[1]}}</p>
+            <p>{{nav_text.nav_login_text[0]}}</p>
             <vs-input vs-icon="perm_identity" vs-label-placeholder="Id" v-model="userinfo.userid" />
             <vs-input vs-icon="lock" vs-label-placeholder="Password" v-model="userinfo.userpw" />
-            <vs-button vs-type="primary-filled" v-on:click="user()">{{nav_text.nav_login_text[1]}}</vs-button>
+            <vs-button vs-type="primary-filled" v-on:click="user()">{{nav_text.nav_login_text[0]}}</vs-button>
           </div>
         </div>
         <div class="register-view" v-if="register_type==false">
@@ -91,8 +91,10 @@ dev . KANG SANG UN
       <!-- 로그인 성공 모달 -->
     </sweet-modal>
     <sweet-modal icon="success" ref="loginok" class="login_btn">
-      {{nav_text.nav_login_text[2]}}
-      <vs-button vs-type="primary-filled" v-on:click="login_btn(true)">{{nav_text.nav_login_text[4]}}</vs-button>
+      {{nav_text.nav_login_text[2]}}<br>
+      <vs-button vs-type="primary-filled" v-on:click="login_btn(true)">
+      {{nav_text.nav_login_text[4]}}
+      </vs-button>
       <!-- 로그인 실패 모달 -->
     </sweet-modal>
     <sweet-modal ref="loginno" icon="error" overlay-theme="dark" modal-theme="dark">

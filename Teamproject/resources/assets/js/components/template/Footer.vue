@@ -21,8 +21,9 @@ dev . KANG SANG UN
         <div class="footer-right">
             <p style="border-bottom : 1px solid white">{{footer_text_2}}</p>   
             <ul>
-              <li v-for="(dev,key) in dev_names">
-                  {{key}}  {{dev}}
+              <li v-for="(dev,key) in dev_names" style="font-family:'Mplus 1p',sans-serif">
+                  <div>{{key}}</div>  <div>{{dev}}</div>
+
               </li>
             </ul>
         </div>
@@ -45,6 +46,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/earlyaccess/mplus1p.css");
+
 .footer-div {
   background-image: url("http://localhost:8000/images/newimage/footer01.jpg");
   position: relative;
@@ -68,9 +71,13 @@ export default {
   padding: 5vh;
 }
 .footer-right {
-  font-size: 2vh;
   text-align: right;
   padding: 4vh;
+}
+.footer-right li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 2.5vh;
 }
 .footer-middle i {
   color: white;

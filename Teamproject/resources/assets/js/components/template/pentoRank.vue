@@ -7,7 +7,7 @@ dev . KANG SANG UN
     
       <div class="rank-page-div-1">  
         <div class="rank-page-title">
-          RANKS
+          <p>PLAY LIST</p>
         </div>
         <div class="rank-page-list">
           <div class="rank-page-div-1-sub" v-for="game_list in game_record" @click="load_user_play(game_list.design_no,game_list.imitated_image)">
@@ -40,26 +40,32 @@ dev . KANG SANG UN
           </div>
       </div>
       <div class="rank-page-div-3">
-        <div class="rank-page-div-3-sub-1">
-          <bar-chart :chart-data="linedatasets" :width="250" :height="100"></bar-chart>
+        <div class="rank-page-div-3-chr-1">
+            <div>
+              <div class="rank-div-3-title">Data Chart</div>
+            
+              <bar-chart :chart-data="linedatasets"></bar-chart>
+            </div>
+            <div>
+               <pie-chart :chart-data="piedatasets"></pie-chart>
+            </div>
         </div>
-          <div>
-            <pie-chart :chart-data="piedatasets" :width="250" :height="99"></pie-chart>
-          </div>
-          <div class="rank-page-div-3-sub-2">
-            <div id="rank-div">
+        <div class="rank-page-div-3-chr-2">
               <div class="rank-div-title">{{rank_text.rank_main_text[3]}}</div>
               <div class="rank-div-contents">
                 <div class="rank-div-contents-content" v-for="ranking in user_rank_record">
-                  <span style="background:skyblue; color:white">
-                  {{ranking.rank}}
-                  </span>
-                  <span>{{ranking.user_nickname}}</span>
-                  <span>{{ranking.clear_time}}</span>
+                  <div class="ranking-number">
+                    <p>{{ranking.rank}}</p>
+                    </div>
+                  <div class="rankname">NAME</div>
+                  <div class="rankdate">Clear Time</div>
+                  <div class="username">{{ranking.user_nickname}}</div>
+                  <div class="userdate">{{ranking.clear_time}}</div>
+
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+
         
       </div>
     </div>
@@ -97,7 +103,7 @@ export default {
       user_rank_record: [],
       user_game_record: {
         game_img: "/images/web/rank.png",
-        game_title: "左のリストから記録を確認しよう",
+        game_title: "Select from your Record",
         game_date: "0",
         game_cleartime: "00：00：00",
         game_avgtime: "0"

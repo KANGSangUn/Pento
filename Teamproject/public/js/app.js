@@ -5372,7 +5372,7 @@ module.exports = {
         collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
     },
     rank: {
-        rank_main_text: ['クリアタイム', '記録', 'Date', 'ランキング']
+        rank_main_text: ['Clear Time', 'Record', 'Date', 'RANKING']
     },
     mypage: ['こんにちは', '保有ミノ', '紹介', 'My Friend'],
     header: ['Storylist', 'Pento Collection', 'Pento Rank', 'Menu'],
@@ -5386,12 +5386,12 @@ module.exports = {
         'footer_text_1': 'Developed Team Horenso',
         'footer_text_2': 'Developers',
         'dev_name': {
-            Unity: "정현우",
-            "Leap Motion": "정지민",
-            Arduino: "최요한",
-            Database: "성경임",
-            "Back-end": "김영문",
-            "Front-end": "강상운"
+            Unity: "ジョン・ヒョンウ",
+            "Leap Motion": "ジョン・ジミン",
+            Arduino: "チェ・ヨハン",
+            Database: "ソン・ギョンイム",
+            "Back-end": "キム・ヨンムン",
+            "Front-end": "カン・サンウン"
         }
     }
 });
@@ -7826,6 +7826,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -8161,6 +8162,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 //Chartデータを処理するCALSSFILE
 
@@ -8189,7 +8196,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       user_rank_record: [],
       user_game_record: {
         game_img: "/images/web/rank.png",
-        game_title: "左のリストから記録を確認しよう",
+        game_title: "Select from your Record",
         game_date: "0",
         game_cleartime: "00：00：00",
         game_avgtime: "0"
@@ -21625,6 +21632,8 @@ module.exports = {
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -21777,6 +21786,14 @@ module.exports = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -22054,6 +22071,7 @@ module.exports = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
+//
 //
 //
 //
@@ -40788,10 +40806,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.footer-div[data-v-01553ad6] {\r\n  background-image: url(\"http://localhost:8000/images/newimage/footer01.jpg\");\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle[data-v-01553ad6] {\r\n  padding: 5vh;\n}\n.footer-right[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-middle i[data-v-01553ad6] {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
+exports.push([module.i, "\n.footer-div[data-v-01553ad6] {\r\n  background-image: url(\"http://localhost:8000/images/newimage/footer01.jpg\");\r\n  position: relative;\r\n  bottom: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n    Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: auto;\r\n  color: white;\r\n  display: grid;\r\n  grid-template-rows: 0.9fr 0.1fr;\r\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.footer-left[data-v-01553ad6] {\r\n  font-size: 2vh;\r\n  text-align: left;\r\n  padding: 5vh;\n}\n.footer-middle[data-v-01553ad6] {\r\n  padding: 5vh;\n}\n.footer-right[data-v-01553ad6] {\r\n  text-align: right;\r\n  padding: 4vh;\n}\n.footer-right li[data-v-01553ad6] {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  font-size: 2.5vh;\n}\n.footer-middle i[data-v-01553ad6] {\r\n  color: white;\r\n  margin: 2vh 1vh 2vh 1vh;\n}\r\n", ""]);
 
 // exports
 
@@ -40839,15 +40857,15 @@ var render = function() {
       _c(
         "ul",
         _vm._l(_vm.dev_names, function(dev, key) {
-          return _c("li", [
-            _vm._v(
-              "\n              " +
-                _vm._s(key) +
-                "  " +
-                _vm._s(dev) +
-                "\n          "
-            )
-          ])
+          return _c(
+            "li",
+            { staticStyle: { "font-family": "'Mplus 1p',sans-serif" } },
+            [
+              _c("div", [_vm._v(_vm._s(key))]),
+              _vm._v(" "),
+              _c("div", [_vm._v(_vm._s(dev))])
+            ]
+          )
         })
       )
     ])
@@ -41702,7 +41720,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n@font-face{\r\n   font-family:'Mine crafter'; \r\n   src:url('http://localhost:8000/font/Minecrafter.Reg.ttf')\n}\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 20% 40% 40%;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height:81vh; \r\n    display: grid;\r\n    grid-template-rows: 0.05fr 1fr;  \r\n    border : 1px solid silver;\n}\n.rank-page-title{\r\n  font-size : 2em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  padding-left: 1vw;\r\n  padding-top: 1vw;\n}\n.rank-page-list{\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 20%;\r\n    padding-right: 0.5vw;\r\n    padding-left: 0.5vw;\r\n    overflow-x:hidden; overflow-y:auto;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding : 0.5vw;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    border : 1px solid silver;\r\n    height: 81vh;\n}\n.rank-page-div-2-game-image{\r\n  padding : 8vh;\n}\n.rank-page-div-2-game-image{\r\n  text-align: center;\n}\n.rank-page-div-2-game-data{\r\n  display: grid;\r\n  grid-template-rows: 1fr 1fr 1fr 1fr;\r\n  padding-left : 2em;\r\n  padding-right : 2em;\n}\n#rank-title-layout{\r\n  font-family:'Mplus 1p',sans-serif;\r\n  font-weight: 300;\r\n  font-size: 2.5em;\n}\n.rank-data-layout{\r\n  font-weight: 300;\r\n  font-family:'Mplus 1p',sans-serif;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  font-size : 1.5em;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 33% 33% 33%;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\n}\n.rank-page-div-3-sub-2{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\n}\n#rank-div {\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.9fr;\r\n  border-right: 1px solid silver;\n}\n.rank-div-title{\r\n  background: orange;\r\n  text-align: center;\r\n  font-size: 3vh;\n}\n.ranking {\r\n  text-align: center;\r\n  border-top: 1px solid silver;\n}\n.rank-div-contents{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.5fr 0.6fr;\n}\n.rank-div-contents-content{\r\n  text-align: center\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n@font-face{\r\n   font-family:'Mine crafter'; \r\n   src:url('http://localhost:8000/font/Minecrafter.Reg.ttf')\n}\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 0.4fr 0.6fr 0.8fr;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height:81vh; \r\n    display: grid;\r\n    grid-template-rows: 0.05fr 1fr;  \r\n    border : 1px solid silver;\n}\n.rank-page-title{\r\n  font-size : 2em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  background: rgb(72, 116, 240);\n}\n.rank-page-title p{\r\n  font-size : 1em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  color : white;\r\n  padding :1vw;\n}\n.rank-page-list{\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 25%;\r\n    padding-right: 0.5vw;\r\n    padding-left: 0.5vw;\r\n    overflow-x:hidden; overflow-y:auto;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding : 0.5vw;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    border : 1px solid silver;\r\n    height: 81vh;\n}\n.rank-page-div-2-game-image{\r\n  padding : 8vh;\r\n  text-align: center;\n}\n.rank-page-div-2-game-data{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 1fr 1fr 1fr;\r\n  padding-left : 2em;\r\n  padding-right : 2em;\n}\n#rank-title-layout{\r\n  font-family:'Mine crafter';\r\n  font-weight: 200;\r\n  font-size: 2.1em;\r\n  padding : 1vh;\r\n  color : white;\r\n  background: rgb(72, 116, 240);\n}\n.rank-data-layout{\r\n  padding : 1vh;\r\n  display: grid;\r\n  font-size : 1.2em;\r\n  grid-template-columns: 0.4fr 0.6fr;\n}\n.rank-data-layout div{\r\n  font-size : 1.5em;\r\n  font-weight: 300;\r\n  padding-top : 1vh;\r\n  font-family:'Mine crafter';\r\n  border-bottom: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.8fr;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\r\n    padding : 2vh;\n}\n.rank-page-div-3-chr-1{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.rank-div-3-title{\r\n  color: white;\r\n  padding : 1vh;\r\n  background: rgb(72, 116, 240);\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\n}\n.rank-page-div-3-chr-2{\r\n  padding-top:1vh;\r\n  display: grid;\r\n  grid-template-rows: 0.15fr 1fr;\r\n  overflow: auto;\n}\n.rank-div-title{\r\n  color: white;\r\n  padding : 1vh;\r\n  background: rgb(72, 116, 240);\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\n}\n.rank-div-contents{\r\n  display: grid;\r\n  grid-row-gap: 0.3em;\n}\n.rank-div-contents-content div{\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\r\n  padding : 0.5vh;\r\n  padding-left: 0;\n}\r\n\r\n/*\r\n.rank-title-span{\r\n   background:skyblue;\r\n   color:white;\r\n   margin-right: 0.5em;\r\n} */\n.ranking-number p{\r\n  color:white;\r\n  background: skyblue;\r\n  margin-right: 1.5em;\r\n  display:table-cell; \r\n  text-align:center; \r\n  vertical-align:middle;\r\n  font-family:'Mine crafter';\n}\n.ranking-number{ \r\n  display:table;\r\n  height: 100%;\r\n  margin-right: 1vh;\r\n  grid-area: ranking-number;\n}\n.rankname{ grid-area: rankname;\n}\n.rankdata{ grid-area: rankdate;\n}\n.username{ grid-area: username;\n}\n.userdate{ grid-area: userdate;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-areas:\r\n  'ranking-number rankname username'\r\n  'ranking-number rankdate userdate';\r\n  grid-template-columns: 0.3fr 0.5fr 1fr;\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
 
 // exports
 
@@ -54622,9 +54640,7 @@ var render = function() {
     [
       _c("div", { staticClass: "rank-page-div-body" }, [
         _c("div", { staticClass: "rank-page-div-1" }, [
-          _c("div", { staticClass: "rank-page-title" }, [
-            _vm._v("\n        RANKS\n      ")
-          ]),
+          _vm._m(0),
           _vm._v(" "),
           _c(
             "div",
@@ -54714,67 +54730,56 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "rank-page-div-3" }, [
-          _c(
-            "div",
-            { staticClass: "rank-page-div-3-sub-1" },
-            [
-              _c("bar-chart", {
-                attrs: {
-                  "chart-data": _vm.linedatasets,
-                  width: 250,
-                  height: 100
-                }
-              })
-            ],
-            1
-          ),
+          _c("div", { staticClass: "rank-page-div-3-chr-1" }, [
+            _c(
+              "div",
+              [
+                _c("div", { staticClass: "rank-div-3-title" }, [
+                  _vm._v("Data Chart")
+                ]),
+                _vm._v(" "),
+                _c("bar-chart", { attrs: { "chart-data": _vm.linedatasets } })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [_c("pie-chart", { attrs: { "chart-data": _vm.piedatasets } })],
+              1
+            )
+          ]),
           _vm._v(" "),
-          _c(
-            "div",
-            [
-              _c("pie-chart", {
-                attrs: { "chart-data": _vm.piedatasets, width: 250, height: 99 }
+          _c("div", { staticClass: "rank-page-div-3-chr-2" }, [
+            _c("div", { staticClass: "rank-div-title" }, [
+              _vm._v(_vm._s(_vm.rank_text.rank_main_text[3]))
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "rank-div-contents" },
+              _vm._l(_vm.user_rank_record, function(ranking) {
+                return _c("div", { staticClass: "rank-div-contents-content" }, [
+                  _c("div", { staticClass: "ranking-number" }, [
+                    _c("p", [_vm._v(_vm._s(ranking.rank))])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "rankname" }, [_vm._v("NAME")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "rankdate" }, [
+                    _vm._v("Clear Time")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "username" }, [
+                    _vm._v(_vm._s(ranking.user_nickname))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "userdate" }, [
+                    _vm._v(_vm._s(ranking.clear_time))
+                  ])
+                ])
               })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "rank-page-div-3-sub-2" }, [
-            _c("div", { attrs: { id: "rank-div" } }, [
-              _c("div", { staticClass: "rank-div-title" }, [
-                _vm._v(_vm._s(_vm.rank_text.rank_main_text[3]))
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "rank-div-contents" },
-                _vm._l(_vm.user_rank_record, function(ranking) {
-                  return _c(
-                    "div",
-                    { staticClass: "rank-div-contents-content" },
-                    [
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { background: "skyblue", color: "white" }
-                        },
-                        [
-                          _vm._v(
-                            "\n                " +
-                              _vm._s(ranking.rank) +
-                              "\n                "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(ranking.user_nickname))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(ranking.clear_time))])
-                    ]
-                  )
-                })
-              )
-            ])
+            )
           ])
         ])
       ]),
@@ -54784,7 +54789,16 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rank-page-title" }, [
+      _c("p", [_vm._v("PLAY LIST")])
+    ])
+  }
+]
 render._withStripped = true
 
 if (false) {
@@ -54987,7 +55001,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 0.5vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 1vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
 
 // exports
 
@@ -55287,7 +55301,7 @@ var render = function() {
                     "div",
                     { staticClass: "login-form" },
                     [
-                      _c("p", [_vm._v(_vm._s(_vm.nav_text.nav_login_text[1]))]),
+                      _c("p", [_vm._v(_vm._s(_vm.nav_text.nav_login_text[0]))]),
                       _vm._v(" "),
                       _c("vs-input", {
                         attrs: {
@@ -55327,7 +55341,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v(_vm._s(_vm.nav_text.nav_login_text[1]))]
+                        [_vm._v(_vm._s(_vm.nav_text.nav_login_text[0]))]
                       )
                     ],
                     1
@@ -55350,7 +55364,9 @@ var render = function() {
           attrs: { icon: "success" }
         },
         [
-          _vm._v("\n    " + _vm._s(_vm.nav_text.nav_login_text[2]) + "\n    "),
+          _vm._v("\n    " + _vm._s(_vm.nav_text.nav_login_text[2])),
+          _c("br"),
+          _vm._v(" "),
           _c(
             "vs-button",
             {
@@ -55361,7 +55377,11 @@ var render = function() {
                 }
               }
             },
-            [_vm._v(_vm._s(_vm.nav_text.nav_login_text[4]))]
+            [
+              _vm._v(
+                "\n    " + _vm._s(_vm.nav_text.nav_login_text[4]) + "\n    "
+              )
+            ]
           )
         ],
         1
@@ -55593,7 +55613,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_div {\r\n    padding-top: 5vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1fr 1fr;\r\n    background-color: #47b7df;\n}\n#mypento_sub_div1 div{\r\n    padding: 4vw;\n}\n#mypento_sub_div1{\r\n    width: 100%;\r\n    margin: auto;\r\n    text-align: center;\n}\n.userimg{\r\n    margin-bottom : 2vh;\n}\n.mypento-sub-div-content-2{\r\n    background: gold\n}\n#mypento_sub_div3 {\r\n     padding : 5vh;\r\n    overflow: scroll;\r\n    margin : auto;\r\n    background-color: #141c35;\n}\n.booklistpage{\r\n    background-size: cover;\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/booklist.png\");\n}\n.my-tale-list{\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns:1fr 1fr 1fr 1fr ;\r\n    grid-column-gap: 1vw;\r\n    grid-row-gap: 1vw;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    width: 15vw;\r\n    height: 20vw;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_main_div span{\r\n    font-size : 1.3em;\n}\n.mypento_div {\r\n    padding-top: 4vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1.2fr 0.8fr;\r\n    background-color: #55c5ee;\n}\n.mypento-info{\r\n    padding : 10vh;\r\n    display: grid;\r\n    grid-template-rows: 0.87fr 0.15fr 0.3fr 1fr;\r\n    text-align: center\n}\n.mypento-info img{\r\n    border: 10px solid rgb(24, 36, 59);\r\n    border-radius: 50%;\n}\n.mypento-intro{\r\n    font-size : 2em;\r\n    padding : 3vh;\r\n    border : 1px solid transparent;\r\n    background: white;\n}\n.mypento-sub-div-content-2{\r\n    background: orange;\r\n    padding : 10vh;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.8fr;\n}\n.mypento-sub-div-content-2 div{\r\n    border-bottom: 3px solid rgb(255, 255, 255);\n}\n#mypento_sub_div3{\r\n    background: rgb(25, 35, 56);\n}\n.my-tale-list{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr ;\r\n    overflow: auto;\r\n    height: 100%;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    padding : 6vh 3vh 3vh 3vh;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}\r\n", ""]);
 
 // exports
 
@@ -55634,26 +55654,24 @@ var render = function() {
                 },
                 [
                   _vm._l(_vm.Item_list, function(user_info) {
-                    return _c("div", [
-                      _c("img", {
-                        staticClass: "userimg",
-                        attrs: {
-                          src:
-                            "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
-                            user_info.image +
-                            ".png"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("h1", [
-                        _vm._v(
-                          _vm._s(_vm.mypage_text[0]) +
-                            " " +
-                            _vm._s(user_info.user_nickname)
-                        )
+                    return _c("div", { staticClass: "mypento-info" }, [
+                      _c("div", [
+                        _c("img", {
+                          staticClass: "userimg",
+                          attrs: {
+                            src:
+                              "http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com" +
+                              user_info.image +
+                              ".png"
+                          }
+                        })
                       ]),
                       _vm._v(" "),
-                      _c("h2", [
+                      _c("div", { staticStyle: { "font-size": "2.3em" } }, [
+                        _vm._v(_vm._s(user_info.user_nickname))
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticStyle: { "font-size": "1.8em" } }, [
                         _vm._v(
                           _vm._s(_vm.mypage_text[1]) +
                             " : " +
@@ -55661,34 +55679,44 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c("h2", { staticStyle: { "margin-top": "2vh" } }, [
-                        _vm._v(_vm._s(_vm.mypage_text[2]))
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { "font-size": "2vh" } }, [
-                        _vm._v(_vm._s(user_info.user_intro))
+                      _c("div", { staticClass: "mypento-intro" }, [
+                        _vm._v(
+                          "        \n            " +
+                            _vm._s(user_info.user_intro) +
+                            "\n          "
+                        )
                       ])
                     ])
                   }),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "mypento-sub-div-content-2" },
-                    [
-                      _c("h1", [_vm._v(_vm._s(_vm.mypage_text[3]))]),
-                      _vm._v(" "),
+                  _c("div", { staticClass: "mypento-sub-div-content-2" }, [
+                    _c("div", { staticStyle: { "font-size": "2.3em" } }, [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.mypage_text[3]) +
+                          "\n          "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticStyle: {
+                          "font-size": "1.5em",
+                          "padding-top": "1.5em"
+                        }
+                      },
                       _vm._l(_vm.frd_list, function(frdlist) {
-                        return _c("li", [
+                        return _c("li", { key: frdlist }, [
                           _vm._v(
                             "\n            " +
                               _vm._s(frdlist.user_nickname) +
-                              "\n          "
+                              "\n              "
                           )
                         ])
                       })
-                    ],
-                    2
-                  )
+                    )
+                  ])
                 ],
                 2
               ),
@@ -55836,7 +55864,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.pento-router {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection_main.jpg\");\r\n  width: 100%;\r\n  height: auto;\n}\n.pento-router-body {\r\n  padding-top: 20vh;\r\n  margin: auto auto 20vh auto;\r\n  width: 80vw;\r\n  height: auto;\r\n  display: grid;\r\n  grid-column-gap: 1vw;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-menu {\r\n  color: rgb(8, 9, 43);\r\n  background: white;\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n.col-menu:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n}\n.menu-sub {\r\n  padding: 1vw;\r\n  text-align: center;\r\n  font-size: 2vw;\n}\n.menu-sub span {\r\n  font-weight: 400;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.col-menu:hover {\r\n  color: white;\r\n  background: blueviolet;\n}\r\n", ""]);
+exports.push([module.i, "\n.pento-router {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/collection_main.jpg\");\r\n  width: 100%;\r\n  background-size: contain;\r\n  height: auto;\n}\n.pento-router-body {\r\n  padding-top: 20vh;\r\n  margin: auto auto 20vh auto;\r\n  width: 80vw;\r\n  height: auto;\r\n  display: grid;\r\n  grid-column-gap: 1vw;\r\n  grid-template-columns: 1fr 1fr;\n}\n.col-menu {\r\n  color: rgb(8, 9, 43);\r\n  background: white;\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n.col-menu:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n}\n.menu-sub {\r\n  padding: 1vw;\r\n  text-align: center;\r\n  font-size: 2vw;\n}\n.menu-sub span {\r\n  font-weight: 400;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.col-menu:hover {\r\n  color: white;\r\n  background: blueviolet;\n}\r\n", ""]);
 
 // exports
 
@@ -56010,7 +56038,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-banner p {\r\n  padding-left: 4vh;\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-banner p {\r\n  padding-left: 4vh;\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2.5vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\r\n  font-size: 2vh;\n}\r\n", ""]);
 
 // exports
 
@@ -56102,7 +56130,7 @@ var render = function() {
                       "tr",
                       {
                         staticClass: "my-modal-layout-tr-index",
-                        attrs: { height: "7%" }
+                        attrs: { height: "10%" }
                       },
                       [
                         _c("td", { attrs: { width: "50%" } }, [
@@ -56111,7 +56139,7 @@ var render = function() {
                               _vm._s(
                                 _vm.mycol_text.collection_my_item_text[0]
                               ) +
-                              " - " +
+                              " : " +
                               _vm._s(select_pento.user_nickname) +
                               "\n                "
                           )
@@ -56123,7 +56151,7 @@ var render = function() {
                               _vm._s(
                                 _vm.mycol_text.collection_my_item_text[1]
                               ) +
-                              " - " +
+                              " " +
                               _vm._s(_vm.select_pento_list.recommendNumSum) +
                               "\n                "
                           )
@@ -56135,7 +56163,7 @@ var render = function() {
                       "tr",
                       {
                         staticClass: "my-modal-layout-tr-index",
-                        attrs: { height: "7%" }
+                        attrs: { height: "10%" }
                       },
                       [
                         _c("td", { attrs: { colspan: "2" } }, [
@@ -56144,7 +56172,7 @@ var render = function() {
                               _vm._s(
                                 _vm.mycol_text.collection_my_item_text[2]
                               ) +
-                              " - " +
+                              " " +
                               _vm._s(select_pento.registered_date) +
                               "\n                "
                           )
@@ -56279,7 +56307,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 50px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: #f8b213;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.2fr;\n}\n.col-share-modal-layout-sub-3 {\r\n  overflow-y: auto;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.user_design_pento_modal-2 {\r\n  padding-left: 1vw;\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 49px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  height: 100%;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: 2px #f8b213 solid;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding-left: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.7fr 0.27fr;\n}\n.col-share-modal-layout-sub-2 p {\r\n  font-size: 1.3em;\r\n  padding-top: 1vh;\r\n  padding-bottom: 1vh;\n}\n.col-share-modal-layout-sub-3 {\r\n  text-align: center;\r\n  font-size: 1.3em;\r\n  overflow-y: auto;\n}\n.col-share-modal-layout-sub-3 span {\r\n  font-size: 1.3em;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.user_design_pento_modal-2 {\r\n  padding-left: 1vw;\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\r\n", ""]);
 
 // exports
 
@@ -56387,7 +56415,7 @@ var render = function() {
         "sweet-modal",
         {
           ref: "col_modal2",
-          attrs: { width: "60vw", "overlay-theme": "dark" }
+          attrs: { width: "60vw", "overlay-theme": "dark", title: "皆のペント" }
         },
         _vm._l(_vm.select_pento_list.design_info, function(select_pento) {
           return _c("div", { staticClass: "col-share-modal-layout" }, [
@@ -56405,20 +56433,12 @@ var render = function() {
                 _vm._v(_vm._s(select_pento.design_title))
               ]),
               _vm._v(" "),
-              _c("h4", [
+              _c("p", [
                 _vm._v(
                   _vm._s(_vm.shcol_text.collection_share_content_text[1]) +
                     " : " +
                     _vm._s(select_pento.user_nickname)
                 )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _c("i", {
-                  staticClass: "fas fa-heart",
-                  staticStyle: { color: "#f87b7b" }
-                }),
-                _vm._v(" : " + _vm._s(_vm.select_pento_list.recommendNumSum))
               ]),
               _vm._v(" "),
               _c("p", [
@@ -56429,6 +56449,14 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
+              _c("p", { staticStyle: { "font-size": "2vw" } }, [
+                _c("i", {
+                  staticClass: "fas fa-heart",
+                  staticStyle: { color: "#f87b7b" }
+                }),
+                _vm._v("  " + _vm._s(_vm.select_pento_list.recommendNumSum))
+              ]),
+              _vm._v(" "),
               _c("span", [_vm._v(_vm._s(select_pento.design_explain))]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-2-sub-4" }, [
@@ -56436,7 +56464,6 @@ var render = function() {
                   "button",
                   {
                     staticClass: "modal-btn-1",
-                    attrs: { "vs-type": "warning-flat" },
                     on: {
                       click: function($event) {
                         _vm.$vs.notify({
@@ -56451,7 +56478,10 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      _vm._s(_vm.shcol_text.collection_share_content_text[6]) +
+                      "\n             " +
+                        _vm._s(
+                          _vm.shcol_text.collection_share_content_text[6]
+                        ) +
                         "\n          "
                     )
                   ]
@@ -56540,7 +56570,7 @@ var render = function() {
               _c("span", { staticStyle: { "font-size": "3vh" } }, [
                 _c("i", {
                   staticClass: "fas fa-heart",
-                  staticStyle: { color: "#f87b7b" }
+                  staticStyle: { color: "#f87b7b", "margin-right": "1vw" }
                 }),
                 _vm._v(_vm._s(_vm.user_design_list.reNum) + "\n        ")
               ]),

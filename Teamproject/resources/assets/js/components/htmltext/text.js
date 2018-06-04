@@ -24,7 +24,7 @@ export default {
         collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
     },
     rank: {
-        rank_main_text: ['クリアタイム', '記録', 'Date', 'ランキング']
+        rank_main_text: ['Clear Time', 'Record', 'Date', 'RANKING']
     },
     mypage: ['こんにちは', '保有ミノ', '紹介', 'My Friend'],
     header: ['Storylist', 'Pento Collection', 'Pento Rank', 'Menu'],
@@ -38,12 +38,12 @@ export default {
         'footer_text_1': 'Developed Team Horenso',
         'footer_text_2': 'Developers',
         'dev_name': {
-            Unity: "정현우",
-            "Leap Motion": "정지민",
-            Arduino: "최요한",
-            Database: "성경임",
-            "Back-end": "김영문",
-            "Front-end": "강상운"
+            Unity: "ジョン・ヒョンウ",
+            "Leap Motion": "ジョン・ジミン",
+            Arduino: "チェ・ヨハン",
+            Database: "ソン・ギョンイム",
+            "Back-end": "キム・ヨンムン",
+            "Front-end": "カン・サンウン"
         }
     },
 }

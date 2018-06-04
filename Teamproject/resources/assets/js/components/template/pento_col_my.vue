@@ -31,17 +31,17 @@
                   <div class="title-box"></div>
                   {{select_pento.design_title}}</td>
               </tr>
-              <tr height="7%" class="my-modal-layout-tr-index">
+              <tr height="10%" class="my-modal-layout-tr-index">
                 <td width="50%">
-                  {{mycol_text.collection_my_item_text[0]}} - {{select_pento.user_nickname}}
+                  {{mycol_text.collection_my_item_text[0]}} : {{select_pento.user_nickname}}
                   </td>
                 <td>
-                  {{mycol_text.collection_my_item_text[1]}} - {{select_pento_list.recommendNumSum}}
+                  {{mycol_text.collection_my_item_text[1]}} {{select_pento_list.recommendNumSum}}
                   </td>
               </tr>
-              <tr height="7%" class="my-modal-layout-tr-index">
+              <tr height="10%" class="my-modal-layout-tr-index">
                 <td colspan="2">
-                  {{mycol_text.collection_my_item_text[2]}} - {{select_pento.registered_date}}
+                  {{mycol_text.collection_my_item_text[2]}} {{select_pento.registered_date}}
                   </td>
               </tr>
               <tr class="my-modal-layout-tr-index-2">
@@ -190,9 +190,10 @@ export default {
   font-size: 4vh;
 }
 .my-modal-layout-tr-index {
-  font-size: 2vh;
+  font-size: 2.5vh;
 }
 .my-modal-layout-tr-index-2 {
   text-align: left;
+  font-size: 2vh;
 }
 </style>
