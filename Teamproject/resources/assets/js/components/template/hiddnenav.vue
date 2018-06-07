@@ -66,9 +66,14 @@ dev . KANG SANG UN
           </div>
           <button class="frd-btn" v-on:click="user_frd_search()">{{nav_text.nav_frd_text[1]}}</button>
           <div class="frd_list">
+            <div class="frd_list-title">
+              {{nav_text.nav_menu_text[5]}}
+            </div>
+            <div style="    margin-top: 1vh;">
             <li v-for="frd in frd_list">
               {{frd.user_nickname}}
             </li>
+            </div>
           </div>
         </div>
       </div>

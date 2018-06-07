@@ -33,7 +33,7 @@ export default {
       this.axios.post(uri, temp).then(
         //서버로 http통신 요청
         response => {
-          if (response.data != null) {
+          if (response.data != false) {
             this.user_temp.user_nickname = response.data[0].user_nickname;
             this.user_temp.user_number = response.data[0].user_no;
             this.user_temp.user_image = response.data[0].image;

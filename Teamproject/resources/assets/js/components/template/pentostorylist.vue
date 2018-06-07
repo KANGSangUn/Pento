@@ -39,9 +39,20 @@ dev . KANG SANG UN
         </transition-group>
       </div>
       <div class="basket-price">
-        <span style="font-size:1.5vh;">{{story_text.story_page_basket[0]}}</span> {{story_text.story_page_basket[1]}} : {{all_price}}
-        <!-- 총 금액 !!!!!!!!!!함수가 가끔식 고장남 고치기 -->
-        <vs-button vs-type="primary-filled" @click="basket_list_buy(basket_item)">{{story_text.story_page_basket[2]}}</vs-button>
+         <div>
+          <span>{{story_text.story_page_basket[1]}}</span>
+        </div>
+        <div>
+           {{all_price}} Mino
+        </div>
+        <div>
+          <button @click="basket_list_buy(basket_item)">{{story_text.story_page_basket[2]}}</button>
+        </div>
+        <div></div>
+        <div></div>
+        <div>
+          <span style="font-size:1.5vh;">{{story_text.story_page_basket[0]}}</span> 
+        </div>
       </div>
     </sweet-modal>
     <!-- 동화 상세정보 출력 -->

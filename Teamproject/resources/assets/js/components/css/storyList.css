@@ -112,8 +112,10 @@ dev : Kang Sangun
   transition: transform 1s;
 }
 .basket-price{
+    font-family:'Mplus 1p',sans-serif;
+    display: grid;
+    grid-template-columns: 0.3fr 0.5fr auto;
     font-size: 3vh;
-    text-align: right;
     border-top : 1px solid slategray;
     width: 100%;
 }
@@ -205,10 +207,17 @@ figure.info_effect:hover h2{
     grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;
 }
 .story-modal-right-title{
-
     font-size: 1.5vw;
 }
+.story-modal-right-title h2::before{
+    content: "I";
+    background-color: orange;
+    color: orange;
+    font-weight: bold;
+    margin-right: 1vh;
+}
 .story-modal-right-info{
+    padding-top: 1.5vw;
     font-size : 1vw;
 }
 .story-modal-right-price{
@@ -219,16 +228,28 @@ figure.info_effect:hover h2{
 }
 .story-modal-right-btn button{
     background: transparent;
-    width: 49%;
+    width: 49.5%;
     height: 100%;
     border-radius: 0;
     color : white;
     margin: 0;
     padding : 0;
     transition: 0.5s;
-    font-size : 1.2vw;
+    font-size : 1.7em;
 }
 .story-modal-right-btn button:hover{
     background:green;
-    color : black;
+}
+.basket-price div{
+}
+.basket-price button{
+    padding : 1vh;
+    padding : 1vh;
+    font-size: 1em;
+    font-family:'Mplus 1p',sans-serif;
+    background: #26a7da;
+    border-radius: 0%;
+    width: 100%;
+    color : white;
+
 }

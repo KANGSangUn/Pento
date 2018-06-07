@@ -13,7 +13,7 @@ export default {
     story: {
         story_page_banner: ['物語の中に', '入りましょう。'],
         story_page_title: ['STORY LIST', 'BASKET'],
-        story_page_basket: ['画像をクリックすると買い物かごから消します。', '金額', '購入'],
+        story_page_basket: ['画像をクリックすると買い物かごから消します。', '合計価格', '購入'],
         story_page_item: ['購入', '買い物かご']
     },
     collection: {
@@ -31,7 +31,7 @@ export default {
     navigation: {
         nav_main_text: ['こんにちは！', 'さん', 'MY PENTO', '友達探し'],
         nav_login_text: ['Login', 'Logout', 'こんにちは！', 'IDとパスワードが間違いました。', 'OK'],
-        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank'],
+        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank', 'MY Friend'],
         nav_frd_text: ['検索結果', 'サーチ']
     },
     footer: {

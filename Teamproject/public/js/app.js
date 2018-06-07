@@ -5361,7 +5361,7 @@ module.exports = {
     story: {
         story_page_banner: ['物語の中に', '入りましょう。'],
         story_page_title: ['STORY LIST', 'BASKET'],
-        story_page_basket: ['画像をクリックすると買い物かごから消します。', '金額', '購入'],
+        story_page_basket: ['画像をクリックすると買い物かごから消します。', '合計価格', '購入'],
         story_page_item: ['購入', '買い物かご']
     },
     collection: {
@@ -5379,7 +5379,7 @@ module.exports = {
     navigation: {
         nav_main_text: ['こんにちは！', 'さん', 'MY PENTO', '友達探し'],
         nav_login_text: ['Login', 'Logout', 'こんにちは！', 'IDとパスワードが間違いました。', 'OK'],
-        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank'],
+        nav_menu_text: ['MENU', 'Main', 'StoryList', 'Pento Collection', 'Pento Rank', 'MY Friend'],
         nav_frd_text: ['検索結果', 'サーチ']
     },
     footer: {
@@ -6835,7 +6835,7 @@ process.umask = function() { return 0; };
       _this.axios.post(uri, temp).then(
       //서버로 http통신 요청
       function (response) {
-        if (response.data != null) {
+        if (response.data != false) {
           _this.user_temp.user_nickname = response.data[0].user_nickname;
           _this.user_temp.user_number = response.data[0].user_no;
           _this.user_temp.user_image = response.data[0].image;
@@ -7972,6 +7972,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -8093,10 +8104,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     delect_Item: function delect_Item(this_items) {
       //delect in basket in item
-
       var delectitem = this.basket_item.indexOf(this_items);
       this.basket_item.splice(delectitem, 1);
-      console.log(this_items.tale_price);
       this.all_price = this.all_price - this_items.tale_price;
       this_items = 0;
     },
@@ -21552,6 +21561,11 @@ module.exports = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__htmltext_text__ = __webpack_require__(7);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -41273,7 +41287,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n      overflow: auto;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-size: 3vh;\r\n    text-align: right;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #26a7da;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n\r\n    font-size: 1.5vw;\n}\n.story-modal-right-info{\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    color : white;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.2vw;\n}\n.story-modal-right-btn button:hover{\r\n    background:green;\r\n    color : black;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n      overflow: auto;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    display: grid;\r\n    grid-template-columns: 0.3fr 0.5fr auto;\r\n    font-size: 3vh;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #26a7da;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-title h2::before{\r\n    content: \"I\";\r\n    background-color: orange;\r\n    color: orange;\r\n    font-weight: bold;\r\n    margin-right: 1vh;\n}\n.story-modal-right-info{\r\n    padding-top: 1.5vw;\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49.5%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    color : white;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.7em;\n}\n.story-modal-right-btn button:hover{\r\n    background:green;\n}\n.basket-price div{\n}\n.basket-price button{\r\n    padding : 1vh;\r\n    padding : 1vh;\r\n    font-size: 1em;\r\n    font-family:'Mplus 1p',sans-serif;\r\n    background: #26a7da;\r\n    border-radius: 0%;\r\n    width: 100%;\r\n    color : white;\n}", ""]);
 
 // exports
 
@@ -41399,25 +41413,19 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "basket-price" },
-            [
-              _c("span", { staticStyle: { "font-size": "1.5vh" } }, [
-                _vm._v(_vm._s(_vm.story_text.story_page_basket[0]))
-              ]),
-              _vm._v(
-                " " +
-                  _vm._s(_vm.story_text.story_page_basket[1]) +
-                  " : " +
-                  _vm._s(_vm.all_price) +
-                  "\n      "
-              ),
-              _vm._v(" "),
+          _c("div", { staticClass: "basket-price" }, [
+            _c("div", [
+              _c("span", [_vm._v(_vm._s(_vm.story_text.story_page_basket[1]))])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _vm._v("\n         " + _vm._s(_vm.all_price) + " Mino\n      ")
+            ]),
+            _vm._v(" "),
+            _c("div", [
               _c(
-                "vs-button",
+                "button",
                 {
-                  attrs: { "vs-type": "primary-filled" },
                   on: {
                     click: function($event) {
                       _vm.basket_list_buy(_vm.basket_item)
@@ -41426,9 +41434,18 @@ var render = function() {
                 },
                 [_vm._v(_vm._s(_vm.story_text.story_page_basket[2]))]
               )
-            ],
-            1
-          )
+            ]),
+            _vm._v(" "),
+            _c("div"),
+            _vm._v(" "),
+            _c("div"),
+            _vm._v(" "),
+            _c("div", [
+              _c("span", { staticStyle: { "font-size": "1.5vh" } }, [
+                _vm._v(_vm._s(_vm.story_text.story_page_basket[0]))
+              ])
+            ])
+          ])
         ]
       ),
       _vm._v(" "),
@@ -55017,7 +55034,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 1vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 2rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    width: 95%;\r\n    height: 35vh;\n}\n.frd_list {\r\n    border: 1px solid silver\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    grid-template-columns: 1fr;\r\n    background: rgba(16,40,62,0.9);\r\n    position: fixed;\r\n    z-index: 10;\r\n    right: 0;\r\n    overflow-x: hidden;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    padding-top: 2vw;\r\n    text-align: center;\r\n    white-space: nowrap;\n}\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    text-align: left;\r\n    display: block;\r\n\r\n    -webkit-transition: 0.3s;\r\n\r\n    transition: 0.3s;\n}\n.sidenav a:hover {\r\n    background: #f9a314;\n}\n.sidenav img{\r\n    width: 5vw;\r\n    height: 5vw;\r\n    border-radius: 50%;\n}\n.closebtn {\r\n     color : white;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0.5vw;\r\n    font-size: 1vw;\n}\n.closebtn{\r\n    width: 2.2vw;\r\n    height: 2.2vw;\r\n    background: transparent;\r\n    border-radius: 50%;\r\n    border: 1px solid #0d0f33;\r\n    -webkit-transition: 0.2s;\r\n    transition: 0.2s;\n}\n.closebtn:hover{\r\n    color : white;\r\n    background: rgba(255, 23, 0, 0.8);\n}\n.hidden-menu-1{\r\n    font-family: 'Noto Sans', sans-serif;\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-1 a{\r\n    color: white;\n}\n.hidden-menu-2{\r\n    color : white;\r\n    width: 100%;\r\n    height: 100%;\n}\n.hidden-menu-2 a{\r\n    font-size: 1.3vw;\r\n    color : white;\n}\n.hidden-menu-2 a:hover{\r\n    background: green;\n}\n.sidenav span{\r\n    text-align: left;\r\n    font-size: 1.5vw;\n}\n.register-modal-main{\r\n    height: 70vh;\n}\n.register-view{\r\n    height : 100%;\r\n    display:grid;\r\n    grid-template-columns: 0.5fr 0.5fr;\n}\n.login-view{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/loginpage.png\");\r\n    background-size: cover;\n}\n.login-form{\r\n    font-size : 1.5vw;\r\n    text-align : left;\r\n    padding-top: 3vw;\r\n    padding-left : 1vw\n}\n.login_btn button{\r\n    font-size: 1vw;\r\n    width: 1vw;\r\n    height: 1vw;\n}\n.add_frd_modal {\r\n    width: 100%;\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    max-height:50vh;\r\n    height:50vh;\n}\n.add_frd_modal_sub1 {\r\n    height: 100%;\n}\n.add_frd_modal_sub2 {\r\n    height: 100%;\n}\n.frd_board{\r\n    text-align: center;\r\n    font-size : 2vh;\n}\n.frd_board table{\r\n    border : 1px solid rgb(128, 128, 128);\r\n    margin : 1rem auto;\r\n    width: 85%;\n}\n.frd-tbody{\r\n    overflow-x: hidden;\r\n    overflow-y: auto\n}\n.frd-table-td-1{\r\n    width: 80%;\r\n    border-right: 1px solid gray;\n}\n.frd-table-td-2 button{\r\n    width: 90%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    border : transparent;\r\n    font-size : 2.5vh;\r\n    color : white;\r\n    background : orange;\n}\n.frd-table-td-2 button:active{\r\n    color : white;\r\n    background : red;\n}\n.frd_list {\r\n    display: grid;\r\n    grid-template-rows :30px 1fr;\r\n    width: 95%;\r\n    height: 35vh;\r\n    padding-left: 20px;\r\n    text-align: left;\r\n    font-size:18px;\n}\n.frd_list-title{\r\n    text-align: left;\r\n    font-size: 23px;\r\n    border-bottom: 1px silver solid;\n}\n.frd_list-title::before{\r\n    content: \"I\";\r\n    color: orange;\r\n    background: orange;\n}\n.frd-btn{\r\n    color : white;\r\n    border-radius: 0;\r\n    background:rgb(2, 160, 2);\r\n    font-size: 2vh;\r\n    width: 5vw;\r\n    height: 3vh;\n}", ""]);
 
 // exports
 
@@ -55283,19 +55300,29 @@ var render = function() {
                 [_vm._v(_vm._s(_vm.nav_text.nav_frd_text[1]))]
               ),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "frd_list" },
-                _vm._l(_vm.frd_list, function(frd) {
-                  return _c("li", [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(frd.user_nickname) +
-                        "\n          "
-                    )
-                  ])
-                })
-              )
+              _c("div", { staticClass: "frd_list" }, [
+                _c("div", { staticClass: "frd_list-title" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.nav_text.nav_menu_text[5]) +
+                      "\n          "
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticStyle: { "margin-top": "1vh" } },
+                  _vm._l(_vm.frd_list, function(frd) {
+                    return _c("li", [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(frd.user_nickname) +
+                          "\n          "
+                      )
+                    ])
+                  })
+                )
+              ])
             ])
           ])
         ]

@@ -114,7 +114,6 @@ dev : Kang Sangun
 }
 .add_frd_modal_sub1 {
     height: 100%;
-
 }
 .add_frd_modal_sub2 {
     height: 100%;
@@ -126,7 +125,7 @@ dev : Kang Sangun
 }
 .frd_board table{
     border : 1px solid rgb(128, 128, 128);
-    margin : 2rem auto;
+    margin : 1rem auto;
     width: 85%;
     
 }
@@ -153,12 +152,25 @@ dev : Kang Sangun
     background : red;
 }
 .frd_list {
+    display: grid;
+    grid-template-rows :30px 1fr;
     width: 95%;
     height: 35vh;
+    padding-left: 20px;
+    text-align: left;
+    font-size:18px;
 }
-.frd_list {
-    border: 1px solid silver
+.frd_list-title{
+    text-align: left;
+    font-size: 23px;
+    border-bottom: 1px silver solid;
 }
+.frd_list-title::before{
+    content: "I";
+    color: orange;
+    background: orange;
+}
+
 .frd-btn{
     color : white;
     border-radius: 0;
