@@ -26,10 +26,20 @@ import Mypento from './components/template/Mypento.vue';
 import pento_col from './components/template/pento_col_main.vue';
 import pento_col_my from './components/template/pento_col_my.vue';
 import pento_col_all from './components/template/pento_col_shares.vue';
+import pent_game from './components/template/webgame.vue';
 
 Vue.prototype.$eventBus = new Vue();
 //Routing登録
 const routes = [
+	{
+		name: 'pent_game',
+		path: '/game',
+		components:
+			{
+
+				default: pent_game,
+			}
+	},
 	{
 		name: 'main',
 		path: '/',
