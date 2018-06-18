@@ -52,6 +52,8 @@ export default {
     footers: footers
   },
   mounted() {
+    //기본 설정
+    //페이지 랜더링 후 유저 정보, 친구목록, 동화 구매 정보 메서드실행
     window.scrollTo(0, 0);
     this.load_user_info();
     this.load_user_frd();
@@ -66,6 +68,7 @@ export default {
     };
   },
   methods: {
+    //유저 기본 정보
     load_user_info: function() {
       let url = "MyPage";
       let art = {

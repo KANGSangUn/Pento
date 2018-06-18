@@ -36,15 +36,15 @@
                   {{mycol_text.collection_my_item_text[0]}} : {{select_pento.user_nickname}}
                   </td>
                 <td>
-                  {{mycol_text.collection_my_item_text[1]}} {{select_pento_list.recommendNumSum}}
+                  {{mycol_text.collection_my_item_text[1]}} : {{select_pento_list.recommendNumSum}}
                   </td>
               </tr>
               <tr height="10%" class="my-modal-layout-tr-index">
                 <td colspan="2">
-                  {{mycol_text.collection_my_item_text[2]}} {{select_pento.registered_date}}
+                  {{mycol_text.collection_my_item_text[2]}} : {{select_pento.registered_date}}
                   </td>
               </tr>
-              <tr class="my-modal-layout-tr-index-2">
+              <tr class="my-modal-layout-tr-index-2"  id="my-modal-contents-layout">
                 <td colspan="2">
                   {{select_pento.design_explain}}
                 </td>
@@ -104,7 +104,7 @@ export default {
 @import url("https://fonts.googleapis.com/earlyaccess/mplus1p.css");
 
 .col-my-page {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 .col-my-main-div {
@@ -125,6 +125,8 @@ export default {
   font-family: "Mplus 1p", sans-serif;
 }
 #my-main-list {
+  height: 100vh;
+  overflow: auto;
   padding-top: 5vh;
   text-align: center;
   display: grid;
@@ -179,21 +181,27 @@ export default {
   text-align: left;
   margin: auto;
   padding: 2vh;
+  padding-top: 0;
   width: 90%;
   height: 100%;
 }
 
 .col-my-modal-layout-sub-2 td {
   vertical-align: baseline;
+  font-family: "Mplus 1p", sans-serif;
 }
 .my-modal-layout-tr-tilte {
   font-size: 4vh;
 }
 .my-modal-layout-tr-index {
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 .my-modal-layout-tr-index-2 {
   text-align: left;
   font-size: 2vh;
+}
+#my-modal-contents-layout td {
+  padding-top: 1.5vh;
+  border-top: 3px gray solid;
 }
 </style>

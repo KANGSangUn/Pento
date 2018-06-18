@@ -7,6 +7,7 @@ dev . KANG SANG UN
     <div class="sub_logo">
       <router-link class="sub_btn" :to="{name:'main'}">
         <img v-bind:src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/logo3.png"'>
+       
       </router-link>
       <router-link class="sub_btn" :to="{name:'pentostorylist'}">{{header_text[0]}}</router-link>
       <router-link class="sub_btn" :to="{name:'pento_col'}">{{header_text[1]}}</router-link>
@@ -32,7 +33,7 @@ export default {
     this.page_up();
   },
   components: {
-    //navigation
+    //네비게이션 메뉴 컴포넌트 추가
     hidnav: hiddne_nav
   },
   methods: {

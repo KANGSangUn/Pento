@@ -54,6 +54,7 @@ dev : Kang Sangun
 .my-tale-list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: repeat(500px);
     overflow: auto;
     height: 100%;
     

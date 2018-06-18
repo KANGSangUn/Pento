@@ -115,22 +115,27 @@ import lang from "../htmltext/text";
 export default {
   /*header req value*/
   created() {
+    //로그인 이벤트 감지
     this.$eventBus.$on("login_success", login_type => {
       this.login_register(login_type);
+      //결과에 따른 예외 처리
     });
   },
   data() {
+    //변수
     return {
-      nav_text: lang.navigation,
+      nav_text: lang.navigation, //html 텍스트 값
       userinfo: {
+        // 로그인 value 값
         userid: "",
         userpw: ""
       },
-      frd_name: [],
+      frd_name: [], // 친구 추가 모달 value
       frd_list: [],
-      search_result: [],
+      search_result: [], //친구 찾기 결과 값
       register_type: "",
       login_type: {
+        //클라이언트 로그인 세션 값
         user_login: sessionStorage.getItem("user_session"),
         user_name: sessionStorage.getItem("user_nickname"),
         user_number: sessionStorage.getItem("user_number"),
@@ -179,9 +184,8 @@ export default {
       let art = {
         kinds: "Logout"
       };
-      //                <input type="submit" value="로그아웃"> O O
-      //                <input type="hidden" value="Logout" name="kinds">
       this.axios.post(url, art).then();
+      //로그 아웃 후 모든 정보 제거
       sessionStorage.removeItem("user_session");
       sessionStorage.removeItem("user_nickname");
       sessionStorage.removeItem("user_number");

@@ -148,18 +148,22 @@ figure.info_effect figcaption{
     top : auto;
     bottom : 0;
     padding : 2em;
-    background: #26a7da;
+    background: rgba(0, 195, 255, 0.733);
     color : #fefff6;
     transition: transform 0.35s;
     transform: translate3d(0,100%,0)
 }
 figure.info_effect h2{
-    float : left;
+    float : center;
     display : inline-block;
+    font-weight: 300;
+    font-family: 'Noto Sans', sans-serif;
+    
 }
 figure.info_effect:hover figcaption,
 figure.info_effect:hover h2{
     transform : translate3d(0,0,0);
+
 }
 
 .story-modal{

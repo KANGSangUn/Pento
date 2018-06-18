@@ -19,7 +19,7 @@ export default {
     collection: {
         collection_main_text: ['私のペント', '皆のペント'],
         collection_my_banner_text: ['あなたが', '作った', '選んだ', 'ペントを', '見よう。'],
-        collection_my_item_text: ['つくり', 'レベル', '製作日'],
+        collection_my_item_text: ['つくり', 'Level', '製作日'],
         collection_share_banner_text: ['みんなが', '作った', 'いろいろな', 'ペント'],
         collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
     },

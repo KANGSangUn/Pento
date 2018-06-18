@@ -16,7 +16,8 @@
     <div class="col-share-contents-layout">
       <div></div>
       <div class="content-banner-text">
-        <span>{{shcol_text.collection_share_content_text[0]}}</span>
+        <span class="page-title">{{shcol_text.collection_share_content_text[0]}}</span>
+        <hr>
       </div>
       <div></div>
       <div></div>
@@ -25,7 +26,7 @@
           <div class="content-index">
             <span>{{list.design_title}}</span>
             <hr style="color : white;">
-            <p>{{shcol_text.collection_share_content_text[1]}} : {{list.nickname}}</p>
+            <p>{{shcol_text.collection_share_content_text[1]}} : {{list.user_nickname}}</p>
             <p>{{shcol_text.collection_share_content_text[2]}} : {{list.level}}</p>
           </div>
           <img v-bind:src="'http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com'+list.design_image" class="content-img">
@@ -294,12 +295,18 @@ export default {
   color: transparent;
   position: absolute;
   width: 0px;
+
   background: transparent;
   height: 100%;
   transition: 0.35s;
 }
 .content-index span {
-  font-size: 2vh;
+  font-size: 2.5vh;
+  font-family: "Mplus 1p", sans-serif;
+}
+.content-index p {
+  font-size: 1.5vh;
+  font-family: "Mplus 1p", sans-serif;
 }
 .content-layout:hover .content-img {
   transform: scale(1.2);
@@ -307,7 +314,7 @@ export default {
 .content-layout:hover .content-index {
   color: white;
   display: inline-block;
-  background: rgba(10, 30, 180, 0.5);
+  background: rgba(8, 131, 39, 0.5);
   width: 50%;
 }
 
@@ -339,5 +346,10 @@ export default {
   font-weight: 200;
   font-family: "Mplus 1p", sans-serif;
   font-size: 5vh;
+}
+.page-title::before {
+  content: "l";
+  font-weight: bold;
+  color: green;
 }
 </style>

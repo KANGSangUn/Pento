@@ -17,6 +17,7 @@ dev . KANG SANG UN
       </div>
       <div class="rank-page-div-2">
           <div class="spinner" id="loadding">
+            待って
           </div>
           <div class="rank-page-div-2-game-image" id="user-game-1">
               <img :src='"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com"+user_game_record.game_img'>

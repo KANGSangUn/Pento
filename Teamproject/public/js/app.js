@@ -5367,7 +5367,7 @@ module.exports = {
     collection: {
         collection_main_text: ['私のペント', '皆のペント'],
         collection_my_banner_text: ['あなたが', '作った', '選んだ', 'ペントを', '見よう。'],
-        collection_my_item_text: ['つくり', 'レベル', '製作日'],
+        collection_my_item_text: ['つくり', 'Level', '製作日'],
         collection_share_banner_text: ['みんなが', '作った', 'いろいろな', 'ペント'],
         collection_share_content_text: ['皆のペントリスト', 'つくり', 'レベル', 'いいね！', '製作日', '皆の作品', 'こうどく']
     },
@@ -7847,14 +7847,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
-      //HTML에 배치될 텍스트
+      //html 텍스트 값 할당
       footer_text_1: __WEBPACK_IMPORTED_MODULE_0__htmltext_text__["a" /* default */].footer["footer_text_1"],
       footer_text_2: __WEBPACK_IMPORTED_MODULE_0__htmltext_text__["a" /* default */].footer["footer_text_2"],
       dev_names: __WEBPACK_IMPORTED_MODULE_0__htmltext_text__["a" /* default */].footer["dev_name"]
@@ -8125,6 +8123,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_Bar_js__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__htmltext_text__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__template_Footer_vue__ = __webpack_require__(10);
+//
 //
 //
 //
@@ -21513,6 +21512,7 @@ module.exports = {
 //
 //
 //
+//
 
 
 
@@ -21528,7 +21528,7 @@ module.exports = {
   },
 
   components: {
-    //navigation
+    //네비게이션 메뉴 컴포넌트 추가
     hidnav: __WEBPACK_IMPORTED_MODULE_0__template_hiddnenav_vue__["a" /* default */]
   },
   methods: {
@@ -21680,22 +21680,27 @@ module.exports = {
   created: function created() {
     var _this = this;
 
+    //로그인 이벤트 감지
     this.$eventBus.$on("login_success", function (login_type) {
       _this.login_register(login_type);
+      //결과에 따른 예외 처리
     });
   },
   data: function data() {
+    //변수
     return {
-      nav_text: __WEBPACK_IMPORTED_MODULE_0__htmltext_text__["a" /* default */].navigation,
+      nav_text: __WEBPACK_IMPORTED_MODULE_0__htmltext_text__["a" /* default */].navigation, //html 텍스트 값
       userinfo: {
+        // 로그인 value 값
         userid: "",
         userpw: ""
       },
-      frd_name: [],
+      frd_name: [], // 친구 추가 모달 value
       frd_list: [],
-      search_result: [],
+      search_result: [], //친구 찾기 결과 값
       register_type: "",
       login_type: {
+        //클라이언트 로그인 세션 값
         user_login: sessionStorage.getItem("user_session"),
         user_name: sessionStorage.getItem("user_nickname"),
         user_number: sessionStorage.getItem("user_number"),
@@ -21745,9 +21750,8 @@ module.exports = {
       var art = {
         kinds: "Logout"
       };
-      //                <input type="submit" value="로그아웃"> O O
-      //                <input type="hidden" value="Logout" name="kinds">
       this.axios.post(url, art).then();
+      //로그 아웃 후 모든 정보 제거
       sessionStorage.removeItem("user_session");
       sessionStorage.removeItem("user_nickname");
       sessionStorage.removeItem("user_number");
@@ -21879,6 +21883,8 @@ module.exports = {
     footers: __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__["a" /* default */]
   },
   mounted: function mounted() {
+    //기본 설정
+    //페이지 랜더링 후 유저 정보, 친구목록, 동화 구매 정보 메서드실행
     window.scrollTo(0, 0);
     this.load_user_info();
     this.load_user_frd();
@@ -21894,6 +21900,7 @@ module.exports = {
   },
 
   methods: {
+    //유저 기본 정보
     load_user_info: function load_user_info() {
       var _this = this;
 
@@ -22110,6 +22117,7 @@ module.exports = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_Footer_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__htmltext_text__ = __webpack_require__(7);
+//
 //
 //
 //
@@ -41452,7 +41460,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n      overflow: auto;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    display: grid;\r\n    grid-template-columns: 0.3fr 0.5fr auto;\r\n    font-size: 3vh;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: #26a7da;\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : left;\r\n    display : inline-block;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-title h2::before{\r\n    content: \"I\";\r\n    background-color: orange;\r\n    color: orange;\r\n    font-weight: bold;\r\n    margin-right: 1vh;\n}\n.story-modal-right-info{\r\n    padding-top: 1.5vw;\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49.5%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    color : white;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.7em;\n}\n.story-modal-right-btn button:hover{\r\n    background:green;\n}\n.basket-price div{\n}\n.basket-price button{\r\n    padding : 1vh;\r\n    padding : 1vh;\r\n    font-size: 1em;\r\n    font-family:'Mplus 1p',sans-serif;\r\n    background: #26a7da;\r\n    border-radius: 0%;\r\n    width: 100%;\r\n    color : white;\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.story_main {\r\n    width: 100%;\r\n    height :auto;\n}\n.stp_thumbnail{\r\n    background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/storypage_banner.jpg\") ;\r\n    background-size: contain;\r\n    margin: auto;\r\n    width: 100%;\r\n    height:80vh;\r\n    text-align: left;\n}\n.stp_thumbnail-p{\r\n    color : purple;\r\n    font-weight: 200;\r\n    padding: 15vw;\r\n\r\n    font-size: 4vw;\r\n    bottom: 40%;\r\n    font-family:'Mplus 1p',sans-serif;\n}\n.stp_body{\r\n\r\n    text-align: center;\r\n    width: 65%;\r\n    height: auto;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.9fr;\r\n    margin: 5vh auto 15vh auto ;\n}\n.stp_text{\r\n    text-align: left;\r\n    margin: auto;\r\n    width: 96%;\r\n    font-size: 4vh;\r\n    color : #000000;\r\n    border-bottom: 1px rgb(112, 113, 144) solid;\n}\n.stp_text span{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    font-weight: 300;\r\n    float: left;\n}\n.stp_text button{\r\n    border-radius: 0%;\r\n    background: rgb(61, 61, 61);\r\n    font-size: 2vh;\r\n    float : right;\r\n    padding : 1vh;\r\n    color : white;\r\n    -webkit-transition: 0.3s;\r\n    transition: 0.3s;\n}\n.stp_text button:hover{\r\n    color : black;\r\n    background: rgb(89, 166, 218);\n}\n.stp_text button:active{\r\n    background: red;\n}\n.booklist{\r\n    display: grid;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n#basket{\r\n    text-align: center;\r\n    min-height: 70vh;\r\n    max-height : 70vh;\r\n    margin: auto;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    display: grid;\r\n      overflow: auto;\r\n    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.obj-bkt{\r\n    margin-right: 10px;\r\n    font-size : 2vh;\r\n    font-weight: 100;\r\n    text-align: center;\r\n    padding : 2%;\r\n    height: 30vh;  width: 20vh;\r\n    border : 0.5px solid slategray;\n}\n.list-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\n}\n.list-enter, .list-leave-to {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-leave-active {\r\n  position: absolute;\n}\n.obj-bkt img{\r\n    width: 100%;\r\n    height: 80%;\n}\n.list-move {\r\n  -webkit-transition: -webkit-transform 1s;\r\n  transition: -webkit-transform 1s;\r\n  transition: transform 1s;\r\n  transition: transform 1s, -webkit-transform 1s;\n}\n.basket-price{\r\n    font-family:'Mplus 1p',sans-serif;\r\n    display: grid;\r\n    grid-template-columns: 0.3fr 0.5fr auto;\r\n    font-size: 3vh;\r\n    border-top : 1px solid slategray;\r\n    width: 100%;\n}\n.list_item{\r\n    -webkit-transition: .3s ease-in-out;\r\n    transition: .3s ease-in-out;\r\n    position: relative;\r\n    text-align: center;\n}\n.list_item figure {\r\n    position: relative;\r\n    overflow: hidden;\n}\n.list_item figure img {\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    margin : 1vw auto;\r\n    position: relative;\r\n    display: block;\r\n    height: 30vh;  width: 26vh;\n}\n.list_item figure figcaption{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 30%;\n}\nfigure.info_effect figcaption{\r\n    top : auto;\r\n    bottom : 0;\r\n    padding : 2em;\r\n    background: rgba(0, 195, 255, 0.733);\r\n    color : #fefff6;\r\n    -webkit-transition: -webkit-transform 0.35s;\r\n    transition: -webkit-transform 0.35s;\r\n    transition: transform 0.35s;\r\n    transition: transform 0.35s, -webkit-transform 0.35s;\r\n    -webkit-transform: translate3d(0,100%,0);\r\n            transform: translate3d(0,100%,0)\n}\nfigure.info_effect h2{\r\n    float : center;\r\n    display : inline-block;\r\n    font-weight: 300;\r\n    font-family: 'Noto Sans', sans-serif;\n}\nfigure.info_effect:hover figcaption,\r\nfigure.info_effect:hover h2{\r\n    -webkit-transform : translate3d(0,0,0);\r\n            transform : translate3d(0,0,0);\n}\n.story-modal{\r\n    font-size: 1em;\r\n    display: grid;\r\n    height: 70vh;\r\n    grid-template-columns: 1fr 1fr;\n}\n.story-modal-left{\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.2fr;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    text-align: center;\n}\n.story-modal-left-sub{\r\n    padding-right :0.3vw;\r\n    padding-left :0.3vw;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n}\n.story-modal-left-main img{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-left-sub div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.story-modal-images img{\r\n    max-width:100%;\r\n    max-height:100%;\r\n    display:inline-block;\n}\n.story-modal-left img{\r\n    width:20vw;\r\n    height:50vh;\r\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);\n}\n.story-modal-right{\r\n        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n    padding :1.4vw;\r\n    display: grid;\r\n    grid-template-rows: 0.4fr 2fr 0.5fr 0.4fr;\n}\n.story-modal-right-title{\r\n    font-size: 1.5vw;\n}\n.story-modal-right-title h2::before{\r\n    content: \"I\";\r\n    background-color: orange;\r\n    color: orange;\r\n    font-weight: bold;\r\n    margin-right: 1vh;\n}\n.story-modal-right-info{\r\n    padding-top: 1.5vw;\r\n    font-size : 1vw;\n}\n.story-modal-right-price{\r\n    font-size : 1.5vw;\n}\n.story-modal-right-btn{\r\n    background: #3793df;\n}\n.story-modal-right-btn button{\r\n    background: transparent;\r\n    width: 49.5%;\r\n    height: 100%;\r\n    border-radius: 0;\r\n    color : white;\r\n    margin: 0;\r\n    padding : 0;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n    font-size : 1.7em;\n}\n.story-modal-right-btn button:hover{\r\n    background:green;\n}\n.basket-price div{\n}\n.basket-price button{\r\n    padding : 1vh;\r\n    padding : 1vh;\r\n    font-size: 1em;\r\n    font-family:'Mplus 1p',sans-serif;\r\n    background: #26a7da;\r\n    border-radius: 0%;\r\n    width: 100%;\r\n    color : white;\n}", ""]);
 
 // exports
 
@@ -41912,7 +41920,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n@font-face{\r\n   font-family:'Mine crafter'; \r\n   src:url(" + escape(__webpack_require__(230)) + ");\r\n   /* src:url('http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/font/Minecrafter.Reg.ttf') */\n}\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 0.4fr 0.6fr 0.8fr;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height:81vh; \r\n    display: grid;\r\n    grid-template-rows: 0.05fr 1fr;  \r\n    border : 1px solid silver;\n}\n.rank-page-title{\r\n  font-size : 2em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  background: rgb(72, 116, 240);\n}\n.rank-page-title p{\r\n  font-size : 1em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  color : white;\r\n  padding :1vw;\n}\n.rank-page-list{\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 25%;\r\n    padding-right: 0.5vw;\r\n    padding-left: 0.5vw;\r\n    overflow-x:hidden; overflow-y:auto;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding : 0.5vw;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    border : 1px solid silver;\r\n    height: 81vh;\n}\n.rank-page-div-2-game-image{\r\n  padding : 8vh;\r\n  text-align: center;\n}\n.rank-page-div-2-game-data{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 1fr 1fr 1fr;\r\n  padding-left : 2em;\r\n  padding-right : 2em;\n}\n#rank-title-layout{\r\n  font-family:'Mine crafter';\r\n  font-weight: 200;\r\n  font-size: 2.1em;\r\n  padding : 1vh;\r\n  color : white;\r\n  background: rgb(72, 116, 240);\n}\n.rank-data-layout{\r\n  padding : 1vh;\r\n  display: grid;\r\n  font-size : 1.2em;\r\n  grid-template-columns: 0.4fr 0.6fr;\n}\n.rank-data-layout div{\r\n  font-size : 1.5em;\r\n  font-weight: 300;\r\n  padding-top : 1vh;\r\n  font-family:'Mine crafter';\r\n  border-bottom: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.8fr;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\r\n    padding : 2vh;\n}\n.rank-page-div-3-chr-1{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.rank-div-3-title{\r\n  color: white;\r\n  padding : 1vh;\r\n  background: rgb(72, 116, 240);\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\n}\n.rank-page-div-3-chr-2{\r\n  padding-top:1vh;\r\n  display: grid;\r\n  grid-template-rows: 0.15fr 1fr;\r\n  overflow: auto;\n}\n.rank-div-title{\r\n  color: white;\r\n  padding : 1vh;\r\n  background: rgb(72, 116, 240);\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\n}\n.rank-div-contents{\r\n  display: grid;\r\n  grid-row-gap: 0.3em;\n}\n.rank-div-contents-content div{\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\r\n  padding : 0.5vh;\r\n  padding-left: 0;\n}\r\n\r\n/*\r\n.rank-title-span{\r\n   background:skyblue;\r\n   color:white;\r\n   margin-right: 0.5em;\r\n} */\n.ranking-number p{\r\n  color:white;\r\n  background: skyblue;\r\n  margin-right: 1.5em;\r\n  display:table-cell; \r\n  text-align:center; \r\n  vertical-align:middle;\r\n  font-family:'Mine crafter';\n}\n.ranking-number{ \r\n  display:table;\r\n  height: 100%;\r\n  margin-right: 1vh;\r\n  grid-area: ranking-number;\n}\n.rankname{ grid-area: rankname;\n}\n.rankdata{ grid-area: rankdate;\n}\n.username{ grid-area: username;\n}\n.userdate{ grid-area: userdate;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-areas:\r\n  'ranking-number rankname username'\r\n  'ranking-number rankdate userdate';\r\n  grid-template-columns: 0.3fr 0.5fr 1fr;\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(120px)\n}\n50% { -webkit-transform: perspective(120px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n@font-face{\r\n   font-family:'Mine crafter'; \r\n   src:url(" + escape(__webpack_require__(230)) + ");\r\n   /* src:url('http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/font/Minecrafter.Reg.ttf') */\n}\n.rank-page-div{\r\n    width: 100%;\r\n    height: 100%;\n}\n.rank-page-div-body{\r\n    padding-top : 8vh;\r\n    padding-bottom: 1vh;\r\n    margin: auto;\r\n    width: 90%;\r\n    height: 90vh;\r\n    margin-bottom: 8vh;\r\n    display: grid;\r\n    grid-template-columns: 0.4fr 0.6fr 0.8fr;\r\n    grid-column-gap: 1vh;\n}\n.rank-page-div-1{\r\n    height:81vh; \r\n    display: grid;\r\n    grid-template-rows: 0.05fr 1fr;  \r\n    border : 1px solid silver;\n}\n.rank-page-title{\r\n  font-size : 2em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  background: rgb(72, 116, 240);\n}\n.rank-page-title p{\r\n  font-size : 1em;\r\n  font-family: \"Mine crafter\";\r\n  font-weight: 200;\r\n  color : white;\r\n  padding :1vw;\n}\n.rank-page-list{\r\n    display : grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 25%;\r\n    padding-right: 0.5vw;\r\n    padding-left: 0.5vw;\r\n    overflow-x:hidden; overflow-y:auto;\n}\n.rank-page-div-1-sub{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding : 0.5vw;\n}\n.rank-page-div-1-sub:hover{\r\n  background : orange;\n}\n.rank-page-div-1-sub img{\r\n\r\n  width: 100%;\r\n  height: 100%;\n}\n.rank-page-div-2-sub-1{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 2fr 0.5fr;\n}\n.rank-page-div-2-sub-2{\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.4fr;\n}\n.game-title{\r\n  font-size : 4vh;\n}\n.rank-page-div-2{\r\n    display: grid;\r\n    grid-template-rows: 1fr 1fr;\r\n    border : 1px solid silver;\r\n    height: 81vh;\n}\n.rank-page-div-2-game-image{\r\n  padding : 8vh;\r\n  text-align: center;\n}\n.rank-page-div-2-game-data{\r\n  display: grid;\r\n  grid-template-rows: 0.5fr 1fr 1fr 1fr;\r\n  padding-left : 2em;\r\n  padding-right : 2em;\n}\n#rank-title-layout{\r\n  font-family:'Mine crafter';\r\n  font-weight: 200;\r\n  font-size: 2.1em;\r\n  padding : 1vh;\r\n  color : white;\r\n  background: rgb(72, 116, 240);\n}\n.rank-data-layout{\r\n  padding : 1vh;\r\n  display: grid;\r\n  font-size : 1.2em;\r\n  grid-template-columns: 0.4fr 0.6fr;\n}\n.rank-data-layout div{\r\n  font-size : 1.5em;\r\n  font-weight: 300;\r\n  padding-top : 1vh;\r\n  font-family:'Mine crafter';\r\n  border-bottom: 1px solid silver;\n}\n.rank-page-div-3{\r\n    display: grid;\r\n    grid-template-rows: 1fr 0.8fr;\r\n    grid-auto-rows: 1fr;\r\n    border : 1px solid silver;\r\n    padding : 2vh;\n}\n.rank-page-div-3-chr-1{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.rank-div-3-title{\r\n  color: white;\r\n  padding : 1vh;\r\n  background: rgb(72, 116, 240);\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\n}\n.rank-page-div-3-chr-2{\r\n  padding-top:1vh;\r\n  display: grid;\r\n  grid-template-rows: 0.15fr 1fr;\r\n  overflow: auto;\n}\n.rank-div-title{\r\n  color: white;\r\n  padding : 1vh;\r\n  background: rgb(72, 116, 240);\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\n}\n.rank-div-contents{\r\n  display: grid;\r\n  grid-row-gap: 0.3em;\n}\n.rank-div-contents div{\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.rank-div-contents div:hover{\r\n  background:pink\n}\n.rank-div-contents-content div{\r\n  font-size : 2em;\r\n  font-family:'Mine crafter';\r\n  font-weight: 400;\r\n  padding : 0.5vh;\r\n  padding-left: 0;\n}\r\n\r\n/*\r\n.rank-title-span{\r\n   background:skyblue;\r\n   color:white;\r\n   margin-right: 0.5em;\r\n} */\n.ranking-number p{\r\n  color:white;\r\n  background: skyblue;\r\n  margin-right: 1.5em;\r\n  display:table-cell; \r\n  text-align:center; \r\n  vertical-align:middle;\r\n  font-family:'Mine crafter';\n}\n.ranking-number{ \r\n  display:table;\r\n  height: 100%;\r\n  margin-right: 1vh;\r\n  grid-area: ranking-number;\n}\n.rankname{ grid-area: rankname;\n}\n.rankdata{ grid-area: rankdate;\n}\n.username{ grid-area: username;\n}\n.userdate{ grid-area: userdate;\n}\n.rank-div-contents-content{\r\n  display: grid;\r\n  grid-template-areas:\r\n  'ranking-number rankname username'\r\n  'ranking-number rankdate userdate';\r\n  grid-template-columns: 0.3fr 0.5fr 1fr;\n}\n.spinner {\r\n  width: 0;\r\n  height: 0;\r\n  background-color: transparent;\r\n  display: none;\r\n  margin: 100px auto;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\r\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n@-webkit-keyframes sk-rotateplane {\n0% { -webkit-transform: perspective(500px   \r\n    )\n}\n50% { -webkit-transform: perspective(500px) rotateY(180deg)\n}\n100% { -webkit-transform: perspective(500px) rotateY(180deg)  rotateX(180deg)\n}\n}\n@keyframes sk-rotateplane {\n0% { \r\n    background-color: rgb(255, 170, 72);\r\n    transform: perspective(500px) rotateX(0deg) rotateY(0deg);\r\n    -webkit-transform: perspective(500px) rotateX(0deg) rotateY(0deg)\n}\n50% { \r\n    background-color: rgb(252, 255, 82);\r\n    transform: perspective(500px) rotateX(-180.1deg) rotateY(0deg);\r\n    -webkit-transform: perspective(500px) rotateX(-180.1deg) rotateY(0deg)\n}\n100% { \r\n    background-color: rgb(149, 255, 50);\r\n    transform: perspective(500px) rotateX(-180deg) rotateY(-179.9deg);\r\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}", ""]);
 
 // exports
 
@@ -54872,7 +54880,9 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "rank-page-div-2" }, [
-          _c("div", { staticClass: "spinner", attrs: { id: "loadding" } }),
+          _c("div", { staticClass: "spinner", attrs: { id: "loadding" } }, [
+            _vm._v("\n          待って\n        ")
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -55100,7 +55110,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(0, 0, 0, 0.473);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #ffffff;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%;\r\n        font-size : 15px;\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n.sub_header {\r\n   \r\n    display: none;\n}\n}\r\n", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.sub_header {\r\n    width: 100%;\r\n    height: auto;\r\n    display: grid;\r\n    position: fixed;\r\n    background : rgba(177, 218, 255, 0.473);\r\n    grid-template-columns: 0.15fr 0.7fr 0.15fr;\r\n    z-index: 30;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\n}\n.sub_logo{\r\n    text-align: center;\r\n    display: grid;\r\n    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;\n}\n.sub_menu{\r\n    margin : auto;\r\n    height:auto;\r\n    text-align: center;\r\n    font-size : 1em;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;\n}\n.sub_menu a{  font-family: 'Noto Sans', sans-serif;\n}\n.sub_btn{\r\n    color: #111111;\r\n    -webkit-transition-duration:0.4s;\r\n            transition-duration:0.4s;\r\n    font-size:1.1em;\r\n    font-family: 'Noto Sans', sans-serif;\r\n    padding : 0.5em;\n}\n.sub_btn:hover{\r\n    color: #ff9b00;\n}\n@media screen and (max-height: 450px) {\n.sidenav {padding-top: 15px;\n}\n.sidenav a {font-size: 18px;\n}\n}\n@media (max-width: 700px) {\n.body_sub, .list_board, .main_body {\r\n        width: 100%;\r\n        font-size : 15px;\n}\n.baskets, .main_left, .menu_btn {\r\n        display: none\n}\n.sub_header {\r\n   \r\n    display: none;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -55821,7 +55831,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_main_div span{\r\n    font-size : 1.3em;\n}\n.mypento_div {\r\n    padding-top: 4vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1.2fr 0.8fr;\r\n    background-color: #55c5ee;\n}\n.mypento-info{\r\n    padding : 10vh;\r\n    display: grid;\r\n    grid-template-rows: 0.87fr 0.15fr 0.3fr 1fr;\r\n    text-align: center\n}\n.mypento-info img{\r\n    border: 10px solid rgb(24, 36, 59);\r\n    border-radius: 50%;\n}\n.mypento-intro{\r\n    font-size : 2em;\r\n    padding : 3vh;\r\n    border : 1px solid transparent;\r\n    background: white;\n}\n.mypento-sub-div-content-2{\r\n    background: orange;\r\n    padding : 10vh;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.8fr;\n}\n.mypento-sub-div-content-2 div{\r\n    border-bottom: 3px solid rgb(255, 255, 255);\n}\n#mypento_sub_div3{\r\n    background: rgb(25, 35, 56);\n}\n.my-tale-list{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr ;\r\n    overflow: auto;\r\n    height: 100%;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    padding : 6vh 3vh 3vh 3vh;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}\r\n", ""]);
+exports.push([module.i, "/* \r\ndev : Kang Sangun\r\n */\n.mypento_main_div {\r\n    width: 100%;\r\n    height: 100%\n}\n.mypento_main_div span{\r\n    font-size : 1.3em;\n}\n.mypento_div {\r\n    padding-top: 4vw;\r\n    margin: auto;\r\n    width: 70%;\r\n    height: 100%\n}\n.mypento_sub_div {\r\n    height: 80vh;\n}\n#mypento_sub_div1 {\r\n    display: grid;\r\n    grid-template-columns : 1.2fr 0.8fr;\r\n    background-color: #55c5ee;\n}\n.mypento-info{\r\n    padding : 10vh;\r\n    display: grid;\r\n    grid-template-rows: 0.87fr 0.15fr 0.3fr 1fr;\r\n    text-align: center\n}\n.mypento-info img{\r\n    border: 10px solid rgb(24, 36, 59);\r\n    border-radius: 50%;\n}\n.mypento-intro{\r\n    font-size : 2em;\r\n    padding : 3vh;\r\n    border : 1px solid transparent;\r\n    background: white;\n}\n.mypento-sub-div-content-2{\r\n    background: orange;\r\n    padding : 10vh;\r\n    display: grid;\r\n    grid-template-rows: 0.1fr 0.8fr;\n}\n.mypento-sub-div-content-2 div{\r\n    border-bottom: 3px solid rgb(255, 255, 255);\n}\n#mypento_sub_div3{\r\n    background: rgb(25, 35, 56);\n}\n.my-tale-list{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr ;\r\n    grid-template-rows: repeat(500px);\r\n    overflow: auto;\r\n    height: 100%;\n}\n.my-tele-list-sub{\r\n    text-align: center;\r\n    padding : 6vh 3vh 3vh 3vh;\n}\n.my-tele-list-sub img{\r\n    width: 100%;\r\n    height: 100%;\n}\r\n", ""]);
 
 // exports
 
@@ -56246,7 +56256,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-my-page {\r\n  height: 100%;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-banner p {\r\n  padding-left: 4vh;\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#my-main-list {\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2.5vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\r\n  font-size: 2vh;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-my-page {\r\n  height: 100vh;\r\n  width: 100%;\n}\n.col-my-main-div {\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  height: auto;\n}\n#my-main-banner {\r\n  color: white;\r\n  font-size: 7vh;\r\n  padding-top: 15vh;\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_my_page_banner.jpg\");\r\n  background-size: cover;\n}\n#my-main-banner p {\r\n  padding-left: 4vh;\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#my-main-list {\r\n  height: 100vh;\r\n  overflow: auto;\r\n  padding-top: 5vh;\r\n  text-align: center;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list img {\r\n  border-radius: 10%;\r\n  text-align: center;\r\n  width: 100%;\r\n  height: 100%;\n}\n#my-main-list div {\r\n  padding: 1vw;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\n}\n#my-main-list div:hover {\r\n  background-color: orange;\n}\n.col-my-modal-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.5fr 0.5fr;\n}\n.col-my-modal-layout-sub-1 {\r\n  border-bottom: 1px solid silver;\n}\n.col-my-modal-layout-sub-1 img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.title-box {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.col-my-modal-layout-sub-2 {\r\n  height: auto;\n}\n.modal-btn {\r\n  padding: 1vh;\r\n  color: white;\r\n  float: right;\r\n  border-radius: 0%;\r\n  background: tomato;\r\n  font-size: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-my-modal-layout-sub-2 table {\r\n  text-align: left;\r\n  margin: auto;\r\n  padding: 2vh;\r\n  padding-top: 0;\r\n  width: 90%;\r\n  height: 100%;\n}\n.col-my-modal-layout-sub-2 td {\r\n  vertical-align: baseline;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.my-modal-layout-tr-tilte {\r\n  font-size: 4vh;\n}\n.my-modal-layout-tr-index {\r\n  font-size: 2vh;\n}\n.my-modal-layout-tr-index-2 {\r\n  text-align: left;\r\n  font-size: 2vh;\n}\n#my-modal-contents-layout td {\r\n  padding-top: 1.5vh;\r\n  border-top: 3px gray solid;\n}\r\n", ""]);
 
 // exports
 
@@ -56359,7 +56369,7 @@ var render = function() {
                               _vm._s(
                                 _vm.mycol_text.collection_my_item_text[1]
                               ) +
-                              " " +
+                              " : " +
                               _vm._s(_vm.select_pento_list.recommendNumSum) +
                               "\n                "
                           )
@@ -56380,7 +56390,7 @@ var render = function() {
                               _vm._s(
                                 _vm.mycol_text.collection_my_item_text[2]
                               ) +
-                              " " +
+                              " : " +
                               _vm._s(select_pento.registered_date) +
                               "\n                "
                           )
@@ -56388,15 +56398,22 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("tr", { staticClass: "my-modal-layout-tr-index-2" }, [
-                      _c("td", { attrs: { colspan: "2" } }, [
-                        _vm._v(
-                          "\n                " +
-                            _vm._s(select_pento.design_explain) +
-                            "\n              "
-                        )
-                      ])
-                    ])
+                    _c(
+                      "tr",
+                      {
+                        staticClass: "my-modal-layout-tr-index-2",
+                        attrs: { id: "my-modal-contents-layout" }
+                      },
+                      [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(select_pento.design_explain) +
+                              "\n              "
+                          )
+                        ])
+                      ]
+                    )
                   ])
                 ])
               ])
@@ -56515,7 +56532,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);", ""]);
 
 // module
-exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 49px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  height: 100%;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: 2px #f8b213 solid;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding-left: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.7fr 0.27fr;\n}\n.col-share-modal-layout-sub-2 p {\r\n  font-size: 1.3em;\r\n  padding-top: 1vh;\r\n  padding-bottom: 1vh;\n}\n.col-share-modal-layout-sub-3 {\r\n  text-align: center;\r\n  font-size: 1.3em;\r\n  overflow-y: auto;\n}\n.col-share-modal-layout-sub-3 span {\r\n  font-size: 1.3em;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2vh;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(10, 30, 180, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.user_design_pento_modal-2 {\r\n  padding-left: 1vw;\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\r\n", ""]);
+exports.push([module.i, "\n.col-share-main-layout {\r\n  display: grid;\r\n  grid-template-rows: 0.4fr 0.6fr;\n}\n.col-share-banner-layout {\r\n  margin: 49px auto;\r\n  display: grid;\r\n  grid-template-columns: 0.3fr 0.7fr;\r\n  width: 100vw;\r\n  height: 60vh;\n}\n#col-share-banner-sub-1 {\r\n  color: white;\r\n  padding: 5vh;\r\n  font-size: 4vw;\r\n  background: green;\n}\n#col-share-banner-sub-1 p {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n#col-share-banner-sub-2 {\r\n  background-image: url(\"http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/col_all_banner.jpg\");\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\n.col-share-contents-layout {\r\n  height: auto;\r\n  display: grid;\r\n  grid-template-columns: 0.1fr 0.8fr 0.1fr;\n}\n.col-share-modal-layout {\r\n  display: grid;\r\n  grid-template-columns: 40% 40% 20%;\r\n  height: 48vh;\n}\n.modal-btn-1 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f8b213 solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  height: 100%;\n}\n.modal-btn-1:hover {\r\n  color: white;\r\n  background-color: #f8b213;\r\n  border: 2px #f8b213 solid;\n}\n.modal-btn-2 {\r\n  font-size: 1.5vw;\r\n  background-color: white;\r\n  border: 2px #f87b7b solid;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.modal-btn-2:hover {\r\n  color: white;\r\n  background-color: #f87b7b;\r\n  border: #f87b7b;\n}\n.col-share-modal-layout img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.col-share-modal-layout-sub-2 {\r\n  padding-left: 1.5vw;\r\n  text-align: left;\r\n  display: grid;\r\n  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.7fr 0.27fr;\n}\n.col-share-modal-layout-sub-2 p {\r\n  font-size: 1.3em;\r\n  padding-top: 1vh;\r\n  padding-bottom: 1vh;\n}\n.col-share-modal-layout-sub-3 {\r\n  text-align: center;\r\n  font-size: 1.3em;\r\n  overflow-y: auto;\n}\n.col-share-modal-layout-sub-3 span {\r\n  font-size: 1.3em;\n}\n.col-share-modal-layouy-sub-3-img {\r\n  padding: 2vh;\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\n}\n.col-share-modal-layouy-sub-3-img img {\r\n  border-radius: 10px;\n}\n.col-share-modal-layouy-sub-3-img:hover {\r\n  background: orange;\n}\n.modal-2-sub-1 {\r\n  font-size: 2vw;\r\n  vertical-align: middle;\r\n  border-bottom: 1px solid silver;\n}\n.modal-2-sub-1 div {\r\n  margin-right: 0.5vw;\r\n  float: left;\r\n  width: 5px;\r\n  height: 3vw;\r\n  background-color: orange;\n}\n.modal-2-sub-4 {\r\n  display: grid;\r\n  grid-template-columns: 1fr;\n}\n.col-share-list-layout {\r\n  display: grid;\r\n  grid-column-gap: 1vh;\r\n  grid-row-gap: 1vh;\r\n  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;\n}\n.content-layout {\r\n  position: relative;\r\n  overflow: hidden;\n}\n.content-index {\r\n  padding: 2vh;\r\n  overflow: hidden;\r\n  z-index: 10;\r\n  color: transparent;\r\n  position: absolute;\r\n  width: 0px;\r\n\r\n  background: transparent;\r\n  height: 100%;\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\n}\n.content-index span {\r\n  font-size: 2.5vh;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.content-index p {\r\n  font-size: 1.5vh;\r\n  font-family: \"Mplus 1p\", sans-serif;\n}\n.content-layout:hover .content-img {\r\n  -webkit-transform: scale(1.2);\r\n          transform: scale(1.2);\n}\n.content-layout:hover .content-index {\r\n  color: white;\r\n  display: inline-block;\r\n  background: rgba(8, 131, 39, 0.5);\r\n  width: 50%;\n}\n.content-img {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  -webkit-transition: 0.4s ease;\r\n  transition: 0.4s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\n}\n.user_design_pento_modal {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\n}\n.user_design_pento_modal-2 {\r\n  padding-left: 1vw;\r\n  display: grid;\r\n  grid-template-rows: 15% 25% 30% 30%;\n}\n.user_design_pento_modal-2 p {\r\n  font-size: 3vh;\n}\n.content-banner-text {\r\n  margin-top: -3vh;\r\n  margin-bottom: 2vh;\n}\n.content-banner-text span {\r\n  font-weight: 200;\r\n  font-family: \"Mplus 1p\", sans-serif;\r\n  font-size: 5vh;\n}\n.page-title::before {\r\n  content: \"l\";\r\n  font-weight: bold;\r\n  color: green;\n}\r\n", ""]);
 
 // exports
 
@@ -56555,9 +56572,11 @@ var render = function() {
         _c("div"),
         _vm._v(" "),
         _c("div", { staticClass: "content-banner-text" }, [
-          _c("span", [
+          _c("span", { staticClass: "page-title" }, [
             _vm._v(_vm._s(_vm.shcol_text.collection_share_content_text[0]))
-          ])
+          ]),
+          _vm._v(" "),
+          _c("hr")
         ]),
         _vm._v(" "),
         _c("div"),
@@ -56588,7 +56607,7 @@ var render = function() {
                     _vm._v(
                       _vm._s(_vm.shcol_text.collection_share_content_text[1]) +
                         " : " +
-                        _vm._s(list.nickname)
+                        _vm._s(list.user_nickname)
                     )
                   ]),
                   _vm._v(" "),

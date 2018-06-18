@@ -3,13 +3,11 @@ dev . KANG SANG UN
 -->
 <template>
     <div class="footer-div">
-        <div class="footer-left">
-          
+        <div class="footer-left"> 
         </div>
         <div class="footer-middle">
           <img src="http://ec2-13-125-219-201.ap-northeast-2.compute.amazonaws.com/images/web/main_logo.png">
             <br>
-            
             <i class="fab fa-vuejs fa-2x"></i>
             <i class="fab fa-laravel fa-2x"></i>
             <a  href="https://github.com/KANGSangUn/Pento">
@@ -36,7 +34,7 @@ import lang from "../htmltext/text";
 export default {
   data() {
     return {
-      //HTML에 배치될 텍스트
+      //html 텍스트 값 할당
       footer_text_1: lang.footer["footer_text_1"],
       footer_text_2: lang.footer["footer_text_2"],
       dev_names: lang.footer["dev_name"]

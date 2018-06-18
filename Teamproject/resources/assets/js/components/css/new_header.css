@@ -6,7 +6,7 @@ dev : Kang Sangun
     height: auto;
     display: grid;
     position: fixed;
-    background : rgba(0, 0, 0, 0.473);
+    background : rgba(177, 218, 255, 0.473);
     grid-template-columns: 0.15fr 0.7fr 0.15fr;
     z-index: 30;
     transition-duration:0.4s;
@@ -26,8 +26,9 @@ dev : Kang Sangun
 }
 .sub_menu a{  font-family: 'Noto Sans', sans-serif; }
 .sub_btn{
-    color: #ffffff;
+    color: #111111;
     transition-duration:0.4s;
+    font-size:1.1em;
     font-family: 'Noto Sans', sans-serif;
     padding : 0.5em;
 }
