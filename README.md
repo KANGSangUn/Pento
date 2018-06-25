@@ -26,9 +26,12 @@ Developers
 
 Web Front-end & Web Design-<br>
 カン・サンウン<br>
+
 担当分野デレクトリー<br>
 ----------------------------------------------------------<br>
+
 Front-end＆CSS :　Teamproject -> resources -> 以下の全部<br>
 Http router : Teamproject -> router -> web.php<br>
 images&font : Teamproejct -> public -> 以下の全部<br>
+
 ----------------------------------------------------------
