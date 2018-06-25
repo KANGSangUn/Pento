@@ -31,7 +31,7 @@ Web Front-end & Web Design-<br>
 ----------------------------------------------------------<br>
 
 Front-end＆CSS :　Teamproject -> resources -> 以下の全部<br>
-URL : https://github.com/KANGSangUn/Pento/tree/master/Teamproject/resources
+URL : https://github.com/KANGSangUn/Pento/tree/master/Teamproject/resources/assets/js
 <br>
 Http router : Teamproject -> router -> web.php<br>
 URL : https://github.com/KANGSangUn/Pento/tree/master/Teamproject/routes
