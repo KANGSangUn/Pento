@@ -38,7 +38,7 @@ URL : https://github.com/KANGSangUn/Pento/tree/master/Teamproject/resources/asse
 Http router : Teamproject -> router -> web.php<br>
 URL : https://github.com/KANGSangUn/Pento/tree/master/Teamproject/routes
 <br>
-images&font : Teamproejct -> public -> 以下の全部<br>
+images&font : Teamproejct -> public<br>
 URL : https://github.com/KANGSangUn/Pento/tree/master/Teamproject/public
 
 ----------------------------------------------------------
