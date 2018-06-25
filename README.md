@@ -6,7 +6,7 @@ Team Project  PENTO
 
 developed 2018 01 ~ 2018 06 
 <hr>
-Web site address : http:/pento.cf
+Web site address : http://pento.cf
 <hr>
 Developers
 
