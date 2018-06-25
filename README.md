@@ -11,19 +11,19 @@ Web site address : http://pento.cf
 Developers
 
 -Game Contents- <br>
-정현우<br>
-정지민
+ジョン・ヒョンウ<br>
+ジョン・ジミン
 <br>
 
 -Hardware-<br>
-최요한
+チェ・ヨハン
 <br>
 
 -Database & Back-end-<br>
-성경임<br>
-김영문
+ソン・ギョンイム<br>
+キム・ヨンムン
 <br>
 
 Web Front-end & Web Design-<br>
-강상운
+カン・サンウン
 
